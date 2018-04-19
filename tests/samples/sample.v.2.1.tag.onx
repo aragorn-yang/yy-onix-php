@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE ONIXmessage SYSTEM "http://www.editeur.org/onix/2.1/short/onix-international.dtd">
+<ONIXmessage>
+    <product>
+        <a001>1234567890</a001>
+        <a002>03</a002>
+        <productidentifier>
+            <b221>02</b221>
+            <b244>0816016356</b244>
+        </productidentifier>
+        <b012>BB</b012>
+        <title>
+            <b202>01</b202>
+            <b203 textcase="02">British English, A to Zed</b203>
+        </title>
+        <contributor>
+            <b035>A01</b035>
+            <b037>Schur, Norman W</b037>
+            <b044>A Harvard graduate in Latin and Italian literature, Norman Schur attended the University of Rome and
+                the
+                Sorbonne before returning to the United States to study law at Harvard and Columbia Law Schools. Now
+                retired
+                from legal practise, Mr Schur is a fluent speaker and writer of both British and American English.
+            </b044>
+        </contributor>
+        <b056>REV</b056>
+        <b057>3</b057>
+        <language>
+            <b253>01</b253>
+            <b252>eng</b252>
+        </language>
+        <b061>493</b061>
+        <b064>REF008000</b064>
+        <b073>01</b073>
+        <othertext>
+            <d102>01</d102>
+            <d104>BRITISH ENGLISH, A TO ZED is the thoroughly updated, revised, and expanded third edition of Norman
+                Schur’s
+                highly acclaimed transatlantic dictionary for English speakers. First published as BRITISH SELF-TAUGHT
+                and
+                then as ENGLISH ENGLISH, this collection of Briticisms for Americans, and Americanisms for the British,
+                is a
+                scholarly yet witty lexicon, combining definitions with commentary on the most frequently used and some
+                lesser known words and phrases. Highly readable, it’s a snip of a book, and one that sorts out – through
+                comments in American – the “Queen’s English” – confounding as it may seem.
+            </d104>
+        </othertext>
+        <othertext>
+            <d102>08</d102>
+            <d104>Norman Schur is without doubt the outstanding authority on the similarities and differences between
+                British and American English. BRITISH ENGLISH, A TO ZED attests not only to his expertise, but also to
+                his
+                undiminished powers to inform, amuse and entertain. – Laurence Urdang, Editor, VERBATIM, The Language
+                Quarterly, Spring 1988
+            </d104>
+        </othertext>
+        <imprint>
+            <b079>Facts on File Publications</b079>
+        </imprint>
+        <publisher>
+            <b291>01</b291>
+            <b081>Facts on File Inc</b081>
+        </publisher>
+        <b003>1987</b003>
+        <measure>
+            <c093>01</c093>
+            <c094>9.25</c094>
+            <c095>in</c095>
+        </measure>
+        <measure>
+            <c093>02</c093>
+            <c094>6.25</c094>
+            <c095>in</c095>
+        </measure>
+        <measure>
+            <c093>03</c093>
+            <c094>1.2</c094>
+            <c095>in</c095>
+        </measure>
+        <supplydetail>
+            <j136>1234567</j136>
+            <j141>IP</j141>
+            <price>
+                <j148>01</j148>
+                <j151>35.00</j151>
+            </price>
+        </supplydetail>
+    </product>
+</ONIXmessage>

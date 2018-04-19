@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE ONIXMessage SYSTEM "http://www.editeur.org/onix/2.1/reference/onix-international.dtd">
+<ONIXMessage>
+    <Product>
+        <RecordReference>1234567890</RecordReference>
+        <NotificationType>03</NotificationType>
+        <ProductIdentifier>
+            <ProductIDType>02</ProductIDType>
+            <IDValue>0816016356</IDValue>
+        </ProductIdentifier>
+        <ProductIdentifier>
+            <ProductIDType>15</ProductIDType>
+            <IDValue>9780816016358</IDValue>
+        </ProductIdentifier>
+        <ProductForm>BB</ProductForm>
+        <Title>
+            <TitleType>01</TitleType>
+            <TitleText textcase="02">British English, A to Zed</TitleText>
+        </Title>
+        <Contributor>
+            <SequenceNumber>1</SequenceNumber>
+            <ContributorRole>A01</ContributorRole>
+            <PersonNameInverted>Schur, Norman W</PersonNameInverted>
+            <BiographicalNote>A Harvard graduate in Latin and Italian literature, Norman Schur attended the University
+                of
+                Rome and the Sorbonne before returning to the United States to study law at Harvard and Columbia Law
+                Schools. Now retired from legal practise, Mr Schur is a fluent speaker and writer of both British and
+                American English.
+            </BiographicalNote>
+        </Contributor>
+        <EditionTypeCode>REV</EditionTypeCode>
+        <EditionNumber>3</EditionNumber>
+        <Language>
+            <LanguageRole>01</LanguageRole>
+            <LanguageCode>eng</LanguageCode>
+        </Language>
+        <NumberOfPages>493</NumberOfPages>
+        <BASICMainSubject>REF008000</BASICMainSubject>
+        <AudienceCode>01</AudienceCode>
+        <OtherText>
+            <TextTypeCode>01</TextTypeCode>
+            <Text>BRITISH ENGLISH, A TO ZED is the thoroughly updated, revised, and expanded third edition of Norman
+                Schur's
+                highly acclaimed transatlantic dictionary for English speakers. First published as BRITISH SELF-TAUGHT
+                and
+                then as ENGLISH ENGLISH, this collection of Briticisms for Americans, and Americanisms for the British,
+                is a
+                scholarly yet witty lexicon, combining definitions with commentary on the most frequently used and some
+                lesser known words and phrases. Highly readable, it's a snip of a book, and one that sorts
+                out through comments in American  the "Queen's English"
+                confounding as it may seem.
+            </Text>
+        </OtherText>
+        <OtherText>
+            <TextTypeCode>08</TextTypeCode>
+            <Text>Norman Schur is without doubt the outstanding authority on the similarities and differences between
+                British and American English. BRITISH ENGLISH, A TO ZED attests not only to his expertise, but also to
+                his
+                undiminished powers to inform, amuse and entertain. Laurence Urdang, Editor, VERBATIM, The
+                Language
+                Quarterly, Spring 1988
+            </Text>
+        </OtherText>
+        <Imprint>
+            <ImprintName>Facts on File Publications</ImprintName>
+        </Imprint>
+        <Publisher>
+            <PublishingRole>01</PublishingRole>
+            <PublisherName>Facts on File Inc</PublisherName>
+        </Publisher>
+        <PublicationDate>1987</PublicationDate>
+        <Measure>
+            <MeasureTypeCode>01</MeasureTypeCode>
+            <Measurement>9.25</Measurement>
+            <MeasureUnitCode>in</MeasureUnitCode>
+        </Measure>
+        <Measure>
+            <MeasureTypeCode>02</MeasureTypeCode>
+            <Measurement>6.25</Measurement>
+            <MeasureUnitCode>in</MeasureUnitCode>
+        </Measure>
+        <Measure>
+            <MeasureTypeCode>03</MeasureTypeCode>
+            <Measurement>1.2</Measurement>
+            <MeasureUnitCode>in</MeasureUnitCode>
+        </Measure>
+        <SupplyDetail>
+            <SupplierSAN>1234567</SupplierSAN>
+            <AvailabilityCode>IP</AvailabilityCode>
+            <Price>
+                <PriceTypeCode>01</PriceTypeCode>
+                <PriceAmount>35.00</PriceAmount>
+            </Price>
+        </SupplyDetail>
+    </Product>
+</ONIXMessage>
