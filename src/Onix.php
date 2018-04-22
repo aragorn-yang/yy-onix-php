@@ -19,9 +19,21 @@ final class Onix
     private $version = '';
     /** @var string */
     private $edition = '';
+    /** @var array */
+    private $unrecognisableElements = [];
 
     private function __construct()
     {
+    }
+
+    public function getUnrecognisableElements(): array
+    {
+        return $this->unrecognisableElements;
+    }
+
+    public function addUnrecognisableElement(string $key): void
+    {
+        $this->unrecognisableElements[$key] = ($this->unrecognisableElements[$key] ?? 0) + 1;
     }
 
     private function __clone()

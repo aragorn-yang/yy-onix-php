@@ -43,4 +43,9 @@ class SimpleBookParser
     {
         return $this->products;
     }
+
+    public function getUnrecognisableElements(): array
+    {
+        return $this->onix->getUnrecognisableElements();
+    }
 }

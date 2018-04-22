@@ -76,4 +76,25 @@ ONIX
             $this->assertInstanceOf(\AragornYang\Onix\Composites\Product::class, $product);
         }
     }
+
+    /** @test */
+    public function it_keeps_a_list_of_unrecognisable_element_names(): void
+    {
+        $parser = new SimpleBookParser;
+        $parser->parse(<<<'ONIX'
+<?xml version="1.0"?>
+<ONIXMessage>
+<Product>
+<UnrecognisableElement1></UnrecognisableElement1>
+<UnrecognisableElement2></UnrecognisableElement2>
+<UnrecognisableElement2></UnrecognisableElement2>
+</Product>
+</ONIXMessage>
+ONIX
+        );
+        $this->assertSame([
+            'UnrecognisableElement1' => 1,
+            'UnrecognisableElement2' => 2,
+        ], $parser->getUnrecognisableElements());
+    }
 }

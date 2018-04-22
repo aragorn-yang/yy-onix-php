@@ -28,7 +28,7 @@ class Composite
                 $composite->{$method_name}($value);
                 continue;
             }
-            throw new \RuntimeException("Failed to handle reference name $key, $method_name");
+            $onix->addUnrecognisableElement($key);
         }
         return $composite;
     }
