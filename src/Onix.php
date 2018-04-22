@@ -21,6 +21,8 @@ final class Onix
     private $edition = '';
     /** @var array */
     private $unrecognisableElements = [];
+    /** @var array */
+    private $unrecognisableCodes = [];
 
     private function __construct()
     {
@@ -34,6 +36,17 @@ final class Onix
     public function addUnrecognisableElement(string $key): void
     {
         $this->unrecognisableElements[$key] = ($this->unrecognisableElements[$key] ?? 0) + 1;
+    }
+
+    public function getUnrecognisableCodes(): array
+    {
+        return $this->unrecognisableCodes;
+    }
+
+    public function addUnrecognisableCode(string $key, string $value): void
+    {
+        $keyValuePair = trim($key) . ':' . trim($value);
+        $this->unrecognisableCodes[$keyValuePair] = ($this->unrecognisableCodes[$keyValuePair] ?? 0) + 1;
     }
 
     private function __clone()

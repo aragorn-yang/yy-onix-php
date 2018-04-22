@@ -97,4 +97,35 @@ ONIX
             'UnrecognisableElement2' => 2,
         ], $parser->getUnrecognisableElements());
     }
+
+    /** @test */
+    public function it_keeps_a_list_of_unrecognisable_codes(): void
+    {
+        $parser = new SimpleBookParser;
+        $parser->parse(<<<'ONIX'
+<?xml version="1.0"?>
+<ONIXMessage>
+<Product>
+<ProductForm>
+    ?1
+</ProductForm>
+</Product>
+<Product>
+<ProductForm>
+    ?2
+</ProductForm>
+</Product>
+<Product>
+<ProductForm>
+    ?2
+</ProductForm>
+</Product>
+</ONIXMessage>
+ONIX
+        );
+        $this->assertSame([
+            'ProductForm:?1' => 1,
+            'ProductForm:?2' => 2,
+        ], $parser->getUnrecognisableCodes());
+    }
 }

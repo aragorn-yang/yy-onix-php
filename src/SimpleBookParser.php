@@ -48,4 +48,9 @@ class SimpleBookParser
     {
         return $this->onix->getUnrecognisableElements();
     }
+
+    public function getUnrecognisableCodes(): array
+    {
+        return $this->onix->getUnrecognisableCodes();
+    }
 }

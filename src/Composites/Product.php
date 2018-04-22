@@ -2,7 +2,7 @@
 
 namespace AragornYang\Onix\Composites;
 
-use AragornYang\Onix\CodeLists\List07ProductFormCode;
+use AragornYang\Onix\CodeLists\CodeList07ProductForm;
 
 class Product extends Composite
 {
@@ -90,7 +90,7 @@ class Product extends Composite
 
     public function getProductForm(): string
     {
-        return List07ProductFormCode::translate($this->productFormCode);
+        return CodeList07ProductForm::translate($this->productFormCode);
     }
 
     public function getTitle(): string
@@ -115,7 +115,13 @@ class Product extends Composite
 
     public function setProductForm(\SimpleXMLElement $productFormCode): void
     {
-        $this->productFormCode = (string)$productFormCode;
+        $code = (string)$productFormCode;
+        if (!CodeList07ProductForm::validate($code)) {
+            CodeList07ProductForm::addToUnrecognisable($code);
+            return;
+        }
+
+        $this->productFormCode = $code;
     }
 
     public function setTitle(\SimpleXMLElement $xml): void

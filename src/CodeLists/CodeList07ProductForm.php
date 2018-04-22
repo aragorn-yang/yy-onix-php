@@ -2,8 +2,10 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class List07ProductFormCode extends CodeList
+class CodeList07ProductForm extends CodeList
 {
+    public const KEY = 'ProductForm';
+
     protected const MAPPING = [
         '00' => 'Undefined',
         'AA' => 'Audio',
