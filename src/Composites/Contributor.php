@@ -2,12 +2,15 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList17ContributorRole;
+
 class Contributor extends Composite
 {
     /** @var int */
     protected $sequenceNumber = 0;
-    /** @var string */
-    protected $contributorRole = '';
+    /** @var CodeInList */
+    protected $contributorRole;
     /** @var string */
     protected $personName = '';
     /** @var string */
@@ -37,12 +40,17 @@ class Contributor extends Composite
 
     public function getContributorRole(): string
     {
-        return $this->contributorRole;
+        return $this->contributorRole ? $this->contributorRole->getCode() : '';
     }
 
-    public function setContributorRole(string $contributorRole): void
+    public function getContributorRoleDesc(): string
     {
-        $this->contributorRole = $contributorRole;
+        return $this->contributorRole ? $this->contributorRole->getDesc() : '';
+    }
+
+    public function setContributorRole(string $code): void
+    {
+        $this->contributorRole = new CodeInList(CodeList17ContributorRole::class, $code);
     }
 
     public function getPersonName(): string

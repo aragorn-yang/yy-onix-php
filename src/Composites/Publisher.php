@@ -2,21 +2,29 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList45PublishingRole;
+
 class Publisher extends Composite
 {
-    /** @var string */
-    protected $publishingRole = '';
+    /** @var CodeInList */
+    protected $publishingRole;
     /** @var string */
     protected $publisherName = '';
 
     public function getPublishingRole(): string
     {
-        return $this->publishingRole;
+        return $this->publishingRole ? $this->publishingRole->getCode() : '';
     }
 
-    public function setPublishingRole(string $publishingRole): void
+    public function getPublishingRoleDesc(): string
     {
-        $this->publishingRole = $publishingRole;
+        return $this->publishingRole ? $this->publishingRole->getDesc() : '';
+    }
+
+    public function setPublishingRole(string $code): void
+    {
+        $this->publishingRole = new CodeInList(CodeList45PublishingRole::class, $code);
     }
 
     public function getPublisherName(): string

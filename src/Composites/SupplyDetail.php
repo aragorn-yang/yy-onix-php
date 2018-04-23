@@ -2,11 +2,14 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList54AvailabilityStatus;
+
 class SupplyDetail extends Composite
 {
     /** @var string */
     protected $supplierSAN = '';
-    /** @var string */
+    /** @var string|CodeInList */
     protected $availabilityCode = '';
     /** @var Price */
     protected $price;
@@ -23,12 +26,17 @@ class SupplyDetail extends Composite
 
     public function getAvailabilityCode(): string
     {
-        return $this->availabilityCode;
+        return $this->availabilityCode ? $this->availabilityCode->getCode() : '';
     }
 
-    public function setAvailabilityCode(string $availabilityCode): void
+    public function getAvailabilityCodeDesc(): string
     {
-        $this->availabilityCode = $availabilityCode;
+        return $this->availabilityCode ? $this->availabilityCode->getDesc() : '';
+    }
+
+    public function setAvailabilityCode(string $code): void
+    {
+        $this->availabilityCode = new CodeInList(CodeList54AvailabilityStatus::class, $code);
     }
 
     public function getPrice(): Price

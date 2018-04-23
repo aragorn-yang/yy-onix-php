@@ -2,21 +2,31 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList22LanguageRole;
+
 class Language extends Composite
 {
-    /** @var string */
-    protected $languageRole = '';
+    /** @var CodeInList */
+    protected $languageRole;
     /** @var string */
     protected $languageCode = '';
 
+    const TYPE_OF_THE_LANG_OF_TEXT = '01';
+
     public function getLanguageRole(): string
     {
-        return $this->languageRole;
+        return $this->languageRole ? $this->languageRole->getCode() : '';
     }
 
-    public function setLanguageRole(string $languageRole): void
+    public function getLanguageRoleDesc(): string
     {
-        $this->languageRole = $languageRole;
+        return $this->languageRole ? $this->languageRole->getDesc() : '';
+    }
+
+    public function setLanguageRole(string $code): void
+    {
+        $this->languageRole = new CodeInList(CodeList22LanguageRole::class, $code);
     }
 
     public function getLanguageCode(): string
@@ -31,6 +41,6 @@ class Language extends Composite
 
     public function isTheLanguageOfText(): bool
     {
-        return $this->languageRole === '01';
+        return (string)$this->languageRole === self::TYPE_OF_THE_LANG_OF_TEXT;
     }
 }

@@ -46,8 +46,8 @@ class SimpleBookParserForSampleTagOnixFileTest extends TestCase
     /** @test */
     public function it_can_get_product_form(): void
     {
-        $this->assertSame('BB', $this->product->getProductFormCode());
-        $this->assertSame('Hardback', $this->product->getProductForm());
+        $this->assertSame('BB', $this->product->getProductForm());
+        $this->assertSame('Hardback', $this->product->getProductFormDesc());
     }
 
     /** @test */

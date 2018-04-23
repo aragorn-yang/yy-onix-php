@@ -2,6 +2,7 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList7ProductForm;
 
 class Product extends Composite
@@ -14,8 +15,8 @@ class Product extends Composite
     protected $isbn10 = '';
     /** @var string */
     protected $isbn13 = '';
-    /** @var string */
-    protected $productFormCode = '';
+    /** @var CodeInList */
+    protected $productForm;
     /** @var string */
     protected $title = '';
     /** @var Contributor[] */
@@ -82,24 +83,19 @@ class Product extends Composite
         return $this->isbn13;
     }
 
-    public function getProductFormCode(): string
-    {
-        return $this->productFormCode;
-    }
-
     public function getProductForm(): string
     {
-        return CodeList7ProductForm::translate($this->productFormCode);
+        return $this->productForm ? $this->productForm->getCode() : '';
+    }
+
+    public function getProductFormDesc(): string
+    {
+        return $this->productForm ? $this->productForm->getDesc() : '';
     }
 
     public function setProductForm(string $code): void
     {
-        if (!CodeList7ProductForm::validate($code)) {
-            CodeList7ProductForm::addToUnrecognisable($code);
-            return;
-        }
-
-        $this->productFormCode = $code;
+        $this->productForm = new CodeInList(CodeList7ProductForm::class, $code);
     }
 
     public function getTitle(): string

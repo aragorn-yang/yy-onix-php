@@ -2,23 +2,37 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList48MeasureType;
+
 class Measure extends Composite
 {
-    /** @var string */
-    protected $measureTypeCode = '';
+    /** @var CodeInList */
+    protected $measureTypeCode;
     /** @var float */
     protected $measurement = 0.0;
     /** @var string */
     protected $measureUnitCode = '';
 
+    public const TYPE_OF_HEIGHT = '01';
+
+    public const TYPE_OF_WIDTH = '02';
+
+    public const TYPE_OF_THICKNESS = '03';
+
     public function getMeasureTypeCode(): string
     {
-        return $this->measureTypeCode;
+        return $this->measureTypeCode ? $this->measureTypeCode->getCode() : '';
     }
 
-    public function setMeasureTypeCode(string $measureTypeCode): void
+    public function getMeasureTypeCodeDesc(): string
     {
-        $this->measureTypeCode = $measureTypeCode;
+        return $this->measureTypeCode ? $this->measureTypeCode->getDesc() : '';
+    }
+
+    public function setMeasureTypeCode(string $code): void
+    {
+        $this->measureTypeCode = new CodeInList(CodeList48MeasureType::class, $code);
     }
 
     public function getMeasurement(): float
@@ -43,16 +57,16 @@ class Measure extends Composite
 
     public function isHeight(): bool
     {
-        return $this->measureTypeCode === '01';
+        return (string)$this->measureTypeCode === self::TYPE_OF_HEIGHT;
     }
 
     public function isWidth(): bool
     {
-        return $this->measureTypeCode === '02';
+        return (string)$this->measureTypeCode === self::TYPE_OF_WIDTH;
     }
 
     public function isThickness(): bool
     {
-        return $this->measureTypeCode === '03';
+        return (string)$this->measureTypeCode === self::TYPE_OF_THICKNESS;
     }
 }

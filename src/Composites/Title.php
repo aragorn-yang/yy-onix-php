@@ -2,23 +2,31 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList15TitleType;
+
 class Title extends Composite
 {
-    /** @var string */
-    protected $titleType = '';
+    /** @var CodeInList */
+    protected $titleType;
     /** @var string */
     protected $titleText = '';
 
-    protected const DISTINCTIVE_TITLE = '01';
+    protected const TYPE_OF_DISTINCTIVE_TITLE = '01';
 
     public function getTitleType(): string
     {
-        return $this->titleType;
+        return $this->titleType ? $this->titleType->getCode() : '';
     }
 
-    public function setTitleType(string $titleType): void
+    public function getTitleTypeDesc(): string
     {
-        $this->titleType = $titleType;
+        return $this->titleType ? $this->titleType->getDesc() : '';
+    }
+
+    public function setTitleType(string $code): void
+    {
+        $this->titleType = new CodeInList(CodeList15TitleType::class, $code);
     }
 
     public function getTitleText(): string
@@ -33,6 +41,6 @@ class Title extends Composite
 
     public function isDistinctiveTitle(): bool
     {
-        return $this->titleType === static::DISTINCTIVE_TITLE;
+        return (string)$this->titleType === self::TYPE_OF_DISTINCTIVE_TITLE;
     }
 }
