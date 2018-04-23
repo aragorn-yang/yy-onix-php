@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>ONIX Code List 230 [Issue 36]</title>
+		<style type="text/css">
+			body { font-family: Arial, Helvetica, sanserif }
+			.listHeading { font-size: 16pt; font-weight: bold; margin-top: 12pt }
+			.heading { text-align: left }
+			.code { vertical-align: top }
+		</style></head>
+	<body>
+		<div class="listHeading" style="color: red;">ONIX Code Lists Issue 36, January 2017<br>List 230: Price constraint type</div>
+		<table width="100%">
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr align="left">
+				<th width="10%">Value</th>
+				<th width="30%">Description</th>
+				<th width="60%">Notes</th>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>00</td>
+				<td>No constraints</td>
+				<td>Allows positive indication that there are no conditions (the default if &lt;PriceConstraint&gt; is omitted)</td>
+			</tr>
+			<tr valign="top">
+				<td>06</td>
+				<td>Lend</td>
+				<td>Lendable by the purchaser to other device owner, account holder or patron, eg library lending (use where the library product
+					is not identified with a separate &lt;ProductIdentifier&gt; from the consumer product). The &#8216;primary&#8217; copy becomes unusable while
+					the secondary copy is on loan, unless a number of concurrent borrowers is also specified
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>07</td>
+				<td>Time-limited license</td>
+				<td>E-publication license is time-limited. Use with code 02 from List 146 and a time period in days, weeks or months in &lt;PriceConstraintLimit&gt;.
+					The purchased copy becomes unusable when the license expires
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>08</td>
+				<td>Loan renewal</td>
+				<td>Maximum number of consecutive loans (eg from a library) to a single device owner, account holder or patron. Note that a limit
+					of 1 indicates that a loan cannot be renewed
+				</td>
+			</tr>
+			<tr valign="top" style="color: red;">
+				<td>09</td>
+				<td>Multi-user license</td>
+				<td>E-publication license is multi-user. Maximum number of concurrent users licensed to use the product should be given in &lt;PriceConstraintLimit&gt;</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

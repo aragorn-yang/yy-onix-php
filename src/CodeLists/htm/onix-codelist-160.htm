@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>ONIX Code List 160 [Issue 36]</title>
+		<style type="text/css">
+			body { font-family: Arial, Helvetica, sanserif }
+			.listHeading { font-size: 16pt; font-weight: bold; margin-top: 12pt }
+			.heading { text-align: left }
+			.code { vertical-align: top }
+		</style></head>
+	<body>
+		<div class="listHeading">ONIX Code Lists Issue 36, January 2017<br>List 160: Resource feature type</div>
+		<table width="100%">
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr align="left">
+				<th width="10%">Value</th>
+				<th width="30%">Description</th>
+				<th width="60%">Notes</th>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>01</td>
+				<td>Required credit</td>
+				<td>Credit that must be displayed when a resource is used (eg &#8216;Photo Jerry Bauer&#8217; or &#8216;&copy; Magnum Photo&#8217;). Credit text should be
+					carried in &lt;FeatureNote&gt;
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>02</td>
+				<td>Caption</td>
+				<td>Explanatory caption that may accompany a resource (eg use to identify an author in a photograph). Caption text should be carried
+					in &lt;FeatureNote&gt;
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>03</td>
+				<td>Copyright holder</td>
+				<td>Copyright holder of resource (indicative only, as the resource can be used without consultation). Copyright text should be
+					carried in &lt;FeatureNote&gt;
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>04</td>
+				<td>Length in minutes</td>
+				<td>Approximate length in minutes of an audio or video resource. &lt;FeatureValue&gt; should contain the length of time as an integer
+					number of minutes
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>05</td>
+				<td>ISNI of resource contributor</td>
+				<td>Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11&#8211;14 from List 158, particularly
+					where the product has more than a single contributor. &lt;FeatureValue&gt; contains the 16-digit ISNI
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>06</td>
+				<td>Proprietary ID of resource contributor</td>
+				<td>Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11&#8211;14 from List 158, particularly
+					where the product has more than a single contributor. &lt;FeatureValue&gt; contains the proprietary ID, which must match a proprietary
+					ID given in an instance of &lt;Contributor&gt;
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -9,12 +9,15 @@ abstract class CodeList
     protected const MAPPING = [];
     public const KEY = '';
 
-    public static function translate(string $value): ?string
+    public static function translate(string $value): string
     {
-        if (!static::validate($value)) {
-            return null;
+        if (!$value) {
+            return '';
         }
-        return static::MAPPING[$value] ?? null;
+        if (!static::validate($value)) {
+            return '';
+        }
+        return static::MAPPING[$value] ?? '';
     }
 
     public static function validate(string $value): bool

@@ -2,7 +2,7 @@
 
 namespace AragornYang\Onix\Composites;
 
-use AragornYang\Onix\CodeLists\CodeList07ProductForm;
+use AragornYang\Onix\CodeLists\CodeList7ProductForm;
 
 class Product extends Composite
 {
@@ -72,7 +72,6 @@ class Product extends Composite
         $this->notificationType = $notificationType;
     }
 
-
     public function getIsbn10(): string
     {
         return $this->isbn10;
@@ -90,7 +89,17 @@ class Product extends Composite
 
     public function getProductForm(): string
     {
-        return CodeList07ProductForm::translate($this->productFormCode);
+        return CodeList7ProductForm::translate($this->productFormCode);
+    }
+
+    public function setProductForm(string $code): void
+    {
+        if (!CodeList7ProductForm::validate($code)) {
+            CodeList7ProductForm::addToUnrecognisable($code);
+            return;
+        }
+
+        $this->productFormCode = $code;
     }
 
     public function getTitle(): string
@@ -111,17 +120,6 @@ class Product extends Composite
             $this->isbn13 = $identifier->getIDValue();
             return;
         }
-    }
-
-    public function setProductForm(\SimpleXMLElement $productFormCode): void
-    {
-        $code = (string)$productFormCode;
-        if (!CodeList07ProductForm::validate($code)) {
-            CodeList07ProductForm::addToUnrecognisable($code);
-            return;
-        }
-
-        $this->productFormCode = $code;
     }
 
     public function setTitle(\SimpleXMLElement $xml): void

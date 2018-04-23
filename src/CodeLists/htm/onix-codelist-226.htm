@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>ONIX Code List 226 [Issue 36]</title>
+		<style type="text/css">
+			body { font-family: Arial, Helvetica, sanserif }
+			.listHeading { font-size: 16pt; font-weight: bold; margin-top: 12pt }
+			.heading { text-align: left }
+			.code { vertical-align: top }
+		</style></head>
+	<body>
+		<div class="listHeading">ONIX Code Lists Issue 36, January 2017<br>List 226: Record status</div>
+		<table width="100%">
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr align="left">
+				<th width="10%">Value</th>
+				<th width="30%">Description</th>
+				<th width="60%">Notes</th>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>00</td>
+				<td>No record errors</td>
+				<td>Entire record parsed and ingested without errors, record may have a Product record in the Acknowledgement which itself may
+					have a &lt;RecordStatusNote&gt; or &lt;RecordStatusDetail&gt; to convey information, editorial queries or warnings
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>01</td>
+				<td>No record errors &#8211; errors in collateral</td>
+				<td>Entire record parsed and ingested without errors, record MUST have a Product record in the Acknowledgement with a &lt;RecordStatusNote&gt;
+					or at least one &lt;RecordStatusDetail&gt; to convey errors in associated media files (and possibly supplementary editorial queries)
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>02</td>
+				<td>Record with errors</td>
+				<td>Record parsed and ingested with errors, record MUST have a Product record in the Acknowledgement with a &lt;RecordStatusNote&gt;
+					or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial queries or warnings).
+					At least SOME of the data in the original Product record has been ingested. There may also be errors in associated media files
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>03</td>
+				<td>Record rejected</td>
+				<td>Entire record rejected, record MUST have a Product record in the Acknowedgemet, with a &lt;RecordStatusNote&gt; or at least one
+					&lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial queries or warnings). NONE of the
+					data in the original Product record has been ingested
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>09</td>
+				<td>Reported previously</td>
+				<td>Record status reported in an earlier Acknowledgement message, based on partial processing of ONIX message. The record MUST
+					NOT have a Product record in this Acknowledgement. Code not valid in &lt;RecordStatusDetail&gt;
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
