@@ -1,7 +1,6 @@
 {
     "name": "aragorn-yang/yy-onix-php",
     "description": "An ONIX parser library.",
-    "version": "0.2.0",
     "type": "library",
     "keywords": [
         "ONIX",
