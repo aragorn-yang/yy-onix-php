@@ -1,11 +1,13 @@
 <?php
 
+namespace AragornYang\Onix\Tests\Features;
+
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\Composites\SupplyDetail;
 use AragornYang\Onix\SimpleBookParser;
-use PHPUnit\Framework\TestCase;
+use AragornYang\Onix\Tests\TestCase;
 
-class SimpleBookParserForSampleRefOnixFileTest extends TestCase
+class SimpleBookParserForRef21SampleOnixFileTest extends TestCase
 {
     /** @var string */
     protected static $contents;
@@ -34,6 +36,8 @@ class SimpleBookParserForSampleRefOnixFileTest extends TestCase
     {
         $this->assertCount(1, static::$products);
         $this->assertInstanceOf(Product::class, $this->product);
+        $this->assertCount(0, static::$parser->getUnrecognisableElements());
+        $this->assertCount(0, static::$parser->getUnrecognisableCodes());
     }
 
     /** @test */

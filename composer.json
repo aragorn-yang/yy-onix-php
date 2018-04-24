@@ -23,7 +23,8 @@
     },
     "autoload": {
         "psr-4": {
-            "AragornYang\\Onix\\": "src/"
+            "AragornYang\\Onix\\": "src/",
+            "AragornYang\\Onix\\Tests\\": "tests/"
         }
     },
     "license": "MIT"

@@ -1,11 +1,13 @@
 <?php
 
+namespace AragornYang\Onix\Tests\Features;
+
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\Composites\SupplyDetail;
 use AragornYang\Onix\SimpleBookParser;
-use PHPUnit\Framework\TestCase;
+use AragornYang\Onix\Tests\TestCase;
 
-class SimpleBookParserForSampleTagOnixFileTest extends TestCase
+class SimpleBookParserForTag21SampleOnixFileTest extends TestCase
 {
     /** @var string */
     protected static $contents;

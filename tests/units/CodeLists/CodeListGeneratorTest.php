@@ -1,6 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+namespace AragornYang\Onix\Tests\Units\CodeLists;
+
+use AragornYang\Onix\Tests\TestCase;
 
 class CodeListGeneratorTest extends TestCase
 {

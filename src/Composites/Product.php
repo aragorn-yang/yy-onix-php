@@ -10,6 +10,7 @@ use AragornYang\Onix\ProductFeatures\HasEditionTypeCode;
 use AragornYang\Onix\ProductFeatures\HasImprints;
 use AragornYang\Onix\ProductFeatures\HasLanguages;
 use AragornYang\Onix\ProductFeatures\HasMeasures;
+use AragornYang\Onix\ProductFeatures\HasNotificationType;
 use AragornYang\Onix\ProductFeatures\HasNumberOfPages;
 use AragornYang\Onix\ProductFeatures\HasOtherTexts;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
@@ -30,6 +31,7 @@ class Product extends Composite
         HasImprints,
         HasLanguages,
         HasMeasures,
+        HasNotificationType,
         HasNumberOfPages,
         HasOtherTexts,
         HasProductForm,

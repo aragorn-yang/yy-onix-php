@@ -15,6 +15,11 @@ trait HasAudienceCode
         return $this->audienceCode ? $this->audienceCode->getCode() : '';
     }
 
+    public function getAudienceCodeDesc(): string
+    {
+        return $this->audienceCode ? $this->audienceCode->getDesc() : '';
+    }
+
     public function setAudienceCode(string $code): void
     {
         $this->audienceCode = new CodeInList(CodeList28AudienceCode::class, $code);
