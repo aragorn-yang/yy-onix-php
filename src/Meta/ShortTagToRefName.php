@@ -1,6 +1,6 @@
 <?php
 
-namespace AragornYang\Onix;
+namespace AragornYang\Onix\Meta;
 
 /**
  * [Release 2.1 format specifications (revisions 03/04) with codelists Issue 36 (HTML version)]

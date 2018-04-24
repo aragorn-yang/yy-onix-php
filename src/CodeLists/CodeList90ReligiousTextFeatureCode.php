@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class CodeList90ReligiousTextFeature extends CodeList
+class CodeList90ReligiousTextFeatureCode extends CodeList
 {
-    public const KEY = 'ReligiousTextFeature';
+    public const KEY = 'ReligiousTextFeatureCode';
 
     protected const MAPPING = [
         // Use with code 01 in <ReligiousTextFeatureType>

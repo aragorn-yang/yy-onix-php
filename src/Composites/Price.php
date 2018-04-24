@@ -3,7 +3,7 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
-use AragornYang\Onix\CodeLists\CodeList58PriceType;
+use AragornYang\Onix\CodeLists\CodeList58PriceTypeCode;
 
 class Price extends Composite
 {
@@ -38,7 +38,7 @@ class Price extends Composite
 
     public function setPriceTypeCode(string $code): void
     {
-        $this->priceTypeCode = new CodeInList(CodeList58PriceType::class, $code);
+        $this->priceTypeCode = new CodeInList(CodeList58PriceTypeCode::class, $code);
     }
 
     public function getPriceAmount(): float

@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class CodeList49Region extends CodeList
+class CodeList49RegionCode extends CodeList
 {
-    public const KEY = 'Region';
+    public const KEY = 'RegionCode';
 
     protected const MAPPING = [
         // 

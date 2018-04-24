@@ -2,8 +2,8 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\Meta\ShortTagToRefName;
 use AragornYang\Onix\Onix;
-use AragornYang\Onix\ShortTagToRefName;
 
 class Composite
 {

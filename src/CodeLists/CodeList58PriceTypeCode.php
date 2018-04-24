@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class CodeList58PriceType extends CodeList
+class CodeList58PriceTypeCode extends CodeList
 {
-    public const KEY = 'PriceType';
+    public const KEY = 'PriceTypeCode';
 
     protected const MAPPING = [
         // RRP excluding any sales tax or value-added tax

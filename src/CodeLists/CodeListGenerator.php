@@ -2,6 +2,8 @@
 
 namespace AragornYang\Onix\CodeLists;
 
+use AragornYang\Onix\Meta\Tag;
+
 class CodeListGenerator
 {
     public function generateAll(): void
@@ -51,11 +53,18 @@ class CodeListGenerator
         $original = preg_replace(["/&#\d+;/", "/&\w{4,6};/"], '', $original);
         $return = '';
         $words = explode(' ', $original);
+        $hasTrailingCodeWord = false;
         if ($words[\count($words) - 1] === 'code') {
+            $hasTrailingCodeWord = true;
             array_pop($words);
         }
         foreach ($words as $word) {
             $return .= ucfirst($word);
+        }
+        if ($hasTrailingCodeWord) {
+            if (Tag::isValid($return . 'Code')) {
+                return $return . 'Code';
+            }
         }
         return $return;
     }

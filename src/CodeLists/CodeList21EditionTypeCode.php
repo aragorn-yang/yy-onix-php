@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class CodeList21EditionType extends CodeList
+class CodeList21EditionTypeCode extends CodeList
 {
-    public const KEY = 'EditionType';
+    public const KEY = 'EditionTypeCode';
 
     protected const MAPPING = [
         // Content has been shortened: use for abridged, shortened, concise, condensed

@@ -28,6 +28,19 @@ final class Onix
     {
     }
 
+    public static function getInstance(): Onix
+    {
+        if (self::$instance) {
+            return self::$instance;
+        }
+        return self::getNewInstance();
+    }
+
+    public static function getNewInstance(): Onix
+    {
+        return self::$instance = new self;
+    }
+
     public function getUnrecognisableElements(): array
     {
         return $this->unrecognisableElements;
@@ -57,14 +70,6 @@ final class Onix
     public function __wakeup()
     {
         throw new \RuntimeException('Try to unserialize a singleton instance');
-    }
-
-    public static function getInstance(): Onix
-    {
-        if (self::$instance) {
-            return self::$instance;
-        }
-        return self::$instance = new self;
     }
 
     public function version(): string

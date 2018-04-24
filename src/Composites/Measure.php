@@ -3,7 +3,7 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
-use AragornYang\Onix\CodeLists\CodeList48MeasureType;
+use AragornYang\Onix\CodeLists\CodeList48MeasureTypeCode;
 
 class Measure extends Composite
 {
@@ -32,7 +32,7 @@ class Measure extends Composite
 
     public function setMeasureTypeCode(string $code): void
     {
-        $this->measureTypeCode = new CodeInList(CodeList48MeasureType::class, $code);
+        $this->measureTypeCode = new CodeInList(CodeList48MeasureTypeCode::class, $code);
     }
 
     public function getMeasurement(): float

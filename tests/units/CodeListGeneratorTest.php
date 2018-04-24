@@ -7,12 +7,12 @@ class CodeListGeneratorTest extends TestCase
     /** @test */
     public function generateAll(): void
     {
-        (new \AragornYang\Onix\CodeLists\CodeListGenerator())->generateAll();
+        //(new \AragornYang\Onix\CodeLists\CodeListGenerator())->generateAll();
         $this->assertTrue(true);
     }
 
     /** @test */
-    public function generate_properly(): void
+    public function generates_properly(): void
     {
         $content = (new \AragornYang\Onix\CodeLists\CodeListGenerator())->parseString(<<<TAG
 <html>
@@ -97,6 +97,111 @@ class CodeList22LanguageRole extends CodeList
         "01" => "Desc01",
         // Notes02
         "02" => "Desc02",
+    ];
+}
+PHP;
+        $this->assertSame($expected2, $content2);
+    }
+
+    /** @test */
+    public function removes_non_alphanumeric_letters_when_generating_list_name_properly(): void
+    {
+        $content = (new \AragornYang\Onix\CodeLists\CodeListGenerator())->parseString(<<<TAG
+<html>
+	<body>
+		<div class="listHeading">ONIX Code Lists Issue 36, January 2017<br>List 22: Language &nbsp;&#8211; role ,/-</div>
+	</body>
+</html>
+TAG
+        );
+        $expected = [
+            'listNo' => '22',
+            'listName' => 'LanguageRole',
+            'contents' => []
+        ];
+        $this->assertSame($expected, $content);
+
+        $content2 = (new \AragornYang\Onix\CodeLists\CodeListGenerator())->generateFromArray($expected);
+        $expected2 = <<<PHP
+<?php
+
+namespace AragornYang\Onix\CodeLists;
+
+class CodeList22LanguageRole extends CodeList
+{
+    public const KEY = 'LanguageRole';
+
+    protected const MAPPING = [
+    ];
+}
+PHP;
+        $this->assertSame($expected2, $content2);
+    }
+
+    /** @test */
+    public function removes_last_code_word_if_not_in_ref_name_when_generating_list_name(): void
+    {
+        $content = (new \AragornYang\Onix\CodeLists\CodeListGenerator())->parseString(<<<TAG
+<html>
+	<body>
+		<div class="listHeading">ONIX Code Lists Issue 36, January 2017<br>List 22: Language role code</div>
+	</body>
+</html>
+TAG
+        );
+        $expected = [
+            'listNo' => '22',
+            'listName' => 'LanguageRole',
+            'contents' => []
+        ];
+        $this->assertSame($expected, $content);
+
+        $content2 = (new \AragornYang\Onix\CodeLists\CodeListGenerator())->generateFromArray($expected);
+        $expected2 = <<<PHP
+<?php
+
+namespace AragornYang\Onix\CodeLists;
+
+class CodeList22LanguageRole extends CodeList
+{
+    public const KEY = 'LanguageRole';
+
+    protected const MAPPING = [
+    ];
+}
+PHP;
+        $this->assertSame($expected2, $content2);
+    }
+
+    /** @test */
+    public function does_not_remove_last_code_word_if_in_ref_name_when_generating_list_name(): void
+    {
+        $content = (new \AragornYang\Onix\CodeLists\CodeListGenerator())->parseString(<<<TAG
+<html>
+	<body>
+		<div class="listHeading">ONIX Code Lists Issue 36, January 2017<br>List 28: Audience code</div>
+	</body>
+</html>
+TAG
+        );
+        $expected = [
+            'listNo' => '28',
+            'listName' => 'AudienceCode',
+            'contents' => []
+        ];
+        $this->assertSame($expected, $content);
+
+        $content2 = (new \AragornYang\Onix\CodeLists\CodeListGenerator())->generateFromArray($expected);
+        $expected2 = <<<PHP
+<?php
+
+namespace AragornYang\Onix\CodeLists;
+
+class CodeList28AudienceCode extends CodeList
+{
+    public const KEY = 'AudienceCode';
+
+    protected const MAPPING = [
     ];
 }
 PHP;

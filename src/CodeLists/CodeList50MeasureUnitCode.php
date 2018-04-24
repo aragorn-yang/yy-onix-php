@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class CodeList50MeasureUnit extends CodeList
+class CodeList50MeasureUnitCode extends CodeList
 {
-    public const KEY = 'MeasureUnit';
+    public const KEY = 'MeasureUnitCode';
 
     protected const MAPPING = [
         // Millimeters are the preferred metric unit of length

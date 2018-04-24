@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class CodeList48MeasureType extends CodeList
+class CodeList48MeasureTypeCode extends CodeList
 {
-    public const KEY = 'MeasureType';
+    public const KEY = 'MeasureTypeCode';
 
     protected const MAPPING = [
         /* For a book, the overall spine height when standing on a shelf. For a folded map, the height when folded. In general, the height

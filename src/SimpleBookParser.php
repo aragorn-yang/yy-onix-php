@@ -13,7 +13,7 @@ class SimpleBookParser
 
     public function __construct()
     {
-        $this->onix = Onix::getInstance();
+        $this->onix = Onix::getNewInstance();
     }
 
     public function onixVersion(): string

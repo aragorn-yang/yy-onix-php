@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\CodeLists;
 
-class CodeList28Audience extends CodeList
+class CodeList28AudienceCode extends CodeList
 {
-    public const KEY = 'Audience';
+    public const KEY = 'AudienceCode';
 
     protected const MAPPING = [
         // For a non-specialist adult audience
