@@ -23,15 +23,15 @@ class CodeInList
 
     public function __toString(): string
     {
-        return $this->getCode();
+        return $this->code();
     }
 
-    public function getCode(): string
+    public function code(): string
     {
         return $this->code;
     }
 
-    public function getDesc(): string
+    public function desc(): string
     {
         return $this->class::translate($this->code);
     }

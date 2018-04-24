@@ -12,12 +12,12 @@ trait HasEditionTypeCode
 
     public function getEditionTypeCode(): string
     {
-        return $this->editionTypeCode ? $this->editionTypeCode->getCode() : '';
+        return $this->editionTypeCode ? $this->editionTypeCode->code() : '';
     }
 
     public function getEditionTypeCodeDesc(): string
     {
-        return $this->editionTypeCode ? $this->editionTypeCode->getDesc() : '';
+        return $this->editionTypeCode ? $this->editionTypeCode->desc() : '';
     }
 
     public function setEditionTypeCode(string $code): void

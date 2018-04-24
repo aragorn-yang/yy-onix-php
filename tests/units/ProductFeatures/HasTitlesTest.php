@@ -10,9 +10,16 @@ class HasTitlesTest extends TestCase
     public function product_has_this_feature(): void
     {
         $product = $this->getParsedProduct('<Title>
-            <TitleType>01</TitleType>
-            <TitleText textcase="02">British English, A to Zed</TitleText>
-        </Title>');
+                <TitleType>01</TitleType>
+                <TitleText textcase="02">British English, A to Zed</TitleText>
+            </Title>');
         $this->assertSame('British English, A to Zed', $product->getTitle());
+
+        $product = $this->getParsedProduct('<Title>
+                <TitleType>01</TitleType>
+                <TitleText>Time Series</TitleText>
+                <Subtitle>A Biostatistical Introduction</Subtitle>
+            </Title>');
+        $this->assertSame('Time Series: A Biostatistical Introduction', $product->getTitle());
     }
 }

@@ -30,5 +30,34 @@ class HasMeasuresTest extends TestCase
         $this->assertSame('in', $product->getWidthUnit());
         $this->assertSame(1.2, $product->getThicknessMeasurement());
         $this->assertSame('in', $product->getThicknessUnit());
+
+        $product = $this->getParsedProduct('<Measure>
+            <MeasureTypeCode>01</MeasureTypeCode>
+            <Measurement>235</Measurement>
+            <MeasureUnitCode>mm</MeasureUnitCode>
+        </Measure>
+        <Measure>
+            <MeasureTypeCode>02</MeasureTypeCode>
+            <Measurement>157</Measurement>
+            <MeasureUnitCode>mm</MeasureUnitCode>
+        </Measure>
+        <Measure>
+            <MeasureTypeCode>03</MeasureTypeCode>
+            <Measurement>15.0</Measurement>
+            <MeasureUnitCode>mm</MeasureUnitCode>
+        </Measure>
+        <Measure>
+            <MeasureTypeCode>08</MeasureTypeCode>
+            <Measurement>405</Measurement>
+            <MeasureUnitCode>gr</MeasureUnitCode>
+        </Measure>');
+        $this->assertSame(235.0, $product->getHeightMeasurement());
+        $this->assertSame('mm', $product->getHeightUnit());
+        $this->assertSame(157.0, $product->getWidthMeasurement());
+        $this->assertSame('mm', $product->getWidthUnit());
+        $this->assertSame(15.0, $product->getThicknessMeasurement());
+        $this->assertSame('mm', $product->getThicknessUnit());
+        $this->assertSame(405.0, $product->getWeightMeasurement());
+        $this->assertSame('gr', $product->getWeightUnit());
     }
 }

@@ -5,6 +5,11 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList17ContributorRole;
 
+/**
+ * @see PR.8 Authorship in Onix Spec 2.1
+ * Class Contributor
+ * @package AragornYang\Onix\Composites
+ */
 class Contributor extends Composite
 {
     /** @var int */
@@ -15,6 +20,7 @@ class Contributor extends Composite
     protected $personName = '';
     /** @var string */
     protected $personNameInverted = '';
+
     /** @var string */
     protected $titlesBeforeNames = '';
     /** @var string */
@@ -24,9 +30,20 @@ class Contributor extends Composite
     /** @var string */
     protected $keyNames = '';
     /** @var string */
+    protected $namesAfterKey = '';
+    /** @var string */
+    protected $suffixToKey = '';
+    /** @var string */
+    protected $lettersAfterNames = '';
+    /** @var string */
+    protected $titlesAfterNames = '';
+
+    /** @var string */
     protected $biographicalNote = '';
     /** @var ProfessionalAffiliation[] */
-    protected $professionalAffiliation = [];
+    protected $professionalAffiliations = [];
+
+    protected const TYPE_OF_AUTHOR = 'A01';
 
     public function getSequenceNumber(): int
     {
@@ -40,12 +57,12 @@ class Contributor extends Composite
 
     public function getContributorRole(): string
     {
-        return $this->contributorRole ? $this->contributorRole->getCode() : '';
+        return $this->contributorRole ? $this->contributorRole->code() : '';
     }
 
     public function getContributorRoleDesc(): string
     {
-        return $this->contributorRole ? $this->contributorRole->getDesc() : '';
+        return $this->contributorRole ? $this->contributorRole->desc() : '';
     }
 
     public function setContributorRole(string $code): void
@@ -55,7 +72,7 @@ class Contributor extends Composite
 
     public function getPersonName(): string
     {
-        return $this->personName;
+        return $this->personName ?: "{$this->namesBeforeKey} {$this->keyNames}";
     }
 
     public function setPersonName(string $personName): void
@@ -65,22 +82,12 @@ class Contributor extends Composite
 
     public function getPersonNameInverted(): string
     {
-        return $this->personNameInverted;
+        return $this->personNameInverted ?: "{$this->keyNames}, {$this->namesBeforeKey}";
     }
 
     public function setPersonNameInverted(string $personNameInverted): void
     {
         $this->personNameInverted = $personNameInverted;
-    }
-
-    public function getTitlesBeforeNames(): string
-    {
-        return $this->titlesBeforeNames;
-    }
-
-    public function setTitlesBeforeNames(string $titlesBeforeNames): void
-    {
-        $this->titlesBeforeNames = $titlesBeforeNames;
     }
 
     public function getNamesBeforeKey(): string
@@ -93,16 +100,6 @@ class Contributor extends Composite
         $this->namesBeforeKey = $namesBeforeKey;
     }
 
-    public function getPrefixToKey(): string
-    {
-        return $this->prefixToKey;
-    }
-
-    public function setPrefixToKey(string $prefixToKey): void
-    {
-        $this->prefixToKey = $prefixToKey;
-    }
-
     public function getKeyNames(): string
     {
         return $this->keyNames;
@@ -113,14 +110,17 @@ class Contributor extends Composite
         $this->keyNames = $keyNames;
     }
 
-    public function getProfessionalAffiliation(): array
+    /**
+     * @return ProfessionalAffiliation[]
+     */
+    public function getProfessionalAffiliations(): array
     {
-        return $this->professionalAffiliation;
+        return $this->professionalAffiliations;
     }
 
-    public function setProfessionalAffiliation(\SimpleXMLElement $professionalAffiliation): void
+    public function setProfessionalAffiliation(\SimpleXMLElement $xml): void
     {
-        $this->professionalAffiliation[] = ProfessionalAffiliation::buildFromXml($professionalAffiliation);
+        $this->professionalAffiliations[] = ProfessionalAffiliation::buildFromXml($xml);
     }
 
     public function getBiographicalNote(): string
@@ -131,5 +131,10 @@ class Contributor extends Composite
     public function setBiographicalNote(string $biographicalNote): void
     {
         $this->biographicalNote = $biographicalNote;
+    }
+
+    public function isAuthor(): bool
+    {
+        return $this->getContributorRole() === self::TYPE_OF_AUTHOR;
     }
 }

@@ -4,30 +4,35 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList48MeasureTypeCode;
+use AragornYang\Onix\CodeLists\CodeList50MeasureUnitCode;
 
+/**
+ * @see PR.22 Dimensions in Onix Spec 2.1
+ * Class Measure
+ * @package AragornYang\Onix\Composites
+ */
 class Measure extends Composite
 {
     /** @var CodeInList */
     protected $measureTypeCode;
     /** @var float */
     protected $measurement = 0.0;
-    /** @var string */
-    protected $measureUnitCode = '';
+    /** @var CodeInList */
+    protected $measureUnitCode;
 
-    public const TYPE_OF_HEIGHT = '01';
-
-    public const TYPE_OF_WIDTH = '02';
-
-    public const TYPE_OF_THICKNESS = '03';
+    protected const TYPE_OF_HEIGHT = '01';
+    protected const TYPE_OF_WIDTH = '02';
+    protected const TYPE_OF_THICKNESS = '03';
+    protected const TYPE_OF_WEIGHT = '08';
 
     public function getMeasureTypeCode(): string
     {
-        return $this->measureTypeCode ? $this->measureTypeCode->getCode() : '';
+        return $this->measureTypeCode ? $this->measureTypeCode->code() : '';
     }
 
     public function getMeasureTypeCodeDesc(): string
     {
-        return $this->measureTypeCode ? $this->measureTypeCode->getDesc() : '';
+        return $this->measureTypeCode ? $this->measureTypeCode->desc() : '';
     }
 
     public function setMeasureTypeCode(string $code): void
@@ -47,12 +52,17 @@ class Measure extends Composite
 
     public function getMeasureUnitCode(): string
     {
-        return $this->measureUnitCode;
+        return $this->measureUnitCode ? $this->measureUnitCode->code() : '';
     }
 
-    public function setMeasureUnitCode(string $measureUnitCode): void
+    public function getMeasureUnitCodeDesc(): string
     {
-        $this->measureUnitCode = $measureUnitCode;
+        return $this->measureUnitCode ? $this->measureUnitCode->desc() : '';
+    }
+
+    public function setMeasureUnitCode(string $code): void
+    {
+        $this->measureUnitCode = new CodeInList(CodeList50MeasureUnitCode::class, $code);
     }
 
     public function isHeight(): bool
@@ -68,5 +78,10 @@ class Measure extends Composite
     public function isThickness(): bool
     {
         return (string)$this->measureTypeCode === self::TYPE_OF_THICKNESS;
+    }
+
+    public function isWeight(): bool
+    {
+        return (string)$this->measureTypeCode === self::TYPE_OF_WEIGHT;
     }
 }

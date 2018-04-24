@@ -28,12 +28,12 @@ trait HasProductIdentifiers
         /** @var ProductIdentifier $identifier */
         $identifier = ProductIdentifier::buildFromXml($xml);
         $this->productIdentifiers[$identifier->getProductIDType()] = $identifier;
-        if ($identifier->isIsbn10()) {
+        if (!$this->isbn10 && $identifier->isISBN10()) {
             $this->isbn10 = $identifier->getIDValue();
             return;
         }
 
-        if ($identifier->isIsbn13()) {
+        if (!$this->isbn13 && ($identifier->isISBN13() || $identifier->isGTIN13())) {
             $this->isbn13 = $identifier->getIDValue();
             return;
         }

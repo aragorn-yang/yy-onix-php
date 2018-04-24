@@ -11,15 +11,17 @@ class Publisher extends Composite
     protected $publishingRole;
     /** @var string */
     protected $publisherName = '';
+    /** @var array|Website[] */
+    protected $websites = [];
 
     public function getPublishingRole(): string
     {
-        return $this->publishingRole ? $this->publishingRole->getCode() : '';
+        return $this->publishingRole ? $this->publishingRole->code() : '';
     }
 
     public function getPublishingRoleDesc(): string
     {
-        return $this->publishingRole ? $this->publishingRole->getDesc() : '';
+        return $this->publishingRole ? $this->publishingRole->desc() : '';
     }
 
     public function setPublishingRole(string $code): void
@@ -35,5 +37,18 @@ class Publisher extends Composite
     public function setPublisherName(string $publisherName): void
     {
         $this->publisherName = $publisherName;
+    }
+
+    /**
+     * @return Website[]
+     */
+    public function getWebsites(): array
+    {
+        return $this->websites;
+    }
+
+    public function setWebsite(\SimpleXMLElement $xml): void
+    {
+        $this->websites[] = Website::buildFromXml($xml);
     }
 }

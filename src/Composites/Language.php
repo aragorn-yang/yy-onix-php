@@ -12,16 +12,16 @@ class Language extends Composite
     /** @var string */
     protected $languageCode = '';
 
-    const TYPE_OF_THE_LANG_OF_TEXT = '01';
+    protected const TYPE_OF_THE_LANG_OF_TEXT = '01';
 
     public function getLanguageRole(): string
     {
-        return $this->languageRole ? $this->languageRole->getCode() : '';
+        return $this->languageRole ? $this->languageRole->code() : '';
     }
 
     public function getLanguageRoleDesc(): string
     {
-        return $this->languageRole ? $this->languageRole->getDesc() : '';
+        return $this->languageRole ? $this->languageRole->desc() : '';
     }
 
     public function setLanguageRole(string $code): void

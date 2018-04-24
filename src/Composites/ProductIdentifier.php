@@ -12,18 +12,18 @@ class ProductIdentifier extends Composite
     /** @var string */
     protected $IDValue = '';
 
-    public const TYPE_OF_ISBN_10 = '02';
-
-    public const TYPE_OF_ISBN_13 = '15';
+    protected const TYPE_OF_ISBN_10 = '02';
+    protected const TYPE_OF_GTIN_13 = '03';
+    protected const TYPE_OF_ISBN_13 = '15';
 
     public function getProductIDType(): string
     {
-        return $this->productIDType ? $this->productIDType->getCode() : '';
+        return $this->productIDType ? $this->productIDType->code() : '';
     }
 
     public function getProductIDTypeDesc(): string
     {
-        return $this->productIDType ? $this->productIDType->getDesc() : '';
+        return $this->productIDType ? $this->productIDType->desc() : '';
     }
 
     public function setProductIDType(string $code): void
@@ -31,14 +31,19 @@ class ProductIdentifier extends Composite
         $this->productIDType = new CodeInList(CodeList5ProductIdentifierType::class, $code);
     }
 
-    public function isIsbn10(): bool
+    public function isISBN10(): bool
     {
         return (string)$this->productIDType === self::TYPE_OF_ISBN_10;
     }
 
-    public function isIsbn13(): bool
+    public function isISBN13(): bool
     {
         return (string)$this->productIDType === self::TYPE_OF_ISBN_13;
+    }
+
+    public function isGTIN13(): bool
+    {
+        return (string)$this->productIDType === self::TYPE_OF_GTIN_13;
     }
 
     public function getIDValue(): string

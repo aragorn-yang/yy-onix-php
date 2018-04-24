@@ -12,12 +12,12 @@ trait HasAudienceCode
 
     public function getAudienceCode(): string
     {
-        return $this->audienceCode ? $this->audienceCode->getCode() : '';
+        return $this->audienceCode ? $this->audienceCode->code() : '';
     }
 
     public function getAudienceCodeDesc(): string
     {
-        return $this->audienceCode ? $this->audienceCode->getDesc() : '';
+        return $this->audienceCode ? $this->audienceCode->desc() : '';
     }
 
     public function setAudienceCode(string $code): void

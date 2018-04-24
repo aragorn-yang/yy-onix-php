@@ -19,7 +19,7 @@ trait HasTitles
         /** @var Title $title */
         $title = Title::buildFromXml($xml);
         if ($title->isDistinctiveTitle()) {
-            $this->title = $title->getTitleText();
+            $this->title = $title->getFullTitle();
             return;
         }
     }

@@ -12,12 +12,12 @@ trait HasNotificationType
 
     public function getNotificationType(): string
     {
-        return $this->notificationType ? $this->notificationType->getCode() : '';
+        return $this->notificationType ? $this->notificationType->code() : '';
     }
 
     public function getNotificationTypeDesc(): string
     {
-        return $this->notificationType ? $this->notificationType->getDesc() : '';
+        return $this->notificationType ? $this->notificationType->desc() : '';
     }
 
     public function setNotificationType(string $code): void

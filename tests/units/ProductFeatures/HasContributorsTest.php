@@ -21,5 +21,20 @@ class HasContributorsTest extends TestCase
             </BiographicalNote>
         </Contributor>');
         $this->assertSame('Schur, Norman W', $product->getAuthor()->getPersonNameInverted());
+
+        $product = $this->getParsedProduct('<Contributor>
+            <SequenceNumber>1</SequenceNumber>
+            <ContributorRole>A01</ContributorRole>
+            <NamesBeforeKey>Peter J.</NamesBeforeKey>
+            <KeyNames>Diggle</KeyNames>
+            <ProfessionalAffiliation>
+                <ProfessionalPosition>Professor of Statistics, Department of Mathematics</ProfessionalPosition>
+                <Affiliation>University of Lancaster</Affiliation>
+            </ProfessionalAffiliation>
+        </Contributor>');
+        $this->assertSame('Peter J. Diggle', $product->getAuthor()->getPersonName());
+        $this->assertSame('Diggle, Peter J.', $product->getAuthor()->getPersonNameInverted());
+        $this->assertSame('University of Lancaster', $product->getAuthor()->getProfessionalAffiliations()[0]->getAffiliation());
+        $this->assertSame('Professor of Statistics, Department of Mathematics', $product->getAuthor()->getProfessionalAffiliations()[0]->getProfessionalPosition());
     }
 }

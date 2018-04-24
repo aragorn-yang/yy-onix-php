@@ -4,6 +4,8 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList58PriceTypeCode;
+use AragornYang\Onix\CodeLists\CodeList62TaxRateCoded;
+use AragornYang\Onix\CodeLists\CodeList96CurrencyCodeISO4217;
 
 class Price extends Composite
 {
@@ -11,10 +13,15 @@ class Price extends Composite
     protected $priceTypeCode;
     /** @var float */
     protected $priceAmount = 0.0;
+    /** @var CodeInList */
+    protected $currencyCode;
+    /** @var CodeInList */
+    protected $taxRateCode1;
+    /** @var DiscountCoded */
+    protected $discountCoded;
 
-    public const TYPE_OF_RRP_EXC_TAX = '01';
-
-    public const TYPE_OF_RRP_INC_TAX = '02';
+    protected const TYPE_OF_RRP_EXC_TAX = '01';
+    protected const TYPE_OF_RRP_INC_TAX = '02';
 
     public function isRrpExcTax(): bool
     {
@@ -28,12 +35,12 @@ class Price extends Composite
 
     public function getPriceTypeCode(): string
     {
-        return $this->priceTypeCode ? $this->priceTypeCode->getCode() : '';
+        return $this->priceTypeCode ? $this->priceTypeCode->code() : '';
     }
 
     public function getPriceTypeCodeDesc(): string
     {
-        return $this->priceTypeCode ? $this->priceTypeCode->getDesc() : '';
+        return $this->priceTypeCode ? $this->priceTypeCode->desc() : '';
     }
 
     public function setPriceTypeCode(string $code): void
@@ -49,5 +56,45 @@ class Price extends Composite
     public function setPriceAmount(string $priceAmount): void
     {
         $this->priceAmount = (float)$priceAmount;
+    }
+
+    public function getCurrencyCode(): string
+    {
+        return $this->currencyCode ? $this->currencyCode->code() : '';
+    }
+
+    public function getCurrencyCodeDesc(): string
+    {
+        return $this->currencyCode ? $this->currencyCode->desc() : '';
+    }
+
+    public function setCurrencyCode(string $code): void
+    {
+        $this->currencyCode = new CodeInList(CodeList96CurrencyCodeISO4217::class, $code);
+    }
+
+    public function getTaxRateCode1(): string
+    {
+        return $this->taxRateCode1 ? $this->taxRateCode1->code() : '';
+    }
+
+    public function getTaxRateCode1Desc(): string
+    {
+        return $this->taxRateCode1 ? $this->taxRateCode1->desc() : '';
+    }
+
+    public function setTaxRateCode1(string $code): void
+    {
+        $this->taxRateCode1 = new CodeInList(CodeList62TaxRateCoded::class, $code);
+    }
+
+    public function getDiscountCoded(): DiscountCoded
+    {
+        return $this->discountCoded;
+    }
+
+    public function setDiscountCoded(\SimpleXMLElement $xml): void
+    {
+        $this->discountCoded = DiscountCoded::buildFromXml($xml);
     }
 }

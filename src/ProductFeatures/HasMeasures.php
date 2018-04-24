@@ -14,9 +14,12 @@ trait HasMeasures
     protected $width;
     /** @var Measure */
     protected $thickness;
+    /** @var Measure */
+    protected $weight;
 
     public function setMeasure(\SimpleXMLElement $xml): void
     {
+        /** @var Measure $measure */
         $measure = Measure::buildFromXml($xml);
         $this->measures[] = $measure;
         if ($measure->isHeight()) {
@@ -25,6 +28,8 @@ trait HasMeasures
             $this->width = $measure;
         } elseif ($measure->isThickness()) {
             $this->thickness = $measure;
+        } elseif ($measure->isWeight()) {
+            $this->weight = $measure;
         }
     }
 
@@ -56,5 +61,15 @@ trait HasMeasures
     public function getThicknessUnit(): string
     {
         return $this->thickness->getMeasureUnitCode();
+    }
+
+    public function getWeightMeasurement(): float
+    {
+        return $this->weight->getMeasurement();
+    }
+
+    public function getWeightUnit(): string
+    {
+        return $this->weight->getMeasureUnitCode();
     }
 }

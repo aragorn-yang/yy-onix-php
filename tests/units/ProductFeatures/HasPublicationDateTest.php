@@ -11,5 +11,8 @@ class HasPublicationDateTest extends TestCase
     {
         $product = $this->getParsedProduct('<PublicationDate>1987</PublicationDate>');
         $this->assertSame('1987', $product->getPublicationDate());
+
+        $product = $this->getParsedProduct('<PublicationDate>19900222</PublicationDate>');
+        $this->assertSame('19900222', $product->getPublicationDate());
     }
 }

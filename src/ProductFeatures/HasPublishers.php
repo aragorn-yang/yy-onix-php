@@ -9,7 +9,7 @@ trait HasPublishers
     /** @var Publisher[] */
     protected $publishers = [];
 
-    public function getPublisher(): string
+    public function getPublisherNames(): string
     {
         if (\count($this->publishers) === 0) {
             return '';
@@ -27,5 +27,13 @@ trait HasPublishers
     public function setPublisher(\SimpleXMLElement $xml): void
     {
         $this->publishers[] = Publisher::buildFromXml($xml);
+    }
+
+    /**
+     * @return Publisher[]
+     */
+    public function getPublishers(): array
+    {
+        return $this->publishers;
     }
 }

@@ -2,8 +2,17 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList44NameCodeType;
+
 class Imprint extends Composite
 {
+    /** @var CodeInList */
+    protected $nameCodeType;
+    /** @var string */
+    protected $nameCodeTypeName = '';
+    /** @var string */
+    protected $nameCodeValue = '';
     /** @var string */
     protected $imprintName = '';
 
@@ -15,5 +24,40 @@ class Imprint extends Composite
     public function setImprintName(string $imprintName): void
     {
         $this->imprintName = $imprintName;
+    }
+
+    public function getNameCodeType(): string
+    {
+        return $this->nameCodeType ? $this->nameCodeType->code() : '';
+    }
+
+    public function getNameCodeTypeDesc(): string
+    {
+        return $this->nameCodeType ? $this->nameCodeType->desc() : '';
+    }
+
+    public function setNameCodeType(string $code): void
+    {
+        $this->nameCodeType = new CodeInList(CodeList44NameCodeType::class, $code);
+    }
+
+    public function getNameCodeTypeName(): string
+    {
+        return $this->nameCodeTypeName;
+    }
+
+    public function setNameCodeTypeName(string $nameCodeTypeName): void
+    {
+        $this->nameCodeTypeName = $nameCodeTypeName;
+    }
+
+    public function getNameCodeValue(): string
+    {
+        return $this->nameCodeValue;
+    }
+
+    public function setNameCodeValue(string $nameCodeValue): void
+    {
+        $this->nameCodeValue = $nameCodeValue;
     }
 }

@@ -33,9 +33,43 @@ class HasOtherTextsTest extends TestCase
                 Quarterly, Spring 1988
             </Text>
         </OtherText>');
-        $this->assertSame(0, stripos($product->getMainDescription(),
+        $this->assertSame(0, stripos($product->getMainDesc(),
             'BRITISH ENGLISH, A TO ZED is the thoroughly updated, revised, and expanded third edition of Norman'));
-        $this->assertSame(0, stripos($product->getReviewQuote(),
+        $this->assertSame(0, stripos($product->getReviewQuotes()[0],
             'Norman Schur is without doubt the outstanding authority on the similarities and differences between'));
+    }
+
+    /** @test */
+    public function product_can_have_long_and_short_desc(): void
+    {
+        $product = $this->getParsedProduct('<OtherText>
+            <TextTypeCode>02</TextTypeCode>
+            <Text textformat="05">Example Short Desc</Text>
+        </OtherText>
+        <OtherText>
+            <TextTypeCode>03</TextTypeCode>
+            <Text textformat="05">Example Long Desc</Text>
+        </OtherText>');
+        $this->assertSame($product->getLongDesc(), $product->getMainDesc());
+        $this->assertSame('Example Long Desc', $product->getLongDesc());
+        $this->assertSame('Example Short Desc', $product->getShortDesc());
+    }
+
+    /** @test */
+    public function product_can_have_multiple_review_quotes(): void
+    {
+        $product = $this->getParsedProduct('<OtherText>
+            <TextTypeCode>08</TextTypeCode>
+            <Text textformat="05">Review Quote 1</Text>
+        </OtherText>
+        <OtherText>
+            <TextTypeCode>08</TextTypeCode>
+            <Text textformat="05">Review Quote 2</Text>
+        </OtherText>
+        <OtherText>
+            <TextTypeCode>08</TextTypeCode>
+            <Text>Review Quote 3</Text>
+        </OtherText>');
+        $this->assertSame(['Review Quote 1', 'Review Quote 2', 'Review Quote 3',], $product->getReviewQuotes());
     }
 }

@@ -17,7 +17,7 @@ trait HasContributors
     public function getAuthor(): ?Contributor
     {
         foreach ($this->contributors as $contributor) {
-            if ($contributor->getContributorRole() === 'A01') {
+            if ($contributor->isAuthor()) {
                 return $contributor;
             }
         }

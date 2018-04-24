@@ -12,12 +12,12 @@ trait HasProductForm
 
     public function getProductForm(): string
     {
-        return $this->productForm ? $this->productForm->getCode() : '';
+        return $this->productForm ? $this->productForm->code() : '';
     }
 
     public function getProductFormDesc(): string
     {
-        return $this->productForm ? $this->productForm->getDesc() : '';
+        return $this->productForm ? $this->productForm->desc() : '';
     }
 
     public function setProductForm(string $code): void

@@ -103,14 +103,14 @@ class SimpleBookParserForTag21SampleOnixFileTest extends TestCase
     /** @test */
     public function it_can_get_MainDescription(): void
     {
-        $this->assertSame(0, stripos($this->product->getMainDescription(),
+        $this->assertSame(0, stripos($this->product->getMainDesc(),
             'BRITISH ENGLISH, A TO ZED is the thoroughly updated, revised, and expanded third edition of Norman'));
     }
 
     /** @test */
     public function it_can_get_ReviewQuote(): void
     {
-        $this->assertSame(0, stripos($this->product->getReviewQuote(),
+        $this->assertSame(0, stripos($this->product->getReviewQuotes()[0],
             'Norman Schur is without doubt the outstanding authority on the similarities and differences between'));
     }
 
@@ -123,7 +123,7 @@ class SimpleBookParserForTag21SampleOnixFileTest extends TestCase
     /** @test */
     public function it_can_get_publisher(): void
     {
-        $this->assertSame('Facts on File Inc', $this->product->getPublisher());
+        $this->assertSame('Facts on File Inc', $this->product->getPublisherNames());
     }
 
     /** @test */

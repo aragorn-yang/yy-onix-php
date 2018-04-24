@@ -12,17 +12,19 @@ class OtherText extends Composite
     /** @var string */
     protected $text = '';
 
-    public const TYPE_OF_MAIN_DESC = '01';
-    public const TYPE_OF_REVIEW_QUOTE = '08';
+    protected const TYPE_OF_MAIN_DESC = '01';
+    protected const TYPE_OF_SHORT_DESC = '02';
+    protected const TYPE_OF_LONG_DESC = '03';
+    protected const TYPE_OF_REVIEW_QUOTE = '08';
 
     public function getTextTypeCode(): string
     {
-        return $this->textTypeCode ? $this->textTypeCode->getCode() : '';
+        return $this->textTypeCode ? $this->textTypeCode->code() : '';
     }
 
     public function getTextTypeCodeDesc(): string
     {
-        return $this->textTypeCode ? $this->textTypeCode->getDesc() : '';
+        return $this->textTypeCode ? $this->textTypeCode->desc() : '';
     }
 
     public function setTextTypeCode(string $code): void
@@ -40,9 +42,19 @@ class OtherText extends Composite
         $this->text = $text;
     }
 
-    public function isMainDescription(): bool
+    public function isMainDesc(): bool
     {
         return (string)$this->textTypeCode === self::TYPE_OF_MAIN_DESC;
+    }
+
+    public function isShortDesc(): bool
+    {
+        return (string)$this->textTypeCode === self::TYPE_OF_SHORT_DESC;
+    }
+
+    public function isLongDesc(): bool
+    {
+        return (string)$this->textTypeCode === self::TYPE_OF_LONG_DESC;
     }
 
     public function isReviewQuote(): bool

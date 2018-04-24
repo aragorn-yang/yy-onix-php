@@ -9,8 +9,14 @@ class SupplyDetail extends Composite
 {
     /** @var string */
     protected $supplierSAN = '';
+    /** @var string */
+    protected $SupplierName = '';
     /** @var string|CodeInList */
     protected $availabilityCode = '';
+    /**
+     * @var int Estimated time to supply
+     */
+    protected $orderTime = 0;
     /** @var Price */
     protected $price;
 
@@ -24,14 +30,24 @@ class SupplyDetail extends Composite
         $this->supplierSAN = $supplierSAN;
     }
 
+    public function getSupplierName(): string
+    {
+        return $this->SupplierName;
+    }
+
+    public function setSupplierName(string $SupplierName): void
+    {
+        $this->SupplierName = $SupplierName;
+    }
+
     public function getAvailabilityCode(): string
     {
-        return $this->availabilityCode ? $this->availabilityCode->getCode() : '';
+        return $this->availabilityCode ? $this->availabilityCode->code() : '';
     }
 
     public function getAvailabilityCodeDesc(): string
     {
-        return $this->availabilityCode ? $this->availabilityCode->getDesc() : '';
+        return $this->availabilityCode ? $this->availabilityCode->desc() : '';
     }
 
     public function setAvailabilityCode(string $code): void
@@ -47,5 +63,15 @@ class SupplyDetail extends Composite
     public function setPrice(\SimpleXMLElement $xml): void
     {
         $this->price = Price::buildFromXml($xml);
+    }
+
+    public function getOrderTime(): int
+    {
+        return $this->orderTime;
+    }
+
+    public function setOrderTime(string $orderTime): void
+    {
+        $this->orderTime = (int)$orderTime;
     }
 }
