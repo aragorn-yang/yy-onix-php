@@ -9,6 +9,14 @@ trait HasOtherTexts
     /** @var OtherText[] */
     protected $otherTexts = [];
 
+    /**
+     * @return OtherText[]
+     */
+    public function getOtherTexts(): array
+    {
+        return $this->otherTexts;
+    }
+
     public function setOtherText(\SimpleXMLElement $xml): void
     {
         $this->otherTexts[] = OtherText::buildFromXml($xml);

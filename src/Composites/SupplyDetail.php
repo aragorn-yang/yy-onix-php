@@ -4,9 +4,11 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList54AvailabilityStatus;
+use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 
 class SupplyDetail extends Composite
 {
+    use HasExpectedShipDate;
     /** @var string */
     protected $supplierSAN = '';
     /** @var string */

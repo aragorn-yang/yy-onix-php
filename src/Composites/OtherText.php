@@ -11,7 +11,9 @@ class OtherText extends Composite
     protected $textTypeCode;
     /** @var string */
     protected $text = '';
-
+    /** @var string */
+    protected $textSourceTitle = '';
+    
     protected const TYPE_OF_MAIN_DESC = '01';
     protected const TYPE_OF_SHORT_DESC = '02';
     protected const TYPE_OF_LONG_DESC = '03';
@@ -60,5 +62,15 @@ class OtherText extends Composite
     public function isReviewQuote(): bool
     {
         return (string)$this->textTypeCode === self::TYPE_OF_REVIEW_QUOTE;
+    }
+
+    public function getTextSourceTitle(): string
+    {
+        return $this->textSourceTitle;
+    }
+
+    public function setTextSourceTitle(string $textSourceTitle): void
+    {
+        $this->textSourceTitle = $textSourceTitle;
     }
 }

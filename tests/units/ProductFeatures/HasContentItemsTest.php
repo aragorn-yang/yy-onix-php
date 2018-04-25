@@ -54,5 +54,46 @@ class HasContentItemsTest extends TestCase
             'References',
             'Appendix A, B & C',
         ], $product->getContentItemTexts());
+
+
+        $product = $this->getParsedProduct('<ContentItem>
+<TextItem>
+<TextItemType>03</TextItemType>
+</TextItem>
+<ComponentTypeName>Heading</ComponentTypeName>
+<DistinctiveTitle>Part I. Introduction
+</DistinctiveTitle>
+</ContentItem>
+<ContentItem>
+<TextItem>
+<TextItemType>03</TextItemType>
+</TextItem>
+<ComponentNumber>1.</ComponentNumber>
+<DistinctiveTitle>Overview of tort law
+</DistinctiveTitle>
+</ContentItem>
+<ContentItem>
+<TextItem>
+<TextItemType>03</TextItemType>
+</TextItem>
+<ComponentTypeName>Heading</ComponentTypeName>
+<DistinctiveTitle>Part II. Negligent invasions of personal, property, and financial interests
+</DistinctiveTitle>
+</ContentItem>
+<ContentItem>
+<TextItem>
+<TextItemType>03</TextItemType>
+</TextItem>
+<ComponentNumber>2.</ComponentNumber>
+<DistinctiveTitle>Duty of care I: foundational principles
+</DistinctiveTitle>
+</ContentItem>');
+        $this->assertCount(4, $product->getContentItems());
+        $this->assertSame([
+            'Part I. Introduction',
+            'Overview of tort law',
+            'Part II. Negligent invasions of personal, property, and financial interests',
+            'Duty of care I: foundational principles',
+        ], $product->getContentItemTexts());
     }
 }

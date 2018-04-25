@@ -2,6 +2,7 @@
 
 namespace AragornYang\Onix\Tests\Units;
 
+use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\SimpleBookParser;
 use AragornYang\Onix\Tests\TestCase;
 
@@ -43,7 +44,7 @@ ONIX
         ));
         $this->assertCount(2, $parser->getProducts());
         foreach ($parser->getProducts() as $product) {
-            $this->assertInstanceOf(\AragornYang\Onix\Composites\Product::class, $product);
+            $this->assertInstanceOf(Product::class, $product);
         }
     }
 
@@ -59,7 +60,7 @@ ONIX
         ));
         $this->assertCount(2, $parser->getProducts());
         foreach ($parser->getProducts() as $product) {
-            $this->assertInstanceOf(\AragornYang\Onix\Composites\Product::class, $product);
+            $this->assertInstanceOf(Product::class, $product);
         }
     }
 
@@ -74,8 +75,8 @@ ONIX
 ONIX
         ));
         $this->assertSame([
-            'UnrecognisableElement1' => 1,
-            'UnrecognisableElement2' => 2,
+            'Product->UnrecognisableElement1' => 1,
+            'Product->UnrecognisableElement2' => 2,
         ], $parser->getUnrecognisableElements());
     }
 

@@ -26,17 +26,17 @@ class Contributor extends Composite
     /** @var string */
     protected $namesBeforeKey = '';
     /** @var string */
-    protected $prefixToKey = '';
+    //protected $prefixToKey = '';
     /** @var string */
     protected $keyNames = '';
     /** @var string */
-    protected $namesAfterKey = '';
+    //protected $namesAfterKey = '';
     /** @var string */
-    protected $suffixToKey = '';
+    //protected $suffixToKey = '';
     /** @var string */
     protected $lettersAfterNames = '';
     /** @var string */
-    protected $titlesAfterNames = '';
+    //protected $titlesAfterNames = '';
 
     /** @var string */
     protected $biographicalNote = '';
@@ -136,5 +136,25 @@ class Contributor extends Composite
     public function isAuthor(): bool
     {
         return $this->getContributorRole() === self::TYPE_OF_AUTHOR;
+    }
+
+    public function getLettersAfterNames(): string
+    {
+        return $this->lettersAfterNames;
+    }
+
+    public function setLettersAfterNames(string $lettersAfterNames): void
+    {
+        $this->lettersAfterNames = $lettersAfterNames;
+    }
+
+    public function getTitlesBeforeNames(): string
+    {
+        return $this->titlesBeforeNames;
+    }
+
+    public function setTitlesBeforeNames(string $titlesBeforeNames): void
+    {
+        $this->titlesBeforeNames = $titlesBeforeNames;
     }
 }

@@ -72,4 +72,24 @@ class HasOtherTextsTest extends TestCase
         </OtherText>');
         $this->assertSame(['Review Quote 1', 'Review Quote 2', 'Review Quote 3',], $product->getReviewQuotes());
     }
+
+    /** @test */
+    public function product_can_have_multiple_review_quotes_with_different_sources(): void
+    {
+        $product = $this->getParsedProduct('<OtherText>
+<TextTypeCode>08</TextTypeCode>
+<Text textformat="05">Review Quote 1</Text>
+<TextSourceTitle>Student Law Journal</TextSourceTitle>
+</OtherText>
+<OtherText>
+<TextTypeCode>08</TextTypeCode>
+<Text textformat="05">Review Quote 2</Text>
+<TextSourceTitle>Emma Teare, Senior Lecturer in Law, Teesside University</TextSourceTitle>
+</OtherText>');
+        $this->assertSame(['Review Quote 1', 'Review Quote 2'], $product->getReviewQuotes());
+        $otherTexts = $product->getOtherTexts();
+        $this->assertSame('Student Law Journal', $otherTexts[0]->getTextSourceTitle());
+        $this->assertSame('Emma Teare, Senior Lecturer in Law, Teesside University', $otherTexts[1]->getTextSourceTitle());
+
+    }
 }

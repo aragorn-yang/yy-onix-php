@@ -28,7 +28,8 @@ class Composite
                 $composite->{$method_name}($value);
                 continue;
             }
-            $onix->addUnrecognisableElement($key);
+            $array = explode("\\", static::class);
+            $onix->addUnrecognisableElement(array_pop($array) . '->' . $key);
         }
         return $composite;
     }

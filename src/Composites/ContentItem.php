@@ -14,6 +14,8 @@ class ContentItem extends Composite
     /** @var string */
     protected $componentNumber = '';
     /** @var string */
+    protected $componentTypeName = '';
+    /** @var string */
     protected $distinctiveTitle = '';
 
     public function getTextItem(): TextItem
@@ -44,5 +46,15 @@ class ContentItem extends Composite
     public function setDistinctiveTitle(string $distinctiveTitle): void
     {
         $this->distinctiveTitle = trim($distinctiveTitle);
+    }
+
+    public function getComponentTypeName(): string
+    {
+        return $this->componentTypeName;
+    }
+
+    public function setComponentTypeName(string $componentTypeName): void
+    {
+        $this->componentTypeName = $componentTypeName;
     }
 }

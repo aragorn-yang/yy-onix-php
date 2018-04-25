@@ -13,6 +13,8 @@ class Price extends Composite
     protected $priceTypeCode;
     /** @var float */
     protected $priceAmount = 0.0;
+    /** @var float */
+    protected $taxableAmount1 = 0.0;
     /** @var CodeInList */
     protected $currencyCode;
     /** @var CodeInList */
@@ -96,5 +98,15 @@ class Price extends Composite
     public function setDiscountCoded(\SimpleXMLElement $xml): void
     {
         $this->discountCoded = DiscountCoded::buildFromXml($xml);
+    }
+
+    public function getTaxableAmount1(): float
+    {
+        return $this->taxableAmount1;
+    }
+
+    public function setTaxableAmount1(string $taxableAmount1): void
+    {
+        $this->taxableAmount1 = (float)$taxableAmount1;
     }
 }
