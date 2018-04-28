@@ -19,6 +19,6 @@ trait HasContainedItems
 
     public function setContainedItem(\SimpleXMLElement $xml): void
     {
-        $this->containedItems[] = ContainedItem::buildFromXml($xml);
+        $this->containedItems[] = ContainedItem::buildFromXml($xml, $this);
     }
 }

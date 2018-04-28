@@ -49,6 +49,6 @@ class Publisher extends Composite
 
     public function setWebsite(\SimpleXMLElement $xml): void
     {
-        $this->websites[] = Website::buildFromXml($xml);
+        $this->websites[] = Website::buildFromXml($xml, $this);
     }
 }

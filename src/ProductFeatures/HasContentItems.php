@@ -28,6 +28,6 @@ trait HasContentItems
 
     public function setContentItem(\SimpleXMLElement $xml): void
     {
-        $this->contentItems[] = ContentItem::buildFromXml($xml);
+        $this->contentItems[] = ContentItem::buildFromXml($xml, $this);
     }
 }

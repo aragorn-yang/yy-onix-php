@@ -28,6 +28,6 @@ trait HasPrizes
 
     public function setPrize(\SimpleXMLElement $xml): void
     {
-        $this->prizes[] = Prize::buildFromXml($xml);
+        $this->prizes[] = Prize::buildFromXml($xml, $this);
     }
 }

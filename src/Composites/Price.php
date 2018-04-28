@@ -97,7 +97,7 @@ class Price extends Composite
 
     public function setDiscountCoded(\SimpleXMLElement $xml): void
     {
-        $this->discountCoded = DiscountCoded::buildFromXml($xml);
+        $this->discountCoded = DiscountCoded::buildFromXml($xml, $this);
     }
 
     public function getTaxableAmount1(): float

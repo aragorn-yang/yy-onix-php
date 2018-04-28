@@ -17,7 +17,7 @@ trait HasTitles
     public function setTitle(\SimpleXMLElement $xml): void
     {
         /** @var Title $title */
-        $title = Title::buildFromXml($xml);
+        $title = Title::buildFromXml($xml, $this);
         if ($title->isDistinctiveTitle()) {
             $this->title = $title->getFullTitle();
             return;

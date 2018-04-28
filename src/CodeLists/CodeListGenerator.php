@@ -30,10 +30,10 @@ class CodeListGenerator
     public function parseString(string $htmlContent): array
     {
         preg_match("/\<br\>List (\d+)\: (.+)\<\/div\>/", $htmlContent, $matches1);
-        if (!($matches1[1] ?? null)) {
-            var_dump($htmlContent);
-            throw new \Exception();
-        }
+        //if (!($matches1[1] ?? null)) {
+        //    var_dump($htmlContent);
+        //    throw new \Exception();
+        //}
         $listNo = $matches1[1];
         $listName = $this->parseListName($matches1[2]);
 

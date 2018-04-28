@@ -16,7 +16,7 @@ class CodeInList
         $this->class = $class;
         $this->code = $code;
         if (!$this->class::validate($code)) {
-            $this->class::addToUnrecognisable($code);
+            $this->class::recordUnrecognisableCode($code);
             return;
         }
     }

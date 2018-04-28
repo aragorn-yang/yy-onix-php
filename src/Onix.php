@@ -20,6 +20,8 @@ final class Onix
     /** @var string */
     private $edition = '';
     /** @var array */
+    private $elementPositions = [];
+    /** @var array */
     private $unrecognisableElements = [];
     /** @var array */
     private $unrecognisableCodes = [];
@@ -46,9 +48,19 @@ final class Onix
         return $this->unrecognisableElements;
     }
 
-    public function addUnrecognisableElement(string $key): void
+    public function recordUnrecognisableElement(string $key): void
     {
         $this->unrecognisableElements[$key] = ($this->unrecognisableElements[$key] ?? 0) + 1;
+    }
+
+    public function getElementPositions(): array
+    {
+        return $this->elementPositions;
+    }
+
+    public function recordElementPosition(string $key): void
+    {
+        $this->elementPositions[$key] = ($this->elementPositions[$key] ?? 0) + 1;
     }
 
     public function getUnrecognisableCodes(): array
@@ -56,7 +68,7 @@ final class Onix
         return $this->unrecognisableCodes;
     }
 
-    public function addUnrecognisableCode(string $key, string $value): void
+    public function recordUnrecognisableCode(string $key, string $value): void
     {
         $keyValuePair = trim($key) . ':' . trim($value);
         $this->unrecognisableCodes[$keyValuePair] = ($this->unrecognisableCodes[$keyValuePair] ?? 0) + 1;

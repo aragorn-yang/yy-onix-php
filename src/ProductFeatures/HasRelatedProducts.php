@@ -25,6 +25,6 @@ trait HasRelatedProducts
 
     public function setRelatedProduct(\SimpleXMLElement $xml): void
     {
-        $this->relatedProducts[] = RelatedProduct::buildFromXml($xml);
+        $this->relatedProducts[] = RelatedProduct::buildFromXml($xml, $this);
     }
 }

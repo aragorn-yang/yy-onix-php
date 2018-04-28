@@ -120,7 +120,7 @@ class Contributor extends Composite
 
     public function setProfessionalAffiliation(\SimpleXMLElement $xml): void
     {
-        $this->professionalAffiliations[] = ProfessionalAffiliation::buildFromXml($xml);
+        $this->professionalAffiliations[] = ProfessionalAffiliation::buildFromXml($xml, $this);
     }
 
     public function getBiographicalNote(): string

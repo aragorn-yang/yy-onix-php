@@ -26,7 +26,7 @@ trait HasPublishers
 
     public function setPublisher(\SimpleXMLElement $xml): void
     {
-        $this->publishers[] = Publisher::buildFromXml($xml);
+        $this->publishers[] = Publisher::buildFromXml($xml, $this);
     }
 
     /**

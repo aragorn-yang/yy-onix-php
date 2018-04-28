@@ -19,7 +19,7 @@ trait HasOtherTexts
 
     public function setOtherText(\SimpleXMLElement $xml): void
     {
-        $this->otherTexts[] = OtherText::buildFromXml($xml);
+        $this->otherTexts[] = OtherText::buildFromXml($xml, $this);
     }
 
     public function getMainDesc(): string

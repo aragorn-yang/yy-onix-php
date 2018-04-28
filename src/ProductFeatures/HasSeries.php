@@ -19,7 +19,7 @@ trait HasSeries
 
     public function setSeries(\SimpleXMLElement $xml): void
     {
-        $series = Series::buildFromXml($xml);
+        $series = Series::buildFromXml($xml, $this);
         $this->series[] = $series;
     }
 }

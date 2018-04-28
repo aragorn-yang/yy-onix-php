@@ -26,7 +26,7 @@ trait HasProductIdentifiers
     public function setProductIdentifier(\SimpleXMLElement $xml): void
     {
         /** @var ProductIdentifier $identifier */
-        $identifier = ProductIdentifier::buildFromXml($xml);
+        $identifier = ProductIdentifier::buildFromXml($xml, $this);
         $this->productIdentifiers[$identifier->getProductIDType()] = $identifier;
         if (!$this->isbn10 && $identifier->isISBN10()) {
             $this->isbn10 = $identifier->getIDValue();

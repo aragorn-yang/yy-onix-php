@@ -11,8 +11,11 @@ class TestCase extends BaseTestCase
     public function getParsedProduct(string $productContent): Product
     {
         $parser = new SimpleBookParser;
-        $parser->parse($this->stuffSingleProductContentIntoRefNameEditionV21($productContent));
-        return $parser->getProducts()[0];
+        $parser->setProductHandler(function (Product $product) {
+            $this->parsedProduct = $product;
+        });
+        $parser->parseString($this->stuffSingleProductContentIntoRefNameEditionV21($productContent));
+        return $this->parsedProduct;
     }
 
     public function stuffSingleProductContentIntoRefNameEditionV21(string $productContent): string

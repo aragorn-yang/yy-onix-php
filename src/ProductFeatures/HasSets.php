@@ -19,6 +19,6 @@ trait HasSets
 
     public function setSet(\SimpleXMLElement $xml): void
     {
-        $this->sets[] = Set::buildFromXml($xml);
+        $this->sets[] = Set::buildFromXml($xml, $this);
     }
 }

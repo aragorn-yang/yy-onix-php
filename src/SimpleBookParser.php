@@ -2,26 +2,9 @@
 
 namespace AragornYang\Onix;
 
-use AragornYang\Onix\Composites\Product;
-
-class SimpleBookParser
+class SimpleBookParser extends BookParser
 {
-    /** @var Onix */
-    protected $onix;
-    /** @var Product[] */
-    protected $products = [];
-
-    public function __construct()
-    {
-        $this->onix = Onix::getNewInstance();
-    }
-
-    public function onixVersion(): string
-    {
-        return $this->onix->version();
-    }
-
-    public function parse(string $contents): void
+    public function parseString(string $contents): void
     {
         $xml = simplexml_load_string($contents);
         if ((string)$xml['release']) {
@@ -35,22 +18,15 @@ class SimpleBookParser
             $this->onix->setAsTagEdition();
         }
         foreach ($xml->{$this->onix->getProductKey()} as $value) {
-            $this->products[] = $this->onix->buildProduct($value);
+            $product = $this->onix->buildProduct($value);
+            ($this->productHandler)($product);
+            $this->productCount++;
         }
     }
 
-    public function getProducts(): array
+    public function parseFile(string $file): void
     {
-        return $this->products;
-    }
+        $this->parseString(file_get_contents($file));
 
-    public function getUnrecognisableElements(): array
-    {
-        return $this->onix->getUnrecognisableElements();
-    }
-
-    public function getUnrecognisableCodes(): array
-    {
-        return $this->onix->getUnrecognisableCodes();
     }
 }

@@ -25,7 +25,7 @@ class ContentItem extends Composite
 
     public function setTextItem(\SimpleXMLElement $xml): void
     {
-        $this->textItem = TextItem::buildFromXml($xml);
+        $this->textItem = TextItem::buildFromXml($xml, $this);
     }
 
     public function getComponentNumber(): string

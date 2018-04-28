@@ -25,8 +25,8 @@ abstract class CodeList
         return array_key_exists($value, static::MAPPING);
     }
 
-    public static function addToUnrecognisable(string $value): void
+    public static function recordUnrecognisableCode(string $value): void
     {
-        Onix::getInstance()->addUnrecognisableCode(static::KEY, $value);
+        Onix::getInstance()->recordUnrecognisableCode(static::KEY, $value);
     }
 }

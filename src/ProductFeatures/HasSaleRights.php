@@ -28,7 +28,7 @@ trait HasSaleRights
 
     public function setSalesRights(\SimpleXMLElement $xml): void
     {
-        $saleRights = SalesRights::buildFromXml($xml);
+        $saleRights = SalesRights::buildFromXml($xml, $this);
         $this->salesRights[$saleRights->getSalesRightsType()] = $saleRights;
     }
 }

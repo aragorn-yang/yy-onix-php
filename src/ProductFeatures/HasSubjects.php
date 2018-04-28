@@ -29,6 +29,6 @@ trait HasSubjects
 
     public function setSubject(\SimpleXMLElement $xml): void
     {
-        $this->subjects[] = Subject::buildFromXml($xml);
+        $this->subjects[] = Subject::buildFromXml($xml, $this);
     }
 }

@@ -11,7 +11,7 @@ trait HasContributors
 
     public function setContributor(\SimpleXMLElement $xml): void
     {
-        $this->contributors[] = Contributor::buildFromXml($xml);
+        $this->contributors[] = Contributor::buildFromXml($xml, $this);
     }
 
     public function getAuthor(): ?Contributor

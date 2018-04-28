@@ -20,7 +20,7 @@ trait HasMeasures
     public function setMeasure(\SimpleXMLElement $xml): void
     {
         /** @var Measure $measure */
-        $measure = Measure::buildFromXml($xml);
+        $measure = Measure::buildFromXml($xml, $this);
         $this->measures[] = $measure;
         if ($measure->isHeight()) {
             $this->height = $measure;

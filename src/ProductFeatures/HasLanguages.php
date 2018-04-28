@@ -11,7 +11,7 @@ trait HasLanguages
 
     public function setLanguage(\SimpleXMLElement $xml): void
     {
-        $this->languages[] = Language::buildFromXml($xml);
+        $this->languages[] = Language::buildFromXml($xml, $this);
     }
 
     public function getLanguageCode(): string

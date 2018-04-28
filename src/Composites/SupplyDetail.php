@@ -64,7 +64,7 @@ class SupplyDetail extends Composite
 
     public function setPrice(\SimpleXMLElement $xml): void
     {
-        $this->price = Price::buildFromXml($xml);
+        $this->price = Price::buildFromXml($xml, $this);
     }
 
     public function getOrderTime(): int

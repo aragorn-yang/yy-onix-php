@@ -21,7 +21,7 @@ class Series extends Composite
     public function setSeriesIdentifier(\SimpleXMLElement $xml): void
     {
         /** @var SeriesIdentifier $identifier */
-        $identifier = SeriesIdentifier::buildFromXml($xml);
+        $identifier = SeriesIdentifier::buildFromXml($xml, $this);
         $this->seriesIdentifiers[$identifier->getSeriesIDType()] = $identifier;
     }
 

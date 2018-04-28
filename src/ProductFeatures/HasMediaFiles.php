@@ -19,7 +19,7 @@ trait HasMediaFiles
 
     public function setMediaFile(\SimpleXMLElement $xml): void
     {
-        $this->mediaFiles[] = MediaFile::buildFromXml($xml);
+        $this->mediaFiles[] = MediaFile::buildFromXml($xml, $this);
     }
 
     public function getFrontCoverLink(): string
