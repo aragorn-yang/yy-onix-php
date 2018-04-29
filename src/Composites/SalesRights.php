@@ -4,20 +4,21 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList46SalesRightsType;
+use AragornYang\Onix\CodeLists\CodeList49RegionCodeSimplified;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 
 class SalesRights extends Composite
 {
     /** @var CodeInList */
     protected $salesRightsType;
-    /** @var CodeInList[] */
+    /** @var array */
     protected $rightsCountries = [];
     /**
      * Code List 49 Where possible and appropriate,
      * country subdivision codes are derived from the UN LOCODE scheme based on ISO 3166.
-     * @var string
+     * @var array
      */
-    protected $rightsTerritory = '';
+    protected $rightsTerritory = [];
 
     public function getSalesRightsType(): string
     {
@@ -34,26 +35,50 @@ class SalesRights extends Composite
         $this->salesRightsType = new CodeInList(CodeList46SalesRightsType::class, $code);
     }
 
-    /**
-     * @return CodeInList[]
-     */
     public function getRightsCountries(): array
     {
         return $this->rightsCountries;
     }
 
-    public function setRightsCountry(string $code): void
+    public function setRightsCountry(string $codes): void
     {
-        $this->rightsCountries[] = new CodeInList(CodeList91CountryCodeISO31661::class, $code);
+        foreach (explode(' ', $codes) as $code) {
+            if (!$code) {
+                continue;
+            }
+            new CodeInList(CodeList91CountryCodeISO31661::class, $code);
+            $this->rightsCountries[] = $code;
+        }
     }
 
-    public function getRightsTerritory(): string
+    public function getRightsTerritory(): array
     {
         return $this->rightsTerritory;
     }
 
-    public function setRightsTerritory(string $rightsTerritory): void
+    public function setRightsTerritory(string $codes): void
     {
-        $this->rightsTerritory = $rightsTerritory;
+        foreach (explode(' ', $codes) as $code) {
+            if (!$code) {
+                continue;
+            }
+            new CodeInList(CodeList49RegionCodeSimplified::class, $code);
+            $this->rightsTerritory[] = $code;
+        }
+    }
+
+    public function contains(string $code): bool
+    {
+        return \in_array($code, $this->getRightsCountries(), true);
+    }
+
+    public function forWorld(): bool
+    {
+        return \in_array('WORLD', $this->getRightsTerritory(), true);
+    }
+
+    public function forRestOfWorld(): bool
+    {
+        return \in_array('ROW', $this->getRightsTerritory(), true);
     }
 }

@@ -31,4 +31,26 @@ trait HasSaleRights
         $saleRights = SalesRights::buildFromXml($xml, $this);
         $this->salesRights[$saleRights->getSalesRightsType()] = $saleRights;
     }
+
+    public function hasSalesRightsIn(string $code): ?bool
+    {
+        foreach (['03', '04', '05', '06'] as $type) {
+            if (array_key_exists($type, $this->salesRights)) {
+                if ($this->salesRights[$type]->contains($code)) {
+                    return false;
+                }
+            }
+        }
+        foreach (['01', '02'] as $type) {
+            if (array_key_exists($type, $this->salesRights)) {
+                if ($this->salesRights[$type]->contains($code)
+                    || $this->salesRights[$type]->forRestOfWorld()
+                    || $this->salesRights[$type]->forWorld()
+                ) {
+                    return true;
+                }
+            }
+        }
+        return null;
+    }
 }
