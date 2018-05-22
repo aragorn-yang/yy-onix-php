@@ -4,16 +4,20 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList33OtherTextType;
+use AragornYang\Onix\CodeLists\CodeList34TextFormat;
+use SimpleXMLElement;
 
 class OtherText extends Composite
 {
     /** @var CodeInList */
     protected $textTypeCode;
+    /** @var CodeInList */
+    protected $textFormat;
     /** @var string */
     protected $text = '';
     /** @var string */
     protected $textSourceTitle = '';
-    
+
     protected const TYPE_OF_MAIN_DESC = '01';
     protected const TYPE_OF_SHORT_DESC = '02';
     protected const TYPE_OF_LONG_DESC = '03';
@@ -34,14 +38,32 @@ class OtherText extends Composite
         $this->textTypeCode = new CodeInList(CodeList33OtherTextType::class, $code);
     }
 
+    public function getTextFormat(): string
+    {
+        return $this->textFormat ? $this->textFormat->code() : '';
+    }
+
+    public function getTextFormatDesc(): string
+    {
+        return $this->textFormat ? $this->textFormat->desc() : '';
+    }
+
+    public function setTextFormat(string $code): void
+    {
+        $this->textFormat = new CodeInList(CodeList34TextFormat::class, $code);
+    }
+
     public function getText(): string
     {
         return $this->text;
     }
 
-    public function setText(string $text): void
+    public function setText(SimpleXMLElement $text): void
     {
-        $this->text = $text;
+        if ($text['textformat']) {
+            $this->setTextFormat($text['textformat']);
+        }
+        $this->text = (string)$text;
     }
 
     public function isMainDesc(): bool

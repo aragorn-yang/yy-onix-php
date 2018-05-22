@@ -3,7 +3,9 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList53ReturnsConditionsCodeType;
 use AragornYang\Onix\CodeLists\CodeList54AvailabilityStatus;
+use AragornYang\Onix\CodeLists\CodeList65ProductAvailability;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 
 class SupplyDetail extends Composite
@@ -13,12 +15,20 @@ class SupplyDetail extends Composite
     protected $supplierSAN = '';
     /** @var string */
     protected $SupplierName = '';
-    /** @var string|CodeInList */
-    protected $availabilityCode = '';
+    /** @var CodeInList */
+    protected $availabilityCode;
+    /** @var CodeInList */
+    protected $productAvailability;
+    /** @var CodeInList */
+    protected $returnsCodeType;
+    /** @var string */
+    protected $returnsCode = '';
     /**
      * @var int Estimated time to supply
      */
     protected $orderTime = 0;
+    /** @var int */
+    protected $packQuantity = 10;
     /** @var Price */
     protected $price;
 
@@ -57,6 +67,36 @@ class SupplyDetail extends Composite
         $this->availabilityCode = new CodeInList(CodeList54AvailabilityStatus::class, $code);
     }
 
+    public function getProductAvailability(): string
+    {
+        return $this->productAvailability ? $this->productAvailability->code() : '';
+    }
+
+    public function getProductAvailabilityDesc(): string
+    {
+        return $this->productAvailability ? $this->productAvailability->desc() : '';
+    }
+
+    public function setProductAvailability(string $code): void
+    {
+        $this->productAvailability = new CodeInList(CodeList65ProductAvailability::class, $code);
+    }
+
+    public function getReturnsCodeType(): string
+    {
+        return $this->returnsCodeType ? $this->returnsCodeType->code() : '';
+    }
+
+    public function getReturnsCodeTypeDesc(): string
+    {
+        return $this->returnsCodeType ? $this->returnsCodeType->desc() : '';
+    }
+
+    public function setReturnsCodeType(string $code): void
+    {
+        $this->returnsCodeType = new CodeInList(CodeList53ReturnsConditionsCodeType::class, $code);
+    }
+
     public function getPrice(): Price
     {
         return $this->price;
@@ -75,5 +115,25 @@ class SupplyDetail extends Composite
     public function setOrderTime(string $orderTime): void
     {
         $this->orderTime = (int)$orderTime;
+    }
+
+    public function getPackQuantity(): int
+    {
+        return $this->packQuantity;
+    }
+
+    public function setPackQuantity(string $packQuantity): void
+    {
+        $this->packQuantity = (int)$packQuantity;
+    }
+
+    public function getReturnsCode(): string
+    {
+        return $this->returnsCode;
+    }
+
+    public function setReturnsCode(string $returnsCode): void
+    {
+        $this->returnsCode = $returnsCode;
     }
 }

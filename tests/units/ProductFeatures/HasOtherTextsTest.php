@@ -78,18 +78,32 @@ class HasOtherTextsTest extends TestCase
     {
         $product = $this->getParsedProduct('<OtherText>
 <TextTypeCode>08</TextTypeCode>
-<Text textformat="05">Review Quote 1</Text>
+<Text>Review Quote 1</Text>
 <TextSourceTitle>Student Law Journal</TextSourceTitle>
 </OtherText>
 <OtherText>
 <TextTypeCode>08</TextTypeCode>
-<Text textformat="05">Review Quote 2</Text>
+<Text>Review Quote 2</Text>
 <TextSourceTitle>Emma Teare, Senior Lecturer in Law, Teesside University</TextSourceTitle>
 </OtherText>');
         $this->assertSame(['Review Quote 1', 'Review Quote 2'], $product->getReviewQuotes());
         $otherTexts = $product->getOtherTexts();
         $this->assertSame('Student Law Journal', $otherTexts[0]->getTextSourceTitle());
-        $this->assertSame('Emma Teare, Senior Lecturer in Law, Teesside University', $otherTexts[1]->getTextSourceTitle());
+        $this->assertSame('Emma Teare, Senior Lecturer in Law, Teesside University',
+            $otherTexts[1]->getTextSourceTitle());
+    }
 
+    /** @test */
+    public function other_texts_can_have_text_format(): void
+    {
+        $product = $this->getParsedProduct('<OtherText>
+<Text textformat="05">Review Quote 1</Text>
+</OtherText>
+<OtherText>
+<TextFormat>02</TextFormat>
+</OtherText>');
+        $otherTexts = $product->getOtherTexts();
+        $this->assertSame('05', $otherTexts[0]->getTextFormat());
+        $this->assertSame('02', $otherTexts[1]->getTextFormat());
     }
 }

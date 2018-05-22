@@ -21,6 +21,8 @@ class Price extends Composite
     protected $taxRateCode1;
     /** @var DiscountCoded */
     protected $discountCoded;
+    /** @var string */
+    protected $priceEffectiveFrom = '';
 
     protected const TYPE_OF_RRP_EXC_TAX = '01';
     protected const TYPE_OF_RRP_INC_TAX = '02';
@@ -108,5 +110,15 @@ class Price extends Composite
     public function setTaxableAmount1(string $taxableAmount1): void
     {
         $this->taxableAmount1 = (float)$taxableAmount1;
+    }
+
+    public function getPriceEffectiveFrom(): string
+    {
+        return $this->priceEffectiveFrom;
+    }
+
+    public function setPriceEffectiveFrom(string $priceEffectiveFrom): void
+    {
+        $this->priceEffectiveFrom = $priceEffectiveFrom;
     }
 }

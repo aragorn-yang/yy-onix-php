@@ -3,6 +3,8 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\ProductFeatures\HasAudienceCode;
+use AragornYang\Onix\ProductFeatures\HasAudiences;
+use AragornYang\Onix\ProductFeatures\HasBarcode;
 use AragornYang\Onix\ProductFeatures\HasBASICMainSubject;
 use AragornYang\Onix\ProductFeatures\HasBASICVersion;
 use AragornYang\Onix\ProductFeatures\HasBICMainSubject;
@@ -31,9 +33,12 @@ use AragornYang\Onix\ProductFeatures\HasOutOfPrintDate;
 use AragornYang\Onix\ProductFeatures\HasPrizes;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
 use AragornYang\Onix\ProductFeatures\HasProductFormDescription;
+use AragornYang\Onix\ProductFeatures\HasProductFormDetail;
+use AragornYang\Onix\ProductFeatures\HasProductFormFeatures;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
 use AragornYang\Onix\ProductFeatures\HasPublicationDate;
 use AragornYang\Onix\ProductFeatures\HasPublishers;
+use AragornYang\Onix\ProductFeatures\HasPublishingStatus;
 use AragornYang\Onix\ProductFeatures\HasRecordReference;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceType;
 use AragornYang\Onix\ProductFeatures\HasRelatedProducts;
@@ -43,11 +48,14 @@ use AragornYang\Onix\ProductFeatures\HasSets;
 use AragornYang\Onix\ProductFeatures\HasSubjects;
 use AragornYang\Onix\ProductFeatures\HasSupplyDetails;
 use AragornYang\Onix\ProductFeatures\HasTitles;
+use AragornYang\Onix\ProductFeatures\HasWorkIdentifiers;
 use AragornYang\Onix\ProductFeatures\HasYearFirstPublished;
 
 class Product extends Composite
 {
     use HasAudienceCode,
+        HasAudiences,
+        HasBarcode,
         HasBASICMainSubject,
         HasBASICVersion,
         HasBICMainSubject,
@@ -76,9 +84,12 @@ class Product extends Composite
         HasPrizes,
         HasProductForm,
         HasProductFormDescription,
+        HasProductFormDetail,
+        HasProductFormFeatures,
         HasProductIdentifiers,
         HasPublicationDate,
         HasPublishers,
+        HasPublishingStatus,
         HasRecordReference,
         HasRecordSourceType,
         HasRelatedProducts,
@@ -88,5 +99,6 @@ class Product extends Composite
         HasSubjects,
         HasSupplyDetails,
         HasTitles,
+        HasWorkIdentifiers,
         HasYearFirstPublished;
 }
