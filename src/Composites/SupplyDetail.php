@@ -3,14 +3,19 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList49RegionCodeSimplified;
 use AragornYang\Onix\CodeLists\CodeList53ReturnsConditionsCodeType;
 use AragornYang\Onix\CodeLists\CodeList54AvailabilityStatus;
 use AragornYang\Onix\CodeLists\CodeList65ProductAvailability;
+use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
+use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 
 class SupplyDetail extends Composite
 {
     use HasExpectedShipDate;
+    /** @var CodeInList */
+    protected $supplierRole;
     /** @var string */
     protected $supplierSAN = '';
     /** @var string */
@@ -29,8 +34,27 @@ class SupplyDetail extends Composite
     protected $orderTime = 0;
     /** @var int */
     protected $packQuantity = 10;
-    /** @var Price */
-    protected $price;
+    /** @var CodeInList[] */
+    protected $supplyToCountries = [];
+    /** @var CodeInList[] */
+    protected $supplyToTerritories = [];
+    /** @var Price[] */
+    protected $prices = [];
+
+    public function getSupplierRole(): string
+    {
+        return $this->supplierRole ? $this->supplierRole->code() : '';
+    }
+
+    public function getSupplierRoleDesc(): string
+    {
+        return $this->supplierRole ? $this->supplierRole->desc() : '';
+    }
+
+    public function setSupplierRole(string $code): void
+    {
+        $this->supplierRole = new CodeInList(CodeList93SupplierRole::class, $code);
+    }
 
     public function getSupplierSAN(): string
     {
@@ -97,14 +121,17 @@ class SupplyDetail extends Composite
         $this->returnsCodeType = new CodeInList(CodeList53ReturnsConditionsCodeType::class, $code);
     }
 
-    public function getPrice(): Price
+    /**
+     * @return Price[]
+     */
+    public function getPrices(): array
     {
-        return $this->price;
+        return $this->prices;
     }
 
     public function setPrice(\SimpleXMLElement $xml): void
     {
-        $this->price = Price::buildFromXml($xml, $this);
+        $this->prices[] = Price::buildFromXml($xml, $this);
     }
 
     public function getOrderTime(): int
@@ -135,5 +162,37 @@ class SupplyDetail extends Composite
     public function setReturnsCode(string $returnsCode): void
     {
         $this->returnsCode = $returnsCode;
+    }
+
+    public function getSupplyToCountries(): array
+    {
+        return $this->supplyToCountries;
+    }
+
+    public function setSupplyToCountry(string $codes): void
+    {
+        foreach (explode(' ', $codes) as $code) {
+            if (!$code) {
+                continue;
+            }
+            new CodeInList(CodeList91CountryCodeISO31661::class, $code);
+            $this->supplyToCountries[] = $code;
+        }
+    }
+
+    public function getSupplyToTerritories(): array
+    {
+        return $this->supplyToTerritories;
+    }
+
+    public function setSupplyToTerritory(string $codes): void
+    {
+        foreach (explode(' ', $codes) as $code) {
+            if (!$code) {
+                continue;
+            }
+            new CodeInList(CodeList49RegionCodeSimplified::class, $code);
+            $this->supplyToTerritories[] = $code;
+        }
     }
 }

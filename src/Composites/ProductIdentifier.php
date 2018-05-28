@@ -10,6 +10,8 @@ class ProductIdentifier extends Composite
     /** @var CodeInList */
     protected $productIDType;
     /** @var string */
+    protected $IDTypeName = '';
+    /** @var string */
     protected $IDValue = '';
 
     protected const TYPE_OF_ISBN_10 = '02';
@@ -44,6 +46,16 @@ class ProductIdentifier extends Composite
     public function isGTIN13(): bool
     {
         return (string)$this->productIDType === self::TYPE_OF_GTIN_13;
+    }
+
+    public function getIDTypeName(): string
+    {
+        return $this->IDTypeName;
+    }
+
+    public function setIDTypeName(string $IDTypeName): void
+    {
+        $this->IDTypeName = $IDTypeName;
     }
 
     public function getIDValue(): string

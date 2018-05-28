@@ -15,7 +15,12 @@ trait HasSaleRights
      */
     public function getSalesRightsWithTypeOf(string $type): ?SalesRights
     {
-        return $this->salesRights[$type] ?? null;
+        foreach ($this->salesRights as $salesRight) {
+            if ($salesRight->getSalesRightsType() === $type) {
+                return $salesRight;
+            }
+        }
+        return null;
     }
 
     /**
@@ -29,23 +34,23 @@ trait HasSaleRights
     public function setSalesRights(\SimpleXMLElement $xml): void
     {
         $saleRights = SalesRights::buildFromXml($xml, $this);
-        $this->salesRights[$saleRights->getSalesRightsType()] = $saleRights;
+        $this->salesRights[] = $saleRights;
     }
 
     public function hasSalesRightsIn(string $code): ?bool
     {
         foreach (['03', '04', '05', '06'] as $type) {
-            if (array_key_exists($type, $this->salesRights)) {
-                if ($this->salesRights[$type]->contains($code)) {
+            if ($salesRights = $this->getSalesRightsWithTypeOf($type)) {
+                if ($salesRights->contains($code)) {
                     return false;
                 }
             }
         }
         foreach (['01', '02'] as $type) {
-            if (array_key_exists($type, $this->salesRights)) {
-                if ($this->salesRights[$type]->contains($code)
-                    || $this->salesRights[$type]->forRestOfWorld()
-                    || $this->salesRights[$type]->forWorld()
+            if ($salesRights = $this->getSalesRightsWithTypeOf($type)) {
+                if ($salesRights->contains($code)
+                    || $salesRights->forRestOfWorld()
+                    || $salesRights->forWorld()
                 ) {
                     return true;
                 }

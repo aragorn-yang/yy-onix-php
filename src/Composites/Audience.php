@@ -10,6 +10,8 @@ class Audience extends Composite
     /** @var CodeInList */
     protected $audienceCodeType;
     /** @var string */
+    protected $audienceCodeTypeName = '';
+    /** @var string */
     protected $audienceCodeValue = '';
 
     public function getAudienceCodeType(): string
@@ -25,6 +27,16 @@ class Audience extends Composite
     public function setAudienceCodeType(string $code): void
     {
         $this->audienceCodeType = new CodeInList(CodeList29AudienceCodeType::class, $code);
+    }
+
+    public function getAudienceCodeTypeName(): string
+    {
+        return $this->audienceCodeTypeName;
+    }
+
+    public function setAudienceCodeTypeName(string $audienceCodeTypeName): void
+    {
+        $this->audienceCodeTypeName = $audienceCodeTypeName;
     }
 
     public function getAudienceCodeValue(): string

@@ -8,6 +8,6 @@ class CodeList49RegionCodeSimplified extends CodeList
 
     protected const MAPPING = [
         "ROW" => "Rest of world",
-        //"WORLD" => "World",
+        "WORLD" => "World",
     ];
 }

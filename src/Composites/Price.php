@@ -3,26 +3,41 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList49RegionCodeSimplified;
 use AragornYang\Onix\CodeLists\CodeList58PriceTypeCode;
+use AragornYang\Onix\CodeLists\CodeList61PriceStatus;
 use AragornYang\Onix\CodeLists\CodeList62TaxRateCoded;
+use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList96CurrencyCodeISO4217;
 
 class Price extends Composite
 {
     /** @var CodeInList */
     protected $priceTypeCode;
+    /** @var string */
+    protected $priceTypeDescription = '';
+    /** @var CodeInList */
+    protected $priceStatus;
     /** @var float */
     protected $priceAmount = 0.0;
     /** @var float */
+    protected $taxRatePercent1 = 0.0;
+    /** @var float */
     protected $taxableAmount1 = 0.0;
+    /** @var float */
+    protected $taxAmount1 = 0.0;
     /** @var CodeInList */
     protected $currencyCode;
     /** @var CodeInList */
     protected $taxRateCode1;
-    /** @var DiscountCoded */
-    protected $discountCoded;
+    /** @var DiscountCoded[] */
+    protected $discountsCoded = [];
     /** @var string */
     protected $priceEffectiveFrom = '';
+    /** @var CodeInList[] */
+    protected $countryCodes = [];
+    /** @var CodeInList[] */
+    protected $territories = [];
 
     protected const TYPE_OF_RRP_EXC_TAX = '01';
     protected const TYPE_OF_RRP_INC_TAX = '02';
@@ -50,6 +65,31 @@ class Price extends Composite
     public function setPriceTypeCode(string $code): void
     {
         $this->priceTypeCode = new CodeInList(CodeList58PriceTypeCode::class, $code);
+    }
+
+    public function getPriceTypeDescription(): string
+    {
+        return $this->priceTypeDescription;
+    }
+
+    public function setPriceTypeDescription(string $priceTypeDescription): void
+    {
+        $this->priceTypeDescription = $priceTypeDescription;
+    }
+
+    public function getPriceStatus(): string
+    {
+        return $this->priceStatus ? $this->priceStatus->code() : '';
+    }
+
+    public function getPriceStatusDesc(): string
+    {
+        return $this->priceStatus ? $this->priceStatus->desc() : '';
+    }
+
+    public function setPriceStatus(string $code): void
+    {
+        $this->priceStatus = new CodeInList(CodeList61PriceStatus::class, $code);
     }
 
     public function getPriceAmount(): float
@@ -92,14 +132,27 @@ class Price extends Composite
         $this->taxRateCode1 = new CodeInList(CodeList62TaxRateCoded::class, $code);
     }
 
-    public function getDiscountCoded(): DiscountCoded
+    /**
+     * @return DiscountCoded[]
+     */
+    public function getDiscountsCoded(): array
     {
-        return $this->discountCoded;
+        return $this->discountsCoded;
     }
 
     public function setDiscountCoded(\SimpleXMLElement $xml): void
     {
-        $this->discountCoded = DiscountCoded::buildFromXml($xml, $this);
+        $this->discountsCoded[] = DiscountCoded::buildFromXml($xml, $this);
+    }
+
+    public function getTaxRatePercent1(): float
+    {
+        return $this->taxRatePercent1;
+    }
+
+    public function setTaxRatePercent1(string $taxRatePercent1): void
+    {
+        $this->taxRatePercent1 = (float)$taxRatePercent1;
     }
 
     public function getTaxableAmount1(): float
@@ -112,6 +165,16 @@ class Price extends Composite
         $this->taxableAmount1 = (float)$taxableAmount1;
     }
 
+    public function getTaxAmount1(): float
+    {
+        return $this->taxAmount1;
+    }
+
+    public function setTaxAmount1(string $taxAmount1): void
+    {
+        $this->taxAmount1 = (float)$taxAmount1;
+    }
+
     public function getPriceEffectiveFrom(): string
     {
         return $this->priceEffectiveFrom;
@@ -120,5 +183,37 @@ class Price extends Composite
     public function setPriceEffectiveFrom(string $priceEffectiveFrom): void
     {
         $this->priceEffectiveFrom = $priceEffectiveFrom;
+    }
+
+    public function getCountryCodes(): array
+    {
+        return $this->countryCodes;
+    }
+
+    public function setCountryCode(string $codes): void
+    {
+        foreach (explode(' ', $codes) as $code) {
+            if (!$code) {
+                continue;
+            }
+            new CodeInList(CodeList91CountryCodeISO31661::class, $code);
+            $this->countryCodes[] = $code;
+        }
+    }
+
+    public function getTerritories(): array
+    {
+        return $this->territories;
+    }
+
+    public function setTerritory(string $codes): void
+    {
+        foreach (explode(' ', $codes) as $code) {
+            if (!$code) {
+                continue;
+            }
+            new CodeInList(CodeList49RegionCodeSimplified::class, $code);
+            $this->territories[] = $code;
+        }
     }
 }

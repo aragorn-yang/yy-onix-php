@@ -7,28 +7,39 @@ use AragornYang\Onix\Tests\TestCase;
 
 class AudienceTest extends TestCase
 {
+    /** @var Audience */
+    protected $audience;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $product = $this->getParsedProduct('
+        <Audience>
+            <AudienceCodeType>02</AudienceCodeType>
+            <AudienceCodeTypeName>Springer Nature Content Level</AudienceCodeTypeName>
+            <AudienceCodeValue>Professional/practitioner</AudienceCodeValue>
+        </Audience>');
+        $this->assertCount(1, $product->getAudiences());
+        $this->audience = $product->getAudiences()[0];
+    }
+
     /** @test */
     public function it_has_audience_code_type(): void
     {
-        $product = $this->getParsedProduct('<Audience>
-      <AudienceCodeType>01</AudienceCodeType>
-    </Audience>');
-        $this->assertCount(1, $product->getAudiences());
-        /** @var Audience $audience */
-        $audience = $product->getAudiences()[0];
-        $this->assertSame('01', $audience->getAudienceCodeType());
-        $this->assertSame('ONIX audience codes', $audience->getAudienceCodeTypeDesc());
+        $this->assertSame('02', $this->audience->getAudienceCodeType());
+        $this->assertSame('Proprietary', $this->audience->getAudienceCodeTypeDesc());
+    }
+
+    /** @test */
+    public function it_has_audience_code_type_name(): void
+    {
+        $this->assertSame('Springer Nature Content Level', $this->audience->getAudienceCodeTypeName());
     }
 
     /** @test */
     public function it_has_audience_code_value(): void
     {
-        $product = $this->getParsedProduct('<Audience>
-      <AudienceCodeValue>01</AudienceCodeValue>
-    </Audience>');
-        $this->assertCount(1, $product->getAudiences());
-        /** @var Audience $audience */
-        $audience = $product->getAudiences()[0];
-        $this->assertSame('01', $audience->getAudienceCodeValue());
+        $this->assertSame('Professional/practitioner', $this->audience->getAudienceCodeValue());
     }
 }

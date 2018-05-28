@@ -18,7 +18,7 @@ class SalesRights extends Composite
      * country subdivision codes are derived from the UN LOCODE scheme based on ISO 3166.
      * @var array
      */
-    protected $rightsTerritory = [];
+    protected $rightsTerritories = [];
 
     public function getSalesRightsType(): string
     {
@@ -51,9 +51,9 @@ class SalesRights extends Composite
         }
     }
 
-    public function getRightsTerritory(): array
+    public function getRightsTerritories(): array
     {
-        return $this->rightsTerritory;
+        return $this->rightsTerritories;
     }
 
     public function setRightsTerritory(string $codes): void
@@ -63,7 +63,7 @@ class SalesRights extends Composite
                 continue;
             }
             new CodeInList(CodeList49RegionCodeSimplified::class, $code);
-            $this->rightsTerritory[] = $code;
+            $this->rightsTerritories[] = $code;
         }
     }
 
@@ -74,11 +74,11 @@ class SalesRights extends Composite
 
     public function forWorld(): bool
     {
-        return \in_array('WORLD', $this->getRightsTerritory(), true);
+        return \in_array('WORLD', $this->getRightsTerritories(), true);
     }
 
     public function forRestOfWorld(): bool
     {
-        return \in_array('ROW', $this->getRightsTerritory(), true);
+        return \in_array('ROW', $this->getRightsTerritories(), true);
     }
 }

@@ -23,6 +23,14 @@ trait HasProductIdentifiers
         return $this->isbn13;
     }
 
+    /**
+     * @return ProductIdentifier[]
+     */
+    public function getProductIdentifiers(): array
+    {
+        return $this->productIdentifiers;
+    }
+
     public function setProductIdentifier(\SimpleXMLElement $xml): void
     {
         /** @var ProductIdentifier $identifier */
