@@ -113,7 +113,7 @@ class SupplyDetailTest extends TestCase
     /** @test */
     public function it_has_price(): void
     {
-        $price = $this->supplyDetail->getPrice();
+        $price = $this->supplyDetail->getPrices()[0];
         $this->assertInstanceOf(Price::class, $price);
     }
 }
