@@ -21,5 +21,4 @@ trait HasSupplyDetails
     {
         $this->supplyDetails[] = SupplyDetail::buildFromXml($xml, $this);
     }
-
 }

@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ONIXMessage release="3.0">
+    <Header>
+        <Sender>
+            <SenderName>Elsevier Health Sciences</SenderName>
+            <ContactName>Paul McElroy</ContactName>
+        </Sender>
+        <SentDateTime>20180703</SentDateTime>
+    </Header>
+    <Product>
+        <RecordReference>9780080446844</RecordReference>
+        <NotificationType>03</NotificationType>
+        <RecordSourceType>01</RecordSourceType>
+        <RecordSourceName>Elsevier</RecordSourceName>
+        <ProductIdentifier>
+            <ProductIDType>03</ProductIDType>
+            <IDValue>9780080446844</IDValue>
+        </ProductIdentifier>
+        <ProductIdentifier>
+            <ProductIDType>15</ProductIDType>
+            <IDValue>9780080446844</IDValue>
+        </ProductIdentifier>
+        <ProductIdentifier>
+            <ProductIDType>01</ProductIDType>
+            <IDValue>C2009-0-34349-4</IDValue>
+        </ProductIdentifier>
+        <Barcode>
+            <BarcodeType>02</BarcodeType>
+            <PositionOnProduct>00</PositionOnProduct>
+        </Barcode>
+        <DescriptiveDetail>
+            <ProductComposition>00</ProductComposition>
+            <ProductForm>BC</ProductForm>
+            <Measure>
+                <MeasureType>01</MeasureType>
+                <Measurement>11</Measurement>
+                <MeasureUnitCode>in</MeasureUnitCode>
+            </Measure>
+            <Measure>
+                <MeasureType>02</MeasureType>
+                <Measurement>8.5</Measurement>
+                <MeasureUnitCode>in</MeasureUnitCode>
+            </Measure>
+            <Measure>
+                <MeasureType>08</MeasureType>
+                <Measurement>1120</Measurement>
+                <MeasureUnitCode>gr</MeasureUnitCode>
+            </Measure>
+            <CountryOfManufacture>GB</CountryOfManufacture>
+            <NoCollection/>
+            <TitleDetail>
+                <TitleType>01</TitleType>
+                <TitleElement>
+                    <TitleElementLevel>01</TitleElementLevel>
+                    <TitleText>Pain</TitleText>
+                    <Subtitle>Best Practice &amp; Research Compendium</Subtitle>
+                </TitleElement>
+            </TitleDetail>
+            <Contributor>
+                <SequenceNumber>1</SequenceNumber>
+                <ContributorRole>B01</ContributorRole>
+                <PersonName>Harald Breivik</PersonName>
+                <NamesBeforeKey>Harald</NamesBeforeKey>
+                <KeyNames>Breivik</KeyNames>
+                <LettersAfterNames>MD, DMSc, FRCA</LettersAfterNames>
+                <ProfessionalAffiliation>
+                    <Affiliation>Professor, Department Anaesthesiology, Rikshospitalet University Hospital, Oslo,
+                        Norway
+                    </Affiliation>
+                </ProfessionalAffiliation>
+            </Contributor>
+            <Contributor>
+                <SequenceNumber>2</SequenceNumber>
+                <ContributorRole>B01</ContributorRole>
+                <PersonName>Michael Shipley</PersonName>
+                <NamesBeforeKey>Michael</NamesBeforeKey>
+                <KeyNames>Shipley</KeyNames>
+                <LettersAfterNames>MA, MD, FRCP</LettersAfterNames>
+                <ProfessionalAffiliation>
+                    <Affiliation>Consultant Rheumatologist, Centre for Rheumatology, University College Hospital,
+                        London, UK
+                    </Affiliation>
+                </ProfessionalAffiliation>
+            </Contributor>
+            <Language>
+                <LanguageRole>01</LanguageRole>
+                <LanguageCode>eng</LanguageCode>
+            </Language>
+            <Extent>
+                <ExtentType>05</ExtentType>
+                <ExtentValue>384</ExtentValue>
+                <ExtentUnit>03</ExtentUnit>
+            </Extent>
+            <Illustrated>02</Illustrated>
+            <IllustrationsNote>Illustrated</IllustrationsNote>
+            <Subject>
+                <MainSubject/>
+                <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier>
+                <SubjectCode>MED083000</SubjectCode>
+            </Subject>
+            <Subject>
+                <MainSubject/>
+                <SubjectSchemeIdentifier>12</SubjectSchemeIdentifier>
+                <SubjectSchemeVersion>2.1</SubjectSchemeVersion>
+                <SubjectCode>MJM</SubjectCode>
+            </Subject>
+            <Subject>
+                <SubjectSchemeIdentifier>12</SubjectSchemeIdentifier>
+                <SubjectSchemeVersion>2.1</SubjectSchemeVersion>
+                <SubjectCode>MMBP</SubjectCode>
+            </Subject>
+            <Subject>
+                <SubjectSchemeIdentifier>24</SubjectSchemeIdentifier>
+                <SubjectSchemeName>PROMIS</SubjectSchemeName>
+                <SubjectCode>H03AE41040</SubjectCode>
+            </Subject>
+            <Subject>
+                <SubjectSchemeIdentifier>24</SubjectSchemeIdentifier>
+                <SubjectSchemeName>Landing</SubjectSchemeName>
+                <SubjectCode>1</SubjectCode>
+                <SubjectHeadingText>Medicine</SubjectHeadingText>
+            </Subject>
+            <Subject>
+                <SubjectSchemeIdentifier>24</SubjectSchemeIdentifier>
+                <SubjectSchemeName>MSC</SubjectSchemeName>
+                <SubjectCode>956</SubjectCode>
+                <SubjectHeadingText>Rheumatology</SubjectHeadingText>
+            </Subject>
+            <Subject>
+                <SubjectSchemeIdentifier>24</SubjectSchemeIdentifier>
+                <SubjectSchemeName>PMC</SubjectSchemeName>
+                <SubjectCode>443</SubjectCode>
+                <SubjectHeadingText>Medical Professional and Reference</SubjectHeadingText>
+            </Subject>
+            <Subject>
+                <SubjectSchemeIdentifier>24</SubjectSchemeIdentifier>
+                <SubjectSchemeName>PMG</SubjectSchemeName>
+                <SubjectCode>049</SubjectCode>
+                <SubjectHeadingText>Medical Education UKNL</SubjectHeadingText>
+            </Subject>
+            <Audience>
+                <AudienceCodeType>01</AudienceCodeType>
+                <AudienceCodeValue>05</AudienceCodeValue>
+            </Audience>
+        </DescriptiveDetail>
+        <CollateralDetail>
+            <TextContent>
+                <TextType>03</TextType>
+                <ContentAudience>00</ContentAudience>
+                <Text>This prestigious text offers the most up-to-date advice on the assessment and treatment of pain.
+                    Derived from the highly acclaimed journals Best Practice &amp; Research Clinical Rheumatology and
+                    Best Practice &amp; Research Clinical Anaesthesiology, this fully updated volume discusses the basic
+                    principles of pain, its diagnosis, the recognition of ‘red’ flags indicating a greater risk of
+                    serious causes and ‘yellow’ flags indicating a greater risk of developing more chronic pain, and the
+                    evidence-based management of a variety of conditions. Illustrated throughout, the book draws upon
+                    the expertise of some of the World’s leading experts in the field, providing a publication that
+                    gives a truly international perspective to the management of pain.&lt;ul&gt;&lt;li&gt;Full reference
+                    to the latest clinical research&lt;/li&gt;&lt;li&gt;New chapters on limb pain and Science and
+                    psychology of pain&lt;/li&gt;&lt;li&gt;Cochrane Reviews, when relevant&lt;/li&gt;&lt;li&gt;boxed and
+                    bulleted Research Agenda and Practice Points&lt;/li&gt;&lt;li&gt;Reference to national and
+                    international guidelines&lt;/li&gt;&lt;/ul&gt;
+                </Text>
+            </TextContent>
+            <TextContent>
+                <TextType>04</TextType>
+                <ContentAudience>00</ContentAudience>
+                <Text>&lt;b&gt;1 Introduction&lt;/b&gt;&lt;br&gt;&lt;br&gt;1 Bridging the gap between pain management as
+                    a speciality and rheumatology Harald Breivik and Michael Shipley&lt;br&gt;&lt;br&gt;&lt;b&gt;2
+                    Science &amp; psychology of pain&lt;/b&gt;&lt;br&gt;&lt;br&gt;2 Science and psychology of pain Johan
+                    W.S. Vlaeyen, Geert Crombez and Liesbet Goubert&lt;br&gt;3 What are the mechanisms of chronic pain?
+                    Bruce L. Kidd&lt;br&gt;&lt;br&gt;&lt;b&gt;3 Assessment&lt;/b&gt;&lt;br&gt;&lt;br&gt;4 Assessment of
+                    pain in patients with rheumatic diseases Tuulikki Sokka&lt;br&gt;5 Assessment of neuropathic pain
+                    Ellen Jørum&lt;br&gt;6 Diagnostic nerve blocks in chronic pain Nikolai Bogduk&lt;br&gt;&lt;br&gt;&lt;b&gt;4
+                    Spinal Pain&lt;/b&gt;&lt;br&gt;&lt;br&gt;7 Neck pain Robert Ferrari and Anthony S. Russell&lt;br&gt;8
+                    Low back pain Maurits van Tulder, Bart Koes and Claire Bombardier&lt;br&gt; Low back pain from a
+                    clinical point of view Aage Indahl&lt;br&gt;9 Self-care techniques for acute episodes of low back
+                    pain Sherri Weiser, Marco A. Campello, Margareta Nordin and Markus Pietrek&lt;br&gt;10 Advances with
+                    analgesics and NSAIDs for the treatment of spinal disorders J. A. Desmeules, V. Rollason, C.
+                    Cedraschi, V. Piguet, A.-F. Allaz and Pierre Dayer&lt;br&gt;11 The contribution of psychosocial
+                    factors to long-term disability and work loss Amanda C de C Williams and Nicholas Kendall&lt;br&gt;12
+                    Steroid injections: effect on pain of spinal origin Les Barnsley, Mary McLoone and Andrew Baranowski&lt;br&gt;13
+                    Radiofrequency procedures in chronic pain Nikolai Bogduk and Susan M Lord&lt;br&gt;&lt;br&gt;&lt;b&gt;5
+                    Regional Pain&lt;/b&gt;&lt;br&gt;&lt;br&gt;14 Clinical examination as a tool for identifying the
+                    origin of regional musculoskeletal pain Bernard Fouquet&lt;br&gt;15 Limb pain Michael Shipley&lt;br&gt;16
+                    Diagnosing regional pain: the view from primary care Peter Croft&lt;br&gt;17 Injection therapies for
+                    soft-tissue disorders Cathy Speed&lt;br&gt;18 Treatment options for regional musculoskeletal pain:
+                    what is the evidence? Krysia Dziedzic, Joanne L. Jordan, Julius Sim and Elaine M. Hay&lt;br&gt;19
+                    Fibromyalgia: Interdisciplinary approach Peter Keel&lt;br&gt;20 Efficacy of rehabilitative therapy
+                    in regional musculoskeletal conditions: An update Edwin Yoshiyuki Hanada&lt;br&gt;&lt;br&gt;&lt;b&gt;6
+                    Chronic widespread pain&lt;/b&gt;&lt;br&gt;&lt;br&gt;21 The epidemiology of chronic generalized
+                    musculoskeletal pain Jan Tore Gran&lt;br&gt;21 An update on the epidemiology of chronic generalized
+                    musculoskeletal pain in the light of recent publications Karin Forseth&lt;br&gt;22 Chronic
+                    widespread pain (CWP) and fibromyalgia (FM) Richard E. Harris and Daniel J. Clauw&lt;br&gt;23
+                    Pharmacological therapies in fibromyalgia (chronic widespread pain) Srinivas G. Rao and Robert M.
+                    Bennett&lt;br&gt;&lt;br&gt;&lt;b&gt;7 Acute and postoperative pain&lt;/b&gt;&lt;br&gt;&lt;br&gt;24
+                    How to implement an acute postoperative pain service – an update Harald Breivik, Michele Curatolo,
+                    Geir Niemi, Håkon Haugtomt, Gunnvald Kvarstein, Luis Romundstad and Audun Stubhaug&lt;br&gt;25 The
+                    effect of postoperative epidural analgesia on perioperative morbidity and mortality Christopher L.
+                    Wu and Matthew D. Caldwell&lt;br&gt;26 Prevention and treatment of hyperalgesia and persistent
+                    neuropathic pain after surgery Audun Stubhaug and Harald Breivik&lt;br&gt;&lt;br&gt;&lt;b&gt;8
+                    Management strategies&lt;/b&gt;&lt;br&gt;&lt;br&gt;27 Pain management and quality in healthcare
+                    Lesley A. Colvin and Ian Power&lt;br&gt;28 Drug combinations in pain treatment: A review of the
+                    published evidence and methods to find optimal combinations Gorazd Sveticic and Michele Curatolo&lt;br&gt;29
+                    How do we manage chronic pain? Hans-Georg Schaible and Horacio Vanegas&lt;br&gt;30 Recommendations
+                    for using opioids in chronic non-cancer pain Eija Kalso, Laurie Allan, Paul L.I. Dellemijn, Clara C.
+                    Faura, Wilfried K. Ilias, Troels S. Jensen, Serge Perrot, Leon H. Plaghki and Michael Zenz&lt;br&gt;
+                    Update Leon Plaghki
+                </Text>
+            </TextContent>
+        </CollateralDetail>
+        <PublishingDetail>
+            <Imprint>
+                <ImprintIdentifier>
+                    <ImprintIDType>01</ImprintIDType>
+                    <IDTypeName>ElsevierImprintCode</IDTypeName>
+                    <IDValue>ELSEVIER</IDValue>
+                </ImprintIdentifier>
+                <ImprintName>Elsevier</ImprintName>
+            </Imprint>
+            <Publisher>
+                <PublishingRole>01</PublishingRole>
+                <PublisherName>Elsevier Health Sciences</PublisherName>
+            </Publisher>
+            <CountryOfPublication>GB</CountryOfPublication>
+            <PublishingStatus>04</PublishingStatus>
+            <PublishingDate>
+                <PublishingDateRole>01</PublishingDateRole>
+                <Date>20070327</Date>
+            </PublishingDate>
+            <CopyrightStatement>
+                <CopyrightYear>2007</CopyrightYear>
+                <CopyrightOwner>
+                    <CorporateName>Elsevier Health Sciences</CorporateName>
+                </CopyrightOwner>
+            </CopyrightStatement>
+            <SalesRights>
+                <SalesRightsType>01</SalesRightsType>
+                <Territory>
+                    <RegionsIncluded>WORLD</RegionsIncluded>
+                </Territory>
+            </SalesRights>
+        </PublishingDetail>
+        <RelatedMaterial>
+            <RelatedWork>
+                <WorkRelationCode>02</WorkRelationCode>
+                <WorkIdentifier>
+                    <WorkIDType>15</WorkIDType>
+                    <IDValue>9780080446844</IDValue>
+                </WorkIdentifier>
+            </RelatedWork>
+        </RelatedMaterial>
+        <ProductSupply>
+            <SupplyDetail>
+                <Supplier>
+                    <SupplierRole>01</SupplierRole>
+                    <SupplierName>Elsevier Health Sciences</SupplierName>
+                </Supplier>
+                <ProductAvailability>23</ProductAvailability>
+                <SupplyDate>
+                    <SupplyDateRole>08</SupplyDateRole>
+                    <Date>20070327</Date>
+                </SupplyDate>
+                <PackQuantity>11</PackQuantity>
+                <Price>
+                    <PriceType>01</PriceType>
+                    <DiscountCoded>
+                        <DiscountCodeType>02</DiscountCodeType>
+                        <DiscountCodeTypeName>EHS</DiscountCodeTypeName>
+                        <DiscountCode>TXT</DiscountCode>
+                    </DiscountCoded>
+                    <PriceAmount>76.95</PriceAmount>
+                    <CurrencyCode>USD</CurrencyCode>
+                </Price>
+                <Price>
+                    <PriceType>01</PriceType>
+                    <DiscountCoded>
+                        <DiscountCodeType>02</DiscountCodeType>
+                        <DiscountCodeTypeName>EHS</DiscountCodeTypeName>
+                        <DiscountCode>TXT</DiscountCode>
+                    </DiscountCoded>
+                    <PriceAmount>46.99</PriceAmount>
+                    <CurrencyCode>GBP</CurrencyCode>
+                </Price>
+                <Price>
+                    <PriceType>01</PriceType>
+                    <DiscountCoded>
+                        <DiscountCodeType>02</DiscountCodeType>
+                        <DiscountCodeTypeName>EHS</DiscountCodeTypeName>
+                        <DiscountCode>TXT</DiscountCode>
+                    </DiscountCoded>
+                    <PriceAmount>54.99</PriceAmount>
+                    <CurrencyCode>EUR</CurrencyCode>
+                </Price>
+            </SupplyDetail>
+        </ProductSupply>
+    </Product>
+</ONIXMessage>

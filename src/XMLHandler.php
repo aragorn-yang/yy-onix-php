@@ -2,8 +2,6 @@
 
 namespace AragornYang\Onix;
 
-use AragornYang\Onix\Composites\Product;
-
 class XMLHandler
 {
     /** @var callable */
@@ -37,8 +35,12 @@ class XMLHandler
         xml_parse($this->parser, $chunk, $endOfFile);
     }
 
-    protected function handleElementStart($parser, string $name, array $attributes): void
-    {
+    protected function handleElementStart(
+        /** @noinspection PhpUnusedParameterInspection */
+        $parser,
+        string $name,
+        array $attributes
+    ): void {
         $level = \count($this->openElements);
         // If this is the root element, set whether short tags are used or not.
         if ($level === 0) {
@@ -58,8 +60,11 @@ class XMLHandler
         }
     }
 
-    protected function handleElementEnd($parser, string $name): void
-    {
+    protected function handleElementEnd(
+        /** @noinspection PhpUnusedParameterInspection */
+        $parser,
+        string $name
+    ): void {
         array_pop($this->openElements);
         if ($this->productDOM) {
             $this->currentElement = $this->currentElement->parentNode;
@@ -71,8 +76,11 @@ class XMLHandler
         }
     }
 
-    protected function handleText($parser, string $text): void
-    {
+    protected function handleText(
+        /** @noinspection PhpUnusedParameterInspection */
+        $parser,
+        string $text
+    ): void {
         if ($this->productDOM) {
             /** @noinspection CallableParameterUseCaseInTypeContextInspection */
             $text = $this->productDOM->createTextNode($text);
@@ -82,7 +90,7 @@ class XMLHandler
 
     private function handleProduct(\DOMDocument $productDOM): void
     {
-        ($this->productHandler)(Product::buildFromXml(simplexml_load_string($productDOM->saveXML())));
+        ($this->productHandler)(Onix::getInstance()->buildProduct(simplexml_load_string($productDOM->saveXML())));
     }
 
     protected function parOnixEdition(string $name, array $attributes): void

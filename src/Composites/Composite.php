@@ -8,6 +8,8 @@ use AragornYang\Onix\Onix;
 class Composite
 {
     /** @var string */
+    protected $compositeName = '';
+    /** @var string */
     protected $compositePosition = '';
     /** @var Composite|null */
     protected $parent;
@@ -61,17 +63,27 @@ class Composite
 
     protected function setCompositePosition(): void
     {
-        $array = explode("\\", static::class);
+        $compositeName = $this->getCompositeName();
         if (!$this->parent) {
-            $this->compositePosition = array_pop($array);
+            $this->compositePosition = $compositeName;
             return;
         }
 
-        $this->compositePosition = $this->parent->getCompositePosition() . '->' . array_pop($array);
+        $this->compositePosition = $this->parent->getCompositePosition() . '->' . $compositeName;
     }
 
     private function recordElementPosition(string $key): void
     {
         Onix::getInstance()->recordElementPosition($this->getCompositePosition() . '->' . $key);
+    }
+
+    public function getCompositeName(): string
+    {
+        if ($this->compositeName) {
+            return $this->compositeName;
+        }
+
+        $array = explode("\\", static::class);
+        return array_pop($array);
     }
 }

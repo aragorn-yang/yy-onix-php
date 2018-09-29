@@ -96,7 +96,7 @@ final class Onix
 
     public function buildProduct(SimpleXMLElement $xml): Product
     {
-        return (new ProductBuilder($xml))->build();
+        return (new ProductBuilder($this->version))->build($xml);
     }
 
     public function setAsRefEdition(): void

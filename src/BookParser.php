@@ -17,8 +17,8 @@ abstract class BookParser
     }
 
     abstract public function parseString(string $contents): void;
-    abstract public function parseFile(string $file): void;
 
+    abstract public function parseFile(string $file): void;
 
     public function onixVersion(): string
     {

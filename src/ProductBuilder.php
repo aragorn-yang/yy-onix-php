@@ -3,22 +3,28 @@
 namespace AragornYang\Onix;
 
 use AragornYang\Onix\Composites\Product;
+use AragornYang\Onix\Composites\Product21;
+use AragornYang\Onix\Composites\V30\Product30;
 
 class ProductBuilder
 {
-    /** @var \SimpleXMLElement */
-    protected $xml;
-    /** @var Product */
-    protected $product;
+    /**
+     * @var string
+     */
+    private $onixVersion;
 
-    public function __construct(\SimpleXMLElement $xml)
+    public function __construct(string $onixVersion)
     {
-        $this->xml = $xml;
-        $this->product = new Product;
+        $this->onixVersion = $onixVersion;
     }
 
-    public function build(): Product
+    public function build(\SimpleXMLElement $xml): Product
     {
-        return Product::buildFromXml($this->xml);
+        if ('2.1' === $this->onixVersion) {
+            return Product21::buildFromXml($xml);
+        }
+        //if ('3.0' === $this->onixVersion) {
+        return Product30::buildFromXml($xml);
+        //}
     }
 }

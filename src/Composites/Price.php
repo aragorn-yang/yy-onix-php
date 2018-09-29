@@ -67,6 +67,15 @@ class Price extends Composite
         $this->priceTypeCode = new CodeInList(CodeList58PriceTypeCode::class, $code);
     }
 
+    /**
+     * for V3.0
+     * @param string $code
+     */
+    public function setPriceType(string $code): void
+    {
+        $this->priceTypeCode = new CodeInList(CodeList58PriceTypeCode::class, $code);
+    }
+
     public function getPriceTypeDescription(): string
     {
         return $this->priceTypeDescription;

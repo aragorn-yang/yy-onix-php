@@ -1,37 +1,33 @@
 <?php
 
-namespace AragornYang\Onix\Tests\Features;
+namespace AragornYang\Onix\Tests\Features\V21;
 
-use AragornYang\Onix\BookParser;
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\Composites\SupplyDetail;
-use AragornYang\Onix\Tests\TestCase;
 
-abstract class BookParserForRef21SampleOnixFileTest extends TestCase
+/**
+ * @property Product $product
+ */
+trait Tag21SampleOnixFile
 {
-    /** @var string */
-    protected static $contents;
-    /** @var BookParser */
-    protected static $parser;
-    /** @var array|Product[] */
-    protected static $products;
-    /** @var Product */
-    protected $product;
-
     /** @test */
     public function it_can_parse_the_sample_file(): void
     {
         $this->assertCount(1, static::$products);
         $this->assertInstanceOf(Product::class, $this->product);
-        $this->assertCount(0, static::$parser->getUnrecognisableElements());
-        $this->assertCount(0, static::$parser->getUnrecognisableCodes());
+    }
+
+    /** @test */
+    public function it_is_version_21(): void
+    {
+        $this->assertSame('2.1', static::$parser->onixVersion());
     }
 
     /** @test */
     public function it_can_get_isbn(): void
     {
         $this->assertSame('0816016356', $this->product->getIsbn10());
-        $this->assertSame('9780816016358', $this->product->getIsbn13());
+        //$this->assertSame('9780816016358', $this->product->getIsbn13());
     }
 
     /** @test */
@@ -140,7 +136,7 @@ abstract class BookParserForRef21SampleOnixFileTest extends TestCase
         $supplyDetail = $this->product->getSupplyDetails()[0];
         $this->assertSame('1234567', $supplyDetail->getSupplierSAN());
         $this->assertSame('IP', $supplyDetail->getAvailabilityCode());
-        $price = $supplyDetail->getPrice();
+        $price = $supplyDetail->getPrices()[0];
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
     }
