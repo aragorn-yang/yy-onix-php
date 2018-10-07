@@ -33,6 +33,8 @@ class Price extends Composite
     /** @var DiscountCoded[] */
     protected $discountsCoded = [];
     /** @var string */
+    protected $BICDiscountGroupCode = '';
+    /** @var string */
     protected $priceEffectiveFrom = '';
     /** @var CodeInList[] */
     protected $countryCodes = [];
@@ -192,6 +194,16 @@ class Price extends Composite
     public function setPriceEffectiveFrom(string $priceEffectiveFrom): void
     {
         $this->priceEffectiveFrom = $priceEffectiveFrom;
+    }
+
+    public function getBICDiscountGroupCode(): string
+    {
+        return $this->BICDiscountGroupCode;
+    }
+
+    public function setBICDiscountGroupCode(string $priceEffectiveFrom): void
+    {
+        $this->BICDiscountGroupCode = $priceEffectiveFrom;
     }
 
     public function getCountryCodes(): array
