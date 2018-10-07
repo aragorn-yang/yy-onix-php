@@ -10,10 +10,11 @@ use AragornYang\Onix\CodeLists\CodeList65ProductAvailability;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
+use AragornYang\Onix\ProductFeatures\HasStock;
 
 class SupplyDetail extends Composite
 {
-    use HasExpectedShipDate;
+    use HasExpectedShipDate, HasStock;
     /** @var CodeInList */
     protected $supplierRole;
     /** @var string */
