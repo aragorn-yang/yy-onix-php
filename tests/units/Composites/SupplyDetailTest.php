@@ -27,6 +27,7 @@ class SupplyDetailTest extends TestCase
             <ReturnsCode>Y</ReturnsCode>
             <SupplyToCountry>US</SupplyToCountry>
             <SupplyToTerritory>ROW</SupplyToTerritory>
+            <Stock><OnHand>3</OnHand></Stock>
             <Price></Price>
         </SupplyDetail>');
         $this->supplyDetail = $product->getSupplyDetails()[0];
@@ -115,5 +116,11 @@ class SupplyDetailTest extends TestCase
     {
         $price = $this->supplyDetail->getPrices()[0];
         $this->assertInstanceOf(Price::class, $price);
+    }
+
+    /** @test */
+    public function it_has_stock_on_hand(): void
+    {
+        $this->assertSame(3, $this->supplyDetail->getStock()->getOnHand());
     }
 }

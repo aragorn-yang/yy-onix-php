@@ -12,8 +12,8 @@ class Stock extends Composite
         return $this->onHand;
     }
 
-    public function setOnHand(int $onHand): void
+    public function setOnHand(string $onHand): void
     {
-        $this->onHand = $onHand;
+        $this->onHand = (int)$onHand;
     }
 }
