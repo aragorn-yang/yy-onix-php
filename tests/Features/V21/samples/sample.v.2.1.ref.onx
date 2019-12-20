@@ -92,5 +92,6 @@
                 <PriceAmount>35.00</PriceAmount>
             </Price>
         </SupplyDetail>
+		<ContributorStatement>Trevor Hoppe</ContributorStatement>
     </Product>
 </ONIXMessage>

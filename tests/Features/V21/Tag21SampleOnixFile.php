@@ -140,4 +140,10 @@ trait Tag21SampleOnixFile
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
     }
+
+    /** @test */
+    public function it_can_get_ContributorStatement(): void
+    {
+        $this->assertSame('Trevor Hoppe', $this->product->getContributorStatement());
+    }
 }
