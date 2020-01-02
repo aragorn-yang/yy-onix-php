@@ -4,6 +4,7 @@
     <Product>
         <RecordReference>1234567890</RecordReference>
         <NotificationType>03</NotificationType>
+        <RecordSourceName>Bloomsbury</RecordSourceName>
         <ProductIdentifier>
             <ProductIDType>02</ProductIDType>
             <IDValue>0816016356</IDValue>
