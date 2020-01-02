@@ -146,4 +146,12 @@ trait SampleOnixFile21
     {
         $this->assertSame('Trevor Hoppe', $this->product->getContributorStatement());
     }
+
+    /** @test */
+    public function it_can_get_recordSourceName()
+    {
+        $recordSourceName = $this->product->getRecordSourceName();
+
+        $this->assertSame('Bloomsbury', $recordSourceName);
+    }
 }
