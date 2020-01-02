@@ -54,6 +54,7 @@ trait SampleOnixFile21
 
         $this->assertSame('Schur, Norman W', $author->getPersonNameInverted());
         $this->assertSame('US', $author->getCountryCode());
+        $this->assertSame('US-MI', $author->getRegionCode());
     }
 
     /** @test */

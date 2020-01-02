@@ -5,6 +5,7 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList17ContributorRole;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
+use AragornYang\Onix\CodeLists\CodeList49RegionCode;
 
 /**
  * @see PR.8 Authorship in Onix Spec 2.1
@@ -46,6 +47,9 @@ class Contributor extends Composite
 
     /** @var CodeInList */
     protected $countryCode;
+
+    /** @var CodeInList */
+    protected $regionCode;
 
     protected const TYPE_OF_AUTHOR = 'A01';
 
@@ -169,11 +173,26 @@ class Contributor extends Composite
 
     public function getCountryCode(): string
     {
-        return $this->countryCode->code();
+        return $this->countryCode ? $this->countryCode->code() : '';
     }
 
     public function getCountryCodeDesc(): string
     {
-        return $this->countryCode->desc();
+        return $this->countryCode ? $this->countryCode->desc() : '';
+    }
+
+    public function setRegionCode(string $code): void
+    {
+        $this->regionCode = new CodeInList(CodeList49RegionCode::class, $code);
+    }
+
+    public function getRegionCode(): string
+    {
+        return $this->regionCode ? $this->regionCode->code() : '';
+    }
+
+    public function getRegionCodeDesc(): string
+    {
+        return $this->regionCode ? $this->regionCode->desc() : '';
     }
 }
