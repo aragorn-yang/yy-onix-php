@@ -52,6 +52,7 @@ use AragornYang\Onix\ProductFeatures\HasWorkIdentifiers;
 use AragornYang\Onix\ProductFeatures\HasYearFirstPublished;
 use AragornYang\Onix\ProductFeatures\HasContributorStatement;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceName;
+use AragornYang\Onix\ProductFeatures\HasTradeCategory;
 
 class Product21 extends Composite implements Product
 {
@@ -104,7 +105,8 @@ class Product21 extends Composite implements Product
         HasWorkIdentifiers,
         HasYearFirstPublished,
         HasContributorStatement,
-        HasRecordSourceName;
+        HasRecordSourceName,
+        HasTradeCategory;
 
     /** @var string */
     protected $compositeName = 'Product';

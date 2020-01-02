@@ -154,4 +154,11 @@ trait SampleOnixFile21
 
         $this->assertSame('Bloomsbury', $recordSourceName);
     }
+
+    /** @test */
+    public function it_can_get_tradeCategory()
+    {
+        $this->assertSame('01', $this->product->getTradeCategory());
+        $this->assertSame('UK open market edition', $this->product->getTradeCategoryDesc());
+    }
 }

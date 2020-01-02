@@ -14,6 +14,7 @@
             <IDValue>9780816016358</IDValue>
         </ProductIdentifier>
         <ProductForm>BB</ProductForm>
+        <TradeCategory>01</TradeCategory>
         <Title>
             <TitleType>01</TitleType>
             <TitleText textcase="02">British English, A to Zed</TitleText>
