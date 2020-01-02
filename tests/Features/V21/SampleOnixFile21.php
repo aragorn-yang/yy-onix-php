@@ -161,4 +161,12 @@ trait SampleOnixFile21
         $this->assertSame('01', $this->product->getTradeCategory());
         $this->assertSame('UK open market edition', $this->product->getTradeCategoryDesc());
     }
+
+    /** @test */
+    public function it_can_get_numberOfPieces()
+    {
+        $numberOfPieces = $this->product->getNumberOfPieces();
+
+        $this->assertSame('6', $numberOfPieces);
+    }
 }

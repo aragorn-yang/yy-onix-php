@@ -15,6 +15,7 @@
         </ProductIdentifier>
         <ProductForm>BB</ProductForm>
         <TradeCategory>01</TradeCategory>
+        <NumberOfPieces>6</NumberOfPieces>
         <Title>
             <TitleType>01</TitleType>
             <TitleText textcase="02">British English, A to Zed</TitleText>
