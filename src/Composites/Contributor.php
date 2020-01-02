@@ -43,6 +43,9 @@ class Contributor extends Composite
     /** @var ProfessionalAffiliation[] */
     protected $professionalAffiliations = [];
 
+    /** @var string */
+    protected $countryCode = '';
+
     protected const TYPE_OF_AUTHOR = 'A01';
 
     public function getSequenceNumber(): int
@@ -156,5 +159,15 @@ class Contributor extends Composite
     public function setTitlesBeforeNames(string $titlesBeforeNames): void
     {
         $this->titlesBeforeNames = $titlesBeforeNames;
+    }
+
+    public function setCountryCode(string $countryCode): void
+    {
+        $this->countryCode = $countryCode;
+    }
+
+    public function getCountryCode(): string
+    {
+        return $this->countryCode;
     }
 }

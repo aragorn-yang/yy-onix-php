@@ -50,7 +50,10 @@ trait SampleOnixFile21
     /** @test */
     public function it_can_get_author(): void
     {
-        $this->assertSame('Schur, Norman W', $this->product->getAuthor()->getPersonNameInverted());
+        $author = $this->product->getAuthor();
+
+        $this->assertSame('Schur, Norman W', $author->getPersonNameInverted());
+        $this->assertSame('US', $author->getCountryCode());
     }
 
     /** @test */
