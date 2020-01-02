@@ -16,6 +16,22 @@
         <ProductForm>BB</ProductForm>
         <TradeCategory>01</TradeCategory>
         <NumberOfPieces>6</NumberOfPieces>
+        <ContainedItem>
+            <ProductIdentifier>
+                <ProductIDType>15</ProductIDType>
+                <IDValue>9780520294356</IDValue>
+            </ProductIdentifier>
+            <ProductForm>BC</ProductForm>
+            <NumberOfPieces>1</NumberOfPieces>
+        </ContainedItem>
+        <ContainedItem>
+            <ProductIdentifier>
+                <ProductIDType>15</ProductIDType>
+                <IDValue>9780520286726</IDValue>
+            </ProductIdentifier>
+            <ProductForm>BC</ProductForm>
+            <NumberOfPieces>1</NumberOfPieces>
+        </ContainedItem>
         <Title>
             <TitleType>01</TitleType>
             <TitleText textcase="02">British English, A to Zed</TitleText>

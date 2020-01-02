@@ -167,6 +167,21 @@ trait SampleOnixFile21
     {
         $numberOfPieces = $this->product->getNumberOfPieces();
 
-        $this->assertSame('6', $numberOfPieces);
+        $this->assertSame(6, $numberOfPieces);
+    }
+
+    /** @test */
+    public function it_can_get_containedItems()
+    {
+        $containedItems = $this->product->getContainedItems();
+        $containedItem = $containedItems ? $containedItems[0] : '';
+
+        $productIdentifiers = $containedItem ? $containedItem->getProductIdentifiers() : '';
+        $productIdentifiers = array_values($productIdentifiers);
+
+        $this->assertSame('BC', $containedItem ? $containedItem->getProductForm() : '');
+        $this->assertSame(1, $containedItem ? $containedItem->getNumberOfPieces() : '');
+        $this->assertSame('15', $productIdentifiers ? $productIdentifiers[0]->getProductIDType() : '');
+        $this->assertSame('9780520294356', $productIdentifiers ? $productIdentifiers[0]->getIDValue() : '');
     }
 }

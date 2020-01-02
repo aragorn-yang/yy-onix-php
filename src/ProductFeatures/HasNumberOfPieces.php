@@ -4,16 +4,16 @@ namespace AragornYang\Onix\ProductFeatures;
 
 trait HasNumberOfPieces
 {
-    /** @var string */
-    protected $numberOfPieces = '';
+    /** @var int */
+    protected $numberOfPieces = 0;
 
-    public function getNumberOfPieces(): string
+    public function getNumberOfPieces(): int
     {
         return $this->numberOfPieces;
     }
 
     public function setNumberOfPieces(string $value): void
     {
-        $this->numberOfPieces = $value;
+        $this->numberOfPieces = (int)$value;
     }
 }

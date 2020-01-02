@@ -16,6 +16,22 @@
         <b012>BB</b012>
         <b384>01</b384>
         <b210>6</b210>
+        <containeditem>
+            <productidentifier>
+                <b221>15</b221>
+                <b244>9780520294356</b244>
+            </productidentifier>
+            <b012>BC</b012>
+            <b210>1</b210>
+        </containeditem>
+        <containeditem>
+            <productidentifier>
+                <b221>15</b221>
+                <b244>9780520286726</b244>
+            </productidentifier>
+            <b012>BC</b012>
+            <b210>1</b210>
+        </containeditem>
         <title>
             <b202>01</b202>
             <b203 textcase="02">British English, A to Zed</b203>
