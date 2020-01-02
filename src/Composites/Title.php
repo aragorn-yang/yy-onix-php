@@ -70,4 +70,24 @@ class Title extends Composite
     {
         $this->subtitle = $subtitle;
     }
+
+    public function setTitlePrefix(string $titlePrefix): void
+    {
+        $this->titlePrefix = $titlePrefix;
+    }
+
+    public function getTitlePrefix(): string
+    {
+        return $this->titlePrefix;
+    }
+
+    public function setTitleWithoutPrefix(string $titleWithoutPrefix): void
+    {
+        $this->TitleWithoutPrefix = $titleWithoutPrefix;
+    }
+
+    public function getTitleWithoutPrefix(): string
+    {
+        return $this->TitleWithoutPrefix;
+    }
 }

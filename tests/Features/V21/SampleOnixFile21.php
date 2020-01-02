@@ -41,6 +41,10 @@ trait SampleOnixFile21
     public function it_can_get_title(): void
     {
         $this->assertSame('British English, A to Zed', $this->product->getTitle());
+
+        $title = $this->product->getTitleObj();
+        $this->assertSame('An', $title->getTitlePrefix());
+        $this->assertSame('Unforgettable Christmas', $title->getTitleWithoutPrefix());
     }
 
     /** @test */
