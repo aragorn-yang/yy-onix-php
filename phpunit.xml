@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite>
+        <testsuite name=''>
             <directory>tests</directory>
         </testsuite>
     </testsuites>
 
     <!-- Ignore vendor folder for code coverage -->
     <filter>
-        <blacklist>
-            <directory>vendor</directory>
-        </blacklist>
+        <!--        <blacklist>-->
+        <!--            <directory>vendor</directory>-->
+        <!--        </blacklist>-->
     </filter>
 </phpunit>

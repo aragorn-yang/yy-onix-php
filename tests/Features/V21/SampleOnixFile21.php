@@ -8,7 +8,7 @@ use AragornYang\Onix\Composites\SupplyDetail;
 /**
  * @property Product $product
  */
-trait Tag21SampleOnixFile
+trait SampleOnixFile21
 {
     /** @test */
     public function it_can_parse_the_sample_file(): void
@@ -27,7 +27,7 @@ trait Tag21SampleOnixFile
     public function it_can_get_isbn(): void
     {
         $this->assertSame('0816016356', $this->product->getIsbn10());
-        //$this->assertSame('9780816016358', $this->product->getIsbn13());
+        $this->assertSame('9780816016358', $this->product->getIsbn13());
     }
 
     /** @test */
