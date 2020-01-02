@@ -54,6 +54,9 @@ class Contributor extends Composite
     /** @var string */
     protected $suffixToKey = '';
 
+    /** @var string */
+    protected $corporateName = '';
+
     protected const TYPE_OF_AUTHOR = 'A01';
 
     public function getSequenceNumber(): int
@@ -207,5 +210,15 @@ class Contributor extends Composite
     public function getSuffixToKey(): string
     {
         return $this->suffixToKey;
+    }
+
+    public function setCorporateName(string $corporateName): void
+    {
+        $this->corporateName = $corporateName;
+    }
+
+    public function getCorporateName(): string
+    {
+        return $this->corporateName;
     }
 }
