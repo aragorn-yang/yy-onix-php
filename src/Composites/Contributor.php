@@ -51,6 +51,9 @@ class Contributor extends Composite
     /** @var CodeInList */
     protected $regionCode;
 
+    /** @var string */
+    protected $suffixToKey = '';
+
     protected const TYPE_OF_AUTHOR = 'A01';
 
     public function getSequenceNumber(): int
@@ -194,5 +197,15 @@ class Contributor extends Composite
     public function getRegionCodeDesc(): string
     {
         return $this->regionCode ? $this->regionCode->desc() : '';
+    }
+
+    public function setSuffixToKey(string $suffixToKey): void
+    {
+        $this->suffixToKey = $suffixToKey;
+    }
+
+    public function getSuffixToKey(): string
+    {
+        return $this->suffixToKey;
     }
 }
