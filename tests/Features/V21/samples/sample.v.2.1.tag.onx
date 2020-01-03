@@ -99,6 +99,9 @@
         </publisher>
         <b003>1987</b003>
         <b087>2019</b087>
+        <notforsale>
+            <b090>SS</b090>
+        </notforsale>
         <measure>
             <c093>01</c093>
             <c094>9.25</c094>

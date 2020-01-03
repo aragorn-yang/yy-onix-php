@@ -102,6 +102,9 @@
         </Publisher>
         <PublicationDate>1987</PublicationDate>
         <CopyrightYear>2019</CopyrightYear>
+        <NotForSale>
+            <RightsCountry>SS</RightsCountry>
+        </NotForSale>
         <Measure>
             <MeasureTypeCode>01</MeasureTypeCode>
             <Measurement>9.25</Measurement>

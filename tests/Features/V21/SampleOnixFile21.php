@@ -222,4 +222,14 @@ trait SampleOnixFile21
 
         $this->assertSame('2019', $copyYears ? $copyYears[0] : '');
     }
+
+    /** @test */
+    public function it_can_get_notForSale()
+    {
+        $notForSale = $this->product->getNotForSale();
+
+        $rightsCountry = $notForSale ? $notForSale[0]->getRightsCountry() : '';
+
+        $this->assertSame('SS', $rightsCountry);
+    }
 }
