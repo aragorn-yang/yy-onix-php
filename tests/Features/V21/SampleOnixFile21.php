@@ -204,4 +204,14 @@ trait SampleOnixFile21
         $this->assertSame('03', $extent ? $extent[0]->getExtentUnit() : '');
         $this->assertSame('300', $extent ? $extent[0]->getExtentValue() : '');
     }
+
+    /** @test */
+    public function it_can_get_otherText()
+    {
+        $otherTexts = $this->product->getOtherTexts();
+        $otherText = $otherTexts ? $otherTexts[0] : '';
+
+        $this->assertSame('Ilana Feldman', $otherText ? $otherText->getTextAuthor() : '');
+        $this->assertSame('20180718', $otherText ? $otherText->getTextPublicationDate() : '');
+    }
 }
