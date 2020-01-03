@@ -55,6 +55,9 @@ class SupplyDetail extends Composite
     /** @var array */
     protected $telephoneNumber = [];
 
+    /** @var array */
+    protected $faxNumber = [];
+
     public function getSupplierRole(): string
     {
         return $this->supplierRole ? $this->supplierRole->code() : '';
@@ -253,5 +256,15 @@ class SupplyDetail extends Composite
     public function getTelephoneNumber(): array
     {
         return $this->telephoneNumber;
+    }
+
+    public function setFaxNumber(string $faxNumber): void
+    {
+        $this->faxNumber[] = $faxNumber;
+    }
+
+    public function getFaxNumber(): array
+    {
+        return $this->faxNumber;
     }
 }
