@@ -52,6 +52,9 @@ class SupplyDetail extends Composite
     /** @var string */
     protected $onSaleDate = '';
 
+    /** @var array */
+    protected $telephoneNumber = [];
+
     public function getSupplierRole(): string
     {
         return $this->supplierRole ? $this->supplierRole->code() : '';
@@ -240,5 +243,15 @@ class SupplyDetail extends Composite
     public function getOnSaleDate(): string
     {
         return $this->onSaleDate;
+    }
+
+    public function setTelephoneNumber(string $telephoneNumber): void
+    {
+        $this->telephoneNumber[] = $telephoneNumber;
+    }
+
+    public function getTelephoneNumber(): array
+    {
+        return $this->telephoneNumber;
     }
 }
