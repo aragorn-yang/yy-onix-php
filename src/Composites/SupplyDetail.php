@@ -42,6 +42,9 @@ class SupplyDetail extends Composite
     /** @var Price[] */
     protected $prices = [];
 
+    /** @var string */
+    protected $supplierEANLocationNumber = '';
+
     public function getSupplierRole(): string
     {
         return $this->supplierRole ? $this->supplierRole->code() : '';
@@ -195,5 +198,15 @@ class SupplyDetail extends Composite
             new CodeInList(CodeList49RegionCodeSimplified::class, $code);
             $this->supplyToTerritories[] = $code;
         }
+    }
+
+    public function setSupplierEANLocationNumber(string $value): void
+    {
+        $this->supplierEANLocationNumber = $value;
+    }
+
+    public function getSupplierEANLocationNumber(): string
+    {
+        return $this->supplierEANLocationNumber;
     }
 }
