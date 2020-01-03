@@ -124,6 +124,8 @@
             <SupplierEANLocationNumber>5030670154326</SupplierEANLocationNumber>
             <SupplierSAN>1234567</SupplierSAN>
             <AvailabilityCode>IP</AvailabilityCode>
+            <DateFormat>00</DateFormat>
+            <OnSaleDate>20190801</OnSaleDate>
             <Price>
                 <PriceTypeCode>01</PriceTypeCode>
                 <PriceAmount>35.00</PriceAmount>

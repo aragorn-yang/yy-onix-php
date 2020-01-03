@@ -152,6 +152,8 @@ trait SampleOnixFile21
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
         $this->assertSame('5030670154326', $supplyDetail->getSupplierEANLocationNumber());
+        $this->assertSame('00', $supplyDetail->getDateFormat());
+        $this->assertSame('20190801', $supplyDetail->getOnSaleDate());
     }
 
     /** @test */

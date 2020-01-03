@@ -11,6 +11,7 @@ use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 use AragornYang\Onix\ProductFeatures\HasStock;
+use AragornYang\Onix\CodeLists\CodeList55DateFormat;
 
 class SupplyDetail extends Composite
 {
@@ -44,6 +45,12 @@ class SupplyDetail extends Composite
 
     /** @var string */
     protected $supplierEANLocationNumber = '';
+
+    /** @var string */
+    protected $dateFormat = '';
+
+    /** @var string */
+    protected $onSaleDate = '';
 
     public function getSupplierRole(): string
     {
@@ -208,5 +215,30 @@ class SupplyDetail extends Composite
     public function getSupplierEANLocationNumber(): string
     {
         return $this->supplierEANLocationNumber;
+    }
+
+    public function setDateFormat(string $code)
+    {
+        $this->dateFormat = new CodeInList(CodeList55DateFormat::class, $code);
+    }
+
+    public function getDateFormat()
+    {
+        return $this->dateFormat ? $this->dateFormat->code() : '';
+    }
+
+    public function getDateFormatDesc()
+    {
+        return $this->dateFormat ? $this->dateFormat->desc() : '';
+    }
+
+    public function setOnSaleDate(string $onSaleDate): void
+    {
+        $this->onSaleDate = $onSaleDate;
+    }
+
+    public function getOnSaleDate(): string
+    {
+        return $this->onSaleDate;
     }
 }
