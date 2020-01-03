@@ -194,4 +194,14 @@ trait SampleOnixFile21
         $this->assertSame('15', $productIdentifiers ? $productIdentifiers[0]->getProductIDType() : '');
         $this->assertSame('9780520294356', $productIdentifiers ? $productIdentifiers[0]->getIDValue() : '');
     }
+
+    /** @test */
+    public function it_can_get_extent(): void
+    {
+        $extent = $this->product->getExtent();
+
+        $this->assertSame('00', $extent ? $extent[0]->getExtentType() : '');
+        $this->assertSame('03', $extent ? $extent[0]->getExtentUnit() : '');
+        $this->assertSame('300', $extent ? $extent[0]->getExtentValue() : '');
+    }
 }

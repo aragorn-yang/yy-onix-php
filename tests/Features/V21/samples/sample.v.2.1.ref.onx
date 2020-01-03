@@ -60,6 +60,11 @@
             <LanguageCode>eng</LanguageCode>
         </Language>
         <NumberOfPages>493</NumberOfPages>
+        <Extent>
+            <ExtentType>00</ExtentType>
+            <ExtentValue>300</ExtentValue>
+            <ExtentUnit>03</ExtentUnit>
+        </Extent>
         <BASICMainSubject>REF008000</BASICMainSubject>
         <AudienceCode>01</AudienceCode>
         <OtherText>
