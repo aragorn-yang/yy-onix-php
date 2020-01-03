@@ -9,7 +9,7 @@ use AragornYang\Onix\Tests\Features\BookParserForSampleOnixFileTest;
 
 class StreamBookParserForRef21SampleOnixFileTest extends BookParserForSampleOnixFileTest
 {
-    use Ref21SampleOnixFile, UseV21Handler;
+    use SampleOnixFile21, UseV21Handler;
 
     /** @var BookParser */
     protected static $parser;

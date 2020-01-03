@@ -4,6 +4,8 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList17ContributorRole;
+use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
+use AragornYang\Onix\CodeLists\CodeList49RegionCode;
 
 /**
  * @see PR.8 Authorship in Onix Spec 2.1
@@ -42,6 +44,18 @@ class Contributor extends Composite
     protected $biographicalNote = '';
     /** @var ProfessionalAffiliation[] */
     protected $professionalAffiliations = [];
+
+    /** @var CodeInList */
+    protected $countryCode;
+
+    /** @var CodeInList */
+    protected $regionCode;
+
+    /** @var string */
+    protected $suffixToKey = '';
+
+    /** @var string */
+    protected $corporateName = '';
 
     protected const TYPE_OF_AUTHOR = 'A01';
 
@@ -156,5 +170,55 @@ class Contributor extends Composite
     public function setTitlesBeforeNames(string $titlesBeforeNames): void
     {
         $this->titlesBeforeNames = $titlesBeforeNames;
+    }
+
+    public function setCountryCode(string $code): void
+    {
+        $this->countryCode = new CodeInList(CodeList91CountryCodeISO31661::class, $code);
+    }
+
+    public function getCountryCode(): string
+    {
+        return $this->countryCode ? $this->countryCode->code() : '';
+    }
+
+    public function getCountryCodeDesc(): string
+    {
+        return $this->countryCode ? $this->countryCode->desc() : '';
+    }
+
+    public function setRegionCode(string $code): void
+    {
+        $this->regionCode = new CodeInList(CodeList49RegionCode::class, $code);
+    }
+
+    public function getRegionCode(): string
+    {
+        return $this->regionCode ? $this->regionCode->code() : '';
+    }
+
+    public function getRegionCodeDesc(): string
+    {
+        return $this->regionCode ? $this->regionCode->desc() : '';
+    }
+
+    public function setSuffixToKey(string $suffixToKey): void
+    {
+        $this->suffixToKey = $suffixToKey;
+    }
+
+    public function getSuffixToKey(): string
+    {
+        return $this->suffixToKey;
+    }
+
+    public function setCorporateName(string $corporateName): void
+    {
+        $this->corporateName = $corporateName;
+    }
+
+    public function getCorporateName(): string
+    {
+        return $this->corporateName;
     }
 }

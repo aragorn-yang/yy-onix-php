@@ -18,6 +18,12 @@ class OtherText extends Composite
     /** @var string */
     protected $textSourceTitle = '';
 
+    /** @var string */
+    protected $textAuthor = '';
+
+    /** @var string */
+    protected $textPublicationDate = '';
+
     protected const TYPE_OF_MAIN_DESC = '01';
     protected const TYPE_OF_SHORT_DESC = '02';
     protected const TYPE_OF_LONG_DESC = '03';
@@ -94,5 +100,25 @@ class OtherText extends Composite
     public function setTextSourceTitle(string $textSourceTitle): void
     {
         $this->textSourceTitle = $textSourceTitle;
+    }
+
+    public function setTextAuthor(string $textAuthor): void
+    {
+        $this->textAuthor = $textAuthor;
+    }
+
+    public function getTextAuthor(): string
+    {
+        return $this->textAuthor;
+    }
+
+    public function setTextPublicationDate(string $textPublicationDate): void
+    {
+        $this->textPublicationDate = $textPublicationDate;
+    }
+
+    public function getTextPublicationDate(): string
+    {
+        return $this->textPublicationDate;
     }
 }

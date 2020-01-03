@@ -4,14 +4,39 @@
     <product>
         <a001>1234567890</a001>
         <a002>03</a002>
+        <a197>Bloomsbury</a197>
         <productidentifier>
             <b221>02</b221>
             <b244>0816016356</b244>
         </productidentifier>
+        <productidentifier>
+            <b221>15</b221>
+            <b244>9780816016358</b244>
+        </productidentifier>
         <b012>BB</b012>
+        <b384>01</b384>
+        <b210>6</b210>
+        <containeditem>
+            <productidentifier>
+                <b221>15</b221>
+                <b244>9780520294356</b244>
+            </productidentifier>
+            <b012>BC</b012>
+            <b210>1</b210>
+        </containeditem>
+        <containeditem>
+            <productidentifier>
+                <b221>15</b221>
+                <b244>9780520286726</b244>
+            </productidentifier>
+            <b012>BC</b012>
+            <b210>1</b210>
+        </containeditem>
         <title>
             <b202>01</b202>
             <b203 textcase="02">British English, A to Zed</b203>
+            <b030>An</b030>
+            <b031>Unforgettable Christmas</b031>>
         </title>
         <contributor>
             <b035>A01</b035>
@@ -22,6 +47,10 @@
                 retired
                 from legal practise, Mr Schur is a fluent speaker and writer of both British and American English.
             </b044>
+            <b251>US</b251>
+            <b398>US-MI</b398>
+            <b248>Jr.</b248>
+            <b047>Raqs Media Collective</b047>
         </contributor>
         <b056>REV</b056>
         <b057>3</b057>
@@ -30,6 +59,11 @@
             <b252>eng</b252>
         </language>
         <b061>493</b061>
+        <extent>
+            <b218>00</b218>
+            <b219>300</b219>
+            <b220>03</b220>
+        </extent>
         <b064>REF008000</b064>
         <b073>01</b073>
         <othertext>
@@ -44,6 +78,8 @@
                 lesser known words and phrases. Highly readable, it’s a snip of a book, and one that sorts out – through
                 comments in American – the “Queen’s English” – confounding as it may seem.
             </d104>
+            <d107>Ilana Feldman</d107>
+            <d109>20180718</d109>
         </othertext>
         <othertext>
             <d102>08</d102>
@@ -62,6 +98,10 @@
             <b081>Facts on File Inc</b081>
         </publisher>
         <b003>1987</b003>
+        <b087>2019</b087>
+        <notforsale>
+            <b090>SS</b090>
+        </notforsale>
         <measure>
             <c093>01</c093>
             <c094>9.25</c094>
@@ -85,5 +125,6 @@
                 <j151>35.00</j151>
             </price>
         </supplydetail>
+		<b049>Trevor Hoppe</b049>
     </product>
 </ONIXmessage>

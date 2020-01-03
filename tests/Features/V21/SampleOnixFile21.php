@@ -8,7 +8,7 @@ use AragornYang\Onix\Composites\SupplyDetail;
 /**
  * @property Product $product
  */
-trait Tag21SampleOnixFile
+trait SampleOnixFile21
 {
     /** @test */
     public function it_can_parse_the_sample_file(): void
@@ -27,7 +27,7 @@ trait Tag21SampleOnixFile
     public function it_can_get_isbn(): void
     {
         $this->assertSame('0816016356', $this->product->getIsbn10());
-        //$this->assertSame('9780816016358', $this->product->getIsbn13());
+        $this->assertSame('9780816016358', $this->product->getIsbn13());
     }
 
     /** @test */
@@ -41,12 +41,22 @@ trait Tag21SampleOnixFile
     public function it_can_get_title(): void
     {
         $this->assertSame('British English, A to Zed', $this->product->getTitle());
+
+        $title = $this->product->getTitleObj();
+        $this->assertSame('An', $title->getTitlePrefix());
+        $this->assertSame('Unforgettable Christmas', $title->getTitleWithoutPrefix());
     }
 
     /** @test */
     public function it_can_get_author(): void
     {
-        $this->assertSame('Schur, Norman W', $this->product->getAuthor()->getPersonNameInverted());
+        $author = $this->product->getAuthor();
+
+        $this->assertSame('Schur, Norman W', $author->getPersonNameInverted());
+        $this->assertSame('US', $author->getCountryCode());
+        $this->assertSame('US-MI', $author->getRegionCode());
+        $this->assertSame('Jr.', $author->getSuffixToKey());
+        $this->assertSame('Raqs Media Collective', $author->getCorporateName());
     }
 
     /** @test */
@@ -139,5 +149,87 @@ trait Tag21SampleOnixFile
         $price = $supplyDetail->getPrices()[0];
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
+    }
+
+    /** @test */
+    public function it_can_get_ContributorStatement(): void
+    {
+        $this->assertSame('Trevor Hoppe', $this->product->getContributorStatement());
+    }
+
+    /** @test */
+    public function it_can_get_recordSourceName()
+    {
+        $recordSourceName = $this->product->getRecordSourceName();
+
+        $this->assertSame('Bloomsbury', $recordSourceName);
+    }
+
+    /** @test */
+    public function it_can_get_tradeCategory()
+    {
+        $this->assertSame('01', $this->product->getTradeCategory());
+        $this->assertSame('UK open market edition', $this->product->getTradeCategoryDesc());
+    }
+
+    /** @test */
+    public function it_can_get_numberOfPieces()
+    {
+        $numberOfPieces = $this->product->getNumberOfPieces();
+
+        $this->assertSame(6, $numberOfPieces);
+    }
+
+    /** @test */
+    public function it_can_get_containedItems()
+    {
+        $containedItems = $this->product->getContainedItems();
+        $containedItem = $containedItems ? $containedItems[0] : '';
+
+        $productIdentifiers = $containedItem ? $containedItem->getProductIdentifiers() : '';
+        $productIdentifiers = array_values($productIdentifiers);
+
+        $this->assertSame('BC', $containedItem ? $containedItem->getProductForm() : '');
+        $this->assertSame(1, $containedItem ? $containedItem->getNumberOfPieces() : '');
+        $this->assertSame('15', $productIdentifiers ? $productIdentifiers[0]->getProductIDType() : '');
+        $this->assertSame('9780520294356', $productIdentifiers ? $productIdentifiers[0]->getIDValue() : '');
+    }
+
+    /** @test */
+    public function it_can_get_extent(): void
+    {
+        $extent = $this->product->getExtent();
+
+        $this->assertSame('00', $extent ? $extent[0]->getExtentType() : '');
+        $this->assertSame('03', $extent ? $extent[0]->getExtentUnit() : '');
+        $this->assertSame('300', $extent ? $extent[0]->getExtentValue() : '');
+    }
+
+    /** @test */
+    public function it_can_get_otherText()
+    {
+        $otherTexts = $this->product->getOtherTexts();
+        $otherText = $otherTexts ? $otherTexts[0] : '';
+
+        $this->assertSame('Ilana Feldman', $otherText ? $otherText->getTextAuthor() : '');
+        $this->assertSame('20180718', $otherText ? $otherText->getTextPublicationDate() : '');
+    }
+
+    /** @test */
+    public function it_can_get_copyrightYear()
+    {
+        $copyYears = $this->product->getCopyrightYear();
+
+        $this->assertSame('2019', $copyYears ? $copyYears[0] : '');
+    }
+
+    /** @test */
+    public function it_can_get_notForSale()
+    {
+        $notForSale = $this->product->getNotForSale();
+
+        $rightsCountry = $notForSale ? $notForSale[0]->getRightsCountry() : '';
+
+        $this->assertSame('SS', $rightsCountry);
     }
 }

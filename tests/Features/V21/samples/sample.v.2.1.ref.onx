@@ -4,6 +4,7 @@
     <Product>
         <RecordReference>1234567890</RecordReference>
         <NotificationType>03</NotificationType>
+        <RecordSourceName>Bloomsbury</RecordSourceName>
         <ProductIdentifier>
             <ProductIDType>02</ProductIDType>
             <IDValue>0816016356</IDValue>
@@ -13,9 +14,29 @@
             <IDValue>9780816016358</IDValue>
         </ProductIdentifier>
         <ProductForm>BB</ProductForm>
+        <TradeCategory>01</TradeCategory>
+        <NumberOfPieces>6</NumberOfPieces>
+        <ContainedItem>
+            <ProductIdentifier>
+                <ProductIDType>15</ProductIDType>
+                <IDValue>9780520294356</IDValue>
+            </ProductIdentifier>
+            <ProductForm>BC</ProductForm>
+            <NumberOfPieces>1</NumberOfPieces>
+        </ContainedItem>
+        <ContainedItem>
+            <ProductIdentifier>
+                <ProductIDType>15</ProductIDType>
+                <IDValue>9780520286726</IDValue>
+            </ProductIdentifier>
+            <ProductForm>BC</ProductForm>
+            <NumberOfPieces>1</NumberOfPieces>
+        </ContainedItem>
         <Title>
             <TitleType>01</TitleType>
             <TitleText textcase="02">British English, A to Zed</TitleText>
+            <TitlePrefix>An</TitlePrefix>
+            <TitleWithoutPrefix>Unforgettable Christmas</TitleWithoutPrefix>
         </Title>
         <Contributor>
             <SequenceNumber>1</SequenceNumber>
@@ -27,6 +48,10 @@
                 Schools. Now retired from legal practise, Mr Schur is a fluent speaker and writer of both British and
                 American English.
             </BiographicalNote>
+            <CountryCode>US</CountryCode>
+            <RegionCode>US-MI</RegionCode>
+            <SuffixToKey>Jr.</SuffixToKey>
+            <CorporateName>Raqs Media Collective</CorporateName>
         </Contributor>
         <EditionTypeCode>REV</EditionTypeCode>
         <EditionNumber>3</EditionNumber>
@@ -35,6 +60,11 @@
             <LanguageCode>eng</LanguageCode>
         </Language>
         <NumberOfPages>493</NumberOfPages>
+        <Extent>
+            <ExtentType>00</ExtentType>
+            <ExtentValue>300</ExtentValue>
+            <ExtentUnit>03</ExtentUnit>
+        </Extent>
         <BASICMainSubject>REF008000</BASICMainSubject>
         <AudienceCode>01</AudienceCode>
         <OtherText>
@@ -50,6 +80,8 @@
                 out through comments in American  the "Queen's English"
                 confounding as it may seem.
             </Text>
+            <TextAuthor>Ilana Feldman</TextAuthor>
+            <TextPublicationDate>20180718</TextPublicationDate>
         </OtherText>
         <OtherText>
             <TextTypeCode>08</TextTypeCode>
@@ -69,6 +101,10 @@
             <PublisherName>Facts on File Inc</PublisherName>
         </Publisher>
         <PublicationDate>1987</PublicationDate>
+        <CopyrightYear>2019</CopyrightYear>
+        <NotForSale>
+            <RightsCountry>SS</RightsCountry>
+        </NotForSale>
         <Measure>
             <MeasureTypeCode>01</MeasureTypeCode>
             <Measurement>9.25</Measurement>
@@ -92,5 +128,6 @@
                 <PriceAmount>35.00</PriceAmount>
             </Price>
         </SupplyDetail>
+		<ContributorStatement>Trevor Hoppe</ContributorStatement>
     </Product>
 </ONIXMessage>
