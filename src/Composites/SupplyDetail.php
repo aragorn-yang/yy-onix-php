@@ -12,6 +12,7 @@ use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 use AragornYang\Onix\ProductFeatures\HasStock;
 use AragornYang\Onix\CodeLists\CodeList55DateFormat;
+use AragornYang\Onix\CodeLists\CodeList57UnpricedItemType;
 
 class SupplyDetail extends Composite
 {
@@ -60,6 +61,9 @@ class SupplyDetail extends Composite
 
     /** @var array */
     protected $emailAddress = [];
+
+    /** @var array|CodeInList */
+    protected $unpricedItemType;
 
     public function getSupplierRole(): string
     {
@@ -279,5 +283,20 @@ class SupplyDetail extends Composite
     public function getEmailAddress(): array
     {
         return $this->emailAddress;
+    }
+
+    public function setUnpricedItemType(string $code): void
+    {
+        $this->unpricedItemType = new CodeInList(CodeList57UnpricedItemType::class, $code);
+    }
+
+    public function getUnpricedItemType(): string
+    {
+        return $this->unpricedItemType->code();
+    }
+
+    public function getUnpricedItemTypeDesc(): string
+    {
+        return $this->unpricedItemType->desc();
     }
 }

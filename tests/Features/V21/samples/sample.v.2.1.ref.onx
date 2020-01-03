@@ -133,6 +133,7 @@
                 <PriceTypeCode>01</PriceTypeCode>
                 <PriceAmount>35.00</PriceAmount>
             </Price>
+            <UnpricedItemType>01</UnpricedItemType>
         </SupplyDetail>
 		<ContributorStatement>Trevor Hoppe</ContributorStatement>
     </Product>
