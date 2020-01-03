@@ -58,6 +58,9 @@ class SupplyDetail extends Composite
     /** @var array */
     protected $faxNumber = [];
 
+    /** @var array */
+    protected $emailAddress = [];
+
     public function getSupplierRole(): string
     {
         return $this->supplierRole ? $this->supplierRole->code() : '';
@@ -266,5 +269,15 @@ class SupplyDetail extends Composite
     public function getFaxNumber(): array
     {
         return $this->faxNumber;
+    }
+
+    public function setEmailAddress(string $emailAddress): void
+    {
+        $this->emailAddress[] = $emailAddress;
+    }
+
+    public function getEmailAddress(): array
+    {
+        return $this->emailAddress;
     }
 }

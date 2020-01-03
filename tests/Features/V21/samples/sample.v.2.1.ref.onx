@@ -128,6 +128,7 @@
             <OnSaleDate>20190801</OnSaleDate>
             <TelephoneNumber>+44 (0)1865 474000</TelephoneNumber>
             <FaxNumber>+44 (0)1865 474001</FaxNumber>
+            <EmailAddress>eurobkinfo@elsevier.com</EmailAddress>
             <Price>
                 <PriceTypeCode>01</PriceTypeCode>
                 <PriceAmount>35.00</PriceAmount>

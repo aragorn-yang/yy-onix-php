@@ -156,6 +156,7 @@ trait SampleOnixFile21
         $this->assertSame('20190801', $supplyDetail->getOnSaleDate());
         $this->assertSame('+44 (0)1865 474000', $supplyDetail->getTelephoneNumber()[0]);
         $this->assertSame('+44 (0)1865 474001', $supplyDetail->getFaxNumber()[0]);
+        $this->assertSame('eurobkinfo@elsevier.com', $supplyDetail->getEmailAddress()[0]);
     }
 
     /** @test */
