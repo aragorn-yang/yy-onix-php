@@ -214,4 +214,12 @@ trait SampleOnixFile21
         $this->assertSame('Ilana Feldman', $otherText ? $otherText->getTextAuthor() : '');
         $this->assertSame('20180718', $otherText ? $otherText->getTextPublicationDate() : '');
     }
+
+    /** @test */
+    public function it_can_get_copyrightYear()
+    {
+        $copyYears = $this->product->getCopyrightYear();
+
+        $this->assertSame('2019', $copyYears ? $copyYears[0] : '');
+    }
 }
