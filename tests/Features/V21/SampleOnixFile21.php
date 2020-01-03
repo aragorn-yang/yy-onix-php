@@ -142,13 +142,16 @@ trait SampleOnixFile21
     public function it_can_get_supply_details(): void
     {
         $this->assertCount(1, $this->product->getSupplyDetails());
+
         /** @var SupplyDetail $supplyDetail */
         $supplyDetail = $this->product->getSupplyDetails()[0];
+
         $this->assertSame('1234567', $supplyDetail->getSupplierSAN());
         $this->assertSame('IP', $supplyDetail->getAvailabilityCode());
         $price = $supplyDetail->getPrices()[0];
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
+        $this->assertSame('5030670154326', $supplyDetail->getSupplierEANLocationNumber());
     }
 
     /** @test */

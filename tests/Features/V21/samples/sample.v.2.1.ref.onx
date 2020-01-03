@@ -121,6 +121,7 @@
             <MeasureUnitCode>in</MeasureUnitCode>
         </Measure>
         <SupplyDetail>
+            <SupplierEANLocationNumber>5030670154326</SupplierEANLocationNumber>
             <SupplierSAN>1234567</SupplierSAN>
             <AvailabilityCode>IP</AvailabilityCode>
             <Price>
