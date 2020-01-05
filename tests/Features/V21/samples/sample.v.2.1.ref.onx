@@ -16,6 +16,7 @@
         <ProductForm>BB</ProductForm>
         <TradeCategory>01</TradeCategory>
         <NumberOfPieces>6</NumberOfPieces>
+        <ProductContentType>10</ProductContentType>
         <ContainedItem>
             <ProductIdentifier>
                 <ProductIDType>15</ProductIDType>

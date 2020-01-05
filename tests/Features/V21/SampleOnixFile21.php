@@ -263,4 +263,11 @@ trait SampleOnixFile21
         $this->assertSame('05', $prizes[1]->getPrizeCode());
         $this->assertSame('Long-listed', $prizes[1]->getPrizeCodeDesc());
     }
+
+    /** @test */
+    public function it_can_get_productContentType()
+    {
+        $this->assertSame('10', $this->product->getProductContentType());
+        $this->assertSame('Text (eye-readable)', $this->product->getProductContentTypeDesc());
+    }
 }
