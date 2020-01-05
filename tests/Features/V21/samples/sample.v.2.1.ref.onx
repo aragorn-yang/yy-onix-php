@@ -94,6 +94,18 @@
                 Quarterly, Spring 1988
             </Text>
         </OtherText>
+        <Prize>
+            <PrizeName>Sunburst Award for Canadian Literature of the Fantastic</PrizeName>
+            <PrizeYear>2018</PrizeYear>
+            <PrizeCountry>CA</PrizeCountry>
+            <PrizeCode>05</PrizeCode>
+        </Prize>
+        <Prize>
+            <PrizeName>CBC Canada Reads</PrizeName>
+            <PrizeYear>2018</PrizeYear>
+            <PrizeCountry>CA</PrizeCountry>
+            <PrizeCode>05</PrizeCode>
+        </Prize>
         <Imprint>
             <ImprintName>Facts on File Publications</ImprintName>
         </Imprint>
