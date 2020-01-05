@@ -48,9 +48,10 @@ final class Onix
         return $this->unrecognisableElements;
     }
 
-    public function recordUnrecognisableElement(string $key): void
+    public function recordUnrecognisableElement(string $key, string $code = ''): void
     {
-        $this->unrecognisableElements[$key] = ($this->unrecognisableElements[$key] ?? 0) + 1;
+        $_key = $code ? "{$key}_{$code}" : $key;
+        $this->unrecognisableElements[$_key] = ($this->unrecognisableElements[$_key] ?? 0) + 1;
     }
 
     public function getElementPositions(): array
