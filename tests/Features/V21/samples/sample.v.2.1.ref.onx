@@ -127,6 +127,7 @@
             <AvailabilityCode>IP</AvailabilityCode>
             <DateFormat>00</DateFormat>
             <OnSaleDate>20190801</OnSaleDate>
+            <LastDateForReturns>20190930</LastDateForReturns>
             <TelephoneNumber>+44 (0)1865 474000</TelephoneNumber>
             <FaxNumber>+44 (0)1865 474001</FaxNumber>
             <EmailAddress>eurobkinfo@elsevier.com</EmailAddress>
