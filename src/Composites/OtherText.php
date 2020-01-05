@@ -24,6 +24,9 @@ class OtherText extends Composite
     /** @var string */
     protected $textPublicationDate = '';
 
+    /** @var string */
+    protected $textSourceCorporate = '';
+
     protected const TYPE_OF_MAIN_DESC = '01';
     protected const TYPE_OF_SHORT_DESC = '02';
     protected const TYPE_OF_LONG_DESC = '03';
@@ -120,5 +123,15 @@ class OtherText extends Composite
     public function getTextPublicationDate(): string
     {
         return $this->textPublicationDate;
+    }
+
+    public function setTextSourceCorporate(string $value): void
+    {
+        $this->textSourceCorporate = $value;
+    }
+
+    public function getTextSourceCorporate(): string
+    {
+        return $this->textSourceCorporate;
     }
 }
