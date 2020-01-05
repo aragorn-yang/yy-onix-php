@@ -6,13 +6,13 @@ use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList49RegionCodeSimplified;
 use AragornYang\Onix\CodeLists\CodeList53ReturnsConditionsCodeType;
 use AragornYang\Onix\CodeLists\CodeList54AvailabilityStatus;
+use AragornYang\Onix\CodeLists\CodeList55DateFormat;
+use AragornYang\Onix\CodeLists\CodeList57UnpricedItemType;
 use AragornYang\Onix\CodeLists\CodeList65ProductAvailability;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 use AragornYang\Onix\ProductFeatures\HasStock;
-use AragornYang\Onix\CodeLists\CodeList55DateFormat;
-use AragornYang\Onix\CodeLists\CodeList57UnpricedItemType;
 
 class SupplyDetail extends Composite
 {
@@ -45,9 +45,6 @@ class SupplyDetail extends Composite
     protected $prices = [];
 
     /** @var string */
-    protected $supplierEANLocationNumber = '';
-
-    /** @var string */
     protected $dateFormat = '';
 
     /** @var string */
@@ -67,6 +64,9 @@ class SupplyDetail extends Composite
 
     /** @var array|CodeInList */
     protected $unpricedItemType;
+
+    /** @var string */
+    protected $supplierEANLocationNumber = '';
 
     public function getSupplierRole(): string
     {
