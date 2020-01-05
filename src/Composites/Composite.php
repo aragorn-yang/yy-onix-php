@@ -33,7 +33,9 @@ class Composite
         }
         $composite = new static($parent);
         foreach ($xml as $key => $value) {
+            $code = '';
             if ($isTagEdition) {
+                $code = $key;
                 $key = ShortTagToRefName::find($key);
             }
             $key = ucfirst($key);
@@ -43,14 +45,14 @@ class Composite
                 $composite->recordElementPosition($key);
                 continue;
             }
-            $composite->recordUnrecognisableElement($key);
+            $composite->recordUnrecognisableElement($key, $code);
         }
         return $composite;
     }
 
-    protected function recordUnrecognisableElement(string $key): void
+    protected function recordUnrecognisableElement(string $key, string $code = ''): void
     {
-        Onix::getInstance()->recordUnrecognisableElement($this->getCompositePosition() . '->' . $key);
+        Onix::getInstance()->recordUnrecognisableElement($this->getCompositePosition() . '->' . $key, $code);
     }
 
     public function getCompositePosition(): string
