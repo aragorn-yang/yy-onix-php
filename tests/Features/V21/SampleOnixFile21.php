@@ -161,6 +161,7 @@ trait SampleOnixFile21
         $this->assertSame('eurobkinfo@elsevier.com', $supplyDetail->getEmailAddress()[0]);
         $this->assertSame('01', $supplyDetail->getUnpricedItemType());
         $this->assertSame('Free of charge', $supplyDetail->getUnpricedItemTypeDesc());
+        $this->assertSame('20190930', $supplyDetail->getLastDateForReturns());
     }
 
     /** @test */

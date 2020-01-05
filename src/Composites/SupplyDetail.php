@@ -62,6 +62,9 @@ class SupplyDetail extends Composite
     /** @var array */
     protected $emailAddress = [];
 
+    /** @var string */
+    protected $lastDateForReturns = '';
+
     /** @var array|CodeInList */
     protected $unpricedItemType;
 
@@ -220,16 +223,6 @@ class SupplyDetail extends Composite
         }
     }
 
-    public function setSupplierEANLocationNumber(string $value): void
-    {
-        $this->supplierEANLocationNumber = $value;
-    }
-
-    public function getSupplierEANLocationNumber(): string
-    {
-        return $this->supplierEANLocationNumber;
-    }
-
     public function setDateFormat(string $code)
     {
         $this->dateFormat = new CodeInList(CodeList55DateFormat::class, $code);
@@ -245,12 +238,12 @@ class SupplyDetail extends Composite
         return $this->dateFormat ? $this->dateFormat->desc() : '';
     }
 
-    public function setOnSaleDate(string $onSaleDate): void
+    public function setOnSaleDate(string $onSaleDate): void 
     {
         $this->onSaleDate = $onSaleDate;
     }
 
-    public function getOnSaleDate(): string
+    public function getOnSaleDate(): string 
     {
         return $this->onSaleDate;
     }
@@ -285,7 +278,17 @@ class SupplyDetail extends Composite
         return $this->emailAddress;
     }
 
-    public function setUnpricedItemType(string $code): void
+    public function getLastDateForReturns(): string
+    {
+        return $this->lastDateForReturns;
+    }
+
+    public function setLastDateForReturns(string $value): void
+    {
+        $this->lastDateForReturns = $value;
+    }
+
+    public function setUnpricedItemType(string $code): void 
     {
         $this->unpricedItemType = new CodeInList(CodeList57UnpricedItemType::class, $code);
     }
@@ -298,5 +301,15 @@ class SupplyDetail extends Composite
     public function getUnpricedItemTypeDesc(): string
     {
         return $this->unpricedItemType->desc();
+    }
+
+    public function setSupplierEANLocationNumber(string $value): void
+    {
+        $this->supplierEANLocationNumber = $value;
+    }
+
+    public function getSupplierEANLocationNumber(): string
+    {
+        return $this->supplierEANLocationNumber;
     }
 }
