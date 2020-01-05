@@ -141,10 +141,12 @@ trait SampleOnixFile21
     /** @test */
     public function it_can_get_supply_details(): void
     {
-        $this->assertCount(1, $this->product->getSupplyDetails());
+        $supplyDetails = $this->product->getSupplyDetails();
+
+        $this->assertCount(1, $supplyDetails);
 
         /** @var SupplyDetail $supplyDetail */
-        $supplyDetail = $this->product->getSupplyDetails()[0];
+        $supplyDetail = $supplyDetails[0];
 
         $this->assertSame('1234567', $supplyDetail->getSupplierSAN());
         $this->assertSame('IP', $supplyDetail->getAvailabilityCode());
@@ -219,10 +221,11 @@ trait SampleOnixFile21
     public function it_can_get_otherText()
     {
         $otherTexts = $this->product->getOtherTexts();
-        $otherText = $otherTexts ? $otherTexts[0] : '';
 
-        $this->assertSame('Ilana Feldman', $otherText ? $otherText->getTextAuthor() : '');
-        $this->assertSame('20180718', $otherText ? $otherText->getTextPublicationDate() : '');
+        $this->assertCount(2, $otherTexts);
+
+        $this->assertSame('Ilana Feldman', $otherTexts[0]->getTextAuthor());
+        $this->assertSame('20180718', $otherTexts[0]->getTextPublicationDate());
     }
 
     /** @test */
