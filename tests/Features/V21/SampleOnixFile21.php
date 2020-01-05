@@ -246,4 +246,21 @@ trait SampleOnixFile21
 
         $this->assertSame('SS', $rightsCountry);
     }
+
+    /** @test */
+    public function it_can_get_prize()
+    {
+        $prizes = $this->product->getPrizes();
+
+        $this->assertCount(2, $prizes);
+
+        $this->assertSame('CBC Canada Reads', $prizes[1]->getPrizeName());
+        $this->assertSame('2018', $prizes[1]->getPrizeYear());
+
+        $this->assertSame('CA', $prizes[1]->getPrizeCountry());
+        $this->assertSame('Canada', $prizes[1]->getPrizeCountryDesc());
+
+        $this->assertSame('05', $prizes[1]->getPrizeCode());
+        $this->assertSame('Long-listed', $prizes[1]->getPrizeCodeDesc());
+    }
 }
