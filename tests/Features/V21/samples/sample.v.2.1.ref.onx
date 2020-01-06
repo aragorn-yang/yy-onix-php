@@ -114,6 +114,11 @@
                 Quarterly, Spring 1988
             </Text>
         </OtherText>
+        <ProductWebsite>
+            <WebsiteRole>01</WebsiteRole>
+            <ProductWebsiteDescription>Publisher's website</ProductWebsiteDescription>
+            <ProductWebsiteLink>www.rangjung.com</ProductWebsiteLink>
+        </ProductWebsite>
         <Prize>
             <PrizeName>Sunburst Award for Canadian Literature of the Fantastic</PrizeName>
             <PrizeYear>2018</PrizeYear>
