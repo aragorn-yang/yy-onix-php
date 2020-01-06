@@ -289,4 +289,18 @@ trait SampleOnixFile21
         $this->assertSame('11', $audienceRangeValue ? $audienceRangeValue[0]->code() : '');
         $this->assertSame('Eleventh Grade', $audienceRangeValue ? $audienceRangeValue[0]->desc() : '');
     }
+
+    /** @test */
+    public function it_can_get_illustrations()
+    {
+        $illustrations = $this->product->getIllustrations();
+
+        $this->assertCount(1, $illustrations);
+
+        $this->assertSame('01', $illustrations[0]->getIllustrationType());
+        $this->assertSame('Illustrations, black and white', $illustrations[0]->getIllustrationTypeDesc());
+
+        $this->assertSame(4, $illustrations[0]->getNumber());
+        $this->assertSame('Cover illustration', $illustrations[0]->getIllustrationTypeDescription());
+    }
 }
