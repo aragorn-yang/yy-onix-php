@@ -270,4 +270,23 @@ trait SampleOnixFile21
         $this->assertSame('10', $this->product->getProductContentType());
         $this->assertSame('Text (eye-readable)', $this->product->getProductContentTypeDesc());
     }
+
+    /** @test */
+    public function it_can_get_audienceRanges()
+    {
+        $audienceRanges = $this->product->getAudienceRange();
+
+        $this->assertCount(1, $audienceRanges);
+
+        $this->assertSame('11', $audienceRanges[0]->getAudienceRangeQualifier());
+        $this->assertSame('US school grade range', $audienceRanges[0]->getAudienceRangeQualifierDesc());
+
+        $audienceRangePrecision = $audienceRanges[0]->getAudienceRangePrecision();
+        $this->assertSame('03', $audienceRangePrecision ? $audienceRangePrecision[0]->code() : '');
+        $this->assertSame('From', $audienceRangePrecision ? $audienceRangePrecision[0]->desc() : '');
+
+        $audienceRangeValue = $audienceRanges[0]->getAudienceRangeValue();
+        $this->assertSame('11', $audienceRangeValue ? $audienceRangeValue[0]->code() : '');
+        $this->assertSame('Eleventh Grade', $audienceRangeValue ? $audienceRangeValue[0]->desc() : '');
+    }
 }
