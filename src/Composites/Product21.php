@@ -60,6 +60,7 @@ use AragornYang\Onix\ProductFeatures\HasNotForSales;
 use AragornYang\Onix\ProductFeatures\HasProductContentType;
 use AragornYang\Onix\ProductFeatures\HasAudienceRanges;
 use AragornYang\Onix\ProductFeatures\HasIllustrations;
+use AragornYang\Onix\productFeatures\HasNumberOfIllustrations;
 
 class Product21 extends Composite implements Product
 {
@@ -120,7 +121,8 @@ class Product21 extends Composite implements Product
         HasNotForSales,
         HasProductContentType,
         HasAudienceRanges,
-        HasIllustrations;
+        HasIllustrations,
+        HasNumberOfIllustrations;
 
     /** @var string */
     protected $compositeName = 'Product';
