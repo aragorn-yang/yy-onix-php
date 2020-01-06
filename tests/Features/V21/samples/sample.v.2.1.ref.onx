@@ -17,6 +17,7 @@
         <TradeCategory>01</TradeCategory>
         <NumberOfPieces>6</NumberOfPieces>
         <ProductContentType>10</ProductContentType>
+        <ProductPackaging>00</ProductPackaging>
         <ContainedItem>
             <ProductIdentifier>
                 <ProductIDType>15</ProductIDType>

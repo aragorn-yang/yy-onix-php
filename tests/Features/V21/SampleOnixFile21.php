@@ -323,4 +323,11 @@ trait SampleOnixFile21
         $this->assertSame('FFP', $mainSubject[0]->getSubjectCode());
         $this->assertSame('Crime & mystery: police procedural', $mainSubject[0]->getSubjectHeadingText());
     }
+
+    /** @test */
+    public function it_can_get_productPackaging()
+    {
+        $this->assertSame('00', $this->product->getProductPackaging());
+        $this->assertSame('No outer packaging', $this->product->getProductPackagingDesc());
+    }
 }
