@@ -68,6 +68,13 @@
         </Extent>
         <BASICMainSubject>REF008000</BASICMainSubject>
         <AudienceCode>01</AudienceCode>
+        <Audiencerange>
+            <AudienceRangeQualifier>11</AudienceRangeQualifier>
+            <AudienceRangePrecision>03</AudienceRangePrecision>
+            <AudienceRangeValue>11</AudienceRangeValue>
+            <AudienceRangePrecision>04</AudienceRangePrecision>
+            <AudienceRangeValue>17</AudienceRangeValue>
+        </Audiencerange>
         <OtherText>
             <TextTypeCode>01</TextTypeCode>
             <Text>BRITISH ENGLISH, A TO ZED is the thoroughly updated, revised, and expanded third edition of Norman

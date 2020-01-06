@@ -67,6 +67,13 @@
         </extent>
         <b064>REF008000</b064>
         <b073>01</b073>
+        <audiencerange>
+            <b074>11</b074>
+            <b075>03</b075>
+            <b076>11</b076>
+            <b075>04</b075>
+            <b076>17</b076>
+        </audiencerange>
         <othertext>
             <d102>01</d102>
             <d104>BRITISH ENGLISH, A TO ZED is the thoroughly updated, revised, and expanded third edition of Norman
