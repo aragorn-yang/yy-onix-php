@@ -330,4 +330,18 @@ trait SampleOnixFile21
         $this->assertSame('00', $this->product->getProductPackaging());
         $this->assertSame('No outer packaging', $this->product->getProductPackagingDesc());
     }
+
+    /** @test */
+    public function it_can_get_productWebsite()
+    {
+        $productWebsites = $this->product->getProductWebsite();
+
+        $this->assertCount(1, $productWebsites);
+
+        $this->assertSame('01', $productWebsites[0]->getWebsiteRole());
+        $this->assertSame('Publisher’s corporate website', $productWebsites[0]->getWebsiteRoleDesc());
+
+        $this->assertSame("Publisher's website", $productWebsites[0]->getProductWebsiteDescription());
+        $this->assertSame('www.rangjung.com', $productWebsites[0]->getProductWebsiteLink());
+    }
 }
