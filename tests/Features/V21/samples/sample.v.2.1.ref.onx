@@ -66,6 +66,11 @@
             <ExtentValue>300</ExtentValue>
             <ExtentUnit>03</ExtentUnit>
         </Extent>
+        <Illustrations>
+            <IllustrationType>01</IllustrationType>
+            <Number>4</Number>
+            <IllustrationTypeDescription>Cover illustration</IllustrationTypeDescription>
+        </Illustrations>
         <BASICMainSubject>REF008000</BASICMainSubject>
         <AudienceCode>01</AudienceCode>
         <Audiencerange>
