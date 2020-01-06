@@ -303,4 +303,10 @@ trait SampleOnixFile21
         $this->assertSame(4, $illustrations[0]->getNumber());
         $this->assertSame('Cover illustration', $illustrations[0]->getIllustrationTypeDescription());
     }
+
+    /** @test */
+    public function it_can_get_numberOfIllustrations()
+    {
+        $this->assertSame(4, $this->product->getNumberOfIllustrations());
+    }
 }
