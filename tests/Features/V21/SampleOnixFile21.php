@@ -309,4 +309,18 @@ trait SampleOnixFile21
     {
         $this->assertSame(4, $this->product->getNumberOfIllustrations());
     }
+
+    /** @test */
+    public function it_can_get_mainsubject()
+    {
+        $mainSubject = $this->product->getMainSubject();
+
+        $this->assertCount(1, $mainSubject);
+
+        $this->assertSame('93', $mainSubject[0]->getMainSubjectSchemeIdentifier());
+        $this->assertSame('Thema subject category', $mainSubject[0]->getMainSubjectSchemeIdentifierDesc());
+
+        $this->assertSame('FFP', $mainSubject[0]->getSubjectCode());
+        $this->assertSame('Crime & mystery: police procedural', $mainSubject[0]->getSubjectHeadingText());
+    }
 }

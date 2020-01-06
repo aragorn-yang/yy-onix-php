@@ -67,6 +67,11 @@
             <ExtentUnit>03</ExtentUnit>
         </Extent>
         <NumberOfIllustrations>4</NumberOfIllustrations>
+        <mainsubject>
+            <MainSubjectSchemeIdentifier>93</MainSubjectSchemeIdentifier>
+            <SubjectCode>FFP</SubjectCode>
+            <SubjectHeadingText>Crime &amp; mystery: police procedural</SubjectHeadingText>
+        </mainsubject>
         <Illustrations>
             <IllustrationType>01</IllustrationType>
             <Number>4</Number>
