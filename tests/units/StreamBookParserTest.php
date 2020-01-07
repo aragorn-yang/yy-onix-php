@@ -29,8 +29,7 @@ class StreamBookParserTest extends TestCase
     }
 
     /** @test */
-    public
-    function it_can_get_onix_version_30_after_parsing(): void
+    public function it_can_get_onix_version_30_after_parsing(): void
     {
         $this->iniParser();
         $this->parser->parseString($this->stuffIntoRefNameEditionV30(''));

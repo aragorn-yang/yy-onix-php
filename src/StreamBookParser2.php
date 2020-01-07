@@ -1,5 +1,4 @@
 <?php
-
 namespace AragornYang\Onix;
 
 class StreamBookParser2 extends BookParser
