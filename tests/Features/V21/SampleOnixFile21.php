@@ -162,6 +162,12 @@ trait SampleOnixFile21
         $this->assertSame('01', $supplyDetail->getUnpricedItemType());
         $this->assertSame('Free of charge', $supplyDetail->getUnpricedItemTypeDesc());
         $this->assertSame('20190930', $supplyDetail->getLastDateForReturns());
+
+        $website = $supplyDetail->getWebsite();
+        $this->assertCount(1, $website);
+        $this->assertSame('01', $website[0]->getWebsiteRole());
+        $this->assertSame("Publisher’s corporate website", $website[0]->getWebsiteRoleDesc());
+        $this->assertSame("http://www.wwnorton.com", $website[0]->getWebsiteLink());
     }
 
     /** @test */
