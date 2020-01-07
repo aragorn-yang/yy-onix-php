@@ -34,6 +34,14 @@
             <b012>BC</b012>
             <b210>1</b210>
         </containeditem>
+        <productformfeature>
+            <b334>13</b334>
+            <b335>04</b335>
+            <b336>Contains a Small Ball</b336>
+        </productformfeature>
+        <productformfeature>
+            <b334>30</b334>
+        </productformfeature>
         <title>
             <b202>01</b202>
             <b203 textcase="02">British English, A to Zed</b203>

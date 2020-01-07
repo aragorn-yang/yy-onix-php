@@ -360,4 +360,20 @@ trait SampleOnixFile21
 
         $this->assertSame('San Antonio Tricentennial Commission', $copyrightOwners[0]->getPersonName());
     }
+
+    /** @test */
+    public function it_can_get_productFormFeature()
+    {
+        $productFormFeature = $this->product->getProductFormFeature();
+
+        $this->assertCount(2, $productFormFeature);
+
+        $this->assertSame('13', $productFormFeature[0]->getProductFormFeatureType());
+        $this->assertSame('EU Toy Safety Hazard warning', $productFormFeature[0]->getProductFormFeatureTypeDesc());
+
+        $this->assertSame('04', $productFormFeature[0]->getProductFormFeatureValue());
+        $this->assertSame('', $productFormFeature[0]->getProductFormFeatureValueDesc());
+
+        $this->assertSame('Contains a Small Ball', $productFormFeature[0]->getProductFormFeatureDescription());
+    }
 }

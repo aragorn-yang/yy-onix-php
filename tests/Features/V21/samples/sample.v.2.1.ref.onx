@@ -34,6 +34,14 @@
             <ProductForm>BC</ProductForm>
             <NumberOfPieces>1</NumberOfPieces>
         </ContainedItem>
+        <ProductFormFeature>
+            <ProductFormFeatureType>13</ProductFormFeatureType>
+            <ProductFormFeatureValue>04</ProductFormFeatureValue>
+            <ProductFormFeatureDescription>Contains a Small Ball</ProductFormFeatureDescription>
+        </ProductFormFeature>
+        <ProductFormFeature>
+            <ProductFormFeatureType>30</ProductFormFeatureType>
+        </ProductFormFeature>
         <Title>
             <TitleType>01</TitleType>
             <TitleText textcase="02">British English, A to Zed</TitleText>
