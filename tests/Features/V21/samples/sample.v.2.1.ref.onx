@@ -182,6 +182,10 @@
             <TelephoneNumber>+44 (0)1865 474000</TelephoneNumber>
             <FaxNumber>+44 (0)1865 474001</FaxNumber>
             <EmailAddress>eurobkinfo@elsevier.com</EmailAddress>
+            <Website>
+                <WebsiteRole>01</WebsiteRole>
+                <WebsiteLink>http://www.wwnorton.com</WebsiteLink>
+            </Website>
             <Price>
                 <PriceTypeCode>01</PriceTypeCode>
                 <PriceAmount>35.00</PriceAmount>

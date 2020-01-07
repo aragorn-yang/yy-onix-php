@@ -9,8 +9,10 @@ class Website extends Composite
 {
     /** @var CodeInList */
     protected $websiteRole;
+
     /** @var string */
     protected $websiteDescription = '';
+
     /** @var string */
     protected $websiteLink = '';
 
