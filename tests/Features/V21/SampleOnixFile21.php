@@ -344,4 +344,20 @@ trait SampleOnixFile21
         $this->assertSame("Publisher's website", $productWebsites[0]->getProductWebsiteDescription());
         $this->assertSame('www.rangjung.com', $productWebsites[0]->getProductWebsiteLink());
     }
+
+    /** @test */
+    public function it_can_get_copyrightStatement()
+    {
+        $copyrightStatements = $this->product->getCopyrightStatement();
+
+        $this->assertCount(1, $copyrightStatements);
+
+        $this->assertSame('2019', $copyrightStatements[0]->getCopyrightYear());
+
+        $copyrightOwners = $copyrightStatements[0]->getCopyrightOwner();
+
+        $this->assertCount(1, $copyrightOwners);
+
+        $this->assertSame('San Antonio Tricentennial Commission', $copyrightOwners[0]->getPersonName());
+    }
 }

@@ -143,6 +143,12 @@
         <NotForSale>
             <RightsCountry>SS</RightsCountry>
         </NotForSale>
+        <CopyrightStatement>
+            <CopyrightYear>2019</CopyrightYear>
+            <CopyrightOwner>
+                <PersonName>San Antonio Tricentennial Commission</PersonName>
+            </CopyrightOwner>
+        </CopyrightStatement>
         <Measure>
             <MeasureTypeCode>01</MeasureTypeCode>
             <Measurement>9.25</Measurement>
