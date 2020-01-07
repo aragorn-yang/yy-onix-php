@@ -4,15 +4,22 @@ namespace AragornYang\Onix;
 
 class StreamBookParser2 extends BookParser
 {
-    public function parseString(string $contents): void
-    {
-    }
-
-    public function parseFile(string $file): void
+    public function parseString(string $xmlString): void
     {
         $xml = new \XMLReader();
-        $xml->open($file);
+        $xml->xml($xmlString, 'UTF-8');
+        $this->parseStream($xml);
+    }
 
+    public function parseFile(string $xmlFile): void
+    {
+        $xml = new \XMLReader();
+        $xml->open($xmlFile, 'UTF-8');
+        $this->parseStream($xml);
+    }
+
+    public function parseStream(\XMLReader $xml): void
+    {
         while ($xml->read()) {
             if ($xml->nodeType != \XMLReader::ELEMENT) {
                 continue;
