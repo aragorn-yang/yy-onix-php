@@ -57,6 +57,9 @@ class Contributor extends Composite
     /** @var string */
     protected $corporateName = '';
 
+    /** @var int */
+    protected $sequenceNumberWithinRole = 0;
+
     protected const TYPE_OF_AUTHOR = 'A01';
 
     public function getSequenceNumber(): int
@@ -220,5 +223,15 @@ class Contributor extends Composite
     public function getCorporateName(): string
     {
         return $this->corporateName;
+    }
+
+    public function setSequenceNumberWithinRole($value): void
+    {
+        $this->sequenceNumberWithinRole = (int)$value;
+    }
+
+    public function getSequenceNumberWithinRole(): int
+    {
+        return $this->sequenceNumberWithinRole;
     }
 }

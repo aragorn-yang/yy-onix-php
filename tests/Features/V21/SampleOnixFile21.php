@@ -57,6 +57,7 @@ trait SampleOnixFile21
         $this->assertSame('US-MI', $author->getRegionCode());
         $this->assertSame('Jr.', $author->getSuffixToKey());
         $this->assertSame('Raqs Media Collective', $author->getCorporateName());
+        $this->assertSame(1, $author->getSequenceNumberWithinRole());
     }
 
     /** @test */
