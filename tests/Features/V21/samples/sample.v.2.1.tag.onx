@@ -205,6 +205,19 @@
             </reissue>
             <j192>01</j192>
         </supplydetail>
+        <marketrepresentation>
+            <agentidentifier>
+                <j400>06</j400>
+                <b244>5030670141531</b244>
+            </agentidentifier>
+            <j401>John Wiley &amp; Sons</j401>
+            <j402>05</j402>
+            <j403>GB</j403>
+            <marketdate>
+                <j408>01</j408>
+                <b306>20071002</b306>
+            </marketdate>
+        </marketrepresentation>
 		<b049>Trevor Hoppe</b049>
     </product>
 </ONIXmessage>

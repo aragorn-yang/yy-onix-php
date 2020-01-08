@@ -66,6 +66,7 @@ use AragornYang\Onix\productFeatures\HasProductPackaging;
 use AragornYang\Onix\productFeatures\HasProductWebsites;
 use AragornYang\Onix\productFeatures\HasCopyrightStatements;
 use AragornYang\Onix\ProductFeatures\HasComplexitys;
+use AragornYang\Onix\ProductFeatures\HasMarketRepresentations;
 
 class Product21 extends Composite implements Product
 {
@@ -132,7 +133,8 @@ class Product21 extends Composite implements Product
         HasProductPackaging,
         HasProductWebsites,
         HasCopyrightStatements,
-        HasComplexitys;
+        HasComplexitys,
+        HasMarketRepresentations;
 
     /** @var string */
     protected $compositeName = 'Product';

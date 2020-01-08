@@ -207,6 +207,19 @@
             </Reissue>
             <UnpricedItemType>01</UnpricedItemType>
         </SupplyDetail>
+        <MarketRepresentation>
+            <AgentIdentifier>
+                <AgentIDType>06</AgentIDType>
+                <IDValue>5030670141531</IDValue>
+            </AgentIdentifier>
+            <AgentName>John Wiley &amp; Sons</AgentName>
+            <AgentRole>05</AgentRole>
+            <MarketCountry>GB</MarketCountry>
+            <MarketDate>
+                <MarketDateRole>01</MarketDateRole>
+                <Date>20071002</Date>
+            </MarketDate>
+        </MarketRepresentation>
 		<ContributorStatement>Trevor Hoppe</ContributorStatement>
     </Product>
 </ONIXMessage>
