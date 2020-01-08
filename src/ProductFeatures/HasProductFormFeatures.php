@@ -12,7 +12,7 @@ trait HasProductFormFeatures
     /**
      * @return ProductFormFeature[]
      */
-    public function getProductFormFeature(): array
+    public function getProductFormFeatures(): array
     {
         return $this->productFormFeatures;
     }

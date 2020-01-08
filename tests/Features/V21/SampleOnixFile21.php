@@ -371,7 +371,7 @@ trait SampleOnixFile21
     /** @test */
     public function it_can_get_productFormFeature()
     {
-        $productFormFeature = $this->product->getProductFormFeature();
+        $productFormFeature = $this->product->getProductFormFeatures();
 
         $this->assertCount(2, $productFormFeature);
 
