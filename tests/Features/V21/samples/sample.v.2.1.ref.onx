@@ -184,6 +184,15 @@
             <Measurement>1.2</Measurement>
             <MeasureUnitCode>in</MeasureUnitCode>
         </Measure>
+        <RelatedProduct>
+            <RelationCode>27</RelationCode>
+            <ProductIdentifier>
+                <ProductIDType>15</ProductIDType>
+                <IDValue>9780393079739</IDValue>
+            </ProductIdentifier>
+            <ProductForm>DG</ProductForm>
+            <EpubType>029</EpubType>
+        </RelatedProduct>
         <SupplyDetail>
             <SupplierEANLocationNumber>5030670154326</SupplierEANLocationNumber>
             <SupplierSAN>1234567</SupplierSAN>
