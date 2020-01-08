@@ -6,6 +6,7 @@ use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList17ContributorRole;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList49RegionCode;
+use AragornYang\Onix\ProductFeatures\HasWebsite;
 
 /**
  * @see PR.8 Authorship in Onix Spec 2.1
@@ -14,6 +15,8 @@ use AragornYang\Onix\CodeLists\CodeList49RegionCode;
  */
 class Contributor extends Composite
 {
+    use HasWebsite;
+
     /** @var int */
     protected $sequenceNumber = 0;
     /** @var CodeInList */

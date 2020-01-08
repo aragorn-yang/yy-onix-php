@@ -58,6 +58,13 @@ trait SampleOnixFile21
         $this->assertSame('Jr.', $author->getSuffixToKey());
         $this->assertSame('Raqs Media Collective', $author->getCorporateName());
         $this->assertSame(1, $author->getSequenceNumberWithinRole());
+
+        $websites = $author->getWebsites();
+        $this->assertCount(1, $websites);
+        $this->assertSame('00', $websites[0]->getWebsiteRole());
+        $this->assertSame('Unspecified, see website description', $websites[0]->getWebsiteRoleDesc());
+        $this->assertSame("Nell Irvin Painter's Website", $websites[0]->getWebsiteDescription());
+        $this->assertSame('http://www.nellpainter.com/', $websites[0]->getWebsiteLink());
     }
 
     /** @test */
@@ -164,7 +171,7 @@ trait SampleOnixFile21
         $this->assertSame('Free of charge', $supplyDetail->getUnpricedItemTypeDesc());
         $this->assertSame('20190930', $supplyDetail->getLastDateForReturns());
 
-        $website = $supplyDetail->getWebsite();
+        $website = $supplyDetail->getWebsites();
         $this->assertCount(1, $website);
         $this->assertSame('01', $website[0]->getWebsiteRole());
         $this->assertSame("Publisher’s corporate website", $website[0]->getWebsiteRoleDesc());

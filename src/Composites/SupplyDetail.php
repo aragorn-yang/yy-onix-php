@@ -13,11 +13,11 @@ use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 use AragornYang\Onix\ProductFeatures\HasStock;
-use AragornYang\Onix\Composites\Website;
+use AragornYang\Onix\ProductFeatures\HasWebsite;
 
 class SupplyDetail extends Composite
 {
-    use HasExpectedShipDate, HasStock;
+    use HasExpectedShipDate, HasStock, HasWebsite;
     /** @var CodeInList */
     protected $supplierRole;
     /** @var string */
@@ -68,9 +68,6 @@ class SupplyDetail extends Composite
 
     /** @var string */
     protected $supplierEANLocationNumber = '';
-
-    /** @var array|Website */
-    protected $website = [];
 
     public function getSupplierRole(): string
     {
@@ -315,15 +312,5 @@ class SupplyDetail extends Composite
     public function getSupplierEANLocationNumber(): string
     {
         return $this->supplierEANLocationNumber;
-    }
-
-    public function setWebsite(\SimpleXMLElement $xml): void
-    {
-        $this->website[] = Website::buildFromXml($xml, $this);
-    }
-
-    public function getWebsite(): array
-    {
-        return $this->website;
     }
 }
