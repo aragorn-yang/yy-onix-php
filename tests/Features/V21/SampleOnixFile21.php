@@ -398,4 +398,17 @@ trait SampleOnixFile21
 
         $this->assertSame('Contains a Small Ball', $productFormFeature[0]->getProductFormFeatureDescription());
     }
+
+    /** @test */
+    public function it_can_get_complexity()
+    {
+        $complexity = $this->product->getComplexity();
+
+        $this->assertCount(1, $complexity);
+
+        $this->assertSame('06', $complexity[0]->getComplexitySchemeIdentifier());
+        $this->assertSame('Lexile measure', $complexity[0]->getComplexitySchemeIdentifierDesc());
+
+        $this->assertSame('980L', $complexity[0]->getComplexityCode());
+    }
 }

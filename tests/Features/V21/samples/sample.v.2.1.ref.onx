@@ -103,6 +103,10 @@
             <AudienceRangePrecision>04</AudienceRangePrecision>
             <AudienceRangeValue>17</AudienceRangeValue>
         </Audiencerange>
+        <Complexity>
+            <ComplexitySchemeIdentifier>06</ComplexitySchemeIdentifier>
+            <ComplexityCode>980L</ComplexityCode>
+        </Complexity>
         <OtherText>
             <TextTypeCode>01</TextTypeCode>
             <Text>BRITISH ENGLISH, A TO ZED is the thoroughly updated, revised, and expanded third edition of Norman
