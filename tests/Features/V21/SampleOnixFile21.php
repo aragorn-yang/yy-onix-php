@@ -176,6 +176,9 @@ trait SampleOnixFile21
         $this->assertSame('01', $website[0]->getWebsiteRole());
         $this->assertSame("Publisher’s corporate website", $website[0]->getWebsiteRoleDesc());
         $this->assertSame("http://www.wwnorton.com", $website[0]->getWebsiteLink());
+
+        $reissue = $supplyDetail->getReissue();
+        $this->assertSame('20121008', $reissue ? $reissue->getReissueDate() : '');
     }
 
     /** @test */
