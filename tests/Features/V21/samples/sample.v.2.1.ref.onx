@@ -196,6 +196,9 @@
                 <PriceTypeCode>01</PriceTypeCode>
                 <PriceAmount>35.00</PriceAmount>
             </Price>
+            <Reissue>
+                <ReissueDate>20121008</ReissueDate>
+            </Reissue>
             <UnpricedItemType>01</UnpricedItemType>
         </SupplyDetail>
 		<ContributorStatement>Trevor Hoppe</ContributorStatement>

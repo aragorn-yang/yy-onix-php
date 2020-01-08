@@ -14,6 +14,7 @@ use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 use AragornYang\Onix\ProductFeatures\HasStock;
 use AragornYang\Onix\ProductFeatures\HasWebsite;
+use AragornYang\Onix\Composites\Reissue;
 
 class SupplyDetail extends Composite
 {
@@ -68,6 +69,9 @@ class SupplyDetail extends Composite
 
     /** @var string */
     protected $supplierEANLocationNumber = '';
+
+    /** @var Reissue */
+    protected $reissue;
 
     public function getSupplierRole(): string
     {
@@ -312,5 +316,15 @@ class SupplyDetail extends Composite
     public function getSupplierEANLocationNumber(): string
     {
         return $this->supplierEANLocationNumber;
+    }
+
+    public function setReissue(\SimpleXMLElement $xml): void
+    {
+        $this->reissue = Reissue::buildFromXml($xml, $this);
+    }
+
+    public function getReissue(): ?Reissue
+    {
+        return $this->reissue;
     }
 }
