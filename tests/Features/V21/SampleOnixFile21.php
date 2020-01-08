@@ -411,4 +411,25 @@ trait SampleOnixFile21
 
         $this->assertSame('980L', $complexity[0]->getComplexityCode());
     }
+
+    /** @test */
+    public function it_can_get_marketRepresentations()
+    {
+        $marketRepresentations = $this->product->getMarketRepresentation();
+
+        $this->assertCount(1, $marketRepresentations);
+
+        $agentIdentifier = $marketRepresentations[0]->getAgentIdentifier();
+        $marketDates = $marketRepresentations[0]->getMarketDate();
+
+        $this->assertSame('06', $agentIdentifier->getAgentIDType());
+        $this->assertSame('GLN', $agentIdentifier->getAgentIDTypeDesc());
+        $this->assertSame('John Wiley & Sons', $marketRepresentations[0]->getAgentName());
+        $this->assertSame('05', $marketRepresentations[0]->getAgentRole());
+        $this->assertSame('Exclusive sales agent', $marketRepresentations[0]->getAgentRoleDesc());
+        $this->assertCount(1, $marketDates);
+        $this->assertSame('01', $marketDates[0]->getMarketDateRole());
+        $this->assertSame('Publication date', $marketDates[0]->getMarketDateRoleDesc());
+        $this->assertSame('20071002', $marketDates[0]->getDate());
+    }
 }
