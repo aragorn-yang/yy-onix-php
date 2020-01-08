@@ -2,26 +2,28 @@
 
 namespace AragornYang\Onix;
 
+use \XMLReader;
+
 class XMLReaderBookParser extends BookParser
 {
     public function parseString(string $contents): void
     {
-        $xml = new \XMLReader();
+        $xml = new XMLReader();
         $xml->xml($contents, 'UTF-8');
         $this->parseStream($xml);
     }
 
     public function parseFile(string $file): void
     {
-        $xml = new \XMLReader();
+        $xml = new XMLReader();
         $xml->open($file, 'UTF-8');
         $this->parseStream($xml);
     }
 
-    public function parseStream(\XMLReader $xml): void
+    public function parseStream(XMLReader $xml): void
     {
         while ($xml->read()) {
-            if ($xml->nodeType !== \XMLReader::ELEMENT) {
+            if ($xml->nodeType !== XMLReader::ELEMENT) {
                 continue;
             }
 
@@ -37,7 +39,7 @@ class XMLReaderBookParser extends BookParser
         }
     }
 
-    protected function parseOnixEdition(\XMLReader $xml): void
+    protected function parseOnixEdition(XMLReader $xml): void
     {
         $onix = Onix::getInstance();
 
