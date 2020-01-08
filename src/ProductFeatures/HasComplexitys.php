@@ -4,7 +4,7 @@ namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Complexity;
 
-trait HasComplexity
+trait HasComplexitys
 {
     /** @var array */
     protected $complexity = [];
