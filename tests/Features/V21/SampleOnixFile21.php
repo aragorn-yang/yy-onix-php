@@ -440,8 +440,9 @@ trait SampleOnixFile21
 
         $this->assertCount(1, $relatedProducts);
 
-        $productIdentifiers = $relatedProducts[0]->getProductIdentifiers();
-        $productIdentifiers = array_values($productIdentifiers);
+        $productIdentifiers = array_values($relatedProducts[0]->getProductIdentifiers());
+
+        $productFormDetails = $relatedProducts[0]->getProductFormDetail();
 
         $this->assertSame('27', $relatedProducts[0]->getRelationCode());
         $this->assertSame('Electronic version available as', $relatedProducts[0]->getRelationCodeDesc());
@@ -453,5 +454,10 @@ trait SampleOnixFile21
         $this->assertSame('Electronic book text', $relatedProducts[0]->getProductFormDesc());
         $this->assertSame('029', $relatedProducts[0]->getEpubType());
         $this->assertSame('EPUB', $relatedProducts[0]->getEpubTypeDesc());
+        $this->assertCount(1, $productFormDetails);
+        $this->assertSame('B510', $productFormDetails[0]->code());
+        $this->assertSame('Rough front', $productFormDetails[0]->desc());
+        $this->assertSame('Student Ancillary', $relatedProducts[0]->getProductFormDescription());
+
     }
 }
