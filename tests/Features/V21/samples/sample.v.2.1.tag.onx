@@ -182,6 +182,15 @@
             <c094>1.2</c094>
             <c095>in</c095>
         </measure>
+        <relatedproduct>
+            <h208>27</h208>
+            <productidentifier>
+                <b221>15</b221>
+                <b244>9780393079739</b244>
+            </productidentifier>
+            <b012>DG</b012>
+            <b211>029</b211>
+        </relatedproduct>
         <supplydetail>
             <j135>5030670154326</j135>
             <j136>1234567</j136>

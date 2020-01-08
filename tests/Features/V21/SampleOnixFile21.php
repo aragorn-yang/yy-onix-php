@@ -432,4 +432,26 @@ trait SampleOnixFile21
         $this->assertSame('Publication date', $marketDates[0]->getMarketDateRoleDesc());
         $this->assertSame('20071002', $marketDates[0]->getDate());
     }
+
+    /** @test */
+    public function it_can_get_relatedProduct()
+    {
+        $relatedProducts = $this->product->getRelatedProducts();
+
+        $this->assertCount(1, $relatedProducts);
+
+        $productIdentifiers = $relatedProducts[0]->getProductIdentifiers();
+        $productIdentifiers = array_values($productIdentifiers);
+
+        $this->assertSame('27', $relatedProducts[0]->getRelationCode());
+        $this->assertSame('Electronic version available as', $relatedProducts[0]->getRelationCodeDesc());
+        $this->assertCount(1, $productIdentifiers);
+        $this->assertSame('15', $productIdentifiers[0]->getProductIDType());
+        $this->assertSame('ISBN-13', $productIdentifiers[0]->getProductIDTypeDesc());
+        $this->assertSame('9780393079739', $productIdentifiers[0]->getIDValue());
+        $this->assertSame('DG', $relatedProducts[0]->getProductForm());
+        $this->assertSame('Electronic book text', $relatedProducts[0]->getProductFormDesc());
+        $this->assertSame('029', $relatedProducts[0]->getEpubType());
+        $this->assertSame('EPUB', $relatedProducts[0]->getEpubTypeDesc());
+    }
 }
