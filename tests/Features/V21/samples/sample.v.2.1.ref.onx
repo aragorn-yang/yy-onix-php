@@ -63,6 +63,11 @@
             <RegionCode>US-MI</RegionCode>
             <SuffixToKey>Jr.</SuffixToKey>
             <CorporateName>Raqs Media Collective</CorporateName>
+            <Website>
+                <WebsiteRole>00</WebsiteRole>
+                <WebsiteDescription>Nell Irvin Painter's Website</WebsiteDescription>
+                <WebsiteLink>http://www.nellpainter.com/</WebsiteLink>
+            </Website>
         </Contributor>
         <EditionTypeCode>REV</EditionTypeCode>
         <EditionNumber>3</EditionNumber>

@@ -50,6 +50,4 @@ class Website extends Composite
     {
         $this->websiteLink = $websiteLink;
     }
-
-
 }
