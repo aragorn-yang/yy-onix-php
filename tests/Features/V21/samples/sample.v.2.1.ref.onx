@@ -232,5 +232,6 @@
             </MarketDate>
         </MarketRepresentation>
 		<ContributorStatement>Trevor Hoppe</ContributorStatement>
+		<InitialPrintRun>10000</InitialPrintRun>
     </Product>
 </ONIXMessage>
