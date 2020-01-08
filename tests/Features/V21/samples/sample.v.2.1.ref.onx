@@ -192,6 +192,8 @@
             </ProductIdentifier>
             <ProductForm>DG</ProductForm>
             <EpubType>029</EpubType>
+            <ProductFormDetail>B510</ProductFormDetail>
+            <ProductFormDescription>Student Ancillary</ProductFormDescription>
         </RelatedProduct>
         <SupplyDetail>
             <SupplierEANLocationNumber>5030670154326</SupplierEANLocationNumber>
