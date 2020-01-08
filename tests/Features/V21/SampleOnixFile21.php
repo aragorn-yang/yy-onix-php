@@ -226,6 +226,8 @@ trait SampleOnixFile21
         $this->assertSame('9780520294356', $productIdentifiers ? $productIdentifiers[0]->getIDValue() : '');
         $this->assertSame('B303', $containedItems[0]->getProductFormDetail());
         $this->assertSame('Loose leaf – sheets only', $containedItems[0]->getProductFormDetailDesc());
+        $this->assertSame('14', $containedItems[1]->getProductPackaging());
+        $this->assertSame('In wallet or folder', $containedItems[1]->getProductPackagingDesc());
     }
 
     /** @test */

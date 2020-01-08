@@ -8,6 +8,7 @@ use AragornYang\Onix\ProductFeatures\HasProductFormDescription;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
 use AragornYang\Onix\ProductFeatures\HasNumberOfPieces;
 use AragornYang\Onix\CodeLists\CodeList78ProductFormDetail;
+use AragornYang\Onix\CodeLists\CodeList80ProductPackagingType;
 
 class ContainedItem extends Composite
 {
@@ -16,6 +17,9 @@ class ContainedItem extends Composite
 
     /** @var CodeInList */
     protected $productFormDetail;
+
+    /** @var CodeInList */
+    protected $productPackaging;
 
     public function getItemQuantity(): int
     {
@@ -40,5 +44,20 @@ class ContainedItem extends Composite
     public function getProductFormDetailDesc(): string
     {
         return $this->productFormDetail ? $this->productFormDetail->desc() : '';
+    }
+
+    public function setProductPackaging(string $code): void
+    {
+        $this->productPackaging = new CodeInList(CodeList80ProductPackagingType::class, $code);
+    }
+
+    public function getProductPackaging(): string
+    {
+        return $this->productPackaging ? $this->productPackaging->code() : '';
+    }
+
+    public function getProductPackagingDesc(): string
+    {
+        return $this->productPackaging ? $this->productPackaging->desc() : '';
     }
 }

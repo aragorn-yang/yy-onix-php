@@ -34,6 +34,7 @@
             </ProductIdentifier>
             <ProductForm>BC</ProductForm>
             <NumberOfPieces>1</NumberOfPieces>
+            <ProductPackaging>14</ProductPackaging>
         </ContainedItem>
         <ProductFormFeature>
             <ProductFormFeatureType>13</ProductFormFeatureType>
