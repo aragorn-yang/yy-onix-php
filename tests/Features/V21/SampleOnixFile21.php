@@ -214,15 +214,18 @@ trait SampleOnixFile21
     public function it_can_get_containedItems()
     {
         $containedItems = $this->product->getContainedItems();
-        $containedItem = $containedItems ? $containedItems[0] : '';
 
-        $productIdentifiers = $containedItem ? $containedItem->getProductIdentifiers() : '';
+        $this->assertCount(2, $containedItems);
+
+        $productIdentifiers = $containedItems[0]->getProductIdentifiers();
         $productIdentifiers = array_values($productIdentifiers);
 
-        $this->assertSame('BC', $containedItem ? $containedItem->getProductForm() : '');
-        $this->assertSame(1, $containedItem ? $containedItem->getNumberOfPieces() : '');
+        $this->assertSame('BC', $containedItems[0]->getProductForm());
+        $this->assertSame(1, $containedItems[0]->getNumberOfPieces());
         $this->assertSame('15', $productIdentifiers ? $productIdentifiers[0]->getProductIDType() : '');
         $this->assertSame('9780520294356', $productIdentifiers ? $productIdentifiers[0]->getIDValue() : '');
+        $this->assertSame('B303', $containedItems[0]->getProductFormDetail());
+        $this->assertSame('Loose leaf – sheets only', $containedItems[0]->getProductFormDetailDesc());
     }
 
     /** @test */
