@@ -25,6 +25,7 @@
             </ProductIdentifier>
             <ProductForm>BC</ProductForm>
             <NumberOfPieces>1</NumberOfPieces>
+            <ProductFormDetail>B303</ProductFormDetail>
         </ContainedItem>
         <ContainedItem>
             <ProductIdentifier>
