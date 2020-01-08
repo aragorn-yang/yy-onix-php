@@ -458,6 +458,11 @@ trait SampleOnixFile21
         $this->assertSame('B510', $productFormDetails[0]->code());
         $this->assertSame('Rough front', $productFormDetails[0]->desc());
         $this->assertSame('Student Ancillary', $relatedProducts[0]->getProductFormDescription());
+    }
 
+    /** @test */
+    public function it_can_get_initialPrintRun()
+    {
+        $this->assertSame('10000', $this->product->getInitialPrintRun());
     }
 }
