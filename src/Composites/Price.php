@@ -47,6 +47,8 @@ class Price extends Composite
     protected $countryExcluded = [];
     /** @var CodeInList */
     protected $taxRateCode2;
+    /** @var string */
+    protected $taxRatePercent2 = '';
 
     protected const TYPE_OF_RRP_EXC_TAX = '01';
     protected const TYPE_OF_RRP_INC_TAX = '02';
@@ -286,5 +288,15 @@ class Price extends Composite
     public function getTaxRateCode2Desc(): string
     {
         return $this->taxRateCode2 ? $this->taxRateCode2->desc() : '';
+    }
+
+    public function setTaxRatePercent2(string $value): void
+    {
+        $this->taxRatePercent2 = $value;
+    }
+
+    public function getTaxRatePercent2(): string
+    {
+        return $this->taxRatePercent2;
     }
 }

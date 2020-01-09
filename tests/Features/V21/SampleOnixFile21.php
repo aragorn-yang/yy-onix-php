@@ -178,9 +178,9 @@ trait SampleOnixFile21
         $countryExcludeds = $price->getCountryExcluded();
         $this->assertSame('ES', $countryExcludeds[0]->code());
         $this->assertSame('Spain', $countryExcludeds[0]->desc());
-
         $this->assertSame('Z', $price->getTaxRateCode2());
         $this->assertSame('Zero-rated', $price->getTaxRateCode2Desc());
+        $this->assertSame('0', $price->getTaxRatePercent2());
 
         $website = $supplyDetail->getWebsites();
         $this->assertCount(1, $website);
