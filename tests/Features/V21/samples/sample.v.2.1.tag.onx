@@ -235,5 +235,12 @@
         </marketrepresentation>
 		<b049>Trevor Hoppe</b049>
 		<k167>10000</k167>
+        <mediafile>
+            <f114>04</f114>
+            <f115>03</f115>
+            <f116>01</f116>
+            <f117>9782898020537_FC.jpg</f117>
+            <f373>20190228</f373>
+        </mediafile>
     </product>
 </ONIXmessage>

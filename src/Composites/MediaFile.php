@@ -19,6 +19,9 @@ class MediaFile extends Composite
     /** @var string */
     protected $mediaFileLink = '';
 
+    /** @var string */
+    protected $mediaFileDate = '';
+
     public function getMediaFileTypeCode(): string
     {
         return $this->mediaFileTypeCode ? $this->mediaFileTypeCode->code() : '';
@@ -77,5 +80,15 @@ class MediaFile extends Composite
     public function isFrontCover(): bool
     {
         return (string)$this->mediaFileTypeCode === self::TYPE_OF_FRONT_COVER;
+    }
+
+    public function setMediaFileDate(string $value): void
+    {
+        $this->mediaFileDate = $value;
+    }
+
+    public function getMediaFileDate(): string
+    {
+        return $this->mediaFileDate;
     }
 }

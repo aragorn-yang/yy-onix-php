@@ -237,5 +237,12 @@
         </MarketRepresentation>
 		<ContributorStatement>Trevor Hoppe</ContributorStatement>
 		<InitialPrintRun>10000</InitialPrintRun>
+        <MediaFile>
+            <MediaFileTypeCode>04</MediaFileTypeCode>
+            <MediaFileFormatCode>03</MediaFileFormatCode>
+            <MediaFileLinkTypeCode>01</MediaFileLinkTypeCode>
+            <MediaFileLink>9782898020537_FC.jpg</MediaFileLink>
+            <MediaFileDate>20190228</MediaFileDate>
+        </MediaFile>
     </Product>
 </ONIXMessage>

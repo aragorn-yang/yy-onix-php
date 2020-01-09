@@ -472,4 +472,21 @@ trait SampleOnixFile21
     {
         $this->assertSame('10000', $this->product->getInitialPrintRun());
     }
+
+    /** @test */
+    public function it_can_get_mediaFile()
+    {
+        $mediaFiles = $this->product->getMediaFiles();
+
+        $this->assertCount(1, $mediaFiles);
+
+        $this->assertSame('04', $mediaFiles[0]->getMediaFileTypeCode());
+        $this->assertSame('Image: front cover', $mediaFiles[0]->getMediaFileTypeCodeDesc());
+        $this->assertSame('03', $mediaFiles[0]->getMediaFileFormatCode());
+        $this->assertSame('JPEG', $mediaFiles[0]->getMediaFileFormatCodeDesc());
+        $this->assertSame('01', $mediaFiles[0]->getMediaFileLinkTypeCode());
+        $this->assertSame('URL', $mediaFiles[0]->getMediaFileLinkTypeCodeDesc());
+        $this->assertSame('9782898020537_FC.jpg', $mediaFiles[0]->getMediaFileLink());
+        $this->assertSame('20190228', $mediaFiles[0]->getMediaFileDate());
+    }
 }
