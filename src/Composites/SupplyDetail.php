@@ -73,6 +73,9 @@ class SupplyDetail extends Composite
     /** @var Reissue */
     protected $reissue;
 
+    /** @var array */
+    protected $supplyToCountryExcluded = [];
+
     public function getSupplierRole(): string
     {
         return $this->supplierRole ? $this->supplierRole->code() : '';
@@ -326,5 +329,18 @@ class SupplyDetail extends Composite
     public function getReissue(): ?Reissue
     {
         return $this->reissue;
+    }
+
+    public function setSupplyToCountryExcluded(string $code): void
+    {
+        $codeList = explode(' ', $code);
+        foreach ($codeList as $_code) {
+            $this->supplyToCountryExcluded[] = new CodeInList(CodeList91CountryCodeISO31661::class, $_code);
+        }
+    }
+
+    public function getSupplyToCountryExcluded(): array
+    {
+        return $this->supplyToCountryExcluded;
     }
 }

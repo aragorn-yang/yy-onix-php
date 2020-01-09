@@ -180,6 +180,9 @@ trait SampleOnixFile21
 
         $reissue = $supplyDetail->getReissue();
         $this->assertSame('20121008', $reissue ? $reissue->getReissueDate() : '');
+
+        $supplyToCountryExcludeds = $supplyDetail->getSupplyToCountryExcluded();
+        $this->assertSame('AD', $supplyToCountryExcludeds ? $supplyToCountryExcludeds[0]->code() : '');
     }
 
     /** @test */

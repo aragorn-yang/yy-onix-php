@@ -219,6 +219,7 @@
                 <ReissueDate>20121008</ReissueDate>
             </Reissue>
             <UnpricedItemType>01</UnpricedItemType>
+            <SupplyToCountryExcluded>AD AE AF AL AM AN AO AQ AT AU AX AZ BA BD BE BF BG BH BI BJ BN BQ BT BV BW BY CC CD CF CG CH CI CK CM CN CV CW CX CY CZ DE DJ DK DZ EE EG EH ER ES ET FI FJ FK FO FR GA GB GE GG GH GI GL GM GN GQ GR GS GW HK HM HR HU ID IE IL IM IN IO IQ IR IS IT JE JO JP KE KG KH KI KM KP KR KW KZ LA LB LI LK LR LS LT LU LV LY MA MC MD ME MG MK ML MM MN MO MR MS MT MU MV MW MY MZ NA NC NE NF NG NL NO NP NR NU NZ OM PF PG PK PL PM PN PS PT QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SS ST SX SY SZ TD TF TG TH TJ TK TL TM TN TO TR TV TW TZ UA UG UZ VA VN VU WF WS YE YT ZA ZM ZW</SupplyToCountryExcluded>
         </SupplyDetail>
         <MarketRepresentation>
             <AgentIdentifier>
