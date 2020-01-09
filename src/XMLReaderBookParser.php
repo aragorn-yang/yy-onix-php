@@ -10,17 +10,17 @@ class XMLReaderBookParser extends BookParser
     {
         $xml = new XMLReader();
         $xml->xml($contents, 'UTF-8');
-        $this->parseStream($xml);
+        $this->parseXMLReader($xml);
     }
 
     public function parseFile(string $file): void
     {
         $xml = new XMLReader();
         $xml->open($file, 'UTF-8');
-        $this->parseStream($xml);
+        $this->parseXMLReader($xml);
     }
 
-    public function parseStream(XMLReader $xml): void
+    public function parseXMLReader(XMLReader $xml): void
     {
         while ($xml->read()) {
             if ($xml->nodeType !== XMLReader::ELEMENT) {
