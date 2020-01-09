@@ -217,6 +217,7 @@
                 <PriceAmount>35.00</PriceAmount>
                 <PriceQualifier>05</PriceQualifier>
                 <CountryExcluded>ES</CountryExcluded>
+				<TaxRateCode2>Z</TaxRateCode2>
             </Price>
             <Reissue>
                 <ReissueDate>20121008</ReissueDate>

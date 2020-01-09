@@ -45,6 +45,8 @@ class Price extends Composite
     protected $priceQualifier;
     /** @var array */
     protected $countryExcluded = [];
+    /** @var CodeInList */
+    protected $taxRateCode2;
 
     protected const TYPE_OF_RRP_EXC_TAX = '01';
     protected const TYPE_OF_RRP_INC_TAX = '02';
@@ -269,5 +271,20 @@ class Price extends Composite
     public function getCountryExcluded(): array
     {
         return $this->countryExcluded;
+    }
+
+    public function setTaxRateCode2(string $code): void
+    {
+        $this->taxRateCode2 = new CodeInList(CodeList62TaxRateCoded::class, $code);
+    }
+
+    public function getTaxRateCode2(): string
+    {
+        return $this->taxRateCode2 ? $this->taxRateCode2->code() : '';
+    }
+
+    public function getTaxRateCode2Desc(): string
+    {
+        return $this->taxRateCode2 ? $this->taxRateCode2->desc() : '';
     }
 }
