@@ -501,4 +501,16 @@ trait SampleOnixFile21
         $this->assertSame('20190228', $mediaFiles[0]->getMediaFileDate());
         $this->assertSame('Cover design by Eleanor Rose | Cover image from Pixabay', $mediaFiles[0]->getDownloadCredit());
     }
+
+    /** @test */
+    public function it_can_get_productClassification()
+    {
+        $productClassifications = $this->product->getProductClassifications();
+
+        $this->assertCount(1, $productClassifications);
+
+        $this->assertSame('07', $productClassifications[0]->getProductClassificationType());
+        $this->assertSame("Sender’s product category", $productClassifications[0]->getProductClassificationTypeDesc());
+        $this->assertSame('PN', $productClassifications[0]->getProductClassificationCode());
+    }
 }

@@ -36,6 +36,10 @@
             <b210>1</b210>
             <b225>14</b225>
         </containeditem>
+        <productclassification>
+            <b274>07</b274>
+            <b275>PN</b275>
+        </productclassification>
         <productformfeature>
             <b334>13</b334>
             <b335>04</b335>

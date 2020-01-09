@@ -36,6 +36,10 @@
             <NumberOfPieces>1</NumberOfPieces>
             <ProductPackaging>14</ProductPackaging>
         </ContainedItem>
+        <ProductClassification>
+            <ProductClassificationType>07</ProductClassificationType>
+            <ProductClassificationCode>PN</ProductClassificationCode>
+        </ProductClassification>
         <ProductFormFeature>
             <ProductFormFeatureType>13</ProductFormFeatureType>
             <ProductFormFeatureValue>04</ProductFormFeatureValue>
