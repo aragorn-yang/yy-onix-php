@@ -215,6 +215,8 @@
             <Price>
                 <PriceTypeCode>01</PriceTypeCode>
                 <PriceAmount>35.00</PriceAmount>
+                <PriceQualifier>05</PriceQualifier>
+                <CountryExcluded>ES</CountryExcluded>
             </Price>
             <Reissue>
                 <ReissueDate>20121008</ReissueDate>

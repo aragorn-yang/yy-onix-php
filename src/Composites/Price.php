@@ -9,6 +9,7 @@ use AragornYang\Onix\CodeLists\CodeList61PriceStatus;
 use AragornYang\Onix\CodeLists\CodeList62TaxRateCoded;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList96CurrencyCodeISO4217;
+use AragornYang\Onix\CodeLists\CodeList59PriceTypeQualifier;
 
 class Price extends Composite
 {
@@ -40,6 +41,10 @@ class Price extends Composite
     protected $countryCodes = [];
     /** @var CodeInList[] */
     protected $territories = [];
+    /** @var CodeInList */
+    protected $priceQualifier;
+    /** @var array */
+    protected $countryExcluded = [];
 
     protected const TYPE_OF_RRP_EXC_TAX = '01';
     protected const TYPE_OF_RRP_INC_TAX = '02';
@@ -236,5 +241,33 @@ class Price extends Composite
             new CodeInList(CodeList49RegionCodeSimplified::class, $code);
             $this->territories[] = $code;
         }
+    }
+
+    public function setPriceQualifier(string $code): void
+    {
+        $this->priceQualifier = new CodeInList(CodeList59PriceTypeQualifier::class, $code);
+    }
+
+    public function getPriceQualifier(): string
+    {
+        return $this->priceQualifier ? $this->priceQualifier->code() : '';
+    }
+
+    public function getPriceQualifierDesc(): string
+    {
+        return $this->priceQualifier ? $this->priceQualifier->desc() : '';
+    }
+
+    public function setCountryExcluded(string $code): void
+    {
+        $codeList = explode(' ', $code);
+        foreach ($codeList as $_code) {
+            $this->countryExcluded[] = new CodeInList(CodeList91CountryCodeISO31661::class, $_code);
+        }
+    }
+
+    public function getCountryExcluded(): array
+    {
+        return $this->countryExcluded;
     }
 }

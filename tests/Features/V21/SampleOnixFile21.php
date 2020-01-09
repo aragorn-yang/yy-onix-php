@@ -160,6 +160,7 @@ trait SampleOnixFile21
 
         $this->assertSame('1234567', $supplyDetail->getSupplierSAN());
         $this->assertSame('IP', $supplyDetail->getAvailabilityCode());
+
         $price = $supplyDetail->getPrices()[0];
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
@@ -172,6 +173,12 @@ trait SampleOnixFile21
         $this->assertSame('01', $supplyDetail->getUnpricedItemType());
         $this->assertSame('Free of charge', $supplyDetail->getUnpricedItemTypeDesc());
         $this->assertSame('20190930', $supplyDetail->getLastDateForReturns());
+        $this->assertSame('05', $price->getPriceQualifier());
+        $this->assertSame('Consumer price', $price->getPriceQualifierDesc());
+        $countryExcludeds = $price->getCountryExcluded();
+        $this->assertSame('ES', $countryExcludeds[0]->code());
+        $this->assertSame('Spain', $countryExcludeds[0]->desc());
+
 
         $website = $supplyDetail->getWebsites();
         $this->assertCount(1, $website);
