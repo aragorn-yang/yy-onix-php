@@ -22,6 +22,9 @@ class MediaFile extends Composite
     /** @var string */
     protected $mediaFileDate = '';
 
+    /** @var string */
+    protected $downloadCredit = '';
+
     public function getMediaFileTypeCode(): string
     {
         return $this->mediaFileTypeCode ? $this->mediaFileTypeCode->code() : '';
@@ -90,5 +93,15 @@ class MediaFile extends Composite
     public function getMediaFileDate(): string
     {
         return $this->mediaFileDate;
+    }
+
+    public function setDownloadCredit(string $value): void
+    {
+        $this->downloadCredit = $value;
+    }
+
+    public function getDownloadCredit(): string
+    {
+        return $this->downloadCredit;
     }
 }

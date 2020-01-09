@@ -499,5 +499,6 @@ trait SampleOnixFile21
         $this->assertSame('URL', $mediaFiles[0]->getMediaFileLinkTypeCodeDesc());
         $this->assertSame('9782898020537_FC.jpg', $mediaFiles[0]->getMediaFileLink());
         $this->assertSame('20190228', $mediaFiles[0]->getMediaFileDate());
+        $this->assertSame('Cover design by Eleanor Rose | Cover image from Pixabay', $mediaFiles[0]->getDownloadCredit());
     }
 }
