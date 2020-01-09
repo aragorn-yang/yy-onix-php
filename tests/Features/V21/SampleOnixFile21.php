@@ -181,6 +181,7 @@ trait SampleOnixFile21
         $this->assertSame('Z', $price->getTaxRateCode2());
         $this->assertSame('Zero-rated', $price->getTaxRateCode2Desc());
         $this->assertSame('0', $price->getTaxRatePercent2());
+        $this->assertSame('187.49', $price->getTaxableAmount2());
 
         $website = $supplyDetail->getWebsites();
         $this->assertCount(1, $website);

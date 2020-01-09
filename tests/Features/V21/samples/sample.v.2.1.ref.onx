@@ -219,6 +219,7 @@
                 <CountryExcluded>ES</CountryExcluded>
 				<TaxRateCode2>Z</TaxRateCode2>
 				<TaxRatePercent2>0</TaxRatePercent2>
+				<TaxableAmount2>187.49</TaxableAmount2>
             </Price>
             <Reissue>
                 <ReissueDate>20121008</ReissueDate>

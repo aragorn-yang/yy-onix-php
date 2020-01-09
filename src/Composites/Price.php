@@ -49,6 +49,8 @@ class Price extends Composite
     protected $taxRateCode2;
     /** @var string */
     protected $taxRatePercent2 = '';
+    /** @var string */
+    protected $taxableAmount2 = '';
 
     protected const TYPE_OF_RRP_EXC_TAX = '01';
     protected const TYPE_OF_RRP_INC_TAX = '02';
@@ -298,5 +300,15 @@ class Price extends Composite
     public function getTaxRatePercent2(): string
     {
         return $this->taxRatePercent2;
+    }
+
+    public function setTaxableAmount2(string $value): void
+    {
+        $this->taxableAmount2 = $value;
+    }
+
+    public function getTaxableAmount2(): string
+    {
+        return $this->taxableAmount2;
     }
 }
