@@ -47,10 +47,12 @@ class Price extends Composite
     protected $countryExcluded = [];
     /** @var CodeInList */
     protected $taxRateCode2;
-    /** @var string */
-    protected $taxRatePercent2 = '';
-    /** @var string */
-    protected $taxableAmount2 = '';
+    /** @var float */
+    protected $taxRatePercent2 = 0.0;
+    /** @var float */
+    protected $taxableAmount2 = 0.0;
+    /** @var float */
+    protected $taxAmount2 = 0.0;
 
     protected const TYPE_OF_RRP_EXC_TAX = '01';
     protected const TYPE_OF_RRP_INC_TAX = '02';
@@ -294,21 +296,31 @@ class Price extends Composite
 
     public function setTaxRatePercent2(string $value): void
     {
-        $this->taxRatePercent2 = $value;
+        $this->taxRatePercent2 = (float)$value;
     }
 
-    public function getTaxRatePercent2(): string
+    public function getTaxRatePercent2(): float
     {
         return $this->taxRatePercent2;
     }
 
     public function setTaxableAmount2(string $value): void
     {
-        $this->taxableAmount2 = $value;
+        $this->taxableAmount2 = (float)$value;
     }
 
-    public function getTaxableAmount2(): string
+    public function getTaxableAmount2(): float
     {
         return $this->taxableAmount2;
+    }
+
+    public function setTaxAmount2(string $value): void
+    {
+        $this->taxAmount2 = (float)$value;
+    }
+
+    public function getTaxAmount2(): float
+    {
+        return $this->taxAmount2;
     }
 }

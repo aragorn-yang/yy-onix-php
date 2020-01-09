@@ -180,8 +180,9 @@ trait SampleOnixFile21
         $this->assertSame('Spain', $countryExcludeds[0]->desc());
         $this->assertSame('Z', $price->getTaxRateCode2());
         $this->assertSame('Zero-rated', $price->getTaxRateCode2Desc());
-        $this->assertSame('0', $price->getTaxRatePercent2());
-        $this->assertSame('187.49', $price->getTaxableAmount2());
+        $this->assertSame((float)0, $price->getTaxRatePercent2());
+        $this->assertSame((float)187.49, $price->getTaxableAmount2());
+        $this->assertSame((float)0.00, $price->getTaxAmount2());
 
         $website = $supplyDetail->getWebsites();
         $this->assertCount(1, $website);
