@@ -20,6 +20,9 @@ class Prize extends Composite
     /** @var CodeInList */
     protected $prizeCountry;
 
+    /** @var string */
+    protected $prizeJury = '';
+
     public function getPrizeName(): string
     {
         return $this->prizeName;
@@ -68,5 +71,15 @@ class Prize extends Composite
     public function getPrizeCountryDesc(): string
     {
         return $this->prizeCountry ? $this->prizeCountry->desc() : '';
+    }
+
+    public function setPrizeJury(string $value): void
+    {
+        $this->prizeJury = $value;
+    }
+
+    public function getPrizeJury(): string
+    {
+        return $this->prizeJury;
     }
 }

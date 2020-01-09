@@ -284,6 +284,8 @@ trait SampleOnixFile21
 
         $this->assertSame('05', $prizes[1]->getPrizeCode());
         $this->assertSame('Long-listed', $prizes[1]->getPrizeCodeDesc());
+
+        $this->assertSame('BBC Wildlife', $prizes[0]->getPrizeJury());
     }
 
     /** @test */
