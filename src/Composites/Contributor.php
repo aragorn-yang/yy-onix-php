@@ -66,6 +66,9 @@ class Contributor extends Composite
     /** @var string */
     protected $titlesAfterNames = '';
 
+    /** @var string */
+    protected $prefixToKey = '';
+
     protected const TYPE_OF_AUTHOR = 'A01';
 
     public function getSequenceNumber(): int
@@ -249,5 +252,15 @@ class Contributor extends Composite
     public function getTitlesAfterNames(): string
     {
         return $this->titlesAfterNames;
+    }
+
+    public function setPrefixToKey(string $value): void
+    {
+        $this->prefixToKey = $value;
+    }
+
+    public function getPrefixToKey(): string
+    {
+        return $this->prefixToKey;
     }
 }
