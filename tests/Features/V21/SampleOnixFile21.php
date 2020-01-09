@@ -53,6 +53,7 @@ trait SampleOnixFile21
         $author = $this->product->getAuthor();
 
         $this->assertSame('Schur, Norman W', $author->getPersonNameInverted());
+        $this->assertSame('Ph.D.', $author->getTitlesAfterNames());
         $this->assertSame('US', $author->getCountryCode());
         $this->assertSame('US-MI', $author->getRegionCode());
         $this->assertSame('Jr.', $author->getSuffixToKey());

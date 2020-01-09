@@ -63,6 +63,9 @@ class Contributor extends Composite
     /** @var int */
     protected $sequenceNumberWithinRole = 0;
 
+    /** @var string */
+    protected $titlesAfterNames = '';
+
     protected const TYPE_OF_AUTHOR = 'A01';
 
     public function getSequenceNumber(): int
@@ -236,5 +239,15 @@ class Contributor extends Composite
     public function getSequenceNumberWithinRole(): int
     {
         return $this->sequenceNumberWithinRole;
+    }
+
+    public function setTitlesAfterNames(string $value): void
+    {
+        $this->titlesAfterNames = $value;
+    }
+
+    public function getTitlesAfterNames(): string
+    {
+        return $this->titlesAfterNames;
     }
 }
