@@ -513,4 +513,12 @@ trait SampleOnixFile21
         $this->assertSame("Sender’s product category", $productClassifications[0]->getProductClassificationTypeDesc());
         $this->assertSame('PN', $productClassifications[0]->getProductClassificationCode());
     }
+
+    /** @test */
+    public function it_can_get_placeAsSubject()
+    {
+        $placeAsSubjects = $this->product->getPlaceAsSubject();
+        $this->assertCount(1, $placeAsSubjects);
+        $this->assertSame('Calcutta and Rhode Island', $placeAsSubjects[0]);
+    }
 }
