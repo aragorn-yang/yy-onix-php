@@ -262,5 +262,12 @@
         <b211>002</b211>
         <b278>02</b278>
         <b217>2</b217>
+        <set>
+            <productidentifier>
+                <b221>03</b221>
+                <b244>9783540336273</b244>
+            </productidentifier>
+            <b023>Rheumatology and Immunology Therapy</b023>
+        </set>
     </product>
 </ONIXmessage>

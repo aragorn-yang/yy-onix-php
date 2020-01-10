@@ -556,4 +556,18 @@ trait SampleOnixFile21
     {
         $this->assertSame(2, $this->product->getEditionVersionNumber());
     }
+
+    /** @test */
+    public function it_can_get_set()
+    {
+        $sets = $this->product->getSets();
+        $this->assertCount(1, $sets);
+
+        $productIdentifiers = array_values($sets[0]->getProductIdentifiers());
+        $this->assertCount(1, $productIdentifiers);
+
+        $this->assertSame('03', $productIdentifiers[0]->getProductIDType());
+        $this->assertSame('GTIN-13', $productIdentifiers[0]->getProductIDTypeDesc());
+        $this->assertSame('9783540336273', $productIdentifiers[0]->getIDValue());
+    }
 }

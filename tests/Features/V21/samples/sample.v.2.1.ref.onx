@@ -264,5 +264,12 @@
         <EpubType>002</EpubType>
         <EpubSource>02</EpubSource>
         <EditionVersionNumber>2</EditionVersionNumber>
+        <Set>
+            <ProductIdentifier>
+                <ProductIDType>03</ProductIDType>
+                <IDValue>9783540336273</IDValue>
+            </ProductIdentifier>
+            <TitleOfSet>Rheumatology and Immunology Therapy</TitleOfSet>
+        </Set>
     </Product>
 </ONIXMessage>
