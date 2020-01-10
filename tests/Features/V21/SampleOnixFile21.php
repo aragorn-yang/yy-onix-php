@@ -361,9 +361,9 @@ trait SampleOnixFile21
 
         $this->assertSame('93', $mainSubject[0]->getMainSubjectSchemeIdentifier());
         $this->assertSame('Thema subject category', $mainSubject[0]->getMainSubjectSchemeIdentifierDesc());
-
         $this->assertSame('FFP', $mainSubject[0]->getSubjectCode());
         $this->assertSame('Crime & mystery: police procedural', $mainSubject[0]->getSubjectHeadingText());
+        $this->assertSame('2.0', $mainSubject[0]->getSubjectSchemeVersion());
     }
 
     /** @test */
