@@ -521,4 +521,10 @@ trait SampleOnixFile21
         $this->assertCount(1, $placeAsSubjects);
         $this->assertSame('Calcutta and Rhode Island', $placeAsSubjects[0]);
     }
+
+    /** @test */
+    public function it_can_get_pagesArabic()
+    {
+        $this->assertSame(240, $this->product->getPagesArabic());
+    }
 }
