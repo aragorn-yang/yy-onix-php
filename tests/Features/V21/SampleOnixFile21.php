@@ -67,6 +67,8 @@ trait SampleOnixFile21
         $this->assertSame('Unspecified, see website description', $websites[0]->getWebsiteRoleDesc());
         $this->assertSame("Nell Irvin Painter's Website", $websites[0]->getWebsiteDescription());
         $this->assertSame('http://www.nellpainter.com/', $websites[0]->getWebsiteLink());
+
+        $this->assertSame('eng', $author->getLanguageCode());
     }
 
     /** @test */

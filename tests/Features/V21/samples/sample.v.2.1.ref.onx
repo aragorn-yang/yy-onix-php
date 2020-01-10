@@ -76,6 +76,7 @@
                 <WebsiteDescription>Nell Irvin Painter's Website</WebsiteDescription>
                 <WebsiteLink>http://www.nellpainter.com/</WebsiteLink>
             </Website>
+            <LanguageCode>eng</LanguageCode>
         </Contributor>
         <EditionTypeCode>REV</EditionTypeCode>
         <EditionNumber>3</EditionNumber>
