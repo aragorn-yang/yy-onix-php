@@ -259,5 +259,6 @@
         <PagesArabic>240</PagesArabic>
         <PagesRoman>vii</PagesRoman>
         <EpubType>002</EpubType>
+        <EpubSource>02</EpubSource>
     </Product>
 </ONIXMessage>

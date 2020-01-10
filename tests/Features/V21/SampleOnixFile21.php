@@ -540,4 +540,11 @@ trait SampleOnixFile21
         $this->assertSame('002', $this->product->getEpubType());
         $this->assertSame('PDF', $this->product->getEpubTypeDesc());
     }
+
+    /** @test */
+    public function it_can_get_epubSource()
+    {
+        $this->assertSame('02', $this->product->getEpubSource());
+        $this->assertSame('PDF', $this->product->getEpubSourceDesc());
+    }
 }
