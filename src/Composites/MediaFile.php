@@ -25,6 +25,9 @@ class MediaFile extends Composite
     /** @var string */
     protected $downloadCredit = '';
 
+    /** @var int */
+    protected $imageResolution = 0;
+
     public function getMediaFileTypeCode(): string
     {
         return $this->mediaFileTypeCode ? $this->mediaFileTypeCode->code() : '';
@@ -103,5 +106,15 @@ class MediaFile extends Composite
     public function getDownloadCredit(): string
     {
         return $this->downloadCredit;
+    }
+
+    public function setImageResolution(string $value): void
+    {
+        $this->imageResolution = (int)$value;
+    }
+
+    public function getImageResolution(): int
+    {
+        return $this->imageResolution;
     }
 }
