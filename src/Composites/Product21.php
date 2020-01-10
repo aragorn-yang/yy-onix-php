@@ -72,6 +72,7 @@ use AragornYang\Onix\ProductFeatures\HasProductClassifications;
 use AragornYang\Onix\ProductFeatures\HasPlaceAsSubjects;
 use AragornYang\Onix\ProductFeatures\HasPagesArabic;
 use AragornYang\Onix\ProductFeatures\HasPagesRoman;
+use AragornYang\Onix\ProductFeatures\HasEpubType;
 
 class Product21 extends Composite implements Product
 {
@@ -144,7 +145,8 @@ class Product21 extends Composite implements Product
         HasProductClassifications,
         HasPlaceAsSubjects,
         HasPagesArabic,
-        HasPagesRoman;
+        HasPagesRoman,
+        HasEpubType;
 
     /** @var string */
     protected $compositeName = 'Product';

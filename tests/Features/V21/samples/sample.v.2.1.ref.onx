@@ -258,5 +258,6 @@
         <PlaceAsSubject>Calcutta and Rhode Island</PlaceAsSubject>
         <PagesArabic>240</PagesArabic>
         <PagesRoman>vii</PagesRoman>
+        <EpubType>002</EpubType>
     </Product>
 </ONIXMessage>
