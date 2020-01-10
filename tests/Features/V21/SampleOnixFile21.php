@@ -527,4 +527,10 @@ trait SampleOnixFile21
     {
         $this->assertSame(240, $this->product->getPagesArabic());
     }
+
+    /** @test */
+    public function it_can_get_pagesRoman()
+    {
+        $this->assertSame('vii', $this->product->getPagesRoman());
+    }
 }
