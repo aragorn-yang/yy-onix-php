@@ -260,5 +260,6 @@
         <PagesRoman>vii</PagesRoman>
         <EpubType>002</EpubType>
         <EpubSource>02</EpubSource>
+        <EditionVersionNumber>2</EditionVersionNumber>
     </Product>
 </ONIXMessage>

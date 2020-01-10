@@ -547,4 +547,10 @@ trait SampleOnixFile21
         $this->assertSame('02', $this->product->getEpubSource());
         $this->assertSame('PDF', $this->product->getEpubSourceDesc());
     }
+
+    /** @test */
+    public function it_can_get_editionVersionNumber()
+    {
+        $this->assertSame(2, $this->product->getEditionVersionNumber());
+    }
 }
