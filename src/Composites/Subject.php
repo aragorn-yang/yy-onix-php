@@ -4,6 +4,7 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList27SubjectSchemeIdentifier;
+use AragornYang\Onix\ProductFeatures\HasSubjectSchemeVersion;
 
 /**
  * @see PR.13 Subject in Onix Spec 2.1
@@ -12,12 +13,12 @@ use AragornYang\Onix\CodeLists\CodeList27SubjectSchemeIdentifier;
  */
 class Subject extends Composite
 {
+    use HasSubjectSchemeVersion;
+
     /** @var CodeInList */
     protected $subjectSchemeIdentifier;
     /** @var string */
     protected $subjectSchemeName = '';
-    /** @var string */
-    protected $subjectSchemeVersion = '';
     /** @var string */
     protected $subjectCode = '';
     /** @var string */
@@ -46,16 +47,6 @@ class Subject extends Composite
     public function setSubjectSchemeName(string $subjectSchemeName): void
     {
         $this->subjectSchemeName = $subjectSchemeName;
-    }
-
-    public function getSubjectSchemeVersion(): string
-    {
-        return $this->subjectSchemeVersion;
-    }
-
-    public function setSubjectSchemeVersion(string $subjectSchemeVersion): void
-    {
-        $this->subjectSchemeVersion = $subjectSchemeVersion;
     }
 
     public function getSubjectCode(): string

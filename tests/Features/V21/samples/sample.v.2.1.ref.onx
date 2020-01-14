@@ -36,6 +36,10 @@
             <NumberOfPieces>1</NumberOfPieces>
             <ProductPackaging>14</ProductPackaging>
         </ContainedItem>
+        <ProductClassification>
+            <ProductClassificationType>07</ProductClassificationType>
+            <ProductClassificationCode>PN</ProductClassificationCode>
+        </ProductClassification>
         <ProductFormFeature>
             <ProductFormFeatureType>13</ProductFormFeatureType>
             <ProductFormFeatureValue>04</ProductFormFeatureValue>
@@ -61,15 +65,18 @@
                 Schools. Now retired from legal practise, Mr Schur is a fluent speaker and writer of both British and
                 American English.
             </BiographicalNote>
+            <TitlesAfterNames>Ph.D.</TitlesAfterNames>
             <CountryCode>US</CountryCode>
             <RegionCode>US-MI</RegionCode>
             <SuffixToKey>Jr.</SuffixToKey>
             <CorporateName>Raqs Media Collective</CorporateName>
+            <PrefixToKey>St. John</PrefixToKey>
             <Website>
                 <WebsiteRole>00</WebsiteRole>
                 <WebsiteDescription>Nell Irvin Painter's Website</WebsiteDescription>
                 <WebsiteLink>http://www.nellpainter.com/</WebsiteLink>
             </Website>
+            <LanguageCode>eng</LanguageCode>
         </Contributor>
         <EditionTypeCode>REV</EditionTypeCode>
         <EditionNumber>3</EditionNumber>
@@ -88,6 +95,7 @@
             <MainSubjectSchemeIdentifier>93</MainSubjectSchemeIdentifier>
             <SubjectCode>FFP</SubjectCode>
             <SubjectHeadingText>Crime &amp; mystery: police procedural</SubjectHeadingText>
+            <SubjectSchemeVersion>2.0</SubjectSchemeVersion>
         </mainsubject>
         <Illustrations>
             <IllustrationType>01</IllustrationType>
@@ -144,6 +152,7 @@
             <PrizeYear>2018</PrizeYear>
             <PrizeCountry>CA</PrizeCountry>
             <PrizeCode>05</PrizeCode>
+            <PrizeJury>BBC Wildlife</PrizeJury>
         </Prize>
         <Prize>
             <PrizeName>CBC Canada Reads</PrizeName>
@@ -212,11 +221,18 @@
             <Price>
                 <PriceTypeCode>01</PriceTypeCode>
                 <PriceAmount>35.00</PriceAmount>
+                <PriceQualifier>05</PriceQualifier>
+                <CountryExcluded>ES</CountryExcluded>
+				<TaxRateCode2>Z</TaxRateCode2>
+				<TaxRatePercent2>0</TaxRatePercent2>
+				<TaxableAmount2>187.49</TaxableAmount2>
+				<TaxAmount2>0.00</TaxAmount2>
             </Price>
             <Reissue>
                 <ReissueDate>20121008</ReissueDate>
             </Reissue>
             <UnpricedItemType>01</UnpricedItemType>
+            <SupplyToCountryExcluded>AD AE AF AL AM AN AO AQ AT AU AX AZ BA BD BE BF BG BH BI BJ BN BQ BT BV BW BY CC CD CF CG CH CI CK CM CN CV CW CX CY CZ DE DJ DK DZ EE EG EH ER ES ET FI FJ FK FO FR GA GB GE GG GH GI GL GM GN GQ GR GS GW HK HM HR HU ID IE IL IM IN IO IQ IR IS IT JE JO JP KE KG KH KI KM KP KR KW KZ LA LB LI LK LR LS LT LU LV LY MA MC MD ME MG MK ML MM MN MO MR MS MT MU MV MW MY MZ NA NC NE NF NG NL NO NP NR NU NZ OM PF PG PK PL PM PN PS PT QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SS ST SX SY SZ TD TF TG TH TJ TK TL TM TN TO TR TV TW TZ UA UG UZ VA VN VU WF WS YE YT ZA ZM ZW</SupplyToCountryExcluded>
         </SupplyDetail>
         <MarketRepresentation>
             <AgentIdentifier>
@@ -233,5 +249,27 @@
         </MarketRepresentation>
 		<ContributorStatement>Trevor Hoppe</ContributorStatement>
 		<InitialPrintRun>10000</InitialPrintRun>
+        <MediaFile>
+            <MediaFileTypeCode>04</MediaFileTypeCode>
+            <MediaFileFormatCode>03</MediaFileFormatCode>
+            <MediaFileLinkTypeCode>01</MediaFileLinkTypeCode>
+            <MediaFileLink>9782898020537_FC.jpg</MediaFileLink>
+            <DownloadCredit>Cover design by Eleanor Rose | Cover image from Pixabay</DownloadCredit>
+            <MediaFileDate>20190228</MediaFileDate>
+            <ImageResolution>300</ImageResolution>
+        </MediaFile>
+        <PlaceAsSubject>Calcutta and Rhode Island</PlaceAsSubject>
+        <PagesArabic>240</PagesArabic>
+        <PagesRoman>vii</PagesRoman>
+        <EpubType>002</EpubType>
+        <EpubSource>02</EpubSource>
+        <EditionVersionNumber>2</EditionVersionNumber>
+        <Set>
+            <ProductIdentifier>
+                <ProductIDType>03</ProductIDType>
+                <IDValue>9783540336273</IDValue>
+            </ProductIdentifier>
+            <TitleOfSet>Rheumatology and Immunology Therapy</TitleOfSet>
+        </Set>
     </Product>
 </ONIXMessage>

@@ -2,8 +2,12 @@
 
 namespace AragornYang\Onix\Composites;
 
+use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
+
 class Set extends Composite
 {
+    use HasProductIdentifiers;
+
     /** @var string */
     protected $titleOfSet = '';
     /** @var string */

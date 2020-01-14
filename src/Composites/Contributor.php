@@ -7,6 +7,7 @@ use AragornYang\Onix\CodeLists\CodeList17ContributorRole;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList49RegionCode;
 use AragornYang\Onix\ProductFeatures\HasWebsite;
+use AragornYang\Onix\ProductFeatures\HasLanguageCode;
 
 /**
  * @see PR.8 Authorship in Onix Spec 2.1
@@ -15,7 +16,7 @@ use AragornYang\Onix\ProductFeatures\HasWebsite;
  */
 class Contributor extends Composite
 {
-    use HasWebsite;
+    use HasWebsite, HasLanguageCode;
 
     /** @var int */
     protected $sequenceNumber = 0;
@@ -62,6 +63,12 @@ class Contributor extends Composite
 
     /** @var int */
     protected $sequenceNumberWithinRole = 0;
+
+    /** @var string */
+    protected $titlesAfterNames = '';
+
+    /** @var string */
+    protected $prefixToKey = '';
 
     protected const TYPE_OF_AUTHOR = 'A01';
 
@@ -236,5 +243,25 @@ class Contributor extends Composite
     public function getSequenceNumberWithinRole(): int
     {
         return $this->sequenceNumberWithinRole;
+    }
+
+    public function setTitlesAfterNames(string $value): void
+    {
+        $this->titlesAfterNames = $value;
+    }
+
+    public function getTitlesAfterNames(): string
+    {
+        return $this->titlesAfterNames;
+    }
+
+    public function setPrefixToKey(string $value): void
+    {
+        $this->prefixToKey = $value;
+    }
+
+    public function getPrefixToKey(): string
+    {
+        return $this->prefixToKey;
     }
 }

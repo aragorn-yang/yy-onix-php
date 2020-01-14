@@ -6,18 +6,15 @@ use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList51ProductRelation;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
-use AragornYang\Onix\CodeLists\CodeList10EpublicationType;
+use AragornYang\Onix\ProductFeatures\HasEpubType;
 use AragornYang\Onix\CodeLists\CodeList78ProductFormDetail;
 
 class RelatedProduct extends Composite
 {
-    use HasProductForm, HasProductIdentifiers;
+    use HasProductForm, HasProductIdentifiers, HasEpubType;
 
     /** @var CodeInList */
     protected $relationCode;
-
-    /** @var CodeInList */
-    protected $epubType;
 
     /** @var array */
     protected $productFormDetail = [];
@@ -38,21 +35,6 @@ class RelatedProduct extends Composite
     public function setRelationCode(string $code): void
     {
         $this->relationCode = new CodeInList(CodeList51ProductRelation::class, $code);
-    }
-
-    public function getEpubType(): string
-    {
-        return $this->epubType ? $this->epubType->code() : '';
-    }
-
-    public function getEpubTypeDesc(): string
-    {
-        return $this->epubType ? $this->epubType->desc() : '';
-    }
-
-    public function setEpubType(string $code): void
-    {
-        $this->epubType = new CodeInList(CodeList10EpublicationType::class, $code);
     }
 
     public function getProductFormDetail(): array

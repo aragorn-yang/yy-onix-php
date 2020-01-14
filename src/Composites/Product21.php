@@ -68,6 +68,13 @@ use AragornYang\Onix\productFeatures\HasCopyrightStatements;
 use AragornYang\Onix\ProductFeatures\HasComplexitys;
 use AragornYang\Onix\ProductFeatures\HasMarketRepresentations;
 use AragornYang\Onix\ProductFeatures\HasInitialPrintRun;
+use AragornYang\Onix\ProductFeatures\HasProductClassifications;
+use AragornYang\Onix\ProductFeatures\HasPlaceAsSubjects;
+use AragornYang\Onix\ProductFeatures\HasPagesArabic;
+use AragornYang\Onix\ProductFeatures\HasPagesRoman;
+use AragornYang\Onix\ProductFeatures\HasEpubType;
+use AragornYang\Onix\ProductFeatures\HasEpubSource;
+use AragornYang\Onix\ProductFeatures\HasEditionVersionNumber;
 
 class Product21 extends Composite implements Product
 {
@@ -136,7 +143,14 @@ class Product21 extends Composite implements Product
         HasCopyrightStatements,
         HasComplexitys,
         HasMarketRepresentations,
-        HasInitialPrintRun;
+        HasInitialPrintRun,
+        HasProductClassifications,
+        HasPlaceAsSubjects,
+        HasPagesArabic,
+        HasPagesRoman,
+        HasEpubType,
+        HasEpubSource,
+        HasEditionVersionNumber;
 
     /** @var string */
     protected $compositeName = 'Product';

@@ -53,10 +53,12 @@ trait SampleOnixFile21
         $author = $this->product->getAuthor();
 
         $this->assertSame('Schur, Norman W', $author->getPersonNameInverted());
+        $this->assertSame('Ph.D.', $author->getTitlesAfterNames());
         $this->assertSame('US', $author->getCountryCode());
         $this->assertSame('US-MI', $author->getRegionCode());
         $this->assertSame('Jr.', $author->getSuffixToKey());
         $this->assertSame('Raqs Media Collective', $author->getCorporateName());
+        $this->assertSame('St. John', $author->getPrefixToKey());
         $this->assertSame(1, $author->getSequenceNumberWithinRole());
 
         $websites = $author->getWebsites();
@@ -65,6 +67,8 @@ trait SampleOnixFile21
         $this->assertSame('Unspecified, see website description', $websites[0]->getWebsiteRoleDesc());
         $this->assertSame("Nell Irvin Painter's Website", $websites[0]->getWebsiteDescription());
         $this->assertSame('http://www.nellpainter.com/', $websites[0]->getWebsiteLink());
+
+        $this->assertSame('eng', $author->getLanguageCode());
     }
 
     /** @test */
@@ -158,6 +162,7 @@ trait SampleOnixFile21
 
         $this->assertSame('1234567', $supplyDetail->getSupplierSAN());
         $this->assertSame('IP', $supplyDetail->getAvailabilityCode());
+
         $price = $supplyDetail->getPrices()[0];
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
@@ -170,6 +175,16 @@ trait SampleOnixFile21
         $this->assertSame('01', $supplyDetail->getUnpricedItemType());
         $this->assertSame('Free of charge', $supplyDetail->getUnpricedItemTypeDesc());
         $this->assertSame('20190930', $supplyDetail->getLastDateForReturns());
+        $this->assertSame('05', $price->getPriceQualifier());
+        $this->assertSame('Consumer price', $price->getPriceQualifierDesc());
+        $countryExcludeds = $price->getCountryExcluded();
+        $this->assertSame('ES', $countryExcludeds[0]->code());
+        $this->assertSame('Spain', $countryExcludeds[0]->desc());
+        $this->assertSame('Z', $price->getTaxRateCode2());
+        $this->assertSame('Zero-rated', $price->getTaxRateCode2Desc());
+        $this->assertSame((float)0, $price->getTaxRatePercent2());
+        $this->assertSame((float)187.49, $price->getTaxableAmount2());
+        $this->assertSame((float)0.00, $price->getTaxAmount2());
 
         $website = $supplyDetail->getWebsites();
         $this->assertCount(1, $website);
@@ -179,6 +194,9 @@ trait SampleOnixFile21
 
         $reissue = $supplyDetail->getReissue();
         $this->assertSame('20121008', $reissue ? $reissue->getReissueDate() : '');
+
+        $supplyToCountryExcludeds = $supplyDetail->getSupplyToCountryExcluded();
+        $this->assertSame('AD', $supplyToCountryExcludeds ? $supplyToCountryExcludeds[0]->code() : '');
     }
 
     /** @test */
@@ -284,6 +302,8 @@ trait SampleOnixFile21
 
         $this->assertSame('05', $prizes[1]->getPrizeCode());
         $this->assertSame('Long-listed', $prizes[1]->getPrizeCodeDesc());
+
+        $this->assertSame('BBC Wildlife', $prizes[0]->getPrizeJury());
     }
 
     /** @test */
@@ -341,9 +361,9 @@ trait SampleOnixFile21
 
         $this->assertSame('93', $mainSubject[0]->getMainSubjectSchemeIdentifier());
         $this->assertSame('Thema subject category', $mainSubject[0]->getMainSubjectSchemeIdentifierDesc());
-
         $this->assertSame('FFP', $mainSubject[0]->getSubjectCode());
         $this->assertSame('Crime & mystery: police procedural', $mainSubject[0]->getSubjectHeadingText());
+        $this->assertSame('2.0', $mainSubject[0]->getSubjectSchemeVersion());
     }
 
     /** @test */
@@ -464,5 +484,90 @@ trait SampleOnixFile21
     public function it_can_get_initialPrintRun()
     {
         $this->assertSame('10000', $this->product->getInitialPrintRun());
+    }
+
+    /** @test */
+    public function it_can_get_mediaFile()
+    {
+        $mediaFiles = $this->product->getMediaFiles();
+
+        $this->assertCount(1, $mediaFiles);
+
+        $this->assertSame('04', $mediaFiles[0]->getMediaFileTypeCode());
+        $this->assertSame('Image: front cover', $mediaFiles[0]->getMediaFileTypeCodeDesc());
+        $this->assertSame('03', $mediaFiles[0]->getMediaFileFormatCode());
+        $this->assertSame('JPEG', $mediaFiles[0]->getMediaFileFormatCodeDesc());
+        $this->assertSame('01', $mediaFiles[0]->getMediaFileLinkTypeCode());
+        $this->assertSame('URL', $mediaFiles[0]->getMediaFileLinkTypeCodeDesc());
+        $this->assertSame('9782898020537_FC.jpg', $mediaFiles[0]->getMediaFileLink());
+        $this->assertSame('20190228', $mediaFiles[0]->getMediaFileDate());
+        $this->assertSame('Cover design by Eleanor Rose | Cover image from Pixabay', $mediaFiles[0]->getDownloadCredit());
+        $this->assertSame(300, $mediaFiles[0]->getImageResolution());
+    }
+
+    /** @test */
+    public function it_can_get_productClassification()
+    {
+        $productClassifications = $this->product->getProductClassifications();
+
+        $this->assertCount(1, $productClassifications);
+
+        $this->assertSame('07', $productClassifications[0]->getProductClassificationType());
+        $this->assertSame("Sender’s product category", $productClassifications[0]->getProductClassificationTypeDesc());
+        $this->assertSame('PN', $productClassifications[0]->getProductClassificationCode());
+    }
+
+    /** @test */
+    public function it_can_get_placeAsSubject()
+    {
+        $placeAsSubjects = $this->product->getPlaceAsSubject();
+        $this->assertCount(1, $placeAsSubjects);
+        $this->assertSame('Calcutta and Rhode Island', $placeAsSubjects[0]);
+    }
+
+    /** @test */
+    public function it_can_get_pagesArabic()
+    {
+        $this->assertSame(240, $this->product->getPagesArabic());
+    }
+
+    /** @test */
+    public function it_can_get_pagesRoman()
+    {
+        $this->assertSame('vii', $this->product->getPagesRoman());
+    }
+
+    /** @test */
+    public function it_can_get_epubType()
+    {
+        $this->assertSame('002', $this->product->getEpubType());
+        $this->assertSame('PDF', $this->product->getEpubTypeDesc());
+    }
+
+    /** @test */
+    public function it_can_get_epubSource()
+    {
+        $this->assertSame('02', $this->product->getEpubSource());
+        $this->assertSame('PDF', $this->product->getEpubSourceDesc());
+    }
+
+    /** @test */
+    public function it_can_get_editionVersionNumber()
+    {
+        $this->assertSame(2, $this->product->getEditionVersionNumber());
+    }
+
+    /** @test */
+    public function it_can_get_set()
+    {
+        $sets = $this->product->getSets();
+        $this->assertCount(1, $sets);
+
+        $productIdentifiers = array_values($sets[0]->getProductIdentifiers());
+        $this->assertCount(1, $productIdentifiers);
+
+        $this->assertSame('03', $productIdentifiers[0]->getProductIDType());
+        $this->assertSame('GTIN-13', $productIdentifiers[0]->getProductIDTypeDesc());
+        $this->assertSame('9783540336273', $productIdentifiers[0]->getIDValue());
     }
 }

@@ -36,6 +36,10 @@
             <b210>1</b210>
             <b225>14</b225>
         </containeditem>
+        <productclassification>
+            <b274>07</b274>
+            <b275>PN</b275>
+        </productclassification>
         <productformfeature>
             <b334>13</b334>
             <b335>04</b335>
@@ -61,15 +65,18 @@
                 retired
                 from legal practise, Mr Schur is a fluent speaker and writer of both British and American English.
             </b044>
+            <b043>Ph.D.</b043>
             <b251>US</b251>
             <b398>US-MI</b398>
             <b248>Jr.</b248>
             <b047>Raqs Media Collective</b047>
+            <b247>St. John</b247>
             <website>
                 <b367>00</b367>
                 <b294>Nell Irvin Painter's Website</b294>
                 <b295>http://www.nellpainter.com/</b295>
             </website>
+            <b252>eng</b252>
         </contributor>
         <b056>REV</b056>
         <b057>3</b057>
@@ -88,6 +95,7 @@
             <b191>93</b191>
             <b069>FFP</b069>
             <b070>Crime &amp; mystery: police procedural</b070>
+            <b068>2.0</b068>
         </mainsubject>
         <illustrations>
             <b256>01</b256>
@@ -142,6 +150,7 @@
             <g127>2018</g127>
             <g128>CA</g128>
             <g129>05</g129>
+            <g343>BBC Wildlife</g343>
         </prize>
         <prize>
             <g126>CBC Canada Reads</g126>
@@ -210,11 +219,18 @@
             <price>
                 <j148>01</j148>
                 <j151>35.00</j151>
+                <j261>05</j261>
+                <j304>ES</j304>
+				<j157>Z</j157>
+				<j158>0</j158>
+				<j159>187.49</j159>
+				<j160>0.00</j160>
             </price>
             <reissue>
                 <j365>20121008</j365>
             </reissue>
             <j192>01</j192>
+            <j140>AD AE AF AL AM AN AO AQ AT AU AX AZ BA BD BE BF BG BH BI BJ BN BQ BT BV BW BY CC CD CF CG CH CI CK CM CN CV CW CX CY CZ DE DJ DK DZ EE EG EH ER ES ET FI FJ FK FO FR GA GB GE GG GH GI GL GM GN GQ GR GS GW HK HM HR HU ID IE IL IM IN IO IQ IR IS IT JE JO JP KE KG KH KI KM KP KR KW KZ LA LB LI LK LR LS LT LU LV LY MA MC MD ME MG MK ML MM MN MO MR MS MT MU MV MW MY MZ NA NC NE NF NG NL NO NP NR NU NZ OM PF PG PK PL PM PN PS PT QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SS ST SX SY SZ TD TF TG TH TJ TK TL TM TN TO TR TV TW TZ UA UG UZ VA VN VU WF WS YE YT ZA ZM ZW</j140>
         </supplydetail>
         <marketrepresentation>
             <agentidentifier>
@@ -231,5 +247,27 @@
         </marketrepresentation>
 		<b049>Trevor Hoppe</b049>
 		<k167>10000</k167>
+        <mediafile>
+            <f114>04</f114>
+            <f115>03</f115>
+            <f116>01</f116>
+            <f117>9782898020537_FC.jpg</f117>
+            <f120>Cover design by Eleanor Rose | Cover image from Pixabay</f120>
+            <f373>20190228</f373>
+            <f259>300</f259>
+        </mediafile>
+        <b072>Calcutta and Rhode Island</b072>
+        <b255>240</b255>
+        <b254>vii</b254>
+        <b211>002</b211>
+        <b278>02</b278>
+        <b217>2</b217>
+        <set>
+            <productidentifier>
+                <b221>03</b221>
+                <b244>9783540336273</b244>
+            </productidentifier>
+            <b023>Rheumatology and Immunology Therapy</b023>
+        </set>
     </product>
 </ONIXmessage>
