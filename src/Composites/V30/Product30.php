@@ -6,7 +6,6 @@ use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\ProductFeatures\V30\HasBarcode;
 use AragornYang\Onix\ProductFeatures\HasDescriptiveDetail;
-use AragornYang\Onix\ProductFeatures\HasMeasures;
 use AragornYang\Onix\ProductFeatures\HasNotificationType;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
 use AragornYang\Onix\ProductFeatures\HasProductSupply;
@@ -19,7 +18,6 @@ class Product30 extends Composite implements Product
     use
         HasBarcode,
         HasDescriptiveDetail,
-        HasMeasures,
         HasNotificationType,
         HasProductIdentifiers,
         HasProductSupply,

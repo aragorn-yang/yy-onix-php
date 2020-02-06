@@ -100,6 +100,11 @@ trait SampleOnixFile30
 
         $this->assertSame('GB', $descriptiveDetail->getCountryOfManufacture());
         $this->assertSame('United Kingdom', $descriptiveDetail->getCountryOfManufactureDesc());
+
+        $languages = $descriptiveDetail->getLanguages();
+        $this->assertSame('eng', $languages[0]->getLanguageCode());
+        $this->assertSame('01', $languages[0]->getLanguageRole());
+        $this->assertSame('Language of text', $languages[0]->getLanguageRoleDesc());
     }
 
     /** @test */
