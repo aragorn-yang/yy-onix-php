@@ -48,6 +48,7 @@ trait SampleOnixFile30
         $titleElements = $titleDetails[0]->getTitleElements();
         $this->assertSame('01', $titleElements[0]->getTitleElementLevel());
         $this->assertSame('Product', $titleElements[0]->getTitleElementLevelDesc());
+        $this->assertSame('Pain', $titleElements[0]->getTitleText());
     }
 
     /** @test */

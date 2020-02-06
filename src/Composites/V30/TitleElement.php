@@ -11,6 +11,9 @@ class TitleElement extends Composite
     /** @var CodeInList */
     protected $titleElementLevel;
 
+    /** @var string */
+    protected $titleText = '';
+
     public function setTitleElementLevel(string $code): void
     {
         $this->titleElementLevel = new CodeInList(CodeList149TitleElementLevel::class, $code);
@@ -24,5 +27,15 @@ class TitleElement extends Composite
     public function getTitleElementLevelDesc(): string
     {
         return $this->titleElementLevel ? $this->titleElementLevel->desc() : '';
+    }
+
+    public function setTitleText($value): void
+    {
+        $this->titleText = $value;
+    }
+
+    public function getTitleText(): string
+    {
+        return $this->titleText;
     }
 }
