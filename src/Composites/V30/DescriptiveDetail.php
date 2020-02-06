@@ -4,6 +4,7 @@ namespace AragornYang\Onix\Composites\V30;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList2ProductComposition;
+use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\ProductFeatures\HasContributors;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
@@ -16,6 +17,9 @@ class DescriptiveDetail extends Composite
 
     /** @var CodeInList */
     protected $productComposition;
+
+    /** @var CodeInList */
+    protected $countryOfManufacture;
 
     public function setProductComposition(string $code): void
     {
@@ -30,5 +34,20 @@ class DescriptiveDetail extends Composite
     public function getProductCompositionDesc(): string
     {
         return $this->productComposition ? $this->productComposition->desc() : '';
+    }
+
+    public function setCountryOfManufacture(string $code): void
+    {
+        $this->countryOfManufacture = new CodeInList(CodeList91CountryCodeISO31661::class, $code);
+    }
+
+    public function getCountryOfManufacture(): string
+    {
+        return $this->countryOfManufacture ? $this->countryOfManufacture->code() : '';
+    }
+
+    public function getCountryOfManufactureDesc(): string
+    {
+        return $this->countryOfManufacture ? $this->countryOfManufacture->desc() : '';
     }
 }

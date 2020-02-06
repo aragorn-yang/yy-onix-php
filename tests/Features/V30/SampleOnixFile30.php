@@ -84,6 +84,7 @@ trait SampleOnixFile30
         $titleDetails = $descriptiveDetail->getTitleDetails();
         $this->assertCount(1, $titleDetails);
         $this->assertSame('01', $titleDetails[0]->getTitleType());
+
         $titleElements = $titleDetails[0]->getTitleElements();
         $this->assertSame('01', $titleElements[0]->getTitleElementLevel());
         $this->assertSame('Product', $titleElements[0]->getTitleElementLevelDesc());
@@ -96,6 +97,9 @@ trait SampleOnixFile30
         $this->assertSame(11.0, $measures[0]->getMeasurement());
         $this->assertSame('in', $measures[0]->getMeasureUnitCode());
         $this->assertSame('Inches (US)', $measures[0]->getMeasureUnitCodeDesc());
+
+        $this->assertSame('GB', $descriptiveDetail->getCountryOfManufacture());
+        $this->assertSame('United Kingdom', $descriptiveDetail->getCountryOfManufactureDesc());
     }
 
     /** @test */
