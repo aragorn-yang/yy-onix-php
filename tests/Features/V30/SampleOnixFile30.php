@@ -105,6 +105,13 @@ trait SampleOnixFile30
         $this->assertSame('eng', $languages[0]->getLanguageCode());
         $this->assertSame('01', $languages[0]->getLanguageRole());
         $this->assertSame('Language of text', $languages[0]->getLanguageRoleDesc());
+
+        $extents = $descriptiveDetail->getExtent();
+        $this->assertSame('05', $extents[0]->getExtentType());
+        $this->assertSame('Total numbered pages', $extents[0]->getExtentTypeDesc());
+        $this->assertSame('384', $extents[0]->getExtentValue());
+        $this->assertSame('03', $extents[0]->getExtentUnit());
+        $this->assertSame('Pages', $extents[0]->getExtentUnitDesc());
     }
 
     /** @test */
