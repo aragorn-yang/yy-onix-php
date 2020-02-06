@@ -9,7 +9,7 @@ use AragornYang\Onix\Tests\Features\BookParserForSampleOnixFileTest;
 
 class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnixFileTest
 {
-    use Tag30SampleOnixFile, UseV30Handler;
+    use SampleOnixFile30, UseV30Handler;
 
     /** @var BookParser */
     protected static $parser;

@@ -8,7 +8,7 @@ use AragornYang\Onix\Composites\SupplyDetail;
 /**
  * @property Product $product
  */
-trait Tag30SampleOnixFile
+trait SampleOnixFile30
 {
     /** @test */
     public function it_can_parse_the_sample_file(): void
