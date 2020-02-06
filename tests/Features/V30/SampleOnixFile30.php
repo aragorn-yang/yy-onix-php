@@ -49,6 +49,7 @@ trait SampleOnixFile30
         $this->assertSame('01', $titleElements[0]->getTitleElementLevel());
         $this->assertSame('Product', $titleElements[0]->getTitleElementLevelDesc());
         $this->assertSame('Pain', $titleElements[0]->getTitleText());
+        $this->assertSame('Best Practice & Research Compendium', $titleElements[0]->getSubtitle());
     }
 
     /** @test */

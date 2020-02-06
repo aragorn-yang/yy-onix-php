@@ -14,6 +14,9 @@ class TitleElement extends Composite
     /** @var string */
     protected $titleText = '';
 
+    /** @var string */
+    protected $subtitle = '';
+
     public function setTitleElementLevel(string $code): void
     {
         $this->titleElementLevel = new CodeInList(CodeList149TitleElementLevel::class, $code);
@@ -29,7 +32,7 @@ class TitleElement extends Composite
         return $this->titleElementLevel ? $this->titleElementLevel->desc() : '';
     }
 
-    public function setTitleText($value): void
+    public function setTitleText(string $value): void
     {
         $this->titleText = $value;
     }
@@ -37,5 +40,15 @@ class TitleElement extends Composite
     public function getTitleText(): string
     {
         return $this->titleText;
+    }
+
+    public function setSubtitle(string $value): void
+    {
+        $this->subtitle = $value;
+    }
+
+    public function getSubtitle(): string
+    {
+        return $this->subtitle;
     }
 }
