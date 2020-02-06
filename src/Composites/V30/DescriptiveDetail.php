@@ -12,10 +12,18 @@ use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
 use AragornYang\Onix\ProductFeatures\HasMeasures;
 use AragornYang\Onix\ProductFeatures\HasLanguages;
 use AragornYang\Onix\ProductFeatures\HasExtents;
+use AragornYang\Onix\ProductFeatures\HasSubjects;
 
 class DescriptiveDetail extends Composite
 {
-    use HasContributors, HasProductForm, HasTitleDetails, HasMeasures, HasLanguages, HasExtents;
+    use
+        HasContributors,
+        HasProductForm,
+        HasTitleDetails,
+        HasMeasures,
+        HasLanguages,
+        HasExtents,
+        HasSubjects;
 
     /** @var CodeInList */
     protected $productComposition;

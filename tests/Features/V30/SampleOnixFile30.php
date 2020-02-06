@@ -112,6 +112,11 @@ trait SampleOnixFile30
         $this->assertSame('384', $extents[0]->getExtentValue());
         $this->assertSame('03', $extents[0]->getExtentUnit());
         $this->assertSame('Pages', $extents[0]->getExtentUnitDesc());
+
+        $subjects = $descriptiveDetail->getSubjects();
+        $this->assertSame('10', $subjects[0]->getSubjectSchemeIdentifier());
+        $this->assertSame('BISAC Subject Heading', $subjects[0]->getSubjectSchemeIdentifierDesc());
+        $this->assertSame('MED083000', $subjects[0]->getSubjectCode());
     }
 
     /** @test */
