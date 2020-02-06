@@ -8,10 +8,11 @@ use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\ProductFeatures\HasContributors;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
 use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
+use AragornYang\Onix\ProductFeatures\HasMeasures;
 
 class DescriptiveDetail extends Composite
 {
-    use HasContributors, HasProductForm, HasTitleDetails;
+    use HasContributors, HasProductForm, HasTitleDetails, HasMeasures;
 
     /** @var CodeInList */
     protected $productComposition;

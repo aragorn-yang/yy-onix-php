@@ -89,6 +89,13 @@ trait SampleOnixFile30
         $this->assertSame('Product', $titleElements[0]->getTitleElementLevelDesc());
         $this->assertSame('Pain', $titleElements[0]->getTitleText());
         $this->assertSame('Best Practice & Research Compendium', $titleElements[0]->getSubtitle());
+
+        $measures = $descriptiveDetail->getMeasures();
+        $this->assertSame('01', $measures[0]->getMeasureType());
+        $this->assertSame('Height', $measures[0]->getMeasureTypeDesc());
+        $this->assertSame(11.0, $measures[0]->getMeasurement());
+        $this->assertSame('in', $measures[0]->getMeasureUnitCode());
+        $this->assertSame('Inches (US)', $measures[0]->getMeasureUnitCodeDesc());
     }
 
     /** @test */
