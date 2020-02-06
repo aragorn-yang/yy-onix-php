@@ -50,6 +50,13 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_recordSourceType()
+    {
+        $this->assertSame('01', $this->product->getRecordSourceType());
+        $this->assertSame('Publisher', $this->product->getRecordSourceTypeDesc());
+    }
+
+    /** @test */
     public function it_can_get_descriptiveDetail()
     {
         $descriptiveDetail = $this->product->getDescriptiveDetail();
