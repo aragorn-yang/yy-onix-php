@@ -9,6 +9,7 @@ use AragornYang\Onix\ProductFeatures\HasNotificationType;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
 use AragornYang\Onix\ProductFeatures\HasProductSupply;
 use AragornYang\Onix\ProductFeatures\HasRecordReference;
+use AragornYang\Onix\ProductFeatures\HasRecordSourceName;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceType;
 
 class Product30 extends Composite implements Product
@@ -19,6 +20,7 @@ class Product30 extends Composite implements Product
         HasProductIdentifiers,
         HasProductSupply,
         HasRecordReference,
+        HasRecordSourceName,
         HasRecordSourceType;
 
     /** @var string */

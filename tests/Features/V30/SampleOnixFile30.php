@@ -57,6 +57,14 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_recordSourceName()
+    {
+        $recordSourceName = $this->product->getRecordSourceName();
+
+        $this->assertSame('Elsevier', $recordSourceName);
+    }
+
+    /** @test */
     public function it_can_get_descriptiveDetail()
     {
         $descriptiveDetail = $this->product->getDescriptiveDetail();
