@@ -13,6 +13,7 @@ use AragornYang\Onix\ProductFeatures\HasMeasures;
 use AragornYang\Onix\ProductFeatures\HasLanguages;
 use AragornYang\Onix\ProductFeatures\HasExtents;
 use AragornYang\Onix\ProductFeatures\HasSubjects;
+use AragornYang\Onix\ProductFeatures\HasAudiences;
 
 class DescriptiveDetail extends Composite
 {
@@ -23,7 +24,8 @@ class DescriptiveDetail extends Composite
         HasMeasures,
         HasLanguages,
         HasExtents,
-        HasSubjects;
+        HasSubjects,
+        HasAudiences;
 
     /** @var CodeInList */
     protected $productComposition;

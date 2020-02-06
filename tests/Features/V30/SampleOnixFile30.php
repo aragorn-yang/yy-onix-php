@@ -117,6 +117,11 @@ trait SampleOnixFile30
         $this->assertSame('10', $subjects[0]->getSubjectSchemeIdentifier());
         $this->assertSame('BISAC Subject Heading', $subjects[0]->getSubjectSchemeIdentifierDesc());
         $this->assertSame('MED083000', $subjects[0]->getSubjectCode());
+
+        $audiences = $descriptiveDetail->getAudiences();
+        $this->assertSame('01', $audiences[0]->getAudienceCodeType());
+        $this->assertSame('ONIX audience codes', $audiences[0]->getAudienceCodeTypeDesc());
+        $this->assertSame('05', $audiences[0]->getAudienceCodeValue());
     }
 
     /** @test */
