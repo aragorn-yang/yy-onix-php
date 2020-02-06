@@ -69,6 +69,8 @@ trait SampleOnixFile30
 
         $this->assertSame('02', $barcodes[0]->getBarcodeType());
         $this->assertSame('GTIN-13', $barcodes[0]->getBarcodeTypeDesc());
+        $this->assertSame('00', $barcodes[0]->getPositionOnProduct());
+        $this->assertSame('Unknown / unspecified', $barcodes[0]->getPositionOnProductDesc());
     }
 
     /** @test */
