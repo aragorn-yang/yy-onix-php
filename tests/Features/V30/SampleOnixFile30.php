@@ -43,6 +43,13 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_notificationType()
+    {
+        $this->assertSame('03', $this->product->getNotificationType());
+        $this->assertSame('Notification confirmed on publication', $this->product->getNotificationTypeDesc());
+    }
+
+    /** @test */
     public function it_can_get_descriptiveDetail()
     {
         $descriptiveDetail = $this->product->getDescriptiveDetail();
