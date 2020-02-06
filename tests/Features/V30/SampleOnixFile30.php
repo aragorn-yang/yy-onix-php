@@ -77,6 +77,10 @@ trait SampleOnixFile30
     public function it_can_get_descriptiveDetail()
     {
         $descriptiveDetail = $this->product->getDescriptiveDetail();
+
+        $this->assertSame('00', $descriptiveDetail->getProductComposition());
+        $this->assertSame('Single-item retail product', $descriptiveDetail->getProductCompositionDesc());
+
         $titleDetails = $descriptiveDetail->getTitleDetails();
         $this->assertCount(1, $titleDetails);
         $this->assertSame('01', $titleDetails[0]->getTitleType());

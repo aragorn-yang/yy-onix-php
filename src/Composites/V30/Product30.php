@@ -3,8 +3,8 @@
 namespace AragornYang\Onix\Composites\V30;
 
 use AragornYang\Onix\Composites\Composite;
-use AragornYang\Onix\ProductFeatures\V30\HasBarcode;
 use AragornYang\Onix\Composites\Product;
+use AragornYang\Onix\ProductFeatures\V30\HasBarcode;
 use AragornYang\Onix\ProductFeatures\HasDescriptiveDetail;
 use AragornYang\Onix\ProductFeatures\HasNotificationType;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
