@@ -37,6 +37,12 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_recordReference()
+    {
+        $this->assertSame('9780080446844', $this->product->getRecordReference());
+    }
+
+    /** @test */
     public function it_can_get_descriptiveDetail()
     {
         $descriptiveDetail = $this->product->getDescriptiveDetail();
