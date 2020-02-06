@@ -59,9 +59,16 @@ trait SampleOnixFile30
     /** @test */
     public function it_can_get_recordSourceName()
     {
-        $recordSourceName = $this->product->getRecordSourceName();
+        $this->assertSame('Elsevier', $this->product->getRecordSourceName());
+    }
 
-        $this->assertSame('Elsevier', $recordSourceName);
+    /** @test */
+    public function it_can_get_Barcode()
+    {
+        $barcodes = $this->product->getBarcodes();
+
+        $this->assertSame('02', $barcodes[0]->getBarcodeType());
+        $this->assertSame('GTIN-13', $barcodes[0]->getBarcodeTypeDesc());
     }
 
     /** @test */
