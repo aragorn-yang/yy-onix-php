@@ -14,6 +14,7 @@ use AragornYang\Onix\ProductFeatures\HasRecordSourceName;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceType;
 use AragornYang\Onix\ProductFeatures\V30\HasCollateralDetail;
 use AragornYang\Onix\ProductFeatures\V30\HasPublishingDetail;
+use AragornYang\Onix\ProductFeatures\V30\HasRelatedMaterial;
 
 class Product30 extends Composite implements Product
 {
@@ -27,7 +28,8 @@ class Product30 extends Composite implements Product
         HasPublishingDetail,
         HasRecordReference,
         HasRecordSourceName,
-        HasRecordSourceType;
+        HasRecordSourceType,
+        HasRelatedMaterial;
 
     /** @var string */
     protected $compositeName = 'Product';

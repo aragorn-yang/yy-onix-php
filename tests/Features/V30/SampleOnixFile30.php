@@ -153,6 +153,15 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_relatedMaterial()
+    {
+        $relatedMaterial = $this->product->getRelatedMaterial();
+        $relatedWorks = $relatedMaterial->getRelatedWorks();
+        $this->assertSame('02', $relatedWorks[0]->getWorkRelationCode());
+        $this->assertSame('Derived from', $relatedWorks[0]->getWorkRelationCodeDesc());
+    }
+
+    /** @test */
     public function it_can_get_title(): void
     {
         $this->markTestSkipped();
