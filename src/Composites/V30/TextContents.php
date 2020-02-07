@@ -5,11 +5,15 @@ namespace AragornYang\Onix\Composites\V30;
 use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList153TextType;
+use AragornYang\Onix\CodeLists\CodeList154ContentAudience;
 
 class TextContents extends Composite
 {
     /** @var CodeInList */
     protected $textType;
+
+    /** @var CodeInList */
+    protected $contentAudience;
 
     public function setTextType(string $code): void
     {
@@ -24,5 +28,20 @@ class TextContents extends Composite
     public function getTextTypeDesc(): string
     {
         return $this->textType ? $this->textType->desc() : '';
+    }
+
+    public function setContentAudience(string $code): void
+    {
+        $this->contentAudience = new CodeInList(CodeList154ContentAudience::class, $code);
+    }
+
+    public function getContentAudience(): string
+    {
+        return $this->contentAudience ? $this->contentAudience->code() : '';
+    }
+
+    public function getContentAudienceDesc(): string
+    {
+        return $this->contentAudience ? $this->contentAudience->desc() : '';
     }
 }
