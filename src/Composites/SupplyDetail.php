@@ -11,6 +11,7 @@ use AragornYang\Onix\CodeLists\CodeList57UnpricedItemType;
 use AragornYang\Onix\CodeLists\CodeList65ProductAvailability;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList93SupplierRole;
+use AragornYang\Onix\Composites\V30\SupplyDate;
 use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 use AragornYang\Onix\ProductFeatures\HasStock;
 use AragornYang\Onix\ProductFeatures\HasWebsite;
@@ -79,6 +80,9 @@ class SupplyDetail extends Composite
 
     /** @var Supplier[] */
     protected $suppliers;
+
+    /** @var SupplyDate[] */
+    protected $supplyDate;
 
     public function getSupplierRole(): string
     {
@@ -356,5 +360,15 @@ class SupplyDetail extends Composite
     public function getSuppliers(): array
     {
         return $this->suppliers;
+    }
+
+    public function setSupplyDate(\SimpleXMLElement $xml): void
+    {
+        $this->supplyDate[] = SupplyDate::buildFromXml($xml, $this);
+    }
+
+    public function getSupplyDates(): array
+    {
+        return $this->supplyDate;
     }
 }

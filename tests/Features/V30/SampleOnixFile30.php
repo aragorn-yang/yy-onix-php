@@ -173,10 +173,15 @@ trait SampleOnixFile30
         $productSupply = $this->product->getProductSupply();
         $supplyDetails = $productSupply->getSupplyDetails();
         $suppliers = $supplyDetails[0]->getSuppliers();
+        $supplyDates = $supplyDetails[0]->getSupplyDates();
 
         $this->assertSame('01', $suppliers[0]->getSupplierRole());
         $this->assertSame('Publisher to retailers', $suppliers[0]->getSupplierRoleDesc());
         $this->assertSame('Elsevier Health Sciences', $suppliers[0]->getSupplierName()[0]);
+
+        $this->assertSame('08', $supplyDates[0]->getSupplyDateRole());
+        $this->assertSame('Expected availability date', $supplyDates[0]->getSupplyDateRoleDesc());
+        $this->assertSame('20070327', $supplyDates[0]->getDate());
     }
 
     /** @test */
