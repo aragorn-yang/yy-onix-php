@@ -138,6 +138,19 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_publishingDetail()
+    {
+        $publishingDetail = $this->product->getPublishingDetail();
+        $imprints = $publishingDetail->getImprints();
+
+        $imprintIdentifier = $imprints[0]->getImprintIdentifier();
+        $this->assertSame('01', $imprintIdentifier[0]->getImprintIDType());
+        $this->assertSame('Proprietary', $imprintIdentifier[0]->getImprintIDTypeDesc());
+
+        $this->assertSame('Elsevier', $imprints[0]->getImprintName());
+    }
+
+    /** @test */
     public function it_can_get_title(): void
     {
         $this->markTestSkipped();

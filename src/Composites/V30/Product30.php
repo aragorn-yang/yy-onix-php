@@ -13,6 +13,7 @@ use AragornYang\Onix\ProductFeatures\HasRecordReference;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceName;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceType;
 use AragornYang\Onix\ProductFeatures\V30\HasCollateralDetail;
+use AragornYang\Onix\ProductFeatures\V30\HasPublishingDetail;
 
 class Product30 extends Composite implements Product
 {
@@ -23,6 +24,7 @@ class Product30 extends Composite implements Product
         HasNotificationType,
         HasProductIdentifiers,
         HasProductSupply,
+        HasPublishingDetail,
         HasRecordReference,
         HasRecordSourceName,
         HasRecordSourceType;

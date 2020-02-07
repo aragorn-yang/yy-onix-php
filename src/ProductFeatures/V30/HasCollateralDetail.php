@@ -3,7 +3,6 @@
 namespace AragornYang\Onix\ProductFeatures\V30;
 
 use AragornYang\Onix\Composites\V30\CollateralDetail;
-use phpDocumentor\Reflection\Types\Collection;
 
 trait HasCollateralDetail
 {
