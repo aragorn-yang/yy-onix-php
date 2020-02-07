@@ -125,6 +125,16 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_CollateralDetail()
+    {
+        $collateralDetail = $this->product->getCollateralDetail();
+        $textContents = $collateralDetail->getTextContents();
+
+        $this->assertSame('03', $textContents[0]->getTextType());
+        $this->assertSame('Description', $textContents[0]->getTextTypeDesc());
+    }
+
+    /** @test */
     public function it_can_get_title(): void
     {
         $this->markTestSkipped();

@@ -12,11 +12,13 @@ use AragornYang\Onix\ProductFeatures\HasProductSupply;
 use AragornYang\Onix\ProductFeatures\HasRecordReference;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceName;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceType;
+use AragornYang\Onix\ProductFeatures\V30\HasCollateralDetail;
 
 class Product30 extends Composite implements Product
 {
     use
         HasBarcode,
+        HasCollateralDetail,
         HasDescriptiveDetail,
         HasNotificationType,
         HasProductIdentifiers,
