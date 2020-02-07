@@ -146,6 +146,8 @@ trait SampleOnixFile30
         $imprintIdentifier = $imprints[0]->getImprintIdentifier();
         $this->assertSame('01', $imprintIdentifier[0]->getImprintIDType());
         $this->assertSame('Proprietary', $imprintIdentifier[0]->getImprintIDTypeDesc());
+        $this->assertSame('ElsevierImprintCode', $imprintIdentifier[0]->getIDTypeName());
+        $this->assertSame('ELSEVIER', $imprintIdentifier[0]->getIDValue());
 
         $this->assertSame('Elsevier', $imprints[0]->getImprintName());
     }
