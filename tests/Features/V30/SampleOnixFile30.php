@@ -157,8 +157,14 @@ trait SampleOnixFile30
     {
         $relatedMaterial = $this->product->getRelatedMaterial();
         $relatedWorks = $relatedMaterial->getRelatedWorks();
+
         $this->assertSame('02', $relatedWorks[0]->getWorkRelationCode());
         $this->assertSame('Derived from', $relatedWorks[0]->getWorkRelationCodeDesc());
+
+        $workIdentifiers = $relatedWorks[0]->getWorkIdentifiers();
+        $this->assertSame('15', $workIdentifiers[0]->getWorkIDType());
+        $this->assertSame('ISBN-13', $workIdentifiers[0]->getWorkIDTypeDesc());
+        $this->assertSame('9780080446844', $workIdentifiers[0]->getIDValue());
     }
 
     /** @test */

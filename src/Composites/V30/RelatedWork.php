@@ -6,9 +6,12 @@ use AragornYang\Onix\CodeLists\CodeList161ResourceForm;
 use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList164WorkRelation;
+use AragornYang\Onix\ProductFeatures\HasWorkIdentifiers;
 
 class RelatedWork extends Composite
 {
+    use HasWorkIdentifiers;
+
     /** @var CodeInList */
     protected $workRelationCode;
 
