@@ -15,6 +15,7 @@ use AragornYang\Onix\ProductFeatures\HasExpectedShipDate;
 use AragornYang\Onix\ProductFeatures\HasStock;
 use AragornYang\Onix\ProductFeatures\HasWebsite;
 use AragornYang\Onix\Composites\Reissue;
+use AragornYang\Onix\Composites\V30\Supplier;
 
 class SupplyDetail extends Composite
 {
@@ -75,6 +76,9 @@ class SupplyDetail extends Composite
 
     /** @var array */
     protected $supplyToCountryExcluded = [];
+
+    /** @var Supplier[] */
+    protected $suppliers;
 
     public function getSupplierRole(): string
     {
@@ -342,5 +346,15 @@ class SupplyDetail extends Composite
     public function getSupplyToCountryExcluded(): array
     {
         return $this->supplyToCountryExcluded;
+    }
+
+    public function setSupplier(\SimpleXMLElement $xml): void
+    {
+        $this->suppliers[] = Supplier::buildFromXml($xml, $this);
+    }
+
+    public function getSuppliers(): array
+    {
+        return $this->suppliers;
     }
 }

@@ -168,6 +168,18 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_productSupply()
+    {
+        $productSupply = $this->product->getProductSupply();
+        $supplyDetails = $productSupply->getSupplyDetails();
+        $suppliers = $supplyDetails[0]->getSuppliers();
+
+        $this->assertSame('01', $suppliers[0]->getSupplierRole());
+        $this->assertSame('Publisher to retailers', $suppliers[0]->getSupplierRoleDesc());
+        $this->assertSame('Elsevier Health Sciences', $suppliers[0]->getSupplierName()[0]);
+    }
+
+    /** @test */
     public function it_can_get_title(): void
     {
         $this->markTestSkipped();
