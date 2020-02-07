@@ -134,6 +134,7 @@ trait SampleOnixFile30
         $this->assertSame('Description', $textContents[0]->getTextTypeDesc());
         $this->assertSame('00', $textContents[0]->getContentAudience());
         $this->assertSame('Unrestricted', $textContents[0]->getContentAudienceDesc());
+        $this->assertSame('This prestigious text', substr($textContents[0]->getText(), 0, 21));
     }
 
     /** @test */

@@ -15,6 +15,9 @@ class TextContents extends Composite
     /** @var CodeInList */
     protected $contentAudience;
 
+    /** @var string */
+    protected $text = '';
+
     public function setTextType(string $code): void
     {
         $this->textType = new CodeInList(CodeList153TextType::class, $code);
@@ -43,5 +46,15 @@ class TextContents extends Composite
     public function getContentAudienceDesc(): string
     {
         return $this->contentAudience ? $this->contentAudience->desc() : '';
+    }
+
+    public function setText(string $value): void
+    {
+        $this->text = $value;
+    }
+
+    public function getText(): string
+    {
+        return $this->text;
     }
 }
