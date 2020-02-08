@@ -6,14 +6,15 @@ use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList2ProductComposition;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\Composites\Composite;
+use AragornYang\Onix\Composites\V30\Collection;
 use AragornYang\Onix\ProductFeatures\HasContributors;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
-use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
 use AragornYang\Onix\ProductFeatures\HasMeasures;
 use AragornYang\Onix\ProductFeatures\HasLanguages;
 use AragornYang\Onix\ProductFeatures\HasExtents;
 use AragornYang\Onix\ProductFeatures\HasSubjects;
 use AragornYang\Onix\ProductFeatures\HasAudiences;
+use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
 
 class DescriptiveDetail extends Composite
 {
@@ -32,6 +33,9 @@ class DescriptiveDetail extends Composite
 
     /** @var CodeInList */
     protected $countryOfManufacture;
+
+    /** @var Collection[] */
+    protected $collections;
 
     public function setProductComposition(string $code): void
     {
@@ -61,5 +65,15 @@ class DescriptiveDetail extends Composite
     public function getCountryOfManufactureDesc(): string
     {
         return $this->countryOfManufacture ? $this->countryOfManufacture->desc() : '';
+    }
+
+    public function setCollection(\SimpleXMLElement $xml): void
+    {
+        $this->collections[] = Collection::buildFromXml($xml, $this);
+    }
+
+    public function getCollections(): array
+    {
+        return $this->collections;
     }
 }

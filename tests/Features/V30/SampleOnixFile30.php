@@ -77,21 +77,26 @@ trait SampleOnixFile30
     public function it_can_get_descriptiveDetail()
     {
         $descriptiveDetail = $this->product->getDescriptiveDetail();
+        $titleDetails = $descriptiveDetail->getTitleDetails();
+        $titleElements = $titleDetails[0]->getTitleElements();
+        $measures = $descriptiveDetail->getMeasures();
+        $languages = $descriptiveDetail->getLanguages();
+        $extents = $descriptiveDetail->getExtent();
+        $subjects = $descriptiveDetail->getSubjects();
+        $audiences = $descriptiveDetail->getAudiences();
+        $collections = $descriptiveDetail->getCollections();
 
         $this->assertSame('00', $descriptiveDetail->getProductComposition());
         $this->assertSame('Single-item retail product', $descriptiveDetail->getProductCompositionDesc());
 
-        $titleDetails = $descriptiveDetail->getTitleDetails();
         $this->assertCount(1, $titleDetails);
         $this->assertSame('01', $titleDetails[0]->getTitleType());
 
-        $titleElements = $titleDetails[0]->getTitleElements();
         $this->assertSame('01', $titleElements[0]->getTitleElementLevel());
         $this->assertSame('Product', $titleElements[0]->getTitleElementLevelDesc());
         $this->assertSame('Pain', $titleElements[0]->getTitleText());
         $this->assertSame('Best Practice & Research Compendium', $titleElements[0]->getSubtitle());
 
-        $measures = $descriptiveDetail->getMeasures();
         $this->assertSame('01', $measures[0]->getMeasureType());
         $this->assertSame('Height', $measures[0]->getMeasureTypeDesc());
         $this->assertSame(11.0, $measures[0]->getMeasurement());
@@ -101,27 +106,26 @@ trait SampleOnixFile30
         $this->assertSame('GB', $descriptiveDetail->getCountryOfManufacture());
         $this->assertSame('United Kingdom', $descriptiveDetail->getCountryOfManufactureDesc());
 
-        $languages = $descriptiveDetail->getLanguages();
         $this->assertSame('eng', $languages[0]->getLanguageCode());
         $this->assertSame('01', $languages[0]->getLanguageRole());
         $this->assertSame('Language of text', $languages[0]->getLanguageRoleDesc());
 
-        $extents = $descriptiveDetail->getExtent();
         $this->assertSame('05', $extents[0]->getExtentType());
         $this->assertSame('Total numbered pages', $extents[0]->getExtentTypeDesc());
         $this->assertSame('384', $extents[0]->getExtentValue());
         $this->assertSame('03', $extents[0]->getExtentUnit());
         $this->assertSame('Pages', $extents[0]->getExtentUnitDesc());
 
-        $subjects = $descriptiveDetail->getSubjects();
         $this->assertSame('10', $subjects[0]->getSubjectSchemeIdentifier());
         $this->assertSame('BISAC Subject Heading', $subjects[0]->getSubjectSchemeIdentifierDesc());
         $this->assertSame('MED083000', $subjects[0]->getSubjectCode());
 
-        $audiences = $descriptiveDetail->getAudiences();
         $this->assertSame('01', $audiences[0]->getAudienceCodeType());
         $this->assertSame('ONIX audience codes', $audiences[0]->getAudienceCodeTypeDesc());
         $this->assertSame('05', $audiences[0]->getAudienceCodeValue());
+
+        $this->assertSame('10', $collections[0]->getCollectionType());
+        $this->assertSame('Publisher collection', $collections[0]->getCollectionTypeDesc());
     }
 
     /** @test */
@@ -142,8 +146,8 @@ trait SampleOnixFile30
     {
         $publishingDetail = $this->product->getPublishingDetail();
         $imprints = $publishingDetail->getImprints();
-
         $imprintIdentifier = $imprints[0]->getImprintIdentifier();
+
         $this->assertSame('01', $imprintIdentifier[0]->getImprintIDType());
         $this->assertSame('Proprietary', $imprintIdentifier[0]->getImprintIDTypeDesc());
         $this->assertSame('ElsevierImprintCode', $imprintIdentifier[0]->getIDTypeName());
@@ -157,11 +161,11 @@ trait SampleOnixFile30
     {
         $relatedMaterial = $this->product->getRelatedMaterial();
         $relatedWorks = $relatedMaterial->getRelatedWorks();
+        $workIdentifiers = $relatedWorks[0]->getWorkIdentifiers();
 
         $this->assertSame('02', $relatedWorks[0]->getWorkRelationCode());
         $this->assertSame('Derived from', $relatedWorks[0]->getWorkRelationCodeDesc());
 
-        $workIdentifiers = $relatedWorks[0]->getWorkIdentifiers();
         $this->assertSame('15', $workIdentifiers[0]->getWorkIDType());
         $this->assertSame('ISBN-13', $workIdentifiers[0]->getWorkIDTypeDesc());
         $this->assertSame('9780080446844', $workIdentifiers[0]->getIDValue());

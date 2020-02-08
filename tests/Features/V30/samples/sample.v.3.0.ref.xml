@@ -47,7 +47,17 @@
                 <MeasureUnitCode>gr</MeasureUnitCode>
             </Measure>
             <CountryOfManufacture>GB</CountryOfManufacture>
-            <NoCollection/>
+            <!--            <NoCollection/>-->
+            <Collection>
+                <CollectionType>10</CollectionType>
+                <TitleDetail>
+                    <TitleType>01</TitleType>
+                    <TitleElement>
+                        <TitleElementLevel>02</TitleElementLevel>
+                        <TitleText>Master Medicine</TitleText>
+                    </TitleElement>
+                </TitleDetail>
+            </Collection>
             <TitleDetail>
                 <TitleType>01</TitleType>
                 <TitleElement>
