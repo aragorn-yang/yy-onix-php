@@ -87,6 +87,8 @@ trait SampleOnixFile30
         $collections = $descriptiveDetail->getCollections();
         $titleDetails = $collections[0]->getTitleDetails();
         $collectionTitleElements = $titleDetails[0]->getTitleElements();
+        $productParts = $descriptiveDetail->getProductParts();
+        $productIdentifiers = array_values($productParts[0]->getProductIdentifiers());
 
         $this->assertSame('00', $descriptiveDetail->getProductComposition());
         $this->assertSame('Single-item retail product', $descriptiveDetail->getProductCompositionDesc());
@@ -135,6 +137,12 @@ trait SampleOnixFile30
         $this->assertSame('Collection level', $collectionTitleElements[0]->getTitleElementLevelDesc());
         $this->assertSame('Master Medicine', $collectionTitleElements[0]->getTitleText());
         $this->assertSame('Volume 2010', $collectionTitleElements[0]->getPartNumber());
+
+        $this->assertSame('03', $productIdentifiers[0]->getProductIDType());
+        $this->assertSame('GTIN-13', $productIdentifiers[0]->getProductIDTypeDesc());
+        $this->assertSame('9780323089166', $productIdentifiers[0]->getIDValue());
+        $this->assertSame('DI', $productParts[0]->getProductForm());
+        $this->assertSame('DVD-ROM', $productParts[0]->getProductFormDesc());
     }
 
     /** @test */

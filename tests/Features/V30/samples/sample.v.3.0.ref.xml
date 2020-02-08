@@ -152,6 +152,17 @@
                 <AudienceCodeType>01</AudienceCodeType>
                 <AudienceCodeValue>05</AudienceCodeValue>
             </Audience>
+            <ProductPart>
+                <ProductIdentifier>
+                    <ProductIDType>03</ProductIDType>
+                    <IDValue>9780323089166</IDValue>
+                </ProductIdentifier>
+                <ProductIdentifier>
+                    <ProductIDType>15</ProductIDType>
+                    <IDValue>9780323089166</IDValue>
+                </ProductIdentifier>
+                <ProductForm>DI</ProductForm>
+            </ProductPart>
         </DescriptiveDetail>
         <CollateralDetail>
             <TextContent>
