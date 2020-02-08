@@ -6,6 +6,7 @@ use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\ProductFeatures\HasImprints;
 use AragornYang\Onix\ProductFeatures\HasPublishers;
 use AragornYang\Onix\ProductFeatures\HasPublishingStatus;
+use AragornYang\Onix\Composites\V30\PublishingDate;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 
@@ -19,7 +20,8 @@ class PublishingDetail extends Composite
     /** @var CodeInList */
     protected $countryOfPublication;
 
-    protected $publishingStatus;
+    /** @var PublishingDate[] */
+    protected $publishingDate;
 
     public function setCountryOfPublication(string $code): void
     {
@@ -34,5 +36,15 @@ class PublishingDetail extends Composite
     public function getCountryOfPublicationDesc(): string
     {
         return $this->countryOfPublication ? $this->countryOfPublication->desc() : '';
+    }
+
+    public function setPublishingDate(\SimpleXMLElement $xml): void
+    {
+        $this->publishingDate[] = PublishingDate::buildFromXml($xml, $this);
+    }
+
+    public function getPublishingDate(): array
+    {
+        return $this->publishingDate;
     }
 }

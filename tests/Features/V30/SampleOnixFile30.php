@@ -156,6 +156,7 @@ trait SampleOnixFile30
         $imprints = $publishingDetail->getImprints();
         $imprintIdentifier = $imprints[0]->getImprintIdentifier();
         $publishers = $publishingDetail->getPublishers();
+        $publishingDate = $publishingDetail->getPublishingDate();
 
         $this->assertSame('01', $imprintIdentifier[0]->getImprintIDType());
         $this->assertSame('Proprietary', $imprintIdentifier[0]->getImprintIDTypeDesc());
@@ -169,6 +170,10 @@ trait SampleOnixFile30
         $this->assertSame('United Kingdom', $publishingDetail->getCountryOfPublicationDesc());
         $this->assertSame('04', $publishingDetail->getPublishingStatus());
         $this->assertSame('Active', $publishingDetail->getPublishingStatusDesc());
+
+        $this->assertSame('01', $publishingDate[0]->getPublishingDateRole());
+        $this->assertSame('Publication date', $publishingDate[0]->getPublishingDateRoleDesc());
+        $this->assertSame('20070327', $publishingDate[0]->getDate());
     }
 
     /** @test */
