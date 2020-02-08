@@ -145,6 +145,8 @@ trait SampleOnixFile30
         $this->assertSame('DVD-ROM', $productParts[0]->getProductFormDesc());
 
         $this->assertSame('6', $descriptiveDetail->getEditionNumber());
+        $this->assertSame('02', $descriptiveDetail->getIllustrated());
+        $this->assertSame('Yes', $descriptiveDetail->getIllustratedDesc());
     }
 
     /** @test */

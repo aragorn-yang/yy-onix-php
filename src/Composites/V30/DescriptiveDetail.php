@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\Composites\V30;
 
 use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList152IllustratedNotIllustrated;
 use AragornYang\Onix\CodeLists\CodeList2ProductComposition;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\Composites\Composite;
@@ -42,6 +43,9 @@ class DescriptiveDetail extends Composite
 
     /** @var ProductPart[] */
     protected $productParts;
+
+    /** @var CodeInList */
+    protected $illustrated;
 
     public function setProductComposition(string $code): void
     {
@@ -91,5 +95,20 @@ class DescriptiveDetail extends Composite
     public function getProductParts(): array
     {
         return $this->productParts;
+    }
+
+    public function setIllustrated(string $code): void
+    {
+        $this->illustrated = new CodeInList(CodeList152IllustratedNotIllustrated::class, $code);
+    }
+
+    public function getIllustrated(): string
+    {
+        return $this->illustrated ? $this->illustrated->code() : '';
+    }
+
+    public function getIllustratedDesc(): string
+    {
+        return $this->illustrated ? $this->illustrated->desc() : '';
     }
 }
