@@ -263,6 +263,7 @@
                     <RegionsIncluded>WORLD</RegionsIncluded>
                 </Territory>
             </SalesRights>
+            <ROWSalesRightsType>06</ROWSalesRightsType>
         </PublishingDetail>
         <RelatedMaterial>
             <RelatedWork>

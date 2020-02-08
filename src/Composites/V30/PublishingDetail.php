@@ -11,6 +11,7 @@ use AragornYang\Onix\ProductFeatures\HasSaleRights;
 use AragornYang\Onix\Composites\V30\PublishingDate;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
+use AragornYang\Onix\CodeLists\CodeList46SalesRightsType;
 
 class PublishingDetail extends Composite
 {
@@ -26,6 +27,9 @@ class PublishingDetail extends Composite
 
     /** @var PublishingDate[] */
     protected $publishingDate;
+
+    /** @var CodeInList */
+    protected $ROWSalesRightsType;
 
     public function setCountryOfPublication(string $code): void
     {
@@ -50,5 +54,20 @@ class PublishingDetail extends Composite
     public function getPublishingDate(): array
     {
         return $this->publishingDate;
+    }
+
+    public function setROWSalesRightsType(string $code): void
+    {
+        $this->ROWSalesRightsType = new CodeInList(CodeList46SalesRightsType::class, $code);
+    }
+
+    public function getROWSalesRightsType(): string
+    {
+        return $this->ROWSalesRightsType ? $this->ROWSalesRightsType->code() : '';
+    }
+
+    public function getROWSalesRightsTypeDesc(): string
+    {
+        return $this->ROWSalesRightsType ? $this->ROWSalesRightsType->desc() : '';
     }
 }
