@@ -192,13 +192,19 @@ trait SampleOnixFile30
         $relatedMaterial = $this->product->getRelatedMaterial();
         $relatedWorks = $relatedMaterial->getRelatedWorks();
         $workIdentifiers = $relatedWorks[0]->getWorkIdentifiers();
+        $relatedProducts = $relatedMaterial->getRelatedProducts();
+        $productIdentifiers = $relatedProducts[0]->getProductIdentifier();
 
         $this->assertSame('02', $relatedWorks[0]->getWorkRelationCode());
         $this->assertSame('Derived from', $relatedWorks[0]->getWorkRelationCodeDesc());
-
         $this->assertSame('15', $workIdentifiers[0]->getWorkIDType());
         $this->assertSame('ISBN-13', $workIdentifiers[0]->getWorkIDTypeDesc());
         $this->assertSame('9780080446844', $workIdentifiers[0]->getIDValue());
+        $this->assertSame('03', $relatedProducts[0]->getProductRelationCode());
+        $this->assertSame('Replaces', $relatedProducts[0]->getProductRelationCodeDesc());
+        $this->assertSame('02', $productIdentifiers[0]->getProductIDType());
+        $this->assertSame('ISBN-10', $productIdentifiers[0]->getProductIDTypeDesc());
+        $this->assertSame('0323044379', $productIdentifiers[0]->getIDValue());
     }
 
     /** @test */

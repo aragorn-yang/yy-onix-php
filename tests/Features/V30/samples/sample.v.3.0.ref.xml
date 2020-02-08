@@ -258,6 +258,21 @@
                     <IDValue>9780080446844</IDValue>
                 </WorkIdentifier>
             </RelatedWork>
+            <RelatedProduct>
+                <ProductRelationCode>03</ProductRelationCode>
+                <ProductIdentifier>
+                    <ProductIDType>02</ProductIDType>
+                    <IDValue>0323044379</IDValue>
+                </ProductIdentifier>
+                <ProductIdentifier>
+                    <ProductIDType>15</ProductIDType>
+                    <IDValue>9780323044370</IDValue>
+                </ProductIdentifier>
+                <ProductIdentifier>
+                    <ProductIDType>03</ProductIDType>
+                    <IDValue>9780323044370</IDValue>
+                </ProductIdentifier>
+            </RelatedProduct>
         </RelatedMaterial>
         <ProductSupply>
             <SupplyDetail>
