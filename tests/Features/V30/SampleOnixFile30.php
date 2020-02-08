@@ -167,6 +167,9 @@ trait SampleOnixFile30
         $this->assertSame('01', $publishers[0]->getPublishingRole());
         $this->assertSame('Publisher', $publishers[0]->getPublishingRoleDesc());
         $this->assertSame('Elsevier Health Sciences', $publishers[0]->getPublisherName());
+
+        $this->assertSame('GB', $publishingDetail->getCountryOfPublication());
+        $this->assertSame('United Kingdom', $publishingDetail->getCountryOfPublicationDesc());
     }
 
     /** @test */
