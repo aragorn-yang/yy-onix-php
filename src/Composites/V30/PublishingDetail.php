@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\Composites\V30;
 
 use AragornYang\Onix\Composites\Composite;
+use AragornYang\Onix\ProductFeatures\HasCopyrightStatements;
 use AragornYang\Onix\ProductFeatures\HasImprints;
 use AragornYang\Onix\ProductFeatures\HasPublishers;
 use AragornYang\Onix\ProductFeatures\HasPublishingStatus;
@@ -13,6 +14,7 @@ use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 class PublishingDetail extends Composite
 {
     use
+        HasCopyrightStatements,
         HasImprints,
         HasPublishers,
         HasPublishingStatus;
