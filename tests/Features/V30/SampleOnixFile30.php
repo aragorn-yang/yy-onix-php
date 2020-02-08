@@ -134,6 +134,7 @@ trait SampleOnixFile30
         $this->assertSame('02', $collectionTitleElements[0]->getTitleElementLevel());
         $this->assertSame('Collection level', $collectionTitleElements[0]->getTitleElementLevelDesc());
         $this->assertSame('Master Medicine', $collectionTitleElements[0]->getTitleText());
+        $this->assertSame('Volume 2010', $collectionTitleElements[0]->getPartNumber());
     }
 
     /** @test */
