@@ -155,6 +155,7 @@ trait SampleOnixFile30
         $publishingDetail = $this->product->getPublishingDetail();
         $imprints = $publishingDetail->getImprints();
         $imprintIdentifier = $imprints[0]->getImprintIdentifier();
+        $publishers = $publishingDetail->getPublishers();
 
         $this->assertSame('01', $imprintIdentifier[0]->getImprintIDType());
         $this->assertSame('Proprietary', $imprintIdentifier[0]->getImprintIDTypeDesc());
@@ -162,6 +163,10 @@ trait SampleOnixFile30
         $this->assertSame('ELSEVIER', $imprintIdentifier[0]->getIDValue());
 
         $this->assertSame('Elsevier', $imprints[0]->getImprintName());
+
+        $this->assertSame('01', $publishers[0]->getPublishingRole());
+        $this->assertSame('Publisher', $publishers[0]->getPublishingRoleDesc());
+        $this->assertSame('Elsevier Health Sciences', $publishers[0]->getPublisherName());
     }
 
     /** @test */
