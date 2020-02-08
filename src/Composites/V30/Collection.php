@@ -7,6 +7,7 @@ use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList148CollectionType;
 use AragornYang\Onix\Composites\V30\CollectionSequence;
+use AragornYang\Onix\Composites\V30\CollectionIdentifier;
 
 class Collection extends Composite
 {
@@ -17,6 +18,9 @@ class Collection extends Composite
 
     /** @var CollectionSequence[] */
     protected $collectionSequences;
+
+    /** @var CollectionIdentifier[] */
+    protected $collectionIdentifiers;
 
     public function setCollectionType(string $code): void
     {
@@ -41,5 +45,15 @@ class Collection extends Composite
     public function getCollectionSequences(): array
     {
         return $this->collectionSequences;
+    }
+
+    public function setCollectionIdentifier(\SimpleXMLElement $xml): void
+    {
+        $this->collectionIdentifiers[] = CollectionIdentifier::buildFromXml($xml, $this);
+    }
+
+    public function getCollectionIdentifiers(): array
+    {
+        return $this->collectionIdentifiers;
     }
 }

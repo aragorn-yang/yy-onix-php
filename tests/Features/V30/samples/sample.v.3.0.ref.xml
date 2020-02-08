@@ -50,6 +50,10 @@
             <!--<NoCollection/>-->
             <Collection>
                 <CollectionType>10</CollectionType>
+                <CollectionIdentifier>
+                    <CollectionIDType>02</CollectionIDType>
+                    <IDValue>1567424X</IDValue>
+                </CollectionIdentifier>
                 <CollectionSequence>
                     <CollectionSequenceType>02</CollectionSequenceType>
                     <CollectionSequenceNumber>1</CollectionSequenceNumber>
