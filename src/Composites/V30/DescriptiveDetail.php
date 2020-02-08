@@ -13,6 +13,7 @@ use AragornYang\Onix\ProductFeatures\HasAudiences;
 use AragornYang\Onix\ProductFeatures\HasContributors;
 use AragornYang\Onix\ProductFeatures\HasEditionNumber;
 use AragornYang\Onix\ProductFeatures\HasExtents;
+use AragornYang\Onix\ProductFeatures\HasIllustrationsNote;
 use AragornYang\Onix\ProductFeatures\HasLanguages;
 use AragornYang\Onix\ProductFeatures\HasMeasures;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
@@ -26,6 +27,7 @@ class DescriptiveDetail extends Composite
         HasContributors,
         HasEditionNumber,
         HasExtents,
+        HasIllustrationsNote,
         HasLanguages,
         HasMeasures,
         HasProductForm,

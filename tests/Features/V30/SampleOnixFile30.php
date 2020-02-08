@@ -147,6 +147,7 @@ trait SampleOnixFile30
         $this->assertSame('6', $descriptiveDetail->getEditionNumber());
         $this->assertSame('02', $descriptiveDetail->getIllustrated());
         $this->assertSame('Yes', $descriptiveDetail->getIllustratedDesc());
+        $this->assertSame('Illustrated', $descriptiveDetail->getIllustrationsNote());
     }
 
     /** @test */
