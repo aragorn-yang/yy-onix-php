@@ -8,26 +8,28 @@ use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\Composites\V30\Collection;
 use AragornYang\Onix\Composites\V30\ProductPart;
-use AragornYang\Onix\ProductFeatures\HasContributors;
-use AragornYang\Onix\ProductFeatures\HasProductForm;
-use AragornYang\Onix\ProductFeatures\HasMeasures;
-use AragornYang\Onix\ProductFeatures\HasLanguages;
-use AragornYang\Onix\ProductFeatures\HasExtents;
-use AragornYang\Onix\ProductFeatures\HasSubjects;
 use AragornYang\Onix\ProductFeatures\HasAudiences;
+use AragornYang\Onix\ProductFeatures\HasContributors;
+use AragornYang\Onix\ProductFeatures\HasEditionNumber;
+use AragornYang\Onix\ProductFeatures\HasExtents;
+use AragornYang\Onix\ProductFeatures\HasLanguages;
+use AragornYang\Onix\ProductFeatures\HasMeasures;
+use AragornYang\Onix\ProductFeatures\HasProductForm;
+use AragornYang\Onix\ProductFeatures\HasSubjects;
 use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
 
 class DescriptiveDetail extends Composite
 {
     use
+        HasAudiences,
         HasContributors,
-        HasProductForm,
-        HasTitleDetails,
-        HasMeasures,
-        HasLanguages,
+        HasEditionNumber,
         HasExtents,
+        HasLanguages,
+        HasMeasures,
+        HasProductForm,
         HasSubjects,
-        HasAudiences;
+        HasTitleDetails;
 
     /** @var CodeInList */
     protected $productComposition;

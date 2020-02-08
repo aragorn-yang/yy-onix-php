@@ -143,6 +143,8 @@ trait SampleOnixFile30
         $this->assertSame('9780323089166', $productIdentifiers[0]->getIDValue());
         $this->assertSame('DI', $productParts[0]->getProductForm());
         $this->assertSame('DVD-ROM', $productParts[0]->getProductFormDesc());
+
+        $this->assertSame('6', $descriptiveDetail->getEditionNumber());
     }
 
     /** @test */
