@@ -206,6 +206,7 @@ trait SampleOnixFile30
         $this->assertSame('For sale with exclusive rights in the specified countries or territories', $salesRights[0]->getSalesRightsTypeDesc());
         $this->assertSame('WORLD', $territorys[0]->getRegionsIncluded());
         $this->assertSame('World', $territorys[0]->getRegionsIncludedDesc());
+        $this->assertSame('US CA', $territorys[0]->getCountriesExcluded());
 
         $this->assertSame('06', $publishingDetail->getROWSalesRightsType());
         $this->assertSame('Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)', $publishingDetail->getROWSalesRightsTypeDesc());

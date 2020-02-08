@@ -269,6 +269,7 @@
                 <SalesRightsType>01</SalesRightsType>
                 <Territory>
                     <RegionsIncluded>WORLD</RegionsIncluded>
+                    <CountriesExcluded>US CA</CountriesExcluded>
                 </Territory>
             </SalesRights>
             <ROWSalesRightsType>06</ROWSalesRightsType>

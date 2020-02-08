@@ -11,6 +11,9 @@ class Territory extends Composite
     /** @var CodeInList */
     protected $regionsIncluded;
 
+    /** @var string */
+    protected $countriesExcluded = '';
+
     public function setRegionsIncluded(string $code): void
     {
         $this->regionsIncluded = new CodeInList(CodeList49RegionCode::class, $code);
@@ -24,5 +27,15 @@ class Territory extends Composite
     public function getRegionsIncludedDesc(): string
     {
         return $this->regionsIncluded ? $this->regionsIncluded->desc() : '';
+    }
+
+    public function setCountriesExcluded(string $value): void
+    {
+        $this->countriesExcluded = $value;
+    }
+
+    public function getCountriesExcluded(): string
+    {
+        return $this->countriesExcluded;
     }
 }
