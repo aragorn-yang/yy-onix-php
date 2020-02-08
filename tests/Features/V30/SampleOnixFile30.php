@@ -159,6 +159,8 @@ trait SampleOnixFile30
         $publishingDate = $publishingDetail->getPublishingDate();
         $copyrightStatements = $publishingDetail->getCopyrightStatement();
         $copyrightOwners = $copyrightStatements[0]->getCopyrightOwner();
+        $salesRights = $publishingDetail->getSalesRights();
+        $territorys = $salesRights[0]->getTerritory();
 
         $this->assertSame('01', $imprintIdentifier[0]->getImprintIDType());
         $this->assertSame('Proprietary', $imprintIdentifier[0]->getImprintIDTypeDesc());
@@ -177,6 +179,10 @@ trait SampleOnixFile30
         $this->assertSame('20070327', $publishingDate[0]->getDate());
         $this->assertSame('2007', $copyrightStatements[0]->getCopyrightYear());
         $this->assertSame('Elsevier Health Sciences', $copyrightOwners[0]->getCorporateName());
+        $this->assertSame('01', $salesRights[0]->getSalesRightsType());
+        $this->assertSame('For sale with exclusive rights in the specified countries or territories', $salesRights[0]->getSalesRightsTypeDesc());
+        $this->assertSame('WORLD', $territorys[0]->getRegionsIncluded());
+        $this->assertSame('World', $territorys[0]->getRegionsIncludedDesc());
     }
 
     /** @test */
