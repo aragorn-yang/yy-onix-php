@@ -270,6 +270,7 @@
                 <Territory>
                     <RegionsIncluded>WORLD</RegionsIncluded>
                     <CountriesExcluded>US CA</CountriesExcluded>
+                    <CountriesIncluded>AU NZ</CountriesIncluded>
                 </Territory>
             </SalesRights>
             <ROWSalesRightsType>06</ROWSalesRightsType>
