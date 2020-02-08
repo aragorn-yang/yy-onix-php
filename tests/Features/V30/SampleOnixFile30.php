@@ -89,6 +89,7 @@ trait SampleOnixFile30
         $collectionTitleElements = $titleDetails[0]->getTitleElements();
         $productParts = $descriptiveDetail->getProductParts();
         $productIdentifiers = array_values($productParts[0]->getProductIdentifiers());
+        $collectionSequences = $collections[0]->getCollectionSequences();
 
         $this->assertSame('00', $descriptiveDetail->getProductComposition());
         $this->assertSame('Single-item retail product', $descriptiveDetail->getProductCompositionDesc());
@@ -148,6 +149,10 @@ trait SampleOnixFile30
         $this->assertSame('02', $descriptiveDetail->getIllustrated());
         $this->assertSame('Yes', $descriptiveDetail->getIllustratedDesc());
         $this->assertSame('Illustrated', $descriptiveDetail->getIllustrationsNote());
+
+        $this->assertSame('02', $collectionSequences[0]->getCollectionSequenceType());
+        $this->assertSame('Title order', $collectionSequences[0]->getCollectionSequenceTypeDesc());
+        $this->assertSame(1, $collectionSequences[0]->getCollectionSequenceNumber());
     }
 
     /** @test */

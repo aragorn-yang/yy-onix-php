@@ -47,9 +47,13 @@
                 <MeasureUnitCode>gr</MeasureUnitCode>
             </Measure>
             <CountryOfManufacture>GB</CountryOfManufacture>
-            <!--            <NoCollection/>-->
+            <!--<NoCollection/>-->
             <Collection>
                 <CollectionType>10</CollectionType>
+                <CollectionSequence>
+                    <CollectionSequenceType>02</CollectionSequenceType>
+                    <CollectionSequenceNumber>1</CollectionSequenceNumber>
+                </CollectionSequence>
                 <TitleDetail>
                     <TitleType>01</TitleType>
                     <TitleElement>
