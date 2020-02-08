@@ -85,6 +85,8 @@ trait SampleOnixFile30
         $subjects = $descriptiveDetail->getSubjects();
         $audiences = $descriptiveDetail->getAudiences();
         $collections = $descriptiveDetail->getCollections();
+        $titleDetails = $collections[0]->getTitleDetails();
+        $collectionTitleElements = $titleDetails[0]->getTitleElements();
 
         $this->assertSame('00', $descriptiveDetail->getProductComposition());
         $this->assertSame('Single-item retail product', $descriptiveDetail->getProductCompositionDesc());
@@ -126,6 +128,12 @@ trait SampleOnixFile30
 
         $this->assertSame('10', $collections[0]->getCollectionType());
         $this->assertSame('Publisher collection', $collections[0]->getCollectionTypeDesc());
+
+        $this->assertSame('01', $titleDetails[0]->getTitleType());
+        $this->assertSame('Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)', $titleDetails[0]->getTitleTypeDesc());
+        $this->assertSame('02', $collectionTitleElements[0]->getTitleElementLevel());
+        $this->assertSame('Collection level', $collectionTitleElements[0]->getTitleElementLevelDesc());
+        $this->assertSame('Master Medicine', $collectionTitleElements[0]->getTitleText());
     }
 
     /** @test */

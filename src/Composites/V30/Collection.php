@@ -3,11 +3,14 @@
 namespace AragornYang\Onix\Composites\V30;
 
 use AragornYang\Onix\Composites\Composite;
+use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList148CollectionType;
 
 class Collection extends Composite
 {
+    use HasTitleDetails;
+
     /** @var CodeInList */
     protected $collectionType;
 
