@@ -161,15 +161,14 @@ trait SampleOnixFile30
         $this->assertSame('Proprietary', $imprintIdentifier[0]->getImprintIDTypeDesc());
         $this->assertSame('ElsevierImprintCode', $imprintIdentifier[0]->getIDTypeName());
         $this->assertSame('ELSEVIER', $imprintIdentifier[0]->getIDValue());
-
         $this->assertSame('Elsevier', $imprints[0]->getImprintName());
-
         $this->assertSame('01', $publishers[0]->getPublishingRole());
         $this->assertSame('Publisher', $publishers[0]->getPublishingRoleDesc());
         $this->assertSame('Elsevier Health Sciences', $publishers[0]->getPublisherName());
-
         $this->assertSame('GB', $publishingDetail->getCountryOfPublication());
         $this->assertSame('United Kingdom', $publishingDetail->getCountryOfPublicationDesc());
+        $this->assertSame('04', $publishingDetail->getPublishingStatus());
+        $this->assertSame('Active', $publishingDetail->getPublishingStatusDesc());
     }
 
     /** @test */
