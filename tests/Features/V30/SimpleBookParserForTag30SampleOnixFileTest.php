@@ -26,6 +26,6 @@ class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnix
 
     protected function getPath(): string
     {
-        return __DIR__ . '/samples/sample.v.3.0.ref.xml';
+        return __DIR__ . '/samples/sample.v.3.0.tag.xml';
     }
 }
