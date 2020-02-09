@@ -252,6 +252,18 @@ trait SampleOnixFile30
     }
 
     /** @test */
+    public function it_can_get_supply_details(): void
+    {
+        $this->assertCount(1, $this->product->getSupplyDetails());
+        /** @var SupplyDetail $supplyDetail */
+        $supplyDetail = $this->product->getSupplyDetails()[0];
+        $this->assertSame('23', $supplyDetail->getProductAvailability());
+        $price = $supplyDetail->getPrices()[0];
+        $this->assertTrue($price->isRrpExcTax());
+        $this->assertSame(76.95, $price->getPriceAmount());
+    }
+
+    /** @test */
     public function it_can_get_title(): void
     {
         $this->markTestSkipped();
@@ -354,17 +366,5 @@ trait SampleOnixFile30
         $this->assertSame('in', $this->product->getWidthUnit());
         $this->assertSame(1.2, $this->product->getThicknessMeasurement());
         $this->assertSame('in', $this->product->getThicknessUnit());
-    }
-
-    /** @test */
-    public function it_can_get_supply_details(): void
-    {
-        $this->assertCount(1, $this->product->getSupplyDetails());
-        /** @var SupplyDetail $supplyDetail */
-        $supplyDetail = $this->product->getSupplyDetails()[0];
-        $this->assertSame('23', $supplyDetail->getProductAvailability());
-        $price = $supplyDetail->getPrices()[0];
-        $this->assertTrue($price->isRrpExcTax());
-        $this->assertSame(76.95, $price->getPriceAmount());
     }
 }
