@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ONIXMessage release="3.0">
+    <Header>
+        <Sender>
+            <SenderName>Elsevier Health Sciences</SenderName>
+            <ContactName>Paul McElroy</ContactName>
+        </Sender>
+        <SentDateTime>20180703</SentDateTime>
+    </Header>
+    <Product>
+        <RecordReference>9780080446844</RecordReference>
+        <NotificationType>03</NotificationType>
+        <RecordSourceType>01</RecordSourceType>
+        <RecordSourceName>Elsevier</RecordSourceName>
+        <ProductIdentifier>
+            <ProductIDType>03</ProductIDType>
+            <IDValue>9780080446844</IDValue>
+        </ProductIdentifier>
+        <ProductIdentifier>
+            <ProductIDType>15</ProductIDType>
+            <IDValue>9780080446844</IDValue>
+        </ProductIdentifier>
+        <ProductIdentifier>
+            <ProductIDType>01</ProductIDType>
+            <IDValue>C2009-0-34349-4</IDValue>
+        </ProductIdentifier>
+        <Barcode>
+            <BarcodeType>02</BarcodeType>
+            <PositionOnProduct>00</PositionOnProduct>
+        </Barcode>
+        <DescriptiveDetail>
+            <ProductComposition>00</ProductComposition>
+            <ProductForm>BC</ProductForm>
+            <Measure>
+                <MeasureType>01</MeasureType>
+                <Measurement>11</Measurement>
+                <MeasureUnitCode>in</MeasureUnitCode>
+            </Measure>
+            <Measure>
+                <MeasureType>02</MeasureType>
+                <Measurement>8.5</Measurement>
+                <MeasureUnitCode>in</MeasureUnitCode>
+            </Measure>
+            <Measure>
+                <MeasureType>08</MeasureType>
+                <Measurement>1120</Measurement>
+                <MeasureUnitCode>gr</MeasureUnitCode>
+            </Measure>
+            <CountryOfManufacture>GB</CountryOfManufacture>
+            <!--<NoCollection/>-->
+            <Collection>
+                <CollectionType>10</CollectionType>
+                <CollectionIdentifier>
+                    <CollectionIDType>02</CollectionIDType>
+                    <IDValue>1567424X</IDValue>
+                </CollectionIdentifier>
+                <CollectionSequence>
+                    <CollectionSequenceType>02</CollectionSequenceType>
+                    <CollectionSequenceNumber>1</CollectionSequenceNumber>
+                </CollectionSequence>
+                <TitleDetail>
+                    <TitleType>01</TitleType>
+                    <TitleElement>
+                        <TitleElementLevel>02</TitleElementLevel>
+                        <TitleText>Master Medicine</TitleText>
+                        <PartNumber>Volume 2010</PartNumber>
+                    </TitleElement>
+                </TitleDetail>
+            </Collection>
+            <TitleDetail>
+                <TitleType>01</TitleType>
+                <TitleElement>
+                    <TitleElementLevel>01</TitleElementLevel>
+                    <TitleText>Pain</TitleText>
+                    <Subtitle>Best Practice &amp; Research Compendium</Subtitle>
+                </TitleElement>
+            </TitleDetail>
+            <Contributor>
+                <SequenceNumber>1</SequenceNumber>
+                <ContributorRole>B01</ContributorRole>
+                <PersonName>Harald Breivik</PersonName>
+                <NamesBeforeKey>Harald</NamesBeforeKey>
+                <KeyNames>Breivik</KeyNames>
+                <LettersAfterNames>MD, DMSc, FRCA</LettersAfterNames>
+                <ProfessionalAffiliation>
+                    <Affiliation>Professor, Department Anaesthesiology, Rikshospitalet University Hospital, Oslo,
+                        Norway
+                    </Affiliation>
+                </ProfessionalAffiliation>
+            </Contributor>
+            <Contributor>
+                <SequenceNumber>2</SequenceNumber>
+                <ContributorRole>B01</ContributorRole>
+                <PersonName>Michael Shipley</PersonName>
+                <NamesBeforeKey>Michael</NamesBeforeKey>
+                <KeyNames>Shipley</KeyNames>
+                <LettersAfterNames>MA, MD, FRCP</LettersAfterNames>
+                <ProfessionalAffiliation>
+                    <Affiliation>Consultant Rheumatologist, Centre for Rheumatology, University College Hospital,
+                        London, UK
+                    </Affiliation>
+                </ProfessionalAffiliation>
+            </Contributor>
+            <NoEdition/>
+            <Language>
+                <LanguageRole>01</LanguageRole>
+                <LanguageCode>eng</LanguageCode>
+            </Language>
+            <Extent>
+                <ExtentType>05</ExtentType>
+                <ExtentValue>384</ExtentValue>
+                <ExtentUnit>03</ExtentUnit>
+            </Extent>
+            <Subject>
+                <MainSubject/>
+                <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier>
+                <SubjectCode>MED083000</SubjectCode>
+            </Subject>
+            <Subject>
+                <MainSubject/>
+                <SubjectSchemeIdentifier>12</SubjectSchemeIdentifier>
+                <SubjectSchemeVersion>2.1</SubjectSchemeVersion>
+                <SubjectCode>MJM</SubjectCode>
+            </Subject>
+            <Subject>
+                <SubjectSchemeIdentifier>24</SubjectSchemeIdentifier>
+                <SubjectSchemeName>Landing</SubjectSchemeName>
+                <SubjectCode>1</SubjectCode>
+                <SubjectHeadingText>Medicine</SubjectHeadingText>
+            </Subject>
+            <Audience>
+                <AudienceCodeType>01</AudienceCodeType>
+                <AudienceCodeValue>05</AudienceCodeValue>
+            </Audience>
+            <ProductPart>
+                <ProductIdentifier>
+                    <ProductIDType>03</ProductIDType>
+                    <IDValue>9780323089166</IDValue>
+                </ProductIdentifier>
+                <ProductIdentifier>
+                    <ProductIDType>15</ProductIDType>
+                    <IDValue>9780323089166</IDValue>
+                </ProductIdentifier>
+                <ProductForm>DI</ProductForm>
+            </ProductPart>
+            <EditionNumber>6</EditionNumber>
+            <Illustrated>02</Illustrated>
+            <IllustrationsNote>Illustrated</IllustrationsNote>
+        </DescriptiveDetail>
+        <CollateralDetail>
+            <TextContent>
+                <TextType>03</TextType>
+                <ContentAudience>00</ContentAudience>
+                <Text>This prestigious text offers the most up-to-date advice on the assessment and treatment of pain.
+                    Derived from the highly acclaimed journals Best Practice &amp; Research Clinical Rheumatology and
+                    Best Practice &amp; Research Clinical Anaesthesiology, this fully updated volume discusses the basic
+                    principles of pain, its diagnosis, the recognition of ‘red’ flags indicating a greater risk of
+                    serious causes and ‘yellow’ flags indicating a greater risk of developing more chronic pain, and the
+                    evidence-based management of a variety of conditions. Illustrated throughout, the book draws upon
+                    the expertise of some of the World’s leading experts in the field, providing a publication that
+                    gives a truly international perspective to the management of pain.&lt;ul&gt;&lt;li&gt;Full reference
+                    to the latest clinical research&lt;/li&gt;&lt;li&gt;New chapters on limb pain and Science and
+                    psychology of pain&lt;/li&gt;&lt;li&gt;Cochrane Reviews, when relevant&lt;/li&gt;&lt;li&gt;boxed and
+                    bulleted Research Agenda and Practice Points&lt;/li&gt;&lt;li&gt;Reference to national and
+                    international guidelines&lt;/li&gt;&lt;/ul&gt;
+                </Text>
+            </TextContent>
+        </CollateralDetail>
+        <PublishingDetail>
+            <Imprint>
+                <ImprintIdentifier>
+                    <ImprintIDType>01</ImprintIDType>
+                    <IDTypeName>ElsevierImprintCode</IDTypeName>
+                    <IDValue>ELSEVIER</IDValue>
+                </ImprintIdentifier>
+                <ImprintName>Elsevier</ImprintName>
+            </Imprint>
+            <Publisher>
+                <PublishingRole>01</PublishingRole>
+                <PublisherName>Elsevier Health Sciences</PublisherName>
+            </Publisher>
+            <CountryOfPublication>GB</CountryOfPublication>
+            <PublishingStatus>04</PublishingStatus>
+            <PublishingDate>
+                <PublishingDateRole>01</PublishingDateRole>
+                <Date>20070327</Date>
+            </PublishingDate>
+            <CopyrightStatement>
+                <CopyrightYear>2007</CopyrightYear>
+                <CopyrightOwner>
+                    <CorporateName>Elsevier Health Sciences</CorporateName>
+                </CopyrightOwner>
+            </CopyrightStatement>
+            <SalesRights>
+                <SalesRightsType>01</SalesRightsType>
+                <Territory>
+                    <RegionsIncluded>WORLD</RegionsIncluded>
+                    <CountriesExcluded>US CA</CountriesExcluded>
+                    <CountriesIncluded>AU NZ</CountriesIncluded>
+                </Territory>
+            </SalesRights>
+            <ROWSalesRightsType>06</ROWSalesRightsType>
+        </PublishingDetail>
+        <RelatedMaterial>
+            <RelatedWork>
+                <WorkRelationCode>02</WorkRelationCode>
+                <WorkIdentifier>
+                    <WorkIDType>15</WorkIDType>
+                    <IDValue>9780080446844</IDValue>
+                </WorkIdentifier>
+            </RelatedWork>
+            <RelatedProduct>
+                <ProductRelationCode>03</ProductRelationCode>
+                <ProductIdentifier>
+                    <ProductIDType>02</ProductIDType>
+                    <IDValue>0323044379</IDValue>
+                </ProductIdentifier>
+            </RelatedProduct>
+        </RelatedMaterial>
+        <ProductSupply>
+            <SupplyDetail>
+                <Supplier>
+                    <SupplierRole>01</SupplierRole>
+                    <SupplierName>Elsevier Health Sciences</SupplierName>
+                </Supplier>
+                <ProductAvailability>23</ProductAvailability>
+                <SupplyDate>
+                    <SupplyDateRole>08</SupplyDateRole>
+                    <Date>20070327</Date>
+                </SupplyDate>
+                <PackQuantity>11</PackQuantity>
+                <Price>
+                    <PriceType>01</PriceType>
+                    <DiscountCoded>
+                        <DiscountCodeType>02</DiscountCodeType>
+                        <DiscountCodeTypeName>EHS</DiscountCodeTypeName>
+                        <DiscountCode>TXT</DiscountCode>
+                    </DiscountCoded>
+                    <PriceAmount>76.95</PriceAmount>
+                    <CurrencyCode>USD</CurrencyCode>
+                </Price>
+            </SupplyDetail>
+        </ProductSupply>
+    </Product>
+</ONIXMessage>

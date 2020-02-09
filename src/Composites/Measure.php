@@ -20,6 +20,9 @@ class Measure extends Composite
     /** @var CodeInList */
     protected $measureUnitCode;
 
+    /** @var CodeInList */
+    protected $measureType;
+
     protected const TYPE_OF_HEIGHT = '01';
     protected const TYPE_OF_WIDTH = '02';
     protected const TYPE_OF_THICKNESS = '03';
@@ -83,5 +86,20 @@ class Measure extends Composite
     public function isWeight(): bool
     {
         return (string)$this->measureTypeCode === self::TYPE_OF_WEIGHT;
+    }
+
+    public function getMeasureType(): string
+    {
+        return $this->measureType ? $this->measureType->code() : '';
+    }
+
+    public function getMeasureTypeDesc(): string
+    {
+        return $this->measureType ? $this->measureType->desc() : '';
+    }
+
+    public function setMeasureType(string $code): void
+    {
+        $this->measureType = new CodeInList(CodeList48MeasureTypeCode::class, $code);
     }
 }

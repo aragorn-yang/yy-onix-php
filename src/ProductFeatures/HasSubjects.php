@@ -18,7 +18,6 @@ trait HasSubjects
         return $texts;
     }
 
-
     /**
      * @return Subject[]
      */

@@ -1,13 +1,15 @@
 <?php
 
-namespace AragornYang\Onix\Tests\features\V30;
+namespace AragornYang\Onix\Tests\Features\V30;
 
 use AragornYang\Onix\BookParser;
 use AragornYang\Onix\Composites\Product;
-use AragornYang\Onix\SimpleBookParser;
+use AragornYang\Onix\XMLReaderBookParser;
 use AragornYang\Onix\Tests\Features\BookParserForSampleOnixFileTest;
+use AragornYang\Onix\Tests\features\V30\SampleOnixFile30;
+use AragornYang\Onix\Tests\features\V30\UseV30Handler;
 
-class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnixFileTest
+class XMLReaderBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnixFileTest
 {
     use SampleOnixFile30, UseV30Handler;
 
@@ -21,7 +23,7 @@ class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnix
 
     protected function getParser(): BookParser
     {
-        return new SimpleBookParser;
+        return new XMLReaderBookParser;
     }
 
     protected function getPath(): string

@@ -7,7 +7,7 @@ use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\SimpleBookParser;
 use AragornYang\Onix\Tests\Features\BookParserForSampleOnixFileTest;
 
-class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnixFileTest
+class SimpleBookParserForRef30SampleOnixFileTest extends BookParserForSampleOnixFileTest
 {
     use SampleOnixFile30, UseV30Handler;
 
@@ -26,6 +26,6 @@ class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnix
 
     protected function getPath(): string
     {
-        return __DIR__ . '/samples/sample.v.3.0.tag.xml';
+        return __DIR__ . '/samples/sample.v.3.0.ref.xml';
     }
 }

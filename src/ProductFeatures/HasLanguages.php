@@ -14,6 +14,11 @@ trait HasLanguages
         $this->languages[] = Language::buildFromXml($xml, $this);
     }
 
+    public function getLanguages(): array
+    {
+        return $this->languages;
+    }
+
     public function getLanguageCode(): string
     {
         foreach ($this->languages as $language) {
