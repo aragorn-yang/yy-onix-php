@@ -154,4 +154,23 @@ class Product21 extends Composite implements Product
 
     /** @var string */
     protected $compositeName = 'Product';
+
+    public function getContributors()
+    {
+        return $this->contributors;
+    }
+
+    public function getMeasures()
+    {
+        return $this->measures;
+    }
+    public function getImprints()
+    {
+        return $this->imprints;
+    }
+
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
 }
