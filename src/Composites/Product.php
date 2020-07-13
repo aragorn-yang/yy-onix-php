@@ -32,7 +32,7 @@ interface Product
     //
     //public function getNumberOfPages();
     //
-    //public function getBASICMainSubject();
+    //public function getBISACMainSubject();
     //
     //public function getAudienceCode();
     //

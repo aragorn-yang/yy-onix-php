@@ -2,18 +2,18 @@
 
 namespace AragornYang\Onix\ProductFeatures;
 
-trait HasBASICMainSubject
+trait HasBISACMainSubject
 {
     /** @var string */
-    protected $BASICMainSubject = '';
+    protected $BISACMainSubject = '';
 
-    public function getBASICMainSubject(): string
+    public function getBISACMainSubject(): string
     {
-        return $this->BASICMainSubject;
+        return $this->BISACMainSubject;
     }
 
-    public function setBASICMainSubject(string $BASICMainSubject): void
+    public function setBISACMainSubject(string $BISACMainSubject): void
     {
-        $this->BASICMainSubject = $BASICMainSubject;
+        $this->BISACMainSubject = $BISACMainSubject;
     }
 }

@@ -2,18 +2,18 @@
 
 namespace AragornYang\Onix\ProductFeatures;
 
-trait HasBASICVersion
+trait HasBISACVersion
 {
     /** @var string */
-    protected $BASICVersion = '';
+    protected $BISACVersion = '';
 
-    public function getBASICVersion(): string
+    public function getBISACVersion(): string
     {
-        return $this->BASICVersion;
+        return $this->BISACVersion;
     }
 
-    public function setBASICVersion(string $BASICVersion): void
+    public function setBISACVersion(string $BISACVersion): void
     {
-        $this->BASICVersion = $BASICVersion;
+        $this->BISACVersion = $BISACVersion;
     }
 }

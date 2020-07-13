@@ -5,8 +5,8 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\ProductFeatures\HasAudienceCode;
 use AragornYang\Onix\ProductFeatures\HasAudiences;
 use AragornYang\Onix\ProductFeatures\HasBarcode;
-use AragornYang\Onix\ProductFeatures\HasBASICMainSubject;
-use AragornYang\Onix\ProductFeatures\HasBASICVersion;
+use AragornYang\Onix\ProductFeatures\HasBISACMainSubject;
+use AragornYang\Onix\ProductFeatures\HasBISACVersion;
 use AragornYang\Onix\ProductFeatures\HasBICMainSubject;
 use AragornYang\Onix\ProductFeatures\HasBICVersion;
 use AragornYang\Onix\ProductFeatures\HasCityOfPublication;
@@ -82,8 +82,8 @@ class Product21 extends Composite implements Product
         HasAudienceRanges,
         HasAudiences,
         HasBarcode,
-        HasBASICMainSubject,
-        HasBASICVersion,
+        HasBISACMainSubject,
+        HasBISACVersion,
         HasBICMainSubject,
         HasBICVersion,
         HasCityOfPublication,
