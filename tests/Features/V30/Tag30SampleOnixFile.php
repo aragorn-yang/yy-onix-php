@@ -1,6 +1,6 @@
 <?php
 
-namespace AragornYang\Onix\Tests\features\V30;
+namespace AragornYang\Onix\Tests\Features\V30;
 
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\Composites\SupplyDetail;
