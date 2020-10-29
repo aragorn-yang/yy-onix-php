@@ -28,4 +28,9 @@ trait HasImprints
     {
         $this->imprints[] = Imprint::buildFromXml($xml, $this);
     }
+
+    public function getImprints()
+    {
+        return $this->imprints;
+    }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace AragornYang\Onix\Tests\features\V21;
+namespace AragornYang\Onix\Tests\Features\V21;
 
-use AragornYang\Onix\Tests\features\ProductHandler;
+use AragornYang\Onix\Tests\Features\ProductHandler;
 
 trait UseV21Handler
 {

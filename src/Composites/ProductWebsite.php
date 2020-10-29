@@ -11,7 +11,7 @@ class ProductWebsite extends Composite
     protected $websiteRole;
 
     /** @var string */
-    protected $ProductWebsiteDescription;
+    protected $productWebsiteDescription;
 
     /** @var string */
     protected $productWebsiteLink;

@@ -13,6 +13,8 @@ class Composite
     protected $compositePosition = '';
     /** @var Composite|null */
     protected $parent;
+    /** @var string */
+    private $productXml = '';
 
     public function __construct(Composite $parent = null)
     {
@@ -48,6 +50,16 @@ class Composite
             $composite->recordUnrecognisableElement($key, $code);
         }
         return $composite;
+    }
+
+    public function setProductXml(\SimpleXMLElement $xml): void
+    {
+        $this->productXml = $xml->asXML();
+    }
+
+    public function getProductXml(): string
+    {
+        return $this->productXml;
     }
 
     protected function recordUnrecognisableElement(string $key, string $code = ''): void

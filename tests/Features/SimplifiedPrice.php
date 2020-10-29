@@ -1,6 +1,6 @@
 <?php
 
-namespace AragornYang\Onix\Tests\features;
+namespace AragornYang\Onix\Tests\Features;
 
 class SimplifiedPrice
 {

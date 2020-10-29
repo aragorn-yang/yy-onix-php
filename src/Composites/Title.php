@@ -83,11 +83,11 @@ class Title extends Composite
 
     public function setTitleWithoutPrefix(string $titleWithoutPrefix): void
     {
-        $this->TitleWithoutPrefix = $titleWithoutPrefix;
+        $this->titleWithoutPrefix = $titleWithoutPrefix;
     }
 
     public function getTitleWithoutPrefix(): string
     {
-        return $this->TitleWithoutPrefix;
+        return $this->titleWithoutPrefix;
     }
 }

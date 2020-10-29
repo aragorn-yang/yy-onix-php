@@ -5,8 +5,8 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\ProductFeatures\HasAudienceCode;
 use AragornYang\Onix\ProductFeatures\HasAudiences;
 use AragornYang\Onix\ProductFeatures\HasBarcode;
-use AragornYang\Onix\ProductFeatures\HasBASICMainSubject;
-use AragornYang\Onix\ProductFeatures\HasBASICVersion;
+use AragornYang\Onix\ProductFeatures\HasBISACMainSubject;
+use AragornYang\Onix\ProductFeatures\HasBISACVersion;
 use AragornYang\Onix\ProductFeatures\HasBICMainSubject;
 use AragornYang\Onix\ProductFeatures\HasBICVersion;
 use AragornYang\Onix\ProductFeatures\HasCityOfPublication;
@@ -60,11 +60,11 @@ use AragornYang\Onix\ProductFeatures\HasNotForSales;
 use AragornYang\Onix\ProductFeatures\HasProductContentType;
 use AragornYang\Onix\ProductFeatures\HasAudienceRanges;
 use AragornYang\Onix\ProductFeatures\HasIllustrations;
-use AragornYang\Onix\productFeatures\HasNumberOfIllustrations;
-use AragornYang\Onix\productFeatures\HasMainSubjects;
-use AragornYang\Onix\productFeatures\HasProductPackaging;
-use AragornYang\Onix\productFeatures\HasProductWebsites;
-use AragornYang\Onix\productFeatures\HasCopyrightStatements;
+use AragornYang\Onix\ProductFeatures\HasNumberOfIllustrations;
+use AragornYang\Onix\ProductFeatures\HasMainSubjects;
+use AragornYang\Onix\ProductFeatures\HasProductPackaging;
+use AragornYang\Onix\ProductFeatures\HasProductWebsites;
+use AragornYang\Onix\ProductFeatures\HasCopyrightStatements;
 use AragornYang\Onix\ProductFeatures\HasComplexitys;
 use AragornYang\Onix\ProductFeatures\HasMarketRepresentations;
 use AragornYang\Onix\ProductFeatures\HasInitialPrintRun;
@@ -82,8 +82,8 @@ class Product21 extends Composite implements Product
         HasAudienceRanges,
         HasAudiences,
         HasBarcode,
-        HasBASICMainSubject,
-        HasBASICVersion,
+        HasBISACMainSubject,
+        HasBISACVersion,
         HasBICMainSubject,
         HasBICVersion,
         HasCityOfPublication,
@@ -154,4 +154,5 @@ class Product21 extends Composite implements Product
 
     /** @var string */
     protected $compositeName = 'Product';
+
 }

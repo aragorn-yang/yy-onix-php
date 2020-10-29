@@ -1,6 +1,6 @@
 <?php
 
-namespace AragornYang\Onix\Tests\units\Composites;
+namespace AragornYang\Onix\Tests\Units\Composites;
 
 use AragornYang\Onix\Composites\WorkIdentifier;
 use AragornYang\Onix\Tests\TestCase;

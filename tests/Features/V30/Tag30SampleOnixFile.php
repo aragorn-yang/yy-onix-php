@@ -1,6 +1,6 @@
 <?php
 
-namespace AragornYang\Onix\Tests\features\V30;
+namespace AragornYang\Onix\Tests\Features\V30;
 
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\Composites\SupplyDetail;
@@ -79,10 +79,10 @@ trait Tag30SampleOnixFile
     }
 
     /** @test */
-    public function it_can_get_BASICMainSubject(): void
+    public function it_can_get_BISACMainSubject(): void
     {
         $this->markTestSkipped();
-        $this->assertSame('REF008000', $this->product->getBASICMainSubject());
+        $this->assertSame('REF008000', $this->product->getBISACMainSubject());
     }
 
     /** @test */

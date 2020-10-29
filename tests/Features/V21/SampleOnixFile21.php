@@ -96,9 +96,9 @@ trait SampleOnixFile21
     }
 
     /** @test */
-    public function it_can_get_BASICMainSubject(): void
+    public function it_can_get_BISACMainSubject(): void
     {
-        $this->assertSame('REF008000', $this->product->getBASICMainSubject());
+        $this->assertSame('REF008000', $this->product->getBISACMainSubject());
     }
 
     /** @test */

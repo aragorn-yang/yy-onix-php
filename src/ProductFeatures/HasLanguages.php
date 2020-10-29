@@ -23,4 +23,9 @@ trait HasLanguages
         }
         return '';
     }
+
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
 }

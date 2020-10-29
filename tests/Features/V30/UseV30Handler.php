@@ -1,8 +1,8 @@
 <?php
 
-namespace AragornYang\Onix\Tests\features\V30;
+namespace AragornYang\Onix\Tests\Features\V30;
 
-use AragornYang\Onix\Tests\features\ProductHandler;
+use AragornYang\Onix\Tests\Features\ProductHandler;
 
 trait UseV30Handler
 {

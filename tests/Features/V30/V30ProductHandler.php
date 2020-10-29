@@ -1,14 +1,14 @@
 <?php
 
-namespace AragornYang\Onix\Tests\features\V30;
+namespace AragornYang\Onix\Tests\Features\V30;
 
 use AragornYang\Onix\Composites\Price;
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\Composites\SupplyDetail;
 use AragornYang\Onix\Onix;
-use AragornYang\Onix\Tests\features\ProductHandler;
-use AragornYang\Onix\Tests\features\SimplifiedPrice;
-use AragornYang\Onix\Tests\features\SimplifiedProduct;
+use AragornYang\Onix\Tests\Features\ProductHandler;
+use AragornYang\Onix\Tests\Features\SimplifiedPrice;
+use AragornYang\Onix\Tests\Features\SimplifiedProduct;
 
 class V30ProductHandler extends ProductHandler
 {
