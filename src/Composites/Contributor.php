@@ -21,7 +21,7 @@ class Contributor extends Composite
     /** @var int */
     protected $sequenceNumber = 0;
     /** @var CodeInList */
-    protected $contributorRole;
+    protected $contributorRole = '';
     /** @var string */
     protected $personName = '';
     /** @var string */

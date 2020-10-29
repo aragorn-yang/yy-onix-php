@@ -23,4 +23,9 @@ trait HasContributors
         }
         return null;
     }
+
+    public function getContributors()
+    {
+        return $this->contributors;
+    }
 }
