@@ -33,6 +33,11 @@ trait HasMeasures
         }
     }
 
+    public function getMeasures(): array
+    {
+        return $this->measures;
+    }
+
     public function getHeightMeasurement(): float
     {
         return $this->height->getMeasurement();
