@@ -33,6 +33,11 @@ trait HasMeasures
         }
     }
 
+    public function getMeasures(): array
+    {
+        return $this->measures;
+    }
+
     public function getHeightMeasurement(): float
     {
         return $this->height->getMeasurement();
@@ -71,10 +76,5 @@ trait HasMeasures
     public function getWeightUnit(): string
     {
         return $this->weight->getMeasureUnitCode();
-    }
-
-    public function getMeasures()
-    {
-        return $this->measures;
     }
 }

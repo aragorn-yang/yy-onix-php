@@ -6,6 +6,7 @@ use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList46SalesRightsType;
 use AragornYang\Onix\CodeLists\CodeList49RegionCodeSimplified;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
+use AragornYang\Onix\Composites\V30\Territory;
 
 class SalesRights extends Composite
 {
@@ -19,6 +20,9 @@ class SalesRights extends Composite
      * @var array
      */
     protected $rightsTerritories = [];
+
+    /** @var Territory[] */
+    protected $territorys;
 
     public function getSalesRightsType(): string
     {
@@ -81,4 +85,40 @@ class SalesRights extends Composite
     {
         return \in_array('ROW', $this->getRightsTerritories(), true);
     }
+
+    public function setTerritory(\SimpleXMLElement $xml): void
+    {
+        $this->territorys[] = Territory::buildFromXml($xml, $this);
+    }
+
+    public function getTerritory(): array
+    {
+        return $this->territorys;
+    }
+
+
+    public function getCountriesIncluded(): array
+    {
+        $countries = [];
+
+        foreach ($this->territorys as $territories) {
+            $countries = array_unique(array_merge(explode(' ', $territories->getCountriesIncluded()), $countries));
+        }
+
+        return $countries;
+    }
+
+
+    public function getCountriesExcluded(): array
+    {
+        $countries = [];
+
+        foreach ($this->territorys as $territories) {
+            $countries = array_unique(array_merge(explode(' ', $territories->getCountriesExcluded()), $countries));
+        }
+
+        return $countries;
+    }
+
+
 }

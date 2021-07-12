@@ -18,13 +18,44 @@ trait HasSubjects
         return $texts;
     }
 
-
     /**
      * @return Subject[]
      */
     public function getSubjects(): array
     {
         return $this->subjects;
+    }
+
+    /**
+     * @return Subject[]
+     */
+    public function getBISACSubject(): ?Subject
+    {
+        foreach ($this->subjects as $subject) {
+            if ('10' !== $subject->getSubjectSchemeIdentifier()) {
+                continue;
+            }
+
+            return $subject;
+        }
+
+        return null;
+    }
+
+    /**
+     * @return Subject[]
+     */
+    public function getBICSubject(): ?Subject
+    {
+        foreach ($this->subjects as $subject) {
+            if ('12' !== $subject->getSubjectSchemeIdentifier()) {
+                continue;
+            }
+
+            return $subject;
+        }
+
+        return null;
     }
 
     public function setSubject(\SimpleXMLElement $xml): void

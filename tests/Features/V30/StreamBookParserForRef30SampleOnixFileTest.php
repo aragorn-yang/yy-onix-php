@@ -4,10 +4,12 @@ namespace AragornYang\Onix\Tests\Features\V30;
 
 use AragornYang\Onix\BookParser;
 use AragornYang\Onix\Composites\Product;
-use AragornYang\Onix\SimpleBookParser;
+use AragornYang\Onix\StreamBookParser;
 use AragornYang\Onix\Tests\Features\BookParserForSampleOnixFileTest;
+use AragornYang\Onix\Tests\features\V30\SampleOnixFile30;
+use AragornYang\Onix\Tests\features\V30\UseV30Handler;
 
-class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnixFileTest
+class StreamBookParserForRef30SampleOnixFileTest extends BookParserForSampleOnixFileTest
 {
     use SampleOnixFile30, UseV30Handler;
 
@@ -21,11 +23,11 @@ class SimpleBookParserForTag30SampleOnixFileTest extends BookParserForSampleOnix
 
     protected function getParser(): BookParser
     {
-        return new SimpleBookParser;
+        return new StreamBookParser;
     }
 
     protected function getPath(): string
     {
-        return __DIR__ . '/samples/sample.v.3.0.tag.xml';
+        return __DIR__ . '/samples/sample.v.3.0.ref.xml';
     }
 }
