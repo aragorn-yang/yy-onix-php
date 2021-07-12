@@ -77,9 +77,4 @@ trait HasMeasures
     {
         return $this->weight->getMeasureUnitCode();
     }
-
-    public function getMeasures()
-    {
-        return $this->measures;
-    }
 }

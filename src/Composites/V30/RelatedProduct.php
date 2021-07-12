@@ -39,4 +39,36 @@ class RelatedProduct extends Composite
     {
         return $this->productIdentifier;
     }
+
+    /**
+     * @return ProductIdentifier[]
+     */
+    public function getIsbn10(): string
+    {
+        foreach ($this->productIdentifier as $productIdentifier) {
+            if ('02' !== $productIdentifier->getProductIDType()) {
+                continue;
+            }
+
+            return $productIdentifier->getIDValue();
+        }
+
+        return '';
+    }
+
+    /**
+     * @return ProductIdentifier[]
+     */
+    public function getIsbn13(): string
+    {
+        foreach ($this->productIdentifier as $productIdentifier) {
+            if ('15' !== $productIdentifier->getProductIDType()) {
+                continue;
+            }
+
+            return $productIdentifier->getIDValue();
+        }
+
+        return '';
+    }
 }

@@ -23,8 +23,9 @@ class ProductBuilder
         if ('2.1' === $this->onixVersion) {
             return Product21::buildFromXml($xml);
         }
-        //if ('3.0' === $this->onixVersion) {
-        return Product30::buildFromXml($xml);
-        //}
+
+        if ('3.0' === $this->onixVersion) {
+            return Product30::buildFromXml($xml);
+        }
     }
 }

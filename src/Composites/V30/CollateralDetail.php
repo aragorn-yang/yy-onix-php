@@ -19,4 +19,80 @@ class CollateralDetail extends Composite
     {
         return $this->textContents;
     }
+
+    public function getShortDescription()
+    {
+        foreach ($this->textContents as $textContent) {
+            if ('02' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getMainDescription(): string
+    {
+        if (!$this->textContents) {
+            return '';
+        }
+
+        foreach ($this->textContents as $textContent) {
+            if ('03' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getFeature(): string
+    {
+        foreach ($this->textContents as $textContent) {
+            if ('11' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getBiographicalNote(): string
+    {
+        foreach ($this->textContents as $textContent) {
+            if ('12' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getAllDescriptions(): array
+    {
+        $arr = [];
+        foreach ($this->textContents as $textContent) {
+            $arr[$textContent->getTextType()] = $textContent->getText();
+        }
+
+        return $arr;
+    }
+
+    public function getAllNamedDescriptions(): array
+    {
+        $arr = [];
+        foreach ($this->textContents as $textContent) {
+            $arr[$textContent->getTextTypeDesc()] = $textContent->getText();
+        }
+
+        return $arr;
+    }
 }

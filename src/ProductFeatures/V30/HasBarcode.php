@@ -9,7 +9,7 @@ trait HasBarcode
     /** @var array|Barcode */
     protected $barcodes;
 
-    public function getBarcodes(): array
+    public function getBarcodes(): ?array
     {
         return $this->barcodes;
     }

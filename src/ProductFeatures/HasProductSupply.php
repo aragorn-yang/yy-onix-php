@@ -23,6 +23,11 @@ trait HasProductSupply
         return $this->productSupply;
     }
 
+    public function getSupplyDetail(): ProductSupply
+    {
+        return $this->productSupply[0];
+    }
+
     public function setProductSupply(\SimpleXMLElement $xml): void
     {
         /** @var ProductSupply $descriptiveDetail */

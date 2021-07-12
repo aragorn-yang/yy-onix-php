@@ -20,4 +20,17 @@ trait HasExtents
     {
         $this->extents[] = Extent::buildFromXml($xml, $this);
     }
+
+    public function getNumberOfPages(): string
+    {
+        foreach ($this->extents as $extent) {
+            if ('08' !== $extent->getExtentType()) {
+                continue;
+            }
+
+            return $extent->getExtentValue();
+        }
+
+        return '';
+    }
 }
