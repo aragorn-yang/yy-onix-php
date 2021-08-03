@@ -17,11 +17,15 @@ class CollateralDetail extends Composite
 
     public function getTextContents(): array
     {
-        return $this->textContents;
+        return $this->textContents ?: [] ;
     }
 
     public function getShortDescription()
     {
+        if (!$this->textContents) {
+            return '';
+        }
+
         foreach ($this->textContents as $textContent) {
             if ('02' !== $textContent->getTextType()) {
                 continue;
