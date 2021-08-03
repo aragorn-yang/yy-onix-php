@@ -52,6 +52,10 @@ class CollateralDetail extends Composite
 
     public function getFeature(): string
     {
+        if (!$this->textContents) {
+            return '';
+        }
+
         foreach ($this->textContents as $textContent) {
             if ('11' !== $textContent->getTextType()) {
                 continue;
@@ -65,6 +69,10 @@ class CollateralDetail extends Composite
 
     public function getBiographicalNote(): string
     {
+        if (!$this->textContents) {
+            return '';
+        }
+
         foreach ($this->textContents as $textContent) {
             if ('12' !== $textContent->getTextType()) {
                 continue;
@@ -78,7 +86,12 @@ class CollateralDetail extends Composite
 
     public function getAllDescriptions(): array
     {
+        if (!$this->textContents) {
+            return [];
+        }
+
         $arr = [];
+
         foreach ($this->textContents as $textContent) {
             $arr[$textContent->getTextType()] = $textContent->getText();
         }
@@ -88,6 +101,10 @@ class CollateralDetail extends Composite
 
     public function getAllNamedDescriptions(): array
     {
+        if (!$this->textContents) {
+            return [];
+        }
+
         $arr = [];
         foreach ($this->textContents as $textContent) {
             $arr[$textContent->getTextTypeDesc()] = $textContent->getText();
