@@ -20,7 +20,7 @@ trait HasAudiences
     /**
      * @return string
      */
-    public function getAudienceCode(): string
+    public function getMainAudienceCode(): string
     {
         return $this->audiences[0]->getAudienceCodeValue();
     }

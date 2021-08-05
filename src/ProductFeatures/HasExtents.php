@@ -21,16 +21,16 @@ trait HasExtents
         $this->extents[] = Extent::buildFromXml($xml, $this);
     }
 
-    public function getNumberOfPages(): string
+    public function getExtentsNumberOfPages(): int
     {
         foreach ($this->extents as $extent) {
             if ('08' !== $extent->getExtentType()) {
                 continue;
             }
 
-            return $extent->getExtentValue();
+            return (int) $extent->getExtentValue();
         }
 
-        return '';
+        return 0;
     }
 }
