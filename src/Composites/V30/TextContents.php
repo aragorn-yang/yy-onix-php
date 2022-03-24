@@ -50,6 +50,14 @@ class TextContents extends Composite
 
     public function setText(string $value): void
     {
+        if (is_a($value,\SimpleXMLElement::class) && isset($value->p)) {
+            foreach ($value->p as $textFromParagraph) {
+                $this->text .= '<p>' . $textFromParagraph . '</p>';
+            }
+
+            return;
+        }
+
         $this->text = $value;
     }
 
