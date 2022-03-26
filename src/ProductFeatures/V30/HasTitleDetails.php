@@ -20,17 +20,15 @@ trait HasTitleDetails
         return $this->titleDetails;
     }
 
-    public function getTitle(): ?TitleElement
+    public function getTitle(): string
     {
         foreach ($this->titleDetails as $titleDetail) {
             /** @var TitleDetail $titleDetail */
-            if ('10' !== $titleDetail->getTitleType()) {
+            if ('01' !== $titleDetail->getTitleType()) {
                 continue;
             }
-
-            return $titleDetail->getTitleElements()[0];
+            return $titleDetail->getTitleStatement();
         }
-
-        return null;
+        return '';
     }
 }
