@@ -95,4 +95,30 @@ class SalesRights extends Composite
     {
         return $this->territorys;
     }
+
+
+    public function getCountriesIncluded(): array
+    {
+        $countries = [];
+
+        foreach ($this->territorys as $territories) {
+            $countries = array_unique(array_merge(explode(' ', $territories->getCountriesIncluded()), $countries));
+        }
+
+        return $countries;
+    }
+
+
+    public function getCountriesExcluded(): array
+    {
+        $countries = [];
+
+        foreach ($this->territorys as $territories) {
+            $countries = array_unique(array_merge(explode(' ', $territories->getCountriesExcluded()), $countries));
+        }
+
+        return $countries;
+    }
+
+
 }

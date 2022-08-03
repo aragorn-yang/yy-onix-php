@@ -39,4 +39,14 @@ class TitleDetail extends Composite
     {
         return $this->titleElements;
     }
+
+    public function setTitleStatement($value): void
+    {
+        $this->titleStatement = $value->__toString();
+    }
+
+    public function getTitleStatement(): string
+    {
+        return $this->titleStatement;
+    }
 }

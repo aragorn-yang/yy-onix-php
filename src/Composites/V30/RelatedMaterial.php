@@ -31,6 +31,6 @@ class RelatedMaterial extends Composite
 
     public function getRelatedProducts(): array
     {
-        return $this->relatedProducts;
+        return $this->relatedProducts ?: [];
     }
 }

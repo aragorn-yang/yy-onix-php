@@ -48,8 +48,16 @@ class TextContents extends Composite
         return $this->contentAudience ? $this->contentAudience->desc() : '';
     }
 
-    public function setText(string $value): void
+    public function setText($value): void
     {
+        if (is_a($value,\SimpleXMLElement::class) && isset($value->p)) {
+            foreach ($value->p as $textFromParagraph) {
+                $this->text .= '<p>' . $textFromParagraph . '</p>';
+            }
+
+            return;
+        }
+
         $this->text = $value;
     }
 

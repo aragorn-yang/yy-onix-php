@@ -17,6 +17,103 @@ class CollateralDetail extends Composite
 
     public function getTextContents(): array
     {
-        return $this->textContents;
+        return $this->textContents ?: [] ;
+    }
+
+    public function getShortDescription()
+    {
+        if (!$this->textContents) {
+            return '';
+        }
+
+        foreach ($this->textContents as $textContent) {
+            if ('02' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getMainDescription(): string
+    {
+        if (!$this->textContents) {
+            return '';
+        }
+
+        foreach ($this->textContents as $textContent) {
+            if ('03' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getFeature(): string
+    {
+        if (!$this->textContents) {
+            return '';
+        }
+
+        foreach ($this->textContents as $textContent) {
+            if ('11' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getBiographicalNote(): string
+    {
+        if (!$this->textContents) {
+            return '';
+        }
+
+        foreach ($this->textContents as $textContent) {
+            if ('12' !== $textContent->getTextType()) {
+                continue;
+            }
+
+            return $textContent->getText();
+        }
+
+        return '';
+    }
+
+    public function getAllDescriptions(): array
+    {
+        if (!$this->textContents) {
+            return [];
+        }
+
+        $arr = [];
+
+        foreach ($this->textContents as $textContent) {
+            $arr[$textContent->getTextType()] = $textContent->getText();
+        }
+
+        return $arr;
+    }
+
+    public function getAllNamedDescriptions(): array
+    {
+        if (!$this->textContents) {
+            return [];
+        }
+
+        $arr = [];
+        foreach ($this->textContents as $textContent) {
+            $arr[$textContent->getTextTypeDesc()] = $textContent->getText();
+        }
+
+        return $arr;
     }
 }

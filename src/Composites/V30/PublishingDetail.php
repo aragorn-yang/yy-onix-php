@@ -56,6 +56,47 @@ class PublishingDetail extends Composite
         return $this->publishingDate;
     }
 
+    public function getPublcationDate(): ?PublishingDate
+    {
+        foreach ($this->getPublishingDate() as $publishingDate) {
+            if ('01' !== $publishingDate->getPublishingDateRole()) {
+                continue;
+            }
+
+            return $publishingDate;
+        }
+
+        return null;
+    }
+
+    public function getFirstPubliсationDate(): ?PublishingDate
+    {
+        foreach ($this->getPublishingDate() as $publishingDate) {
+            if ('11' !== $publishingDate->getPublishingDateRole()) {
+                continue;
+            }
+
+            return $publishingDate;
+        }
+
+        return null;
+    }
+
+    public function getFirstPublcationDateString(): string
+    {
+        return $this->getFirstPubliсationDate()->getDate();
+    }
+
+    public function getPublcationDateString(): string
+    {
+        return $this->getPublcationDate()->getDate();
+    }
+
+    public function getPublcationDateDesc(): string
+    {
+        return $this->getPublcationDate()->getProductXml();
+    }
+
     public function setROWSalesRightsType(string $code): void
     {
         $this->ROWSalesRightsType = new CodeInList(CodeList46SalesRightsType::class, $code);

@@ -8,6 +8,7 @@ use AragornYang\Onix\ProductFeatures\V30\HasBarcode;
 use AragornYang\Onix\ProductFeatures\HasDescriptiveDetail;
 use AragornYang\Onix\ProductFeatures\HasNotificationType;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
+use AragornYang\Onix\ProductFeatures\HasMediaFiles;
 use AragornYang\Onix\ProductFeatures\HasProductSupply;
 use AragornYang\Onix\ProductFeatures\HasRecordReference;
 use AragornYang\Onix\ProductFeatures\HasRecordSourceName;
@@ -25,6 +26,7 @@ class Product30 extends Composite implements Product
         HasNotificationType,
         HasProductIdentifiers,
         HasProductSupply,
+        HasMediaFiles,
         HasPublishingDetail,
         HasRecordReference,
         HasRecordSourceName,
