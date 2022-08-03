@@ -167,7 +167,7 @@ trait SampleOnixFile21
         $this->assertTrue($price->isRrpExcTax());
         $this->assertSame(35.0, $price->getPriceAmount());
         $this->assertSame('5030670154326', $supplyDetail->getSupplierEANLocationNumber());
-        $this->assertSame('00', $supplyDetail->getDateFormat());
+        $this->assertSame('00', $supplyDetail->getDateFormatCode());
         $this->assertSame('20190801', $supplyDetail->getOnSaleDate());
         $this->assertSame('+44 (0)1865 474000', $supplyDetail->getTelephoneNumber()[0]);
         $this->assertSame('+44 (0)1865 474001', $supplyDetail->getFaxNumber()[0]);
@@ -501,7 +501,8 @@ trait SampleOnixFile21
         $this->assertSame('URL', $mediaFiles[0]->getMediaFileLinkTypeCodeDesc());
         $this->assertSame('9782898020537_FC.jpg', $mediaFiles[0]->getMediaFileLink());
         $this->assertSame('20190228', $mediaFiles[0]->getMediaFileDate());
-        $this->assertSame('Cover design by Eleanor Rose | Cover image from Pixabay', $mediaFiles[0]->getDownloadCredit());
+        $this->assertSame('Cover design by Eleanor Rose | Cover image from Pixabay',
+            $mediaFiles[0]->getDownloadCredit());
         $this->assertSame(300, $mediaFiles[0]->getImageResolution());
     }
 

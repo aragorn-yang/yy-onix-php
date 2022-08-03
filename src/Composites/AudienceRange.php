@@ -45,7 +45,8 @@ class AudienceRange extends Composite
 
     public function setAudienceRangeValue(string $code): void
     {
-        $this->audienceRangeValue[] = new CodeInList(CodeList77USAndCanadaExcludingQubecSchoolOrCollegeGrade::class, $code);
+        $this->audienceRangeValue[] = new CodeInList(CodeList77USAndCanadaExcludingQubecSchoolOrCollegeGrade::class,
+            $code);
     }
 
     public function getAudienceRangeValue(): array

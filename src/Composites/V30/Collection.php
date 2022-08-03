@@ -2,12 +2,11 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\Composites\Composite;
-use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList148CollectionType;
-use AragornYang\Onix\Composites\V30\CollectionSequence;
-use AragornYang\Onix\Composites\V30\CollectionIdentifier;
+use AragornYang\Onix\Composites\Composite;
+use AragornYang\Onix\ProductFeatures\V30\HasTitleDetails;
+use SimpleXMLElement;
 
 class Collection extends Composite
 {
@@ -37,7 +36,7 @@ class Collection extends Composite
         return $this->collectionType ? $this->collectionType->desc() : '';
     }
 
-    public function setCollectionSequence(\SimpleXMLElement $xml): void
+    public function setCollectionSequence(SimpleXMLElement $xml): void
     {
         $this->collectionSequences[] = CollectionSequence::buildFromXml($xml, $this);
     }
@@ -47,7 +46,7 @@ class Collection extends Composite
         return $this->collectionSequences;
     }
 
-    public function setCollectionIdentifier(\SimpleXMLElement $xml): void
+    public function setCollectionIdentifier(SimpleXMLElement $xml): void
     {
         $this->collectionIdentifiers[] = CollectionIdentifier::buildFromXml($xml, $this);
     }

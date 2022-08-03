@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\CopyrightStatement;
+use SimpleXMLElement;
 
 trait HasCopyrightStatements
 {
@@ -14,7 +15,7 @@ trait HasCopyrightStatements
         return $this->copyrightStatements;
     }
 
-    public function setCopyrightStatement(\SimpleXMLElement $xml): void
+    public function setCopyrightStatement(SimpleXMLElement $xml): void
     {
         $this->copyrightStatements[] = CopyrightStatement::buildFromXml($xml, $this);
     }

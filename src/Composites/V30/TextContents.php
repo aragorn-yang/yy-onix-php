@@ -2,10 +2,11 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList153TextType;
 use AragornYang\Onix\CodeLists\CodeList154ContentAudience;
+use AragornYang\Onix\Composites\Composite;
+use SimpleXMLElement;
 
 class TextContents extends Composite
 {
@@ -50,7 +51,7 @@ class TextContents extends Composite
 
     public function setText($value): void
     {
-        if (is_a($value,\SimpleXMLElement::class) && isset($value->p)) {
+        if (is_a($value, SimpleXMLElement::class) && isset($value->p)) {
             foreach ($value->p as $textFromParagraph) {
                 $this->text .= '<p>' . $textFromParagraph . '</p>';
             }

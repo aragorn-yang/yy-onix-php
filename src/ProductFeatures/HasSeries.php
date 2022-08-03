@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Series;
+use SimpleXMLElement;
 
 trait HasSeries
 {
@@ -17,7 +18,7 @@ trait HasSeries
         return $this->series;
     }
 
-    public function setSeries(\SimpleXMLElement $xml): void
+    public function setSeries(SimpleXMLElement $xml): void
     {
         $series = Series::buildFromXml($xml, $this);
         $this->series[] = $series;

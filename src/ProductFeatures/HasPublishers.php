@@ -3,6 +3,8 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Publisher;
+use SimpleXMLElement;
+use function count;
 
 trait HasPublishers
 {
@@ -11,10 +13,10 @@ trait HasPublishers
 
     public function getPublisherNames(): string
     {
-        if (\count($this->publishers) === 0) {
+        if (count($this->publishers) === 0) {
             return '';
         }
-        if (\count($this->publishers) === 1) {
+        if (count($this->publishers) === 1) {
             return $this->publishers[0]->getPublisherName();
         }
         $publishers = '';
@@ -24,7 +26,7 @@ trait HasPublishers
         return trim($publishers);
     }
 
-    public function setPublisher(\SimpleXMLElement $xml): void
+    public function setPublisher(SimpleXMLElement $xml): void
     {
         $this->publishers[] = Publisher::buildFromXml($xml, $this);
     }

@@ -3,12 +3,11 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
-use AragornYang\Onix\CodeLists\CodeList;
+use AragornYang\Onix\CodeLists\CodeList176ProductFormFeatureValueOperatingSystem;
+use AragornYang\Onix\CodeLists\CodeList76ProductFormFeatureValueDVDRegionCodes;
 use AragornYang\Onix\CodeLists\CodeList79ProductFormFeatureType;
 use AragornYang\Onix\CodeLists\CodeList98ProductFormFeatureValueBindingOrPageEdgeColor;
 use AragornYang\Onix\CodeLists\CodeList99ProductFormFeatureValueSpecialCoverMaterial;
-use AragornYang\Onix\CodeLists\CodeList76ProductFormFeatureValueDVDRegionCodes;
-use AragornYang\Onix\CodeLists\CodeList176ProductFormFeatureValueOperatingSystem;
 
 class ProductFormFeature extends Composite
 {

@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Measure;
+use SimpleXMLElement;
 
 trait HasMeasures
 {
@@ -17,7 +18,7 @@ trait HasMeasures
     /** @var Measure */
     protected $weight;
 
-    public function setMeasure(\SimpleXMLElement $xml): void
+    public function setMeasure(SimpleXMLElement $xml): void
     {
         /** @var Measure $measure */
         $measure = Measure::buildFromXml($xml, $this);

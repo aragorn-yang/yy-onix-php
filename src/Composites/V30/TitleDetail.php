@@ -2,10 +2,10 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList15TitleType;
-use AragornYang\Onix\Composites\V30\TitleElement;
+use AragornYang\Onix\Composites\Composite;
+use SimpleXMLElement;
 
 class TitleDetail extends Composite
 {
@@ -30,7 +30,7 @@ class TitleDetail extends Composite
         return $this->titleType ? $this->titleType->desc() : '';
     }
 
-    public function setTitleElement(\SimpleXMLElement $xml): void
+    public function setTitleElement(SimpleXMLElement $xml): void
     {
         $this->titleElements[] = TitleElement::buildFromXml($xml, $this);
     }

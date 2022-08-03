@@ -41,7 +41,7 @@ class V30ProductHandler extends ProductHandler
 
     public static function report(): void
     {
-        var_dump(\count(static::$simplifiedProducts));
+        var_dump(count(static::$simplifiedProducts));
         echo "\n countOfNoSalesRights:" . static::$countOfNoSalesRights;
 
 
@@ -82,10 +82,10 @@ class V30ProductHandler extends ProductHandler
         $prices = $supplyDetail->getPrices();
         foreach ($prices as $price) {
             if ($price->getCurrencyCode() === 'GBP'
-                && \count($price->getCountryCodes()) <= 0 && \count($price->getTerritories()) <= 0) {
+                && count($price->getCountryCodes()) <= 0 && count($price->getTerritories()) <= 0) {
                 return $price;
             }
-            if (\count($price->getCountryCodes()) > 0 && \in_array('GB', $price->getCountryCodes(), true)) {
+            if (count($price->getCountryCodes()) > 0 && in_array('GB', $price->getCountryCodes(), true)) {
                 return $price;
             }
         }
@@ -96,9 +96,8 @@ class V30ProductHandler extends ProductHandler
     {
         $prices = $supplyDetail->getPrices();
         foreach ($prices as $price) {
-            if (\count($price->getTerritories()) > 0 && \in_array('ROW', $price->getTerritories(), true)) {
+            if (count($price->getTerritories()) > 0 && in_array('ROW', $price->getTerritories(), true)) {
                 return $price;
-                break;
             }
         }
         return null;
@@ -148,7 +147,7 @@ class V30ProductHandler extends ProductHandler
     }
 
     /**
-     * @param Product $product
+     * @param  Product  $product
      * @return SupplyDetail[]
      */
     private function getAvailableSupplyDetails(Product $product): array
@@ -169,7 +168,7 @@ class V30ProductHandler extends ProductHandler
                     || $productAvailability === '23')) {
                 continue;
             }
-            if (\count($supplyDetail->getPrices()) === 0) {
+            if (count($supplyDetail->getPrices()) === 0) {
                 continue;
             }
             $return[] = $supplyDetail;

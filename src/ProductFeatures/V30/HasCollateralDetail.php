@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures\V30;
 
 use AragornYang\Onix\Composites\V30\CollateralDetail;
+use SimpleXMLElement;
 
 trait HasCollateralDetail
 {
@@ -14,7 +15,7 @@ trait HasCollateralDetail
         return $this->collateralDetail;
     }
 
-    public function setCollateralDetail(\SimpleXMLElement $xml): void
+    public function setCollateralDetail(SimpleXMLElement $xml): void
     {
         $this->collateralDetail = CollateralDetail::buildFromXml($xml, $this);
     }

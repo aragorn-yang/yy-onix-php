@@ -3,16 +3,17 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
+use AragornYang\Onix\CodeLists\CodeList78ProductFormDetail;
+use AragornYang\Onix\CodeLists\CodeList80ProductPackagingType;
+use AragornYang\Onix\ProductFeatures\HasNumberOfPieces;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
 use AragornYang\Onix\ProductFeatures\HasProductFormDescription;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
-use AragornYang\Onix\ProductFeatures\HasNumberOfPieces;
-use AragornYang\Onix\CodeLists\CodeList78ProductFormDetail;
-use AragornYang\Onix\CodeLists\CodeList80ProductPackagingType;
 
 class ContainedItem extends Composite
 {
     use HasProductForm, HasProductFormDescription, HasProductIdentifiers, HasNumberOfPieces;
+
     protected $itemQuantity = 0;
 
     /** @var CodeInList */

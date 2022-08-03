@@ -2,20 +2,26 @@
 
 namespace AragornYang\Onix;
 
+use DOMDocument;
+use DOMElement;
+use DOMImplementation;
+use RuntimeException;
+use function count;
+
 class XMLHandler
 {
     /** @var callable */
     protected $productHandler;
     /** @var array */
     protected $openElements = [];
-    /** @var \DOMDocument */
+    /** @var DOMDocument */
     protected $productDOM;
-    /** @var \DOMElement */
+    /** @var DOMElement */
     protected $currentElement;
 
     public function __construct()
     {
-        $this->domImpl = new \DOMImplementation();
+        $this->domImpl = new DOMImplementation();
         // Create a parser that outputs UTF-8.
         $parser = xml_parser_create('UTF-8');
         xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0);
@@ -41,7 +47,7 @@ class XMLHandler
         string $name,
         array $attributes
     ): void {
-        $level = \count($this->openElements);
+        $level = count($this->openElements);
         // If this is the root element, set whether short tags are used or not.
         if ($level === 0) {
             $this->parOnixEdition($name, $attributes);
@@ -88,7 +94,7 @@ class XMLHandler
         }
     }
 
-    private function handleProduct(\DOMDocument $productDOM): void
+    private function handleProduct(DOMDocument $productDOM): void
     {
         ($this->productHandler)(Onix::getInstance()->buildProduct(simplexml_load_string($productDOM->saveXML())));
     }
@@ -110,7 +116,7 @@ class XMLHandler
                 $onix->setAsTagEdition();
                 break;
             default:
-                throw new \RuntimeException("$name is an invalid root element name");
+                throw new RuntimeException("$name is an invalid root element name");
         }
     }
 }

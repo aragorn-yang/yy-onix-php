@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\MainSubject;
+use SimpleXMLElement;
 
 trait HasMainSubjects
 {
@@ -14,7 +15,7 @@ trait HasMainSubjects
         return $this->mainSubject;
     }
 
-    public function setMainSubject(\SimpleXMLElement $xml): void
+    public function setMainSubject(SimpleXMLElement $xml): void
     {
         $this->mainSubject[] = MainSubject::buildFromXml($xml, $this);
     }

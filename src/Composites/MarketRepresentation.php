@@ -5,8 +5,7 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList69AgentRole;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
-use AragornYang\Onix\Composites\AgentIdentifier;
-use AragornYang\Onix\Composites\MarketDate;
+use SimpleXMLElement;
 
 class MarketRepresentation extends Composite
 {
@@ -25,7 +24,7 @@ class MarketRepresentation extends Composite
     /** @var array|MarketDate */
     protected $marketDate = [];
 
-    public function setAgentIdentifier(\SimpleXMLElement $xml): void
+    public function setAgentIdentifier(SimpleXMLElement $xml): void
     {
         $this->agentIdentifier = AgentIdentifier::buildFromXml($xml, $this);
     }
@@ -75,7 +74,7 @@ class MarketRepresentation extends Composite
         $this->marketCountry = new CodeInList(CodeList91CountryCodeISO31661::class, $code);
     }
 
-    public function setMarketDate(\SimpleXMLElement $xml): void
+    public function setMarketDate(SimpleXMLElement $xml): void
     {
         $this->marketDate[] = MarketDate::buildFromXml($xml, $this);
     }

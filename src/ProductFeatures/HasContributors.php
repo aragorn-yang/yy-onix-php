@@ -3,13 +3,14 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Contributor;
+use SimpleXMLElement;
 
 trait HasContributors
 {
     /** @var Contributor[] */
     protected $contributors = [];
 
-    public function setContributor(\SimpleXMLElement $xml): void
+    public function setContributor(SimpleXMLElement $xml): void
     {
         $this->contributors[] = Contributor::buildFromXml($xml, $this);
     }

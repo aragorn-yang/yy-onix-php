@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\ProductClassification;
+use SimpleXMLElement;
 
 trait HasProductClassifications
 {
@@ -17,7 +18,7 @@ trait HasProductClassifications
         return $this->productClassifications;
     }
 
-    public function setProductClassification(\SimpleXMLElement $xml): void
+    public function setProductClassification(SimpleXMLElement $xml): void
     {
         $this->productClassifications[] = ProductClassification::buildFromXml($xml, $this);
     }

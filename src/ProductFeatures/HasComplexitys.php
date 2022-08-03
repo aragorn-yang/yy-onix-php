@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Complexity;
+use SimpleXMLElement;
 
 trait HasComplexitys
 {
@@ -14,7 +15,7 @@ trait HasComplexitys
         return $this->complexity;
     }
 
-    public function setComplexity(\SimpleXMLElement $xml): void
+    public function setComplexity(SimpleXMLElement $xml): void
     {
         $this->complexity[] = Complexity::buildFromXml($xml, $this);
     }

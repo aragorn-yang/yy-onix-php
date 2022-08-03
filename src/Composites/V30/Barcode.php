@@ -2,10 +2,10 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList141BarcodeIndicator;
 use AragornYang\Onix\CodeLists\CodeList142PositionOnProduct;
+use AragornYang\Onix\Composites\Composite;
 
 class Barcode extends Composite
 {

@@ -3,7 +3,6 @@
 namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
-use AragornYang\Onix\CodeLists\CodeList;
 use AragornYang\Onix\CodeLists\CodeList26MainSubjectSchemeIdentifier;
 use AragornYang\Onix\ProductFeatures\HasSubjectSchemeVersion;
 

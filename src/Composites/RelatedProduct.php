@@ -4,10 +4,10 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList51ProductRelation;
+use AragornYang\Onix\CodeLists\CodeList78ProductFormDetail;
+use AragornYang\Onix\ProductFeatures\HasEpubType;
 use AragornYang\Onix\ProductFeatures\HasProductForm;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
-use AragornYang\Onix\ProductFeatures\HasEpubType;
-use AragornYang\Onix\CodeLists\CodeList78ProductFormDetail;
 
 class RelatedProduct extends Composite
 {

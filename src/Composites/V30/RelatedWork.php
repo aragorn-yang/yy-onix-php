@@ -2,10 +2,9 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\CodeLists\CodeList161ResourceForm;
-use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList164WorkRelation;
+use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\ProductFeatures\HasWorkIdentifiers;
 
 class RelatedWork extends Composite

@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\ProductWebsite;
+use SimpleXMLElement;
 
 trait HasProductWebsites
 {
@@ -14,7 +15,7 @@ trait HasProductWebsites
         return $this->productWebsite;
     }
 
-    public function setProductWebsite(\SimpleXMLElement $xml): void
+    public function setProductWebsite(SimpleXMLElement $xml): void
     {
         $this->productWebsite[] = ProductWebsite::buildFromXml($xml, $this);
     }

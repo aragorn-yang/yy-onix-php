@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\SupplyDetail;
+use SimpleXMLElement;
 
 trait HasSupplyDetails
 {
@@ -17,7 +18,7 @@ trait HasSupplyDetails
         return $this->supplyDetails;
     }
 
-    public function setSupplyDetail(\SimpleXMLElement $xml): void
+    public function setSupplyDetail(SimpleXMLElement $xml): void
     {
         $this->supplyDetails[] = SupplyDetail::buildFromXml($xml, $this);
     }

@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\SalesRights;
+use SimpleXMLElement;
 
 trait HasSaleRights
 {
@@ -10,7 +11,7 @@ trait HasSaleRights
     protected $salesRights = [];
 
     /**
-     * @param string $type
+     * @param  string  $type
      * @return SalesRights|null
      */
     public function getSalesRightsWithTypeOf(string $type): ?SalesRights
@@ -31,7 +32,7 @@ trait HasSaleRights
         return $this->salesRights;
     }
 
-    public function setSalesRights(\SimpleXMLElement $xml): void
+    public function setSalesRights(SimpleXMLElement $xml): void
     {
         $saleRights = SalesRights::buildFromXml($xml, $this);
         $this->salesRights[] = $saleRights;

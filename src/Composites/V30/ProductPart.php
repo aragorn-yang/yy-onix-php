@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList150ProductForm;
+use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\ProductFeatures\HasProductIdentifiers;
 
 class ProductPart extends Composite

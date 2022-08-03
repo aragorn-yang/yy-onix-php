@@ -134,7 +134,8 @@ trait SampleOnixFile30
         $this->assertSame('Publisher collection', $collections[0]->getCollectionTypeDesc());
 
         $this->assertSame('01', $titleDetails[0]->getTitleType());
-        $this->assertSame('Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)', $titleDetails[0]->getTitleTypeDesc());
+        $this->assertSame('Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)',
+            $titleDetails[0]->getTitleTypeDesc());
         $this->assertSame('02', $collectionTitleElements[0]->getTitleElementLevel());
         $this->assertSame('Collection level', $collectionTitleElements[0]->getTitleElementLevelDesc());
         $this->assertSame('Master Medicine', $collectionTitleElements[0]->getTitleText());
@@ -203,14 +204,16 @@ trait SampleOnixFile30
         $this->assertSame('2007', $copyrightStatements[0]->getCopyrightYear());
         $this->assertSame('Elsevier Health Sciences', $copyrightOwners[0]->getCorporateName());
         $this->assertSame('01', $salesRights[0]->getSalesRightsType());
-        $this->assertSame('For sale with exclusive rights in the specified countries or territories', $salesRights[0]->getSalesRightsTypeDesc());
+        $this->assertSame('For sale with exclusive rights in the specified countries or territories',
+            $salesRights[0]->getSalesRightsTypeDesc());
         $this->assertSame('WORLD', $territorys[0]->getRegionsIncluded());
         $this->assertSame('World', $territorys[0]->getRegionsIncludedDesc());
         $this->assertSame('US CA', $territorys[0]->getCountriesExcluded());
         $this->assertSame('AU NZ', $territorys[0]->getCountriesIncluded());
 
         $this->assertSame('06', $publishingDetail->getROWSalesRightsType());
-        $this->assertSame('Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)', $publishingDetail->getROWSalesRightsTypeDesc());
+        $this->assertSame('Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)',
+            $publishingDetail->getROWSalesRightsTypeDesc());
     }
 
     /** @test */

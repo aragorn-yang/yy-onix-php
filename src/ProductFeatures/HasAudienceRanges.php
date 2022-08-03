@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\AudienceRange;
+use SimpleXMLElement;
 
 trait HasAudienceRanges
 {
@@ -14,7 +15,7 @@ trait HasAudienceRanges
         return $this->audienceRange;
     }
 
-    public function setAudienceRange(\SimpleXMLElement $xml): void
+    public function setAudienceRange(SimpleXMLElement $xml): void
     {
         $this->audienceRange[] = AudienceRange::buildFromXml($xml, $this);
     }

@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Prize;
+use SimpleXMLElement;
 
 trait HasPrizes
 {
@@ -26,7 +27,7 @@ trait HasPrizes
         return $this->prizes;
     }
 
-    public function setPrize(\SimpleXMLElement $xml): void
+    public function setPrize(SimpleXMLElement $xml): void
     {
         $this->prizes[] = Prize::buildFromXml($xml, $this);
     }

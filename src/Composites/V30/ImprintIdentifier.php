@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList44NameCodeType;
+use AragornYang\Onix\Composites\Composite;
 
 class ImprintIdentifier extends Composite
 {

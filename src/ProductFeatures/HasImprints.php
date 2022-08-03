@@ -3,6 +3,8 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Imprint;
+use SimpleXMLElement;
+use function count;
 
 trait HasImprints
 {
@@ -11,10 +13,10 @@ trait HasImprints
 
     public function getImprint(): string
     {
-        if (\count($this->imprints) === 0) {
+        if (count($this->imprints) === 0) {
             return '';
         }
-        if (\count($this->imprints) === 1) {
+        if (count($this->imprints) === 1) {
             return $this->imprints[0]->getImprintName();
         }
         $imprints = '';
@@ -29,7 +31,7 @@ trait HasImprints
         return $this->imprints;
     }
 
-    public function setImprint(\SimpleXMLElement $xml): void
+    public function setImprint(SimpleXMLElement $xml): void
     {
         $this->imprints[] = Imprint::buildFromXml($xml, $this);
     }

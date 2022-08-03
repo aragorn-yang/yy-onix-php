@@ -3,10 +3,11 @@
 namespace AragornYang\Onix\ProductFeatures\V30;
 
 use AragornYang\Onix\Composites\V30\PublishingDetail;
+use SimpleXMLElement;
 
 trait HasPublishingDetail
 {
-    /** @var PublishingDetail[] */
+    /** @var PublishingDetail */
     protected $publishingDetail;
 
     public function getPublishingDetail(): ?PublishingDetail
@@ -14,7 +15,7 @@ trait HasPublishingDetail
         return $this->publishingDetail;
     }
 
-    public function setPublishingDetail(\SimpleXMLElement $xml): void
+    public function setPublishingDetail(SimpleXMLElement $xml): void
     {
         $this->publishingDetail = PublishingDetail::buildFromXml($xml, $this);
     }

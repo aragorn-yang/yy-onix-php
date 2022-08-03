@@ -2,9 +2,8 @@
 
 namespace AragornYang\Onix\ProductFeatures;
 
-use AragornYang\Onix\CodeInList;
-use AragornYang\Onix\CodeLists\CodeList6BarcodeIndicator;
 use AragornYang\Onix\Composites\Extent;
+use SimpleXMLElement;
 
 trait HasExtents
 {
@@ -16,7 +15,7 @@ trait HasExtents
         return $this->extents;
     }
 
-    public function setExtent(\SimpleXMLElement $xml): void
+    public function setExtent(SimpleXMLElement $xml): void
     {
         $this->extents[] = Extent::buildFromXml($xml, $this);
     }
@@ -28,7 +27,7 @@ trait HasExtents
                 continue;
             }
 
-            return (int) $extent->getExtentValue();
+            return (int)$extent->getExtentValue();
         }
 
         return 0;

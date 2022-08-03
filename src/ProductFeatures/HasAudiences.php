@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Audience;
+use SimpleXMLElement;
 
 trait HasAudiences
 {
@@ -25,7 +26,7 @@ trait HasAudiences
         return $this->audiences[0]->getAudienceCodeValue();
     }
 
-    public function setAudience(\SimpleXMLElement $xml): void
+    public function setAudience(SimpleXMLElement $xml): void
     {
         $this->audiences[] = Audience::buildFromXml($xml, $this);
     }

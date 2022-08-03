@@ -3,8 +3,7 @@
 namespace AragornYang\Onix\Composites\V30;
 
 use AragornYang\Onix\Composites\Composite;
-use AragornYang\Onix\Composites\V30\RelatedWork;
-use AragornYang\Onix\Composites\V30\RelatedProduct;
+use SimpleXMLElement;
 
 class RelatedMaterial extends Composite
 {
@@ -14,7 +13,7 @@ class RelatedMaterial extends Composite
     /** @var RelatedProduct[] */
     protected $relatedProducts;
 
-    public function setRelatedWork(\SimpleXMLElement $xml): void
+    public function setRelatedWork(SimpleXMLElement $xml): void
     {
         $this->relatedWorks[] = RelatedWork::buildFromXml($xml, $this);
     }
@@ -24,7 +23,7 @@ class RelatedMaterial extends Composite
         return $this->relatedWorks;
     }
 
-    public function setRelatedProduct(\SimpleXMLElement $xml): void
+    public function setRelatedProduct(SimpleXMLElement $xml): void
     {
         $this->relatedProducts[] = RelatedProduct::buildFromXml($xml, $this);
     }

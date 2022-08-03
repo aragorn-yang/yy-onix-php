@@ -34,8 +34,10 @@ class HasContributorsTest extends TestCase
         </Contributor>');
         $this->assertSame('Peter J. Diggle', $product->getAuthor()->getPersonName());
         $this->assertSame('Diggle, Peter J.', $product->getAuthor()->getPersonNameInverted());
-        $this->assertSame('University of Lancaster', $product->getAuthor()->getProfessionalAffiliations()[0]->getAffiliation());
-        $this->assertSame('Professor of Statistics, Department of Mathematics', $product->getAuthor()->getProfessionalAffiliations()[0]->getProfessionalPosition());
+        $this->assertSame('University of Lancaster',
+            $product->getAuthor()->getProfessionalAffiliations()[0]->getAffiliation());
+        $this->assertSame('Professor of Statistics, Department of Mathematics',
+            $product->getAuthor()->getProfessionalAffiliations()[0]->getProfessionalPosition());
 
         //This one has LettersAfterNames, and put full ProfessionalAffiliation text in Affiliation
         $product = $this->getParsedProduct('<Contributor>
@@ -51,7 +53,8 @@ class HasContributorsTest extends TestCase
 </Contributor>');
         $this->assertSame('Dominic Legge', $product->getAuthor()->getPersonName());
         $this->assertSame('Legge, Dominic', $product->getAuthor()->getPersonNameInverted());
-        $this->assertSame('Assistant Professor, Pontifical Faculty of the Immaculate Conception, Dominican House of Studies; Assistant Director, Thomistic Institute', $product->getAuthor()->getProfessionalAffiliations()[0]->getAffiliation());
+        $this->assertSame('Assistant Professor, Pontifical Faculty of the Immaculate Conception, Dominican House of Studies; Assistant Director, Thomistic Institute',
+            $product->getAuthor()->getProfessionalAffiliations()[0]->getAffiliation());
 
         //This one has TitlesBeforeNames, and put full ProfessionalAffiliation text in ProfessionalPosition
         $product = $this->getParsedProduct('<Contributor>
@@ -67,6 +70,7 @@ class HasContributorsTest extends TestCase
 </Contributor>');
         $this->assertSame('Igor Galynker', $product->getAuthor()->getPersonName());
         $this->assertSame('Galynker, Igor', $product->getAuthor()->getPersonNameInverted());
-        $this->assertSame('Associate Chairman for Research, Department of Psychiatry, Mount Sinai Beth Israel, Director, The Family Center for Bipolar Disorder, Mount Sinai Beth Israel', $product->getAuthor()->getProfessionalAffiliations()[0]->getProfessionalPosition());
+        $this->assertSame('Associate Chairman for Research, Department of Psychiatry, Mount Sinai Beth Israel, Director, The Family Center for Bipolar Disorder, Mount Sinai Beth Israel',
+            $product->getAuthor()->getProfessionalAffiliations()[0]->getProfessionalPosition());
     }
 }

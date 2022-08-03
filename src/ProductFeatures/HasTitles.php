@@ -3,13 +3,14 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Title;
+use SimpleXMLElement;
 
 trait HasTitles
 {
     /** @var string */
     protected $title = '';
 
-    /** @var object Title */
+    /** @var Title */
     protected $titleObj;
 
     public function getTitle(): string
@@ -17,14 +18,13 @@ trait HasTitles
         return $this->title;
     }
 
-    public function setTitle(\SimpleXMLElement $xml): void
+    public function setTitle(SimpleXMLElement $xml): void
     {
         /** @var Title $title */
         $title = Title::buildFromXml($xml, $this);
         $this->titleObj = $title;
         if ($title->isDistinctiveTitle()) {
             $this->title = $title->getFullTitle();
-            return;
         }
     }
 

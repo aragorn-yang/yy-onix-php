@@ -3,13 +3,14 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Language;
+use SimpleXMLElement;
 
 trait HasLanguages
 {
     /** @var Language[] */
     protected $languages = [];
 
-    public function setLanguage(\SimpleXMLElement $xml): void
+    public function setLanguage(SimpleXMLElement $xml): void
     {
         $this->languages[] = Language::buildFromXml($xml, $this);
     }

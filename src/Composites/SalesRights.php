@@ -7,6 +7,8 @@ use AragornYang\Onix\CodeLists\CodeList46SalesRightsType;
 use AragornYang\Onix\CodeLists\CodeList49RegionCodeSimplified;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\Composites\V30\Territory;
+use SimpleXMLElement;
+use function in_array;
 
 class SalesRights extends Composite
 {
@@ -73,20 +75,20 @@ class SalesRights extends Composite
 
     public function contains(string $code): bool
     {
-        return \in_array($code, $this->getRightsCountries(), true);
+        return in_array($code, $this->getRightsCountries(), true);
     }
 
     public function forWorld(): bool
     {
-        return \in_array('WORLD', $this->getRightsTerritories(), true);
+        return in_array('WORLD', $this->getRightsTerritories(), true);
     }
 
     public function forRestOfWorld(): bool
     {
-        return \in_array('ROW', $this->getRightsTerritories(), true);
+        return in_array('ROW', $this->getRightsTerritories(), true);
     }
 
-    public function setTerritory(\SimpleXMLElement $xml): void
+    public function setTerritory(SimpleXMLElement $xml): void
     {
         $this->territorys[] = Territory::buildFromXml($xml, $this);
     }

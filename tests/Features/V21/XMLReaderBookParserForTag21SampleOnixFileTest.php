@@ -4,8 +4,8 @@ namespace AragornYang\Onix\Tests\Features\V21;
 
 use AragornYang\Onix\BookParser;
 use AragornYang\Onix\Composites\Product;
-use AragornYang\Onix\XMLReaderBookParser;
 use AragornYang\Onix\Tests\Features\BookParserForSampleOnixFileTest;
+use AragornYang\Onix\XMLReaderBookParser;
 
 class XMLReaderBookParserForTag21SampleOnixFileTest extends BookParserForSampleOnixFileTest
 {

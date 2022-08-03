@@ -2,9 +2,9 @@
 
 namespace AragornYang\Onix\Composites\V30;
 
-use AragornYang\Onix\Composites\Composite;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList49RegionCode;
+use AragornYang\Onix\Composites\Composite;
 
 class Territory extends Composite
 {

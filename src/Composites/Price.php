@@ -5,11 +5,12 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList49RegionCodeSimplified;
 use AragornYang\Onix\CodeLists\CodeList58PriceTypeCode;
+use AragornYang\Onix\CodeLists\CodeList59PriceTypeQualifier;
 use AragornYang\Onix\CodeLists\CodeList61PriceStatus;
 use AragornYang\Onix\CodeLists\CodeList62TaxRateCoded;
 use AragornYang\Onix\CodeLists\CodeList91CountryCodeISO31661;
 use AragornYang\Onix\CodeLists\CodeList96CurrencyCodeISO4217;
-use AragornYang\Onix\CodeLists\CodeList59PriceTypeQualifier;
+use SimpleXMLElement;
 
 class Price extends Composite
 {
@@ -84,7 +85,7 @@ class Price extends Composite
 
     /**
      * for V3.0
-     * @param string $code
+     * @param  string  $code
      */
     public function setPriceType(string $code): void
     {
@@ -164,7 +165,7 @@ class Price extends Composite
         return $this->discountsCoded;
     }
 
-    public function setDiscountCoded(\SimpleXMLElement $xml): void
+    public function setDiscountCoded(SimpleXMLElement $xml): void
     {
         $this->discountsCoded[] = DiscountCoded::buildFromXml($xml, $this);
     }

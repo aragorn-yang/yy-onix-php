@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Subject;
+use SimpleXMLElement;
 
 trait HasSubjects
 {
@@ -58,7 +59,7 @@ trait HasSubjects
         return null;
     }
 
-    public function setSubject(\SimpleXMLElement $xml): void
+    public function setSubject(SimpleXMLElement $xml): void
     {
         $this->subjects[] = Subject::buildFromXml($xml, $this);
     }

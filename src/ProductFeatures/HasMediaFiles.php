@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\MediaFile;
+use SimpleXMLElement;
 
 trait HasMediaFiles
 {
@@ -17,7 +18,7 @@ trait HasMediaFiles
         return $this->mediaFiles;
     }
 
-    public function setMediaFile(\SimpleXMLElement $xml): void
+    public function setMediaFile(SimpleXMLElement $xml): void
     {
         $this->mediaFiles[] = MediaFile::buildFromXml($xml, $this);
     }

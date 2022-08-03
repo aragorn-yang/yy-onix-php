@@ -3,8 +3,8 @@
 namespace AragornYang\Onix\Tests\Units;
 
 use AragornYang\Onix\Composites\Product;
-use AragornYang\Onix\XMLReaderBookParser;
 use AragornYang\Onix\Tests\TestCase;
+use AragornYang\Onix\XMLReaderBookParser;
 
 class XMLReaderBookParserTest extends TestCase
 {

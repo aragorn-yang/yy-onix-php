@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\Set;
+use SimpleXMLElement;
 
 trait HasSets
 {
@@ -17,7 +18,7 @@ trait HasSets
         return $this->sets;
     }
 
-    public function setSet(\SimpleXMLElement $xml): void
+    public function setSet(SimpleXMLElement $xml): void
     {
         $this->sets[] = Set::buildFromXml($xml, $this);
     }

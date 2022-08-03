@@ -3,6 +3,7 @@
 namespace AragornYang\Onix\ProductFeatures;
 
 use AragornYang\Onix\Composites\RelatedProduct;
+use SimpleXMLElement;
 
 trait HasRelatedProducts
 {
@@ -23,7 +24,7 @@ trait HasRelatedProducts
         return $isbn13s;
     }
 
-    public function setRelatedProduct(\SimpleXMLElement $xml): void
+    public function setRelatedProduct(SimpleXMLElement $xml): void
     {
         $this->relatedProducts[] = RelatedProduct::buildFromXml($xml, $this);
     }

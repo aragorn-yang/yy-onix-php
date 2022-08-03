@@ -5,6 +5,7 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList44NameCodeType;
 use AragornYang\Onix\CodeLists\CodeList45PublishingRole;
+use SimpleXMLElement;
 
 class Publisher extends Composite
 {
@@ -72,7 +73,7 @@ class Publisher extends Composite
         return $this->websites;
     }
 
-    public function setWebsite(\SimpleXMLElement $xml): void
+    public function setWebsite(SimpleXMLElement $xml): void
     {
         $this->websites[] = Website::buildFromXml($xml, $this);
     }

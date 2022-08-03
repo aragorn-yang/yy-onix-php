@@ -5,6 +5,7 @@ namespace AragornYang\Onix\Composites;
 use AragornYang\Onix\CodeInList;
 use AragornYang\Onix\CodeLists\CodeList44NameCodeType;
 use AragornYang\Onix\Composites\V30\ImprintIdentifier;
+use SimpleXMLElement;
 
 class Imprint extends Composite
 {
@@ -65,7 +66,7 @@ class Imprint extends Composite
         $this->nameCodeValue = $nameCodeValue;
     }
 
-    public function setImprintIdentifier(\SimpleXMLElement $xml): void
+    public function setImprintIdentifier(SimpleXMLElement $xml): void
     {
         $this->imprintIdentifier[] = ImprintIdentifier::buildFromXml($xml, $this);
     }

@@ -29,7 +29,7 @@ class CodeListGenerator
 
     public function parseString(string $htmlContent): array
     {
-        preg_match("/\<br\>List (\d+)\: (.+)\<\/div\>/", $htmlContent, $matches1);
+        preg_match("/<br>List (\d+): (.+)<\/div>/", $htmlContent, $matches1);
         //if (!($matches1[1] ?? null)) {
         //    var_dump($htmlContent);
         //    throw new \Exception();
@@ -37,7 +37,7 @@ class CodeListGenerator
         $listNo = $matches1[1];
         $listName = $this->parseListName($matches1[2]);
 
-        preg_match_all('/\<tr valign\="top"\>\s*\<td\>(.*)<\/td>\s*\<td\>(.*)\<\/td\>\s*\<td\>([\s\S]*)\<\/td\>\s*\<\/tr\>/U',
+        preg_match_all('/<tr valign="top">\s*<td>(.*)<\/td>\s*<td>(.*)<\/td>\s*<td>([\s\S]*)<\/td>\s*<\/tr>/U',
             $htmlContent, $matches2);
         $contents = [];
         foreach ($matches2[1] as $key => $value) {
@@ -54,7 +54,7 @@ class CodeListGenerator
         $return = '';
         $words = explode(' ', $original);
         $hasTrailingCodeWord = false;
-        if ($words[\count($words) - 1] === 'code') {
+        if ($words[count($words) - 1] === 'code') {
             $hasTrailingCodeWord = true;
             array_pop($words);
         }
