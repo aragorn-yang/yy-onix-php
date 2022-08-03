@@ -5,6 +5,8 @@ namespace AragornYang\Onix;
 use AragornYang\Onix\Composites\Product;
 use AragornYang\Onix\Composites\Product21;
 use AragornYang\Onix\Composites\V30\Product30;
+use RuntimeException;
+use SimpleXMLElement;
 
 class ProductBuilder
 {
@@ -18,14 +20,19 @@ class ProductBuilder
         $this->onixVersion = $onixVersion;
     }
 
-    public function build(\SimpleXMLElement $xml): Product
+    public function build(SimpleXMLElement $xml): Product
     {
         if ('2.1' === $this->onixVersion) {
-            return Product21::buildFromXml($xml);
+            $product = Product21::buildFromXml($xml);
+            $product->setProductXml($xml);
+            return $product;
         }
 
         if ('3.0' === $this->onixVersion) {
-            return Product30::buildFromXml($xml);
+            $product = Product30::buildFromXml($xml);
+            $product->setProductXml($xml);
+            return $product;
         }
+        throw new RuntimeException("Unknown onix version: {$this->onixVersion}");
     }
 }
