@@ -40,6 +40,11 @@ class Composite
                 $key = ShortTagToRefName::find($key);
             }
             $key = ucfirst($key);
+            if ($key === 'BASICMainSubject') {
+                $key = 'BISACMainSubject';
+            } elseif ($key === 'BASICVersion') {
+                $key = 'BISACVersion';
+            }
             $method_name = "set{$key}";
             if (method_exists($composite, $method_name)) {
                 $composite->{$method_name}($value);
