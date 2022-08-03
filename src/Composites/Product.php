@@ -2,6 +2,8 @@
 
 namespace AragornYang\Onix\Composites;
 
+use SimpleXMLElement;
+
 interface Product
 {
     public function getIsbn13();
@@ -58,4 +60,7 @@ interface Product
     //
     //public function getThicknessUnit();
 
+    public function setProductXml(SimpleXMLElement $xml): void;
+
+    public function getProductXml(): string;
 }

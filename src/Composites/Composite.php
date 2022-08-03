@@ -4,6 +4,7 @@ namespace AragornYang\Onix\Composites;
 
 use AragornYang\Onix\Meta\ShortTagToRefName;
 use AragornYang\Onix\Onix;
+use SimpleXMLElement;
 
 class Composite
 {
@@ -13,8 +14,6 @@ class Composite
     protected $compositePosition = '';
     /** @var Composite|null */
     protected $parent;
-    /** @var string */
-    private $productXml = '';
 
     public function __construct(Composite $parent = null)
     {
@@ -22,11 +21,11 @@ class Composite
     }
 
     /**
-     * @param \SimpleXMLElement $xml
-     * @param Composite|null $parent
+     * @param  SimpleXMLElement  $xml
+     * @param  Composite|null  $parent
      * @return static
      */
-    public static function buildFromXml(\SimpleXMLElement $xml, Composite $parent = null)
+    public static function buildFromXml(SimpleXMLElement $xml, Composite $parent = null): Composite
     {
         $isTagEdition = false;
         $onix = Onix::getInstance();
@@ -50,16 +49,6 @@ class Composite
             $composite->recordUnrecognisableElement($key, $code);
         }
         return $composite;
-    }
-
-    public function setProductXml(\SimpleXMLElement $xml): void
-    {
-        $this->productXml = $xml->asXML();
-    }
-
-    public function getProductXml(): string
-    {
-        return $this->productXml;
     }
 
     protected function recordUnrecognisableElement(string $key, string $code = ''): void
