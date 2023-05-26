@@ -4,3 +4,4 @@ composer.lock
 
 ### JetBrains template
 .idea/
+.phpunit.result.cache
