@@ -34,6 +34,8 @@ class XMLReaderBookParser extends BookParser
                 ($this->productHandler)(Onix::getInstance()->buildProduct(simplexml_load_string($xmlDom)));
             } elseif (in_array(ucfirst($xml->name), ['ONIXMessage', 'ONIXmessage'])) {
                 $this->parseOnixEdition($xml);
+            } else {
+                continue;
             }
         }
     }

@@ -19,6 +19,7 @@ class SimpleBookParser extends BookParser
         }
         foreach ($xml->{$this->onix->getProductKey()} as $value) {
             $product = $this->onix->buildProduct($value);
+            $product->setProductXml($value);
             ($this->productHandler)($product);
             $this->productCount++;
         }

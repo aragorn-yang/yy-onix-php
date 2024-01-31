@@ -23,15 +23,11 @@ class ProductBuilder
     public function build(SimpleXMLElement $xml): Product
     {
         if ('2.1' === $this->onixVersion) {
-            $product = Product21::buildFromXml($xml);
-            $product->setProductXml($xml);
-            return $product;
+            return Product21::buildFromXml($xml);
         }
 
         if ('3.0' === $this->onixVersion) {
-            $product = Product30::buildFromXml($xml);
-            $product->setProductXml($xml);
-            return $product;
+            return Product30::buildFromXml($xml);
         }
         throw new RuntimeException("Unknown onix version: {$this->onixVersion}");
     }
